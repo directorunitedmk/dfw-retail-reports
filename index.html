@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DFW Retail Investment Report — June 11, 2026</title>
+<style>
+:root{
+  --bg:#0d0d14; --card:#15151f; --gold:#e8a020; --text:#e8e8ee; --muted:#9a9aa8;
+  --green:#3ecf6e; --red:#e85050; --border:#26263a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;padding-bottom:60px}
+header{padding:28px 24px 16px;text-align:center}
+header h1{font-size:26px;letter-spacing:.5px}
+header h1 span{color:var(--gold)}
+header p{color:var(--muted);margin-top:6px;font-size:14px}
+.statbar{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;padding:14px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--card)}
+.stat{text-align:center;min-width:120px}
+.stat .v{font-size:19px;font-weight:700;color:var(--gold)}
+.stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+.controls{position:sticky;top:0;z-index:50;display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:12px 24px;background:rgba(13,13,20,.96);border-bottom:1px solid var(--border);backdrop-filter:blur(6px)}
+.controls label{font-size:12px;color:var(--muted)}
+.controls select,.controls input[type=number]{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 8px;font-size:13px;width:110px}
+.controls select{width:150px}
+.controls .chk{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:20px;padding:24px;max-width:1500px;margin:0 auto}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s}
+.card:hover{transform:translateY(-3px)}
+.photo{position:relative;height:200px;background:#000}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.badges{position:absolute;top:10px;left:10px;display:flex;gap:6px}
+.badge{font-size:11px;font-weight:700;padding:4px 8px;border-radius:5px;background:rgba(13,13,20,.85);color:var(--text);border:1px solid var(--border)}
+.badge.top{background:var(--gold);color:#000;border:none}
+.dompill{position:absolute;bottom:0;right:10px;transform:translateY(50%);font-size:11px;font-weight:800;color:#000;padding:4px 10px;border-radius:999px;z-index:2}
+.dom-green{background:var(--green)} .dom-gold{background:var(--gold)} .dom-red{background:var(--red)} .dom-na{background:#8a8a99}
+.body{padding:18px 16px 16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.name{font-size:17px;font-weight:700}
+.addr{font-size:13px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.cell{background:#1b1b29;border-radius:8px;padding:8px 10px}
+.cell .k{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}
+.cell .val{font-size:15px;font-weight:700;margin-top:2px}
+.cell .val.gold{color:var(--gold)}
+.notes{font-size:12.5px;color:#bdbdca;line-height:1.45}
+.btn{margin-top:auto;display:block;text-align:center;background:var(--gold);color:#000;font-weight:700;text-decoration:none;padding:10px;border-radius:8px;font-size:14px}
+.btn:hover{filter:brightness(1.1)}
+.src-note{max-width:1500px;margin:0 auto;padding:0 24px 24px;color:var(--muted);font-size:12px;line-height:1.6}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<header>
+  <h1>DFW <span>Retail Investment</span> Report</h1>
+  <p>Multi-tenant retail · For sale · $2M–$50M · Dallas–Fort Worth metro · Thursday, June 11, 2026</p>
+</header>
+
+<div class="statbar" id="statbar"></div>
+
+<div class="controls">
+  <label>Sort
+    <select id="sort">
+      <option value="newest">Newest (days on market)</option>
+      <option value="cap">Cap rate (high→low)</option>
+      <option value="price">Price (low→high)</option>
+      <option value="sf">Size (high→low)</option>
+    </select>
+  </label>
+  <label>Min cap % <input type="number" id="mincap" step="0.25" placeholder="any"></label>
+  <label>Max price $M <input type="number" id="maxprice" step="0.5" placeholder="any"></label>
+  <span class="chk"><input type="checkbox" id="toponly"> ⭐ Top picks only</span>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div class="src-note">
+  <strong>Sources scanned this run:</strong> Crexi, STRIVE, Secure Net Lease, SHOP Companies, Matthews, SRS, Marcus &amp; Millichap, Colliers, CBRE, NAI Robert Lynn, LoopNet.<br>
+  Notes: LoopNet blocked automated access; NAI Robert Lynn and CBRE search apps failed to render; Colliers and SRS state filters unavailable; Matthews and Marcus &amp; Millichap location filters did not apply (national STNL inventory only); SHOP Companies is a map-only app. No qualifying DFW multi-tenant listings could be extracted from those sources today. Days on market shown where published (Crexi); "DOM n/a" otherwise. ⭐ Top Pick = on market ≤ 7 days.
+</div>
+
+<script>
+const L=[
+{n:"Live Oak & Liberty Retail Shops",a:"2817 Live Oak St, Dallas, TX 75204",p:3348000,c:6.65,sf:7084,occ:"100%",dom:56,src:"Crexi",img:"imgs/p1_a.jpg",u:"https://www.crexi.com/properties/1661624/texas-live-oak-liberty-retail-shops",notes:"Core infill Dallas multi-tenant retail. 100% occupied, NOI $222,612."},
+{n:"El Rio Grande & DD's Discounts",a:"2515 W Jefferson Blvd, Dallas, TX 75211",p:8244115,c:6.0,sf:61097,occ:"Multi-tenant",dom:225,src:"Crexi",img:"imgs/p2_a.jpg",u:"https://www.crexi.com/properties/2233034/",notes:"Grocery-anchored (El Rio Grande) + DD's Discounts. Built 2000. NOI $494,649. 292K population in 5 miles."},
+{n:"Preston & Broadway",a:"4950 Broadway, Dallas, TX 75225",p:4583000,c:6.0,sf:7000,occ:"100%",dom:212,src:"Crexi",img:"imgs/p3_a.jpg",u:"https://www.crexi.com/properties/2251085/texas-preston-broadway",notes:"2025-built multi-tenant retail fronting Preston Rd (63,306 VPD). NOI $275,000."},
+{n:"Fair Oaks Plaza",a:"4409 River Oaks Blvd, Fort Worth, TX 76114",p:5000000,c:7.15,sf:69923,occ:"100%",dom:null,src:"STRIVE",img:"imgs/p4_a.jpg",u:"https://www.strivere.com/property/201191",notes:"100% occupied 69,923 SF center, built 1954. NOI $357,320."},
+{n:"Fitzhugh Retail Center",a:"2325 N Fitzhugh Ave, Dallas, TX 75204",p:6750000,c:6.0,sf:8855,occ:"100%",dom:null,src:"STRIVE",img:"https://strivenext.s3.amazonaws.com/website/property-photos/21/Fitzhugh%20Retail%20-%20Cover%20Option%201.jpg",u:"https://www.strivere.com/property/21",notes:"Urban-infill hard corner, Fitzhugh & Capitol. Service retail + medical tenant mix, long-term NNN leases with escalations. NOI $404,767."},
+{n:"Tarrant West Plaza",a:"1701 S Cherry Ln, Fort Worth, TX 76108",p:12905000,c:8.0,sf:105173,occ:"100%",dom:null,src:"STRIVE",img:"imgs/p6_a.jpg",u:"https://www.strivere.com/property/63807",notes:"Two-tenant center: Academy Sports + Outdoors (NYSE: ASO, since 2003) and The Picklr (new 10-yr lease). Both NNN. NOI $1,032,179."},
+{n:"Camp Wisdom Village",a:"417 E Camp Wisdom Rd, Duncanville, TX",p:3800000,c:7.15,sf:19188,occ:"Multi-tenant",dom:null,src:"Secure Net Lease",img:"imgs/p7_a.jpg",u:"https://securenetlease.com/properties/camp-wisdom-village/",notes:"Below-market rents ($15.70 vs $25.93 market) = mark-to-market upside. 94% of tenants ≥5 yrs. NOI $271,816. Built 1982."},
+{n:"Texas Star Plaza",a:"125 North Clark Road, Cedar Hill, TX",p:3800000,c:7.58,sf:12660,occ:"Multi-tenant",dom:null,src:"Secure Net Lease",img:"imgs/p8_a.jpg",u:"https://securenetlease.com/properties/texas-star-plaza/",notes:"2007 build, hard corner on Belt Line Rd w/ US-67 access. 37% of rent roll in place 15+ yrs, avg rent $18.37/SF NNN. NOI $287,891."}
+];
+const fmt$=v=>'$'+v.toLocaleString();
+const fmtSF=v=>v.toLocaleString()+' SF';
+function domPill(d){
+  if(d==null) return '<span class="dompill dom-na">DOM n/a</span>';
+  const cls=d<=30?'dom-green':(d<=90?'dom-gold':'dom-red');
+  return `<span class="dompill ${cls}">${d}d on market</span>`;
+}
+function card(x,i){
+  const top=x.dom!=null&&x.dom<=7;
+  return `<div class="card" data-i="${i}">
+    <div class="photo">
+      <img src="${x.img}" alt="${x.n}" loading="lazy">
+      <div class="badges">${top?'<span class="badge top">⭐ Top Pick</span>':''}<span class="badge">${x.src}</span></div>
+      ${domPill(x.dom)}
+    </div>
+    <div class="body">
+      <div class="name">${x.n}</div>
+      <div class="addr">${x.a}</div>
+      <div class="stats">
+        <div class="cell"><div class="k">Price</div><div class="val">${fmt$(x.p)}</div></div>
+        <div class="cell"><div class="k">Cap Rate</div><div class="val gold">${x.c?x.c.toFixed(2)+'%':'—'}</div></div>
+        <div class="cell"><div class="k">Size</div><div class="val">${fmtSF(x.sf)}</div></div>
+        <div class="cell"><div class="k">Occupancy</div><div class="val">${x.occ}</div></div>
+      </div>
+      <div class="notes">${x.notes}</div>
+      <a class="btn" href="${x.u}" target="_blank" rel="noopener">View Listing →</a>
+    </div>
+  </div>`;
+}
+function render(){
+  const sort=document.getElementById('sort').value;
+  const mincap=parseFloat(document.getElementById('mincap').value)||0;
+  const maxp=(parseFloat(document.getElementById('maxprice').value)||Infinity)*1e6;
+  const top=document.getElementById('toponly').checked;
+  let arr=L.map((x,i)=>({...x,i})).filter(x=>(x.c||0)>=mincap&&x.p<=maxp&&(!top||(x.dom!=null&&x.dom<=7)));
+  const big=1e9;
+  if(sort==='newest')arr.sort((a,b)=>(a.dom??big)-(b.dom??big));
+  if(sort==='cap')arr.sort((a,b)=>(b.c||0)-(a.c||0));
+  if(sort==='price')arr.sort((a,b)=>a.p-b.p);
+  if(sort==='sf')arr.sort((a,b)=>b.sf-a.sf);
+  document.getElementById('grid').innerHTML=arr.map(x=>card(x,x.i)).join('')||'<p style="color:var(--muted)">No listings match the current filters.</p>';
+}
+function statbar(){
+  const caps=L.map(x=>x.c).filter(Boolean), prices=L.map(x=>x.p);
+  const doms=L.map(x=>x.dom).filter(d=>d!=null);
+  const tops=L.filter(x=>x.dom!=null&&x.dom<=7).length;
+  const s=[
+    [L.length,'Listings'],
+    [tops,'⭐ Top Picks'],
+    [Math.min(...caps).toFixed(2)+'–'+Math.max(...caps).toFixed(2)+'%','Cap Rate Range'],
+    ['$'+(Math.min(...prices)/1e6).toFixed(2)+'M–$'+(Math.max(...prices)/1e6).toFixed(1)+'M','Price Range'],
+    [doms.length?Math.min(...doms)+' days':'n/a','Newest DOM']
+  ];
+  document.getElementById('statbar').innerHTML=s.map(([v,l])=>`<div class="stat"><div class="v">${v}</div><div class="l">${l}</div></div>`).join('');
+}
+['sort','mincap','maxprice','toponly'].forEach(id=>document.getElementById(id).addEventListener('input',render));
+statbar();render();
+</script>
+</body>
+</html>
