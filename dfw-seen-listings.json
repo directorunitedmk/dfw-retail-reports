@@ -1,0 +1,13 @@
+{
+  "seen": {
+    "https://www.crexi.com/properties/1661624/texas-live-oak-liberty-retail-shops": { "first_seen": "2026-06-11", "last_seen": "2026-06-11", "address": "2817 Live Oak St, Dallas, TX 75204", "price": 3348000 },
+    "https://www.crexi.com/properties/2233034/": { "first_seen": "2026-06-11", "last_seen": "2026-06-11", "address": "2515 W Jefferson Blvd, Dallas, TX 75211", "price": 8244115 },
+    "https://www.crexi.com/properties/2251085/texas-preston-broadway": { "first_seen": "2026-06-11", "last_seen": "2026-06-11", "address": "4950 Broadway, Dallas, TX 75225", "price": 4583000 },
+    "https://www.strivere.com/property/201191": { "first_seen": "2026-06-11", "last_seen": "2026-06-11", "address": "4409 River Oaks Blvd, Fort Worth, TX 76114", "price": 5000000 },
+    "https://www.strivere.com/property/21": { "first_seen": "2026-06-11", "last_seen": "2026-06-11", "address": "2325 N Fitzhugh Ave, Dallas, TX 75204", "price": 6750000 },
+    "https://www.strivere.com/property/63807": { "first_seen": "2026-06-11", "last_seen": "2026-06-11", "address": "1701 S Cherry Ln, Fort Worth, TX 76108", "price": 12905000 },
+    "https://securenetlease.com/properties/camp-wisdom-village/": { "first_seen": "2026-06-11", "last_seen": "2026-06-11", "address": "417 E Camp Wisdom Rd, Duncanville, TX", "price": 3800000 },
+    "https://securenetlease.com/properties/texas-star-plaza/": { "first_seen": "2026-06-11", "last_seen": "2026-06-11", "address": "125 North Clark Road, Cedar Hill, TX", "price": 3800000 }
+  },
+  "note": "Tracker rebuilt 2026-06-11: previous tracker file was in an inaccessible session folder; treated seen as empty per task spec."
+}
