@@ -548,6 +548,15 @@ function updateStats() {
 
 updateStats();
 applyFilters();
+
+// After 4s, hide any photo-wraps where image failed to load (hotlink protection)
+setTimeout(() => {
+  document.querySelectorAll('.photo-wrap img').forEach(img => {
+    if (!img.complete || img.naturalWidth === 0) {
+      img.closest('.photo-wrap').style.display = 'none';
+    }
+  });
+}, 4000);
 </script>
 </body>
 </html>
