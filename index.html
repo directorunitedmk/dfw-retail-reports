@@ -477,8 +477,8 @@ function buildCard(l) {
   const priceNum = l.price || 0;
   const capNum = l.cap || 0;
   return `<div class="card" data-id="${l.id}" data-sortid="${l.sortId}" data-price="${priceNum}" data-cap="${capNum}" data-top="${l.isTop?1:0}" data-criteria="${capMatch?1:0}">
-    ${l.img ? `<div class="photo-wrap">
-      <img src="${l.img}" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" alt="${l.name}">` : `<div class="photo-wrap" style="display:none">`}
+    ${l.img ? `<div class="photo-wrap" style="display:none">
+      <img src="${l.img}" referrerpolicy="no-referrer" onload="this.closest('.photo-wrap').style.display=''" onerror="this.closest('.photo-wrap').style.display='none'" alt="${l.name}">` : `<div class="photo-wrap" style="display:none">`}
       <div class="dom-pill ${l.domClass}" style="background:${domColor(l.domClass)};color:${domTextColor(l.domClass)}">${l.dom==='N/A'?'DOM N/A':l.dom==='NEW'?'🆕 NEW':l.dom+' days'}</div>
       <div class="badges">
         ${l.isTop ? '<span class="badge top">⭐ Top Pick</span>' : ''}
