@@ -188,13 +188,13 @@
   },
   "https://srsre.com/properties/investment-sale/retail/texas/prosper/5720-west-university-drive/l14833": {
    "first_seen": "2026-06-17",
-   "last_seen": "2026-06-17",
+   "last_seen": "2026-06-19",
    "address": "5720 W University Dr, Prosper, TX",
    "price": 10401000
   },
   "https://srsre.com/properties/sale/retail/texas/fort-worth/5601-n-tarrant-pkwy/l14832": {
    "first_seen": "2026-06-17",
-   "last_seen": "2026-06-17",
+   "last_seen": "2026-06-19",
    "address": "5601 N Tarrant Pkwy, Fort Worth, TX",
    "price": null
   },
@@ -575,6 +575,102 @@
    "last_seen": "2026-06-18",
    "address": "McKinney",
    "price": null
+  },
+  "https://www.crexi.com/properties/2592791/texas-4421-w-kiest-blvd": {
+   "first_seen": "2026-06-19",
+   "last_seen": "2026-06-19",
+   "address": "4421 W. Kiest Blvd., Dallas, TX 75236",
+   "price": 900000
+  },
+  "https://www.crexi.com/properties/2592581/texas-6535-abrams-rd": {
+   "first_seen": "2026-06-19",
+   "last_seen": "2026-06-19",
+   "address": "6535 Abrams Road, Dallas, TX 75231",
+   "price": null
+  },
+  "https://www.crexi.com/properties/2563874/texas-1103-south-beckley-avenue": {
+   "first_seen": "2026-06-19",
+   "last_seen": "2026-06-19",
+   "address": "1103 South Beckley Avenue, Dallas, TX 75203",
+   "price": 700000
+  },
+  "https://www.crexi.com/properties/2592043/texas-starbucks-nnn-ground-lease": {
+   "first_seen": "2026-06-19",
+   "last_seen": "2026-06-19",
+   "address": "1350 North Hampton Road, Dallas, TX 75208",
+   "price": 3263000
+  },
+  "https://www.crexi.com/properties/2566534/texas-702-south-hampton-road": {
+   "first_seen": "2026-06-19",
+   "last_seen": "2026-06-19",
+   "address": "702 South Hampton Road, Dallas, TX 75208",
+   "price": 1750000
+  },
+  "https://www.crexi.com/properties/2563003/texas-jefferson-marsalis-retail-center": {
+   "first_seen": "2026-06-19",
+   "last_seen": "2026-06-19",
+   "address": "610 E Jefferson Blvd, Dallas, TX 75203",
+   "price": 4064031
+  },
+  "https://www.crexi.com/properties/2561753/texas-2257-vantage-street": {
+   "first_seen": "2026-06-19",
+   "last_seen": "2026-06-19",
+   "address": "2257 Vantage Street, Dallas, TX 75207",
+   "price": null
+  },
+  "https://www.crexi.com/properties/2559547/texas-lancaster-crossing-commercial-pad-site-8520-s-lancaster-rd": {
+   "first_seen": "2026-06-19",
+   "last_seen": "2026-06-19",
+   "address": "8520 South Lancaster Road, Dallas, TX 75241",
+   "price": 1400000
+  },
+  "https://www.crexi.com/properties/2556713/texas-sonic-drive-in-brand-new-20-year-absolute-nnn-lease": {
+   "first_seen": "2026-06-19",
+   "last_seen": "2026-06-19",
+   "address": "101 Main Street, Lake Dallas, TX 75065",
+   "price": 1680769
+  },
+  "https://www.crexi.com/properties/2517381/texas-myeyedr": {
+   "first_seen": "2026-06-19",
+   "last_seen": "2026-06-19",
+   "address": "9816 N Beach Street, Fort Worth, TX 76244",
+   "price": 2164267
+  },
+  "https://securenetlease.com/properties/hg-sply-co/": {
+   "first_seen": "2026-06-19",
+   "last_seen": "2026-06-19",
+   "address": "2980 TX-114 Frontage Rd, Trophy Club, TX",
+   "price": 11439000
+  },
+  "https://securenetlease.com/properties/7-eleven-midlothian-tx/": {
+   "first_seen": "2026-06-19",
+   "last_seen": "2026-06-19",
+   "address": "U.S. 287 & Miller Rd, Midlothian, TX",
+   "price": 9100000
+  },
+  "https://securenetlease.com/properties/caribou-coffee-grapevine-tx/": {
+   "first_seen": "2026-06-19",
+   "last_seen": "2026-06-19",
+   "address": "897 W Northwest Hwy, Grapevine, TX",
+   "price": 2250000
+  },
+  "https://www.matthews.com/properties/stnl-kwik-kar-frisco-tx": {
+   "first_seen": "2026-06-19",
+   "last_seen": "2026-06-19",
+   "address": "6614 Preston Rd, Frisco, TX 75034",
+   "price": 3895400
+  },
+  "https://www.matthews.com/properties/stnl-stnl-cadence-academy-preschool-wylie-tx": {
+   "first_seen": "2026-06-19",
+   "last_seen": "2026-06-19",
+   "address": "1451 Park Blvd, Wylie, TX 75098",
+   "price": 4560000
+  },
+  "https://www.matthews.com/properties/stnl-preschool-on-shiloh-garland-tx": {
+   "first_seen": "2026-06-19",
+   "last_seen": "2026-06-19",
+   "address": "410 N Shiloh Rd, Garland, TX 75042",
+   "price": 1250000
   }
  }
 }
