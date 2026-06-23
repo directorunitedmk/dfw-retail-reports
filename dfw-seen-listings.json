@@ -57,7 +57,7 @@
     "https://www.crexi.com/properties/2596432": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
-      "address": "101 Main Street, Lakeside (DFW MSA), TX",
+      "address": "101 Main St (Lake Dallas), Lake Dallas (DFW MSA), TX",
       "price": 1680769
     },
     "https://www.crexi.com/properties/2592896": {
@@ -75,79 +75,79 @@
     "https://www.strivere.com/property/20457": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
-      "address": "Collins Plaza, Arlington, TX",
+      "address": "2104 N Collins St, Arlington, TX 76011",
       "price": 6550000
     },
     "https://www.strivere.com/property/40531": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
-      "address": "Black Rock Coffee, McKinney, TX",
+      "address": "4001 W University Dr, McKinney, TX 75071",
       "price": 2520000
     },
     "https://www.strivere.com/property/47357": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
-      "address": "Fountain Oaks Shopping Center, Granbury, TX",
+      "address": "3301 E US Hwy 377, Granbury, TX 76049",
       "price": 3505000
     },
     "https://www.strivere.com/property/60285": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
-      "address": "Sojourn Retail, Lewisville, TX",
+      "address": "3517 Windhaven Pkwy, Lewisville, TX 75056",
       "price": 3045000
     },
     "https://www.strivere.com/property/200126": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
-      "address": "Smalls Sliders, McKinney, TX",
+      "address": "1681 N Hardin Blvd, McKinney, TX 75071",
       "price": 1910000
     },
     "https://www.strivere.com/property/200363": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
-      "address": "First Street Shallow Bay, Garland, TX",
+      "address": "601 N 1st St, Garland, TX 75040",
       "price": 2395000
     },
     "https://www.strivere.com/property/202304": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
-      "address": "Dallas VA Hospital Strip, Dallas, TX",
+      "address": "4303 S Lancaster Rd, Dallas, TX 75216",
       "price": 530000
     },
     "https://www.strivere.com/property/202508": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
-      "address": "450-500 S. Kaufman St, Seagoville, TX",
+      "address": "450 & 500 Kaufman St, Seagoville, TX 75159",
       "price": 999900
     },
     "https://www.strivere.com/property/338973": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
-      "address": "Wimbledon Court, Garland, TX",
+      "address": "2709 Wimbledon Ct, Garland, TX 75041",
       "price": 699000
     },
     "https://www.strivere.com/property/32466": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
-      "address": "Richardson Medical Office, Richardson, TX",
+      "address": "1070 W Campbell Rd, Richardson, TX 75080",
       "price": 2000000
     },
     "https://www.strivere.com/property/58544": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
-      "address": "Skyway Circle, Irving, TX",
+      "address": "3007 N Skyway Cir, Irving, TX 75038",
       "price": 2615000
     },
     "https://www.strivere.com/property/202300": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
-      "address": "2001 Green Oaks, Arlington, TX",
+      "address": "2001 NE Green Oaks Blvd, Arlington, TX 76006",
       "price": 2525000
     },
     "https://www.strivere.com/property/202380": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
-      "address": "2005 Green Oaks, Arlington, TX",
+      "address": "2005 NE Green Oaks Blvd, Arlington, TX 76006",
       "price": 3985000
     },
     "https://securenetlease.com/properties/7-eleven-aubrey-tx/": {
@@ -189,51 +189,45 @@
     "https://srsre.com/properties/investment-sale/retail/texas/prosper/5720-west-university-drive/l14833": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
-      "address": "5720 W University Dr, Prosper, TX",
+      "address": "5720 W University Dr, Prosper, TX 75078",
       "price": 10401000
     },
     "https://srsre.com/properties/sale/retail/texas/fort-worth/5601-n-tarrant-pkwy/l14832": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
-      "address": "5601 N Tarrant Pkwy, Fort Worth, TX",
+      "address": "5601 N Tarrant Pkwy, Fort Worth, TX 76244",
       "price": null
     },
     "https://www.marcusmillichap.com/properties/201490/first-watch-nasdaq-fwrg-leading-daytime-dining-concept-dfw-1-most-visited-location-in-tx": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
-      "address": "Waxahachie (DFW MSA), Waxahachie, TX",
+      "address": "1760 N Hwy 77, Waxahachie (DFW MSA), TX 75165",
       "price": 3913000
-    },
-    "https://www.marcusmillichap.com/properties/200332/sixt-rent-the-car": {
-      "first_seen": "2026-06-23",
-      "last_seen": "2026-06-23",
-      "address": "Dallas, Dallas, TX",
-      "price": null
-    },
-    "https://www.marcusmillichap.com/properties/201872/bishop-arts-retail-portfolio": {
-      "first_seen": "2026-06-23",
-      "last_seen": "2026-06-23",
-      "address": "Bishop Arts District, Dallas, TX",
-      "price": null
     },
     "https://www.marcusmillichap.com/properties/301942/corp-pollo-campero-400-locations-dfw-metro-epicenter-of-activity-absolute-nnn-ground-lease": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
-      "address": "Irving (DFW MSA), Irving, TX",
-      "price": null
+      "address": "2705 N Belt Line Rd, Irving, TX 75062",
+      "price": 3611111
     },
-    "https://www.matthews.com/listings/stnl-el-toro-sinaloense-arlington-tx/": {
+    "https://www.marcusmillichap.com/properties/201872/bishop-arts-retail-portfolio": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
-      "address": "1520 Nolan Ryan Expy, Arlington, TX 76011",
-      "price": 7708029
+      "address": "300 W Davis St, Dallas, TX 75208",
+      "price": null
     },
-    "https://www.matthews.com/listings/stnl-carys-car-wash-lube-center-haltom-city-tx/": {
+    "https://www.marcusmillichap.com/properties/200332/sixt-rent-the-car": {
+      "first_seen": "2026-06-23",
+      "last_seen": "2026-06-23",
+      "address": "5800 Maple Ave, Dallas, TX 75235",
+      "price": null
+    },
+    "https://www.matthews.com/listings/": {
       "first_seen": "2026-06-23",
       "last_seen": "2026-06-23",
       "address": "4530 Western Center Blvd, Haltom City, TX 76137",
       "price": 2900000
     }
   },
-  "note": "Updated 2026-06-23. 31 new listings added this run."
+  "note": "Updated 2026-06-23 (enriched). 31 new listings."
 }
