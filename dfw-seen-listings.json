@@ -50,7 +50,7 @@
     },
     "https://www.crexi.com/properties/2593964": {
       "first_seen": "2026-06-26",
-      "last_seen": "2026-06-26",
+      "last_seen": "2026-06-27",
       "address": "4110 W Camp Wisdom Rd, Dallas, TX 75237",
       "price": null
     },
@@ -92,7 +92,7 @@
     },
     "https://www.strivere.com/property/338973": {
       "first_seen": "2026-06-26",
-      "last_seen": "2026-06-26",
+      "last_seen": "2026-06-27",
       "address": "Garland, TX",
       "price": 699000
     },
@@ -185,6 +185,108 @@
       "last_seen": "2026-06-26",
       "address": "Granbury, TX",
       "price": null
+    },
+    "https://www.crexi.com/properties/2594015": {
+      "first_seen": "2026-06-27",
+      "last_seen": "2026-06-27",
+      "address": "5003 Belt Line Rd, Dallas, TX 75254",
+      "price": null
+    },
+    "https://www.crexi.com/properties/2599650": {
+      "first_seen": "2026-06-27",
+      "last_seen": "2026-06-27",
+      "address": "1203 E Redbird Ln, Dallas, TX 75241",
+      "price": 700000
+    },
+    "https://www.crexi.com/properties/2599544": {
+      "first_seen": "2026-06-27",
+      "last_seen": "2026-06-27",
+      "address": "8300 Elam Rd, Dallas, TX 75217",
+      "price": 1999999
+    },
+    "https://www.crexi.com/properties/2594017": {
+      "first_seen": "2026-06-27",
+      "last_seen": "2026-06-27",
+      "address": "6301 E RL Thornton Fwy, Dallas, TX 75223",
+      "price": null
+    },
+    "https://www.crexi.com/properties/2594239": {
+      "first_seen": "2026-06-27",
+      "last_seen": "2026-06-27",
+      "address": "6501 Hillcrest Ave, Dallas, TX 75205",
+      "price": null
+    },
+    "https://www.crexi.com/properties/2594119": {
+      "first_seen": "2026-06-27",
+      "last_seen": "2026-06-27",
+      "address": "13900 Dallas Pkwy, Dallas, TX 75240",
+      "price": null
+    },
+    "https://www.crexi.com/properties/2594523": {
+      "first_seen": "2026-06-27",
+      "last_seen": "2026-06-27",
+      "address": "13408 Kit Ln, Dallas, TX 75240",
+      "price": null
+    },
+    "https://www.crexi.com/properties/2596618": {
+      "first_seen": "2026-06-27",
+      "last_seen": "2026-06-27",
+      "address": "3311 Oak Lawn Ave, 3rd Floor, Dallas, TX 75219",
+      "price": null
+    },
+    "https://www.crexi.com/properties/2594037": {
+      "first_seen": "2026-06-27",
+      "last_seen": "2026-06-27",
+      "address": "4323-4331 Maple Ave, Dallas, TX 75219",
+      "price": 2450000
+    },
+    "https://www.crexi.com/properties/2593954": {
+      "first_seen": "2026-06-27",
+      "last_seen": "2026-06-27",
+      "address": "7474 S Cockrell Hill Rd, Dallas, TX 75236",
+      "price": null
+    },
+    "https://www.crexi.com/properties/2597791": {
+      "first_seen": "2026-06-27",
+      "last_seen": "2026-06-27",
+      "address": "8201 North Beach Street, Fort Worth, TX 76244",
+      "price": null
+    },
+    "https://www.crexi.com/properties/2599003": {
+      "first_seen": "2026-06-27",
+      "last_seen": "2026-06-27",
+      "address": "2813 Commerce St, Fort Worth, TX 76106",
+      "price": null
+    },
+    "https://www.strivere.com/property/35833": {
+      "first_seen": "2026-06-27",
+      "last_seen": "2026-06-27",
+      "address": "Fort Worth, TX",
+      "price": 4200000
+    },
+    "https://www.marcusmillichap.com/properties/301942": {
+      "first_seen": "2026-06-27",
+      "last_seen": "2026-06-27",
+      "address": "Irving (Dallas-Ft. Worth MSA), TX",
+      "price": 3611111
+    },
+    "https://www.matthews.com/properties/stnl-el-toro-sinaloense-arlington-tx": {
+      "first_seen": "2026-06-27",
+      "last_seen": "2026-06-27",
+      "address": "1520 Nolan Ryan Expy, Arlington, TX 76011",
+      "price": 7708029
+    },
+    "https://www.matthews.com/properties/stnl-kwik-kar-frisco-tx": {
+      "first_seen": "2026-06-27",
+      "last_seen": "2026-06-27",
+      "address": "6614 Preston Rd, Frisco, TX 75034",
+      "price": 3895400
+    },
+    "https://www.matthews.com/properties/stnl-preschool-on-shiloh-garland-tx": {
+      "first_seen": "2026-06-27",
+      "last_seen": "2026-06-27",
+      "address": "410 N Shiloh Rd, Garland, TX 75042",
+      "price": 1250000
     }
   },
   "note": "Updated 2026-06-26 daily run. 23 new listings added; 8 prior re-confirmed. Note: Secure Net Lease and Marcus & Millichap listings lack individual canonical URLs in scrape; tracked via name-suffixed keys."
