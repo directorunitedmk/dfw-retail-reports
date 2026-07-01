@@ -3,230 +3,247 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DFW Retail Investment Report — June 30, 2026</title>
+<title>DFW Retail Investment Report — July 1, 2026</title>
 <style>
-  :root{
-    --bg:#0d0d14; --card:#15151f; --card2:#1c1c28; --gold:#e8a020; --gold-soft:#f0c068;
-    --txt:#e8e8ee; --muted:#9a9aa8; --line:#2a2a38; --green:#3fae6b; --red:#d6543e; --gray:#5a5a6a;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;padding-bottom:60px}
-  a{color:inherit;text-decoration:none}
-  header{padding:28px 20px 16px;border-bottom:1px solid var(--line);text-align:center}
-  header h1{font-size:24px;letter-spacing:.3px}
-  header h1 .gold{color:var(--gold)}
-  header .sub{color:var(--muted);font-size:13px;margin-top:6px}
-  .wrap{max-width:1200px;margin:0 auto;padding:0 16px}
-
-  .statbar{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;padding:18px 16px}
-  .stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 18px;min-width:130px;text-align:center}
-  .stat .n{font-size:22px;font-weight:700;color:var(--gold)}
-  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
-
-  .controls{position:sticky;top:0;z-index:20;background:rgba(13,13,20,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);padding:12px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
-  .controls label{font-size:12px;color:var(--muted);margin-right:4px}
-  select,input[type=number]{background:var(--card2);color:var(--txt);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px}
-  input[type=number]{width:110px}
-  .toggle{display:inline-flex;align-items:center;gap:6px;background:var(--card2);border:1px solid var(--line);border-radius:7px;padding:6px 10px;font-size:12px;cursor:pointer;user-select:none}
-  .toggle input{accent-color:var(--gold)}
-
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px;padding:22px 0}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,border-color .15s}
-  .card:hover{transform:translateY(-3px);border-color:#3a3a4a}
-  .photo-wrap{position:relative;width:100%;height:190px;background:var(--card2);overflow:hidden}
-  .photo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
-  .badges{position:absolute;top:10px;left:10px;display:flex;flex-wrap:wrap;gap:6px;max-width:80%}
-  .badge{font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:20px;letter-spacing:.3px;text-transform:uppercase}
-  .b-top{background:var(--gold);color:#1a1205}
-  .b-src{background:rgba(0,0,0,.62);color:#fff;border:1px solid rgba(255,255,255,.18)}
-  .b-crit{background:#2d5fae;color:#fff}
-  .dom-pill{position:absolute;bottom:0;left:0;font-size:11px;font-weight:700;padding:4px 10px;border-top-right-radius:8px;color:#000}
-  .dom-green{background:var(--green)} .dom-gold{background:var(--gold)} .dom-red{background:var(--red);color:#fff} .dom-gray{background:var(--gray);color:#e8e8ee}
-
-  .body{padding:14px 15px 16px;display:flex;flex-direction:column;flex:1}
-  .name{font-size:16px;font-weight:700;line-height:1.3}
-  .addr{font-size:12.5px;color:var(--muted);margin-top:3px}
-  .stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:13px 0}
-  .s{background:var(--card2);border-radius:8px;padding:7px 9px}
-  .s .sl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
-  .s .sv{font-size:14px;font-weight:600;margin-top:1px}
-  .s.cap .sv{color:var(--gold)}
-  .notes{font-size:12px;color:#b8b8c4;margin-top:2px;flex:1}
-  .notes b{color:var(--txt)}
-  .view{margin-top:13px;display:block;text-align:center;background:var(--gold);color:#1a1205;font-weight:700;font-size:13px;padding:9px;border-radius:8px}
-  .view:hover{background:var(--gold-soft)}
-
-  .empty{text-align:center;color:var(--muted);padding:40px;font-size:14px}
-  footer{text-align:center;color:var(--muted);font-size:11.5px;padding:24px 16px;border-top:1px solid var(--line);margin-top:20px;line-height:1.7}
-  .src-status{max-width:760px;margin:8px auto 0;text-align:left;font-size:11px;color:#777}
-  .src-status span{color:#999}
+:root{
+  --bg:#0d0d14; --card:#15151f; --card2:#1c1c28; --gold:#e8a020; --gold2:#f5c15a;
+  --txt:#e8e8ef; --muted:#9a9ab0; --line:#26263a; --green:#2ecc71; --red:#e74c3c; --gray:#555;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.45;padding-bottom:60px}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 20px}
+header{padding:34px 0 18px;border-bottom:1px solid var(--line)}
+h1{font-size:26px;font-weight:700;letter-spacing:.2px}
+h1 span{color:var(--gold)}
+.sub{color:var(--muted);font-size:14px;margin-top:6px}
+.statbar{display:flex;flex-wrap:wrap;gap:14px;margin:20px 0 6px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;min-width:130px}
+.stat .n{font-size:22px;font-weight:700;color:var(--gold)}
+.stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-top:2px}
+.bar{position:sticky;top:0;z-index:20;background:rgba(13,13,20,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 0;margin-top:14px}
+.bar .inner{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.bar label{font-size:12px;color:var(--muted);margin-right:4px}
+select,input[type=number]{background:var(--card2);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:13px}
+.chk{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--txt);cursor:pointer;background:var(--card2);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.photo-wrap{position:relative;width:100%;height:180px;background:var(--card2);overflow:hidden}
+.photo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.badges{position:absolute;top:10px;left:10px;display:flex;flex-wrap:wrap;gap:6px;max-width:88%}
+.badge{font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:20px;letter-spacing:.3px;text-transform:uppercase}
+.b-top{background:var(--gold);color:#1a1300}
+.b-src{background:#2a2a3d;color:#c9c9e0}
+.b-crit{background:#1d5c37;color:#c8f5d8}
+.dom{position:absolute;bottom:0;left:0;font-size:11px;font-weight:700;padding:3px 10px;color:#000;border-top-right-radius:8px}
+.dom.g{background:var(--green)} .dom.y{background:var(--gold)} .dom.r{background:var(--red)} .dom.n{background:var(--gray);color:#eee}
+.body{padding:14px 15px 16px;display:flex;flex-direction:column;flex:1}
+.name{font-size:15px;font-weight:700;line-height:1.25}
+.addr{font-size:12.5px;color:var(--muted);margin-top:3px}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.sgrid .cell{background:var(--card2);border-radius:8px;padding:7px 9px}
+.sgrid .k{font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.sgrid .v{font-size:14px;font-weight:700;margin-top:2px}
+.sgrid .v.gold{color:var(--gold)}
+.notes{font-size:12px;color:#c2c2d4;margin-top:2px;flex:1}
+.btn{margin-top:13px;display:block;text-align:center;background:var(--gold);color:#1a1300;font-weight:700;font-size:13px;padding:9px;border-radius:9px;transition:background .2s}
+.btn:hover{background:var(--gold2)}
+.sec-title{font-size:15px;font-weight:700;color:var(--gold);margin:34px 0 4px;text-transform:uppercase;letter-spacing:.6px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 16px;margin-top:14px}
+summary{cursor:pointer;padding:10px 0;font-weight:600}
+.mini{font-size:13px;color:var(--muted);padding:5px 0;border-top:1px solid var(--line)}
+.mini b{color:var(--txt)}
+.srcstat{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;margin-top:14px}
+.srcstat .s{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:12.5px}
+.srcstat .s .sn{font-weight:700;font-size:13px}
+.srcstat .ok{color:var(--green)} .srcstat .warn{color:var(--gold)} .srcstat .bad{color:var(--red)}
+footer{color:var(--muted);font-size:12px;margin-top:40px;border-top:1px solid var(--line);padding-top:18px}
+.empty{color:var(--muted);padding:30px 0;text-align:center}
 </style>
 </head>
 <body>
-<header>
-  <h1>📋 DFW Retail Investment Report <span class="gold">·</span> <span class="gold">June 30, 2026</span></h1>
-  <div class="sub">New-to-market retail &amp; net-lease listings across the Dallas–Fort Worth metro · ⭐ = on market within past 3 days</div>
-</header>
-
-<div class="wrap">
+<header><div class="wrap">
+  <h1>DFW Retail Investment Report — <span>New to Market</span></h1>
+  <div class="sub">Wednesday, July 1, 2026 · Dallas–Fort Worth metro · For-sale retail &amp; net-lease</div>
   <div class="statbar" id="statbar"></div>
-</div>
+</div></header>
 
-<div class="controls">
-  <div><label>Sort</label>
-    <select id="sortSel">
-      <option value="newest">Newest first</option>
-      <option value="cap">Cap rate (high→low)</option>
-      <option value="price">Price (low→high)</option>
-      <option value="sf">Size (high→low)</option>
-    </select>
-  </div>
-  <div><label>Min cap %</label><input type="number" id="minCap" step="0.25" placeholder="any"></div>
-  <div><label>Max price $</label><input type="number" id="maxPrice" step="100000" placeholder="any"></div>
-  <label class="toggle"><input type="checkbox" id="topOnly"> ⭐ Top picks only</label>
-  <label class="toggle"><input type="checkbox" id="critOnly"> Criteria match only</label>
-</div>
+<div class="bar"><div class="wrap inner">
+  <span><label>Sort</label>
+  <select id="sort">
+    <option value="new">Newest / DOM</option>
+    <option value="cap">Cap rate (high→low)</option>
+    <option value="price">Price (high→low)</option>
+    <option value="sf">Size (high→low)</option>
+  </select></span>
+  <span><label>Min cap %</label><input type="number" id="minCap" step="0.25" style="width:80px" placeholder="any"></span>
+  <span><label>Max price $</label><input type="number" id="maxPrice" step="500000" style="width:130px" placeholder="any"></span>
+  <label class="chk"><input type="checkbox" id="topOnly"> Top picks only</label>
+  <label class="chk"><input type="checkbox" id="critOnly"> Criteria match only</label>
+</div></div>
 
 <div class="wrap">
+  <div class="sec-title">New Listings This Report</div>
+  <div class="sub" style="margin-top:2px">Listings not present in the tracker as of the last run (2026-06-11). ⭐ Top Pick = confirmed on market ≤3 days.</div>
   <div class="grid" id="grid"></div>
-  <div class="empty" id="empty" style="display:none">No listings match the current filters.</div>
-</div>
 
-<footer>
-  <div><b style="color:var(--gold)">Coverage this run</b></div>
-  <div class="src-status" id="srcStatus"></div>
-  <div style="margin-top:14px">Report auto-generated 2026-06-30 · Geography: Dallas, Tarrant, Collin, Denton, Rockwall, Ellis, Johnson + greater DFW · For Sale, retail.<br>
-  Days-on-market is exact only for Crexi (via listing activation date). Other brokerage sites do not publish list dates; their listings are flagged as new vs. the prior tracker and shown with an n/a day pill.</div>
-</footer>
+  <div class="sec-title" style="margin-top:40px">Still Active (Previously Seen)</div>
+  <details open>
+    <summary id="activeSum">Previously tracked listings still available</summary>
+    <div id="active"></div>
+  </details>
+
+  <div class="sec-title" style="margin-top:40px">Source Coverage This Run</div>
+  <div class="srcstat" id="srcstat"></div>
+
+  <footer>
+    <b>Methodology &amp; caveats:</b> Listings gathered live from public brokerage sites. Most sources do not publish days-on-market on their listing grids, so "days on market" is shown only where confirmed on a Crexi detail page. Crexi's freshest Dallas listing this run was 13 days on market — no confirmed ≤3-day (⭐ Top Pick) listings were found across accessible sources. Prices/cap rates are as displayed by the source and should be independently verified. Photos load directly from source CDNs and are hidden if unavailable.<br><br>
+    Generated automatically · Data as of 2026-07-01.
+  </footer>
+</div>
 
 <script>
-const LISTINGS = [
-  {src:"Crexi",name:"E Grand Retail Portfolio",addr:"5429 East Grand Ave, Dallas, TX 75223",price:"Unpriced",cap:null,sf:"5,579",occ:null,tenant:null,sub:"Storefront / Medical Office",dom:0,listed:"2026-06-29",photo:"https://images.crexi.com/assets/2604638/ec726e7a2f2148bcbad0feef93b93c95_716x444.jpg",url:"https://www.crexi.com/properties/2604638/texas-e-grand-retail-portfolio",crit:true,notes:"Multi-building infill retail/medical portfolio. Just hit the market."},
-  {src:"Crexi",name:"High Profile Addison Restaurant",addr:"5003 Belt Line Rd, Dallas, TX 75254",price:"Unpriced",cap:null,sf:"17,085",occ:null,tenant:null,sub:"Restaurant",dom:3,listed:"2026-06-26",photo:"https://images.crexi.com/assets/2594015/631d0fe95b194451a024732de098dc0e_716x444.jpg",url:"https://www.crexi.com/properties/2594015/texas-high-profile-addison-restaurant",crit:false,notes:"Large freestanding restaurant in the Addison dining corridor."},
-  {src:"Crexi",name:"1203 E Redbird Ln",addr:"1203 E Redbird Ln, Dallas, TX 75241",price:700000,cap:null,sf:"1,161",occ:null,tenant:null,sub:"Restaurant",dom:5,listed:"2026-06-24",photo:"https://images.crexi.com/assets/2599650/31633bdaa20b414d9a537951a2720987_716x444.jpg",url:"https://www.crexi.com/properties/2599650/texas-1203-e-redbird-ln",crit:false,notes:"Small single-tenant restaurant pad."},
-  {src:"Crexi",name:"8300 & 8314 Elam Rd",addr:"8300 Elam Rd, Dallas, TX 75217",price:1999999,cap:null,sf:"5,000",occ:"100%",tenant:null,sub:"Grocery / Commercial",dom:5,listed:"2026-06-24",photo:"https://images.crexi.com/assets/2599544/58b9f68134b3457fb87cdbb909720317_716x444.jpg",url:"https://www.crexi.com/properties/2599544/texas-8300-elam-rd-8314-elam-rd",crit:false,notes:"Two-parcel grocery/commercial offering, fully occupied."},
-  {src:"Crexi",name:"6301 E RL Thornton Fwy",addr:"6301 E RL Thornton Fwy, Dallas, TX 75223",price:"Unpriced",cap:null,sf:"2,511",occ:null,tenant:null,sub:"Commercial",dom:6,listed:"2026-06-24",photo:"https://images.crexi.com/assets/2594017/1d89662ded224595a8d59a48811c0caf_716x444.jpg",url:"https://www.crexi.com/properties/2594017/texas-6301-e-rl-thornton-fwy",crit:false,notes:"Freeway-frontage commercial building."},
-  {src:"Crexi",name:"6501 Hillcrest Ave",addr:"6501 Hillcrest Ave, Dallas, TX 75205",price:"Unpriced",cap:null,sf:"1,300",occ:null,tenant:null,sub:"Restaurant",dom:6,listed:"2026-06-24",photo:"https://images.crexi.com/assets/2594239/9626d979b2a74796820d10989b789037_716x444.jpg",url:"https://www.crexi.com/properties/2594239/texas-6501-hillcrest-ave",crit:false,notes:"University Park-area restaurant/retail."},
-  {src:"Crexi",name:"Galleria Hard Corner Pad Site",addr:"13900 Dallas Pkwy, Dallas, TX 75240",price:"Unpriced",cap:null,sf:"5,237",occ:null,tenant:null,sub:"QSR / Restaurant Pad",dom:6,listed:"2026-06-24",photo:"https://images.crexi.com/assets/2594119/3d45569ae644423aa8e6ae5bf07b8de8_716x444.jpg",url:"https://www.crexi.com/properties/2594119/texas-galleria-hard-corner-pad-site",crit:false,notes:"Hard-corner pad near the Galleria."},
-  {src:"Crexi",name:"13408 Kit Ln",addr:"13408 Kit Ln, Dallas, TX 75240",price:"Unpriced",cap:null,sf:"4,108",occ:null,tenant:null,sub:"Commercial",dom:6,listed:"2026-06-24",photo:"https://images.crexi.com/assets/2594523/1ec2cad9d00640c9af1931e1bcc4de4a_716x444.jpg",url:"https://www.crexi.com/properties/2594523/texas-13408-kit-ln",crit:false,notes:"North Dallas commercial building."},
-  {src:"Crexi",name:"3311 Oak Lawn Ave",addr:"3311 Oak Lawn Ave, Dallas, TX 75219",price:"Unpriced",cap:null,sf:null,occ:null,tenant:null,sub:"Commercial",dom:6,listed:"2026-06-24",photo:"https://images.crexi.com/assets/2596618/f1e410835cc640ee9824b9195deb5e93_716x444.jpg",url:"https://www.crexi.com/properties/2596618/texas-3311-oak-lawn-ave",crit:false,notes:"Oak Lawn corridor commercial space."},
-  {src:"Crexi",name:"Camp Wisdom Shopping Center",addr:"4110 W Camp Wisdom Rd, Dallas, TX 75237",price:"Unpriced",cap:null,sf:"3,000–6,500",occ:null,tenant:null,sub:"Shopping Center",dom:6,listed:"2026-06-24",photo:"https://images.crexi.com/assets/2593964/e1593b3c29d744ee8550d09e68dea3b0_716x444.jpg",url:"https://www.crexi.com/properties/2593964/texas-camp-wisdom-shopping-center",crit:true,notes:"Multi-tenant neighborhood shopping center."},
-  {src:"Crexi",name:"Calloway Center",addr:"5932-5952 River Oaks Blvd, Fort Worth, TX 76114",price:2150000,cap:"5.67",sf:"12,047",occ:"85%",tenant:null,sub:"Shopping Center",dom:2,listed:"2026-06-28",photo:"https://images.crexi.com/assets/2603644/a867b47d0b4b4be09912e3550360db87_716x444.jpg",url:"https://www.crexi.com/properties/2603644/texas-calloway-center",crit:true,notes:"Multi-tenant strip center, 85% occupied, 5.67% cap — fits preferred profile."},
-  {src:"Crexi",name:"2813 Commerce St",addr:"2813 Commerce St, Fort Worth, TX 76106",price:1600000,cap:null,sf:"4,976",occ:null,tenant:null,sub:"Pharmacy / Restaurant / Center",dom:5,listed:"2026-06-24",photo:"https://images.crexi.com/assets/2599003/131e3999d39d4405a220bd5f74f53ba7_716x444.jpg",url:"https://www.crexi.com/properties/2599003/texas-2813-commerce-st",crit:false,notes:"Mixed retail near downtown Fort Worth."},
-  {src:"Crexi",name:"Beach Street Retail",addr:"8201 North Beach St, Fort Worth, TX 76244",price:3549000,cap:"6",sf:"7,039",occ:"100%",tenant:null,sub:"Shopping Center",dom:6,listed:"2026-06-23",photo:"https://images.crexi.com/assets/2597791/b11eb012cbc5407ab3709b0e15db44bc_716x444.jpg",url:"https://www.crexi.com/properties/2597791/texas-beach-street-retail",crit:true,notes:"Fully leased multi-tenant center, 6% cap — fits preferred profile."},
-  {src:"Crexi",name:"Near Southside Mercantile",addr:"1217 Eighth Ave, Fort Worth, TX 76104",price:"Unpriced",cap:null,sf:"21,883",occ:"89%",tenant:null,sub:"Multi-Tenant Retail",dom:7,listed:"2026-06-22",photo:"https://images.crexi.com/assets/2596793/b635bd8481164f11a54796b0bd359e11_716x444.jpg",url:"https://www.crexi.com/properties/2596793/texas-near-southside-mercantile",crit:true,notes:"21,883 SF multi-tenant retail, 89% occupied, Near Southside."},
-  {src:"STRIVE",name:"Action Behavior Centers",addr:"Fort Worth, TX",price:4200000,cap:"7.22",sf:null,occ:"100%",tenant:"Action Behavior Centers (NNN)",sub:"Single-Tenant Net Lease",dom:null,listed:null,photo:"https://strivenext.s3.amazonaws.com/website/property-photos/35833/Action%20Behavior%20Cover%20Photo.JPG",url:"https://www.strivere.com/property/35833",crit:false,notes:"NNN autism-therapy net lease, 7.22% cap. New vs. prior tracker."},
-  {src:"STRIVE",name:"Wimbledon Court",addr:"Garland, TX",price:699000,cap:"4.70",sf:null,occ:null,tenant:null,sub:"Retail",dom:null,listed:null,photo:"https://strivenext.s3.amazonaws.com/website/property-photos/338973/ChatGPT%20Image%20Jun%2011%2C%202026%2C%2002_24_48%20PM.png",url:"https://www.strivere.com/property/338973",crit:false,notes:"Small Garland retail asset. New vs. prior tracker."},
-  {src:"STRIVE",name:"Smalls Sliders",addr:"McKinney, TX",price:1910000,cap:"5.50",sf:null,occ:"100%",tenant:"Smalls Sliders (QSR)",sub:"QSR / Fast Food",dom:null,listed:null,photo:"https://strivenext.s3.amazonaws.com/website/property-photos/200126/Aerial%20-%20Surrounding%20Stores_HS05n.png",url:"https://www.strivere.com/property/200126",crit:false,notes:"New-build QSR NNN, 5.50% cap. New vs. prior tracker."},
-  {src:"Secure Net Lease",name:"7-Eleven (Aubrey)",addr:"4398 U.S. Route 377, Aubrey, TX",price:9678000,cap:"4.70",sf:null,occ:"100%",tenant:"7-Eleven (NNN)",sub:"Single-Tenant C-Store · 2026 build",dom:null,listed:null,photo:"https://securenetlease.com/wp-content/uploads/2026/06/7-Eleven_TX_4398_US_Route_377-Cover-scaled.jpg",url:"https://securenetlease.com/properties/7-eleven-aubrey-tx/",crit:false,notes:"Most-recent SNL DFW listing; brand-new 2026 construction 7-Eleven."},
-  {src:"Secure Net Lease",name:"Murphy USA",addr:"960 State Hwy 121, Lewisville, TX",price:3190000,cap:"5.00",sf:null,occ:"100%",tenant:"Murphy USA (NNN)",sub:"Single-Tenant Gas / C-Store",dom:null,listed:null,photo:"https://securenetlease.com/wp-content/uploads/2026/04/Murphy_USA_TX_Lewisville_960_E_State_Hwy_121-COVER.jpg",url:"https://securenetlease.com/properties/murphy-usa-lewisville/",crit:false,notes:"NNN fuel/c-store, 5.00% cap."},
-  {src:"Secure Net Lease",name:"7-Eleven (Midlothian)",addr:"U.S. 287 & Miller Rd, Midlothian, TX",price:9100000,cap:"5.00",sf:null,occ:"100%",tenant:"7-Eleven (NNN)",sub:"Single-Tenant C-Store · 2026 build",dom:null,listed:null,photo:null,url:"https://securenetlease.com/properties/7-eleven-midlothian-tx/",crit:false,notes:"New 2026-build 7-Eleven on US-287, 5.00% cap."},
-  {src:"Secure Net Lease",name:"Outback Steakhouse",addr:"560 W US Hwy 80, Forney, TX",price:3364485,cap:"5.35",sf:null,occ:"100%",tenant:"Outback Steakhouse (NNN)",sub:"Single-Tenant Restaurant",dom:null,listed:null,photo:"https://securenetlease.com/wp-content/uploads/2026/01/Outback_Steakhouse_TX_Forney_560_W_US_Hwy_80-Cover.jpg",url:"https://securenetlease.com/properties/outback-forney-tx/",crit:false,notes:"NNN casual-dining net lease, 5.35% cap."},
-  {src:"Secure Net Lease",name:"Caribou Coffee",addr:"897 W Northwest Hwy, Grapevine, TX",price:2250000,cap:"6.00",sf:null,occ:"100%",tenant:"Caribou Coffee (NNN)",sub:"Single-Tenant Restaurant",dom:null,listed:null,photo:"https://securenetlease.com/wp-content/uploads/2025/10/Caribou_Coffee_TX_Grapevine_897_W_Northwest_Hwy-Cover-1.png",url:"https://securenetlease.com/properties/caribou-coffee-grapevine-tx/",crit:false,notes:"NNN coffee drive-thru, 6.00% cap."},
-  {src:"SRS",name:"Kiddie Academy",addr:"9773 Tehama Ridge Pkwy, Fort Worth, TX",price:6844000,cap:"6.75",sf:"12,500",occ:"100%",tenant:"Kiddie Academy (NNN)",sub:"Single-Tenant Investment",dom:null,listed:"NEW",photo:null,url:"https://srsre.com/properties/investment-sale/retail/texas/fort-worth/9773-tehama-ridge-parkway/l14885",crit:false,notes:"Flagged NEW on SRS. NNN childcare net lease, 6.75% cap."},
-  {src:"SRS",name:"Vacant Former Restaurant",addr:"603 N Cockrell Hill Rd, Duncanville, TX",price:"Unpriced",cap:null,sf:"8,356",occ:null,tenant:null,sub:"Restaurant (Sale/Lease)",dom:null,listed:"NEW",photo:null,url:"https://srsre.com/properties/sale-or-lease/retail/texas/duncanville/603-n-cockrell-hill-rd/l14871",crit:false,notes:"Flagged NEW on SRS. Second-generation restaurant building."},
-  {src:"Marcus & Millichap",name:"Bishop Arts Retail Portfolio",addr:"Bishop Arts District, Dallas, TX",price:"Request For Offer",cap:null,sf:null,occ:null,tenant:null,sub:"Multi-Tenant Retail Portfolio",dom:null,listed:null,photo:null,url:"https://www.marcusmillichap.com/properties/201872/bishop-arts-retail-portfolio",crit:true,notes:"Multi-tenant retail portfolio in the Bishop Arts District."},
-  {src:"Marcus & Millichap",name:"First Watch",addr:"Waxahachie (DFW MSA), TX",price:3913000,cap:"5.75",sf:null,occ:"100%",tenant:"First Watch (NNN)",sub:"Single-Tenant Restaurant",dom:null,listed:null,photo:"https://mmimageservice.azurewebsites.net/api/image/property/95214344-1b47-405e-b6c6-5ffd7ef1388e/M",url:"https://www.marcusmillichap.com/properties/201490/first-watch-nasdaq-fwrg-leading-daytime-dining-concept-dfw-1-most-visited-location-in-tx",crit:false,notes:"#1 most-visited First Watch in TX; 5.75% cap."},
-  {src:"Marcus & Millichap",name:"Sixt: Rent The Car",addr:"Dallas, TX",price:"Request For Offer",cap:null,sf:null,occ:null,tenant:"Sixt (NNN)",sub:"Single-Tenant Retail",dom:null,listed:null,photo:"https://mmimageservice.azurewebsites.net/api/image/property/41cdb871-c317-454d-9fd4-e6848b25fc3b/M",url:"https://www.marcusmillichap.com/properties/200332/sixt-rent-the-car",crit:false,notes:"Single-tenant auto-rental retail net lease."},
-  {src:"Marcus & Millichap",name:"Corp. Pollo Campero",addr:"Irving (DFW MSA), TX",price:3333333,cap:"5.85",sf:null,occ:"100%",tenant:"Pollo Campero (Absolute NNN Ground Lease)",sub:"Single-Tenant QSR",dom:null,listed:"price reduction",photo:"https://mmimageservice.azurewebsites.net/api/image/property/1b7074f2-ce8a-42cf-8a39-c89bae83d699/M",url:"https://www.marcusmillichap.com/properties/301942/corp-pollo-campero-400-locations-dfw-metro-epicenter-of-activity-absolute-nnn-ground-lease",crit:false,notes:"Absolute NNN ground lease (recent price reduction, not brand-new)."},
-  {src:"Matthews",name:"Portillo's",addr:"Frisco, TX",price:"Contact Broker",cap:null,sf:null,occ:null,tenant:"Portillo's (STNL)",sub:"Single-Tenant Restaurant",dom:null,listed:null,photo:null,url:"https://www.matthews.com/properties/stnl-portillos-frisco-tx",crit:false,notes:"Single-tenant Portillo's net lease in Frisco."},
-  {src:"Matthews",name:"El Toro Sinaloense",addr:"Arlington, TX",price:"Contact Broker",cap:null,sf:null,occ:null,tenant:"El Toro Sinaloense (STNL)",sub:"Single-Tenant Restaurant",dom:null,listed:null,photo:null,url:"https://www.matthews.com/properties/stnl-el-toro-sinaloense-arlington-tx",crit:false,notes:"Single-tenant restaurant net lease in Arlington."},
-  {src:"Matthews",name:"Former Goodwill",addr:"1803 I-30 Frontage, Greenville, TX 75402",price:"Contact Broker",cap:null,sf:"8,000",occ:null,tenant:null,sub:"Retail",dom:null,listed:null,photo:null,url:"https://www.matthews.com/properties/stnl-former-goodwill-greenville-tx",crit:false,notes:"8,000 SF freestanding retail on I-30 frontage."},
-  {src:"Colliers",name:"Angel's on Earth Learning Center",addr:"2805 Peavy Rd, Dallas, TX 75228",price:"Unpriced",cap:null,sf:"11,906",occ:null,tenant:null,sub:"Specialty / Retail",dom:null,listed:null,photo:"https://listingsprod.blob.core.windows.net/ourlistings-usa/df393325-0e71-4832-9e7f-97801e77757f/d92cd861-307a-4f5e-9e50-d0f20b771311-672-404",url:"https://www.colliers.com/en/properties/angel%E2%80%99s-on-earth-learning-center/usa-2805-peavy-rd-dallas-tx-75228-usa/usa1161774",crit:false,notes:"11,906 SF specialty/retail building, surfaced via date sort."}
+const TODAY="2026-07-01";
+const SRC={crexi:"Crexi",strive:"STRIVE",snl:"Secure Net Lease",srs:"SRS",matthews:"Matthews"};
+const listings=[
+ {n:"1350 North Hampton Road",a:"1350 N Hampton Rd, Dallas, TX 75208",price:3263000,cap:null,sf:null,occ:null,notes:"Freshest Crexi Dallas listing this run.",src:"crexi",dom:13,top:false,crit:false,url:"https://www.crexi.com/properties/2592043/texas-1350-north-hampton-road",photo:"https://images.crexi.com/assets/2592043/122468464db147a199daa21512212dae_716x444.jpg"},
+ {n:"Zips Car Wash",a:"3505 W Northwest Hwy, Dallas, TX 75220",price:5046000,cap:7.00,sf:null,occ:"Single-tenant NNN",notes:"±39,000 VPD frontage.",src:"crexi",dom:null,top:false,crit:false,url:"https://www.crexi.com/properties/2559802/texas-zips-car-wash",photo:""},
+ {n:"AutoZone (NNN Ground Lease)",a:"2450 S Beltline Rd, Dallas, TX 75253",price:1505000,cap:null,sf:null,occ:"AutoZone — NYSE:AZO, S&P BBB",notes:"15-yr absolute NNN ground lease, income tax free.",src:"crexi",dom:48,top:false,crit:false,url:"https://www.crexi.com/properties/2513664/texas-2450-south-beltline-road",photo:"https://images.crexi.com/assets/2513664/b5e25b53e36c47048bd97ceb8bbcec0f_716x444.jpg"},
+ {n:"Murphy USA Ground Lease",a:"12505 E Northwest Hwy, Dallas, TX",price:1944000,cap:null,sf:null,occ:"Murphy USA",notes:"12 yrs remaining, zero landlord responsibilities.",src:"crexi",dom:null,top:false,crit:false,url:"https://www.crexi.com/properties/2502097/texas-12505-east-northwest-highway",photo:"https://images.crexi.com/assets/2502097/6d0506263e78465cbe16294991435256_716x444.jpg"},
+ {n:"The Saint — Design District",a:"1000 N Riverfront Blvd, Dallas, TX",price:7335000,cap:null,sf:null,occ:"Single-tenant, dual-concept venue",notes:"20-year absolute NNN lease, pride of ownership.",src:"crexi",dom:null,top:false,crit:false,url:"https://www.crexi.com/properties/2452205/texas-the-saint---design-district",photo:"https://images.crexi.com/assets/2452205/209ee0fb574b44b2baaea3b97ac8019f_716x444.jpg"},
+ {n:"Gaston Avenue Retail",a:"3921 Gaston Ave, Dallas, TX 75204",price:5343000,cap:5.25,sf:null,occ:"Corporate guarantees",notes:"Lakewood/East Dallas retail.",src:"crexi",dom:null,top:false,crit:true,url:"https://www.crexi.com/properties/2451950/texas-gaston-avenue-retail",photo:"https://images.crexi.com/assets/2451950/8c27bbb42f0248ba868be53043e7cc7b_716x444.jpg"},
+ {n:"Texas Health Breeze Urgent Care",a:"4635 Frankford Rd, Dallas, TX 75287",price:2924380,cap:5.00,sf:3002,occ:"Corporate guaranty",notes:"Single-tenant medical retail.",src:"crexi",dom:null,top:false,crit:false,url:"https://www.crexi.com/properties/1924754/texas-texas-health-breeze-urgent-care-corporate-guaranty",photo:"https://images.crexi.com/assets/1924754/224e9cf0195641099a5f47417e01d729_716x444.jpg"},
+ {n:"Creative Space — Design District",a:"Design District, Dallas, TX",price:1350000,cap:null,sf:null,occ:null,notes:"Exceptional creative/retail space in upscale Design District.",src:"crexi",dom:null,top:false,crit:false,url:"https://www.crexi.com/properties/2357556/texas-exceptional-creative-space-in-upscale-design-district",photo:""},
+ {n:"NEC Langdon & Bonnie View Rd (Land)",a:"4381 Langdon Rd, Dallas, TX 75241",price:5495000,cap:null,sf:null,occ:"±10.08 acres",notes:"Retail development land.",src:"crexi",dom:null,top:false,crit:false,url:"https://www.crexi.com/properties/1961156/texas-nec-langdon-bonnie-view-rd",photo:"https://images.crexi.com/assets/1961156/f3588bb5665947f29a8b53d6b92afbb9_716x444.jpg"},
+ {n:"13720 & 13830 CF Hawn Fwy (Land)",a:"13720 C F Hawn Fwy, Dallas, TX 75253",price:null,cap:null,sf:null,occ:"1.11 acres",notes:"US-175 frontage, highway retail land.",src:"crexi",dom:null,top:false,crit:false,url:"https://www.crexi.com/properties/2297963/texas-13720-13830-cf-hawn-fwy-dallas-tx",photo:""},
+
+ {n:"7-Eleven (New Construction)",a:"4398 U.S. Route 377, Aubrey, TX",price:9678000,cap:4.70,sf:4816,occ:"7-Eleven — corporate NNN",notes:"2026 construction on ±2.06 acres. Denton County / DFW north.",src:"snl",dom:null,top:false,crit:false,url:"https://securenetlease.com/properties/7-eleven-aubrey-tx/",photo:""},
+ {n:"Murphy USA",a:"960 State Hwy 121, Lewisville, TX",price:3190000,cap:5.00,sf:2824,occ:"Murphy USA",notes:"2022 construction, ±1.34 acre site.",src:"snl",dom:null,top:false,crit:false,url:"https://securenetlease.com/properties/murphy-usa-lewisville/",photo:""},
+ {n:"7-Eleven (New Construction)",a:"U.S. 287 & Miller Rd, Midlothian, TX",price:9100000,cap:5.00,sf:4853,occ:"7-Eleven — corporate NNN",notes:"2026 construction, ±1.04 acre site.",src:"snl",dom:null,top:false,crit:false,url:"https://securenetlease.com/properties/7-eleven-midlothian-tx/",photo:""},
+ {n:"Outback Steakhouse",a:"560 W US Hwy 80, Forney, TX",price:3364485,cap:5.35,sf:4694,occ:"Outback Steakhouse",notes:"2024 construction NNN.",src:"snl",dom:null,top:false,crit:false,url:"https://securenetlease.com/properties/outback-forney-tx/",photo:""},
+ {n:"Caribou Coffee",a:"897 W Northwest Hwy, Grapevine, TX",price:null,cap:null,sf:null,occ:"Caribou Coffee",notes:"Single-tenant QSR net lease.",src:"snl",dom:null,top:false,crit:false,url:"https://securenetlease.com/properties/caribou-coffee-grapevine-tx/",photo:""},
+
+ {n:"Collins Plaza",a:"Collins Plaza, Arlington, TX",price:6550000,cap:7.33,sf:null,occ:"Multi-tenant center",notes:"Retail strip center.",src:"strive",dom:null,top:false,crit:true,url:"https://www.strivere.com/property/20457",photo:""},
+ {n:"Sojourn Retail",a:"Sojourn Retail, Lewisville, TX",price:3045000,cap:null,sf:null,occ:"Multi-tenant retail",notes:"",src:"strive",dom:null,top:false,crit:true,url:"https://www.strivere.com/property/60285",photo:""},
+ {n:"Action Behavior Centers",a:"Action Behavior Centers, Fort Worth, TX",price:4200000,cap:7.22,sf:null,occ:"Action Behavior Centers",notes:"Single-tenant net lease.",src:"strive",dom:null,top:false,crit:false,url:"https://www.strivere.com/property/35833",photo:"https://strivenext.s3.amazonaws.com/website/property-photos/35833/Action%20Behavior%20Cover%20Photo.JPG"},
+ {n:"Black Rock Coffee",a:"Black Rock Coffee, McKinney, TX",price:2520000,cap:null,sf:null,occ:"Black Rock Coffee",notes:"QSR net lease.",src:"strive",dom:null,top:false,crit:false,url:"https://www.strivere.com/property/40531",photo:""},
+ {n:"Green Oaks Offices II",a:"Green Oaks Offices II, Arlington, TX",price:3985000,cap:null,sf:null,occ:"Office/flex",notes:"",src:"strive",dom:null,top:false,crit:false,url:"https://www.strivere.com/property/202380",photo:""},
+ {n:"Skyway Circle Office",a:"Skyway Circle Office, Irving, TX",price:2615000,cap:null,sf:null,occ:"Office",notes:"",src:"strive",dom:null,top:false,crit:false,url:"https://www.strivere.com/property/58544",photo:""},
+ {n:"Green Oaks Offices I",a:"Green Oaks Offices I, Arlington, TX",price:2525000,cap:null,sf:null,occ:"Office/flex",notes:"",src:"strive",dom:null,top:false,crit:false,url:"https://www.strivere.com/property/202300",photo:""},
+ {n:"First Street Shallow Bay",a:"First Street Shallow Bay, Garland, TX",price:2395000,cap:null,sf:null,occ:"Industrial/flex",notes:"",src:"strive",dom:null,top:false,crit:false,url:"https://www.strivere.com/property/200363",photo:""},
+ {n:"Dallas Infill Shallow Bay Industrial",a:"Dallas, TX",price:2600000,cap:10.02,sf:null,occ:"Industrial",notes:"Infill shallow-bay industrial.",src:"strive",dom:null,top:false,crit:false,url:"https://www.strivere.com/property/63745",photo:"https://strivenext.s3.amazonaws.com/website/property-photos/63745/DJI_0783.jpg"},
+ {n:"Wimbledon Court",a:"Wimbledon Court, Garland, TX",price:699000,cap:4.70,sf:null,occ:"Multi-tenant",notes:"",src:"strive",dom:null,top:false,crit:false,url:"https://www.strivere.com/property/338973",photo:""},
+ {n:"Kaufman Street (Land)",a:"450-500 S Kaufman St, Seagoville, TX",price:999900,cap:null,sf:null,occ:"Land",notes:"Development land, US-175 corridor.",src:"strive",dom:null,top:false,crit:false,url:"https://www.strivere.com/property/202508",photo:"https://strivenext.s3.amazonaws.com/website/property-photos/202508/450-500%20S.%20Kaufman%20street%20redline%20map%20%281%29.jpg"},
+ {n:"Dallas VA Hospital Strip",a:"Dallas, TX",price:530000,cap:null,sf:null,occ:"Strip retail",notes:"",src:"strive",dom:null,top:false,crit:false,url:"https://www.strivere.com/property/202304",photo:""},
+
+ {n:"Kiddie Academy",a:"9773 Tehama Ridge Pkwy, Fort Worth, TX",price:6844000,cap:6.75,sf:12500,occ:"Kiddie Academy",notes:"Single-tenant early-education net lease. Newest DFW listing on SRS (date-sorted).",src:"srs",dom:null,top:false,crit:false,url:"https://srsre.com/properties/investment-sale/retail/texas/fort-worth/9773-tehama-ridge-parkway/l14885",photo:""},
+
+ {n:"Portillo's",a:"16499 FM 423, Frisco, TX 75034",price:6000000,cap:null,sf:null,occ:"Portillo's",notes:"Single-tenant restaurant.",src:"matthews",dom:null,top:false,crit:false,url:"https://www.matthews.com/listings",photo:""},
+ {n:"501 Rufe Snow Dr",a:"501 Rufe Snow Dr, Keller, TX 76248",price:1555095,cap:null,sf:null,occ:null,notes:"Retail for sale.",src:"matthews",dom:null,top:false,crit:false,url:"https://www.matthews.com/listings",photo:""},
+ {n:"SEC W Campbell Rd & PGBT",a:"W Campbell Rd & PGBT, Garland, TX 75044",price:null,cap:null,sf:null,occ:"Contact broker",notes:"Hard-corner retail pad/site.",src:"matthews",dom:null,top:false,crit:false,url:"https://www.matthews.com/listings",photo:""}
 ];
 
-const SRC_STATUS = [
-  ["Crexi (Dallas)","OK — newest-sort + activation-date API; exact days-on-market"],
-  ["Crexi (Fort Worth)","OK — newest-sort + activation-date API; exact days-on-market"],
-  ["STRIVE","OK — no published list dates; new vs. prior tracker (n/a DOM)"],
-  ["Secure Net Lease","OK — sorted Most Recent; new vs. prior tracker (n/a DOM)"],
-  ["SRS","OK — sorted Newest; cards carry NEW badge (n/a DOM)"],
-  ["Marcus & Millichap","OK — Dallas MSA, sorted Most Recent; no list dates (n/a DOM)"],
-  ["Matthews","OK — TX filter; no newest-sort/dates, photos proxied (n/a DOM)"],
-  ["Colliers","OK — Dallas, sorted by date; mostly office/industrial, 1 retail"],
-  ["CBRE","BLOCKED — property URLs return 404 (site restructured)"],
-  ["LoopNet","BLOCKED — bot-protection wall (not bypassed per policy)"],
-  ["NAI Robert Lynn","FAILED — results app did not render"],
-  ["SHOP Companies","LIMITED — map-only app, no extractable list"]
+const active=[
+ {n:"Live Oak Liberty Retail Shops",a:"2817 Live Oak St, Dallas, TX 75204",price:3348000,src:"Crexi",url:"https://www.crexi.com/properties/1661624/texas-live-oak-liberty-retail-shops"},
+ {n:"Fair Oaks Plaza (multi-tenant)",a:"Fort Worth, TX",price:4925000,src:"STRIVE",url:"https://www.strivere.com/property/201191"},
+ {n:"Fitzhugh Retail Center (multi-tenant)",a:"2325 N Fitzhugh Ave, Dallas, TX 75204",price:6750000,src:"STRIVE",url:"https://www.strivere.com/property/21"},
+ {n:"Camp Wisdom Village (±19,188 SF center)",a:"417 E Camp Wisdom Rd, Duncanville, TX",price:3800000,src:"Secure Net Lease",url:"https://securenetlease.com/properties/camp-wisdom-village/"}
 ];
 
-const fmtPrice = p => (typeof p === "number") ? "$"+p.toLocaleString() : (p||"—");
+const sources=[
+ {n:"Crexi",st:"ok",d:"Fully scraped — 60 Dallas listings; freshest 13 DOM."},
+ {n:"STRIVE",st:"ok",d:"Fully scraped — 17 DFW listings."},
+ {n:"Secure Net Lease",st:"ok",d:"Fully scraped — 7 DFW retail/net-lease."},
+ {n:"SRS",st:"ok",d:"Scraped (date-sorted) — 1 DFW listing on page 1."},
+ {n:"Matthews",st:"ok",d:"Scraped — 3 DFW retail listings."},
+ {n:"Marcus & Millichap",st:"warn",d:"Needs on-page filter UI; listings did not render from URL params."},
+ {n:"Colliers",st:"warn",d:"Coveo faceted search needs manual location entry."},
+ {n:"SHOP Companies",st:"warn",d:"Map-only app; List View toggle not captured."},
+ {n:"CBRE",st:"bad",d:"Direct URL returned 404 this run."},
+ {n:"NAI Robert Lynn",st:"bad",d:"Results app failed to render (retried)."},
+ {n:"LoopNet",st:"bad",d:"Bot-protection blank page; not bypassed."}
+];
+
+const fmt=n=>n==null?"—":"$"+n.toLocaleString();
 function domPill(d){
-  if(d===null||d===undefined) return {c:"dom-gray",t:"n/a"};
-  if(d<=30) return {c:"dom-green",t:d+"d on market"};
-  if(d<=90) return {c:"dom-gold",t:d+"d on market"};
-  return {c:"dom-red",t:d+"d on market"};
+  if(d==null)return '<div class="dom n">DOM n/a</div>';
+  let c=d<=30?'g':d<=90?'y':'r';
+  return '<div class="dom '+c+'">'+d+'d on market</div>';
 }
-const isTop = l => l.dom!==null && l.dom!==undefined && l.dom<=3;
+function card(x){
+  const badges=[];
+  if(x.top)badges.push('<span class="badge b-top">⭐ Top Pick</span>');
+  badges.push('<span class="badge b-src">'+SRC[x.src]+'</span>');
+  if(x.crit)badges.push('<span class="badge b-crit">Criteria Match</span>');
+  const photo=x.photo?('<div class="photo-wrap"><div class="badges">'+badges.join('')+'</div>'+
+     '<img loading="lazy" referrerpolicy="no-referrer" src="'+x.photo+'" onerror="this.closest(\'.photo-wrap\').style.display=\'none\'">'+
+     domPill(x.dom)+'</div>'):
+     ('<div style="padding:12px 15px 0"><div style="display:flex;flex-wrap:wrap;gap:6px">'+badges.join('')+'</div></div>');
+  return '<div class="card">'+photo+
+    '<div class="body"><div class="name">'+x.n+'</div><div class="addr">'+x.a+'</div>'+
+    '<div class="sgrid">'+
+      '<div class="cell"><div class="k">Price</div><div class="v">'+fmt(x.price)+'</div></div>'+
+      '<div class="cell"><div class="k">Cap Rate</div><div class="v gold">'+(x.cap!=null?x.cap.toFixed(2)+'%':'—')+'</div></div>'+
+      '<div class="cell"><div class="k">Size</div><div class="v">'+(x.sf?x.sf.toLocaleString()+' SF':'—')+'</div></div>'+
+      '<div class="cell"><div class="k">Occupancy</div><div class="v" style="font-size:12px">'+(x.occ||'—')+'</div></div>'+
+    '</div>'+
+    '<div class="notes">'+(x.notes||'')+'</div>'+
+    '<a class="btn" href="'+x.url+'" target="_blank" rel="noopener">View Listing →</a></div></div>';
+}
 
 function render(){
-  const minCap = parseFloat(document.getElementById('minCap').value);
-  const maxPrice = parseFloat(document.getElementById('maxPrice').value);
-  const topOnly = document.getElementById('topOnly').checked;
-  const critOnly = document.getElementById('critOnly').checked;
-  const sort = document.getElementById('sortSel').value;
-
-  let arr = LISTINGS.filter(l=>{
-    if(topOnly && !isTop(l)) return false;
-    if(critOnly && !l.crit) return false;
-    if(!isNaN(minCap)){ if(l.cap===null||parseFloat(l.cap)<minCap) return false; }
-    if(!isNaN(maxPrice)){ if(typeof l.price!=="number"||l.price>maxPrice) return false; }
-    return true;
-  });
-
+  let arr=listings.slice();
+  const minCap=parseFloat(document.getElementById('minCap').value);
+  const maxPrice=parseFloat(document.getElementById('maxPrice').value);
+  const topOnly=document.getElementById('topOnly').checked;
+  const critOnly=document.getElementById('critOnly').checked;
+  if(!isNaN(minCap))arr=arr.filter(x=>x.cap!=null&&x.cap>=minCap);
+  if(!isNaN(maxPrice))arr=arr.filter(x=>x.price!=null&&x.price<=maxPrice);
+  if(topOnly)arr=arr.filter(x=>x.top);
+  if(critOnly)arr=arr.filter(x=>x.crit);
+  const s=document.getElementById('sort').value;
   arr.sort((a,b)=>{
-    if(sort==="newest"){ const da=a.dom??999, db=b.dom??999; if(da!==db) return da-db; return isTop(b)-isTop(a); }
-    if(sort==="cap"){ return (parseFloat(b.cap)||-1)-(parseFloat(a.cap)||-1); }
-    if(sort==="price"){ const pa=typeof a.price==="number"?a.price:Infinity, pb=typeof b.price==="number"?b.price:Infinity; return pa-pb; }
-    if(sort==="sf"){ const sa=parseInt((a.sf||"0").replace(/[^0-9]/g,''))||0, sb=parseInt((b.sf||"0").replace(/[^0-9]/g,''))||0; return sb-sa; }
-    return 0;
+    if(s==='cap')return (b.cap||0)-(a.cap||0);
+    if(s==='price')return (b.price||0)-(a.price||0);
+    if(s==='sf')return (b.sf||0)-(a.sf||0);
+    if(a.top!==b.top)return a.top?-1:1;
+    const da=a.dom==null?9999:a.dom, db=b.dom==null?9999:b.dom;
+    return da-db;
   });
-
-  const grid = document.getElementById('grid');
-  grid.innerHTML = arr.map(l=>{
-    const dp = domPill(l.dom);
-    const top = isTop(l);
-    const badges = `${top?'<span class="badge b-top">⭐ Top Pick</span>':''}<span class="badge b-src">${l.src}</span>${l.crit?'<span class="badge b-crit">Criteria Match</span>':''}`;
-    const photo = l.photo ?
-      `<div class="photo-wrap"><img src="${l.photo}" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'"><div class="badges">${badges}</div><div class="dom-pill ${dp.c}">${dp.t}</div></div>` :
-      `<div class="photo-wrap" style="display:flex;align-items:center;justify-content:center"><div class="badges">${badges}</div><span style="color:var(--gray);font-size:12px">No photo available</span><div class="dom-pill ${dp.c}">${dp.t}</div></div>`;
-    return `<div class="card">${photo}<div class="body">
-      <div class="name">${l.name}</div>
-      <div class="addr">${l.addr}</div>
-      <div class="stats">
-        <div class="s"><div class="sl">Price</div><div class="sv">${fmtPrice(l.price)}</div></div>
-        <div class="s cap"><div class="sl">Cap Rate</div><div class="sv">${l.cap?l.cap+'%':'—'}</div></div>
-        <div class="s"><div class="sl">Size</div><div class="sv">${l.sf?l.sf+' SF':'—'}</div></div>
-        <div class="s"><div class="sl">Occupancy</div><div class="sv">${l.occ||'—'}</div></div>
-      </div>
-      <div class="notes">${l.tenant?'<b>Tenant:</b> '+l.tenant+'<br>':''}${l.sub?'<b>Type:</b> '+l.sub+'<br>':''}${l.notes||''}</div>
-      <a class="view" href="${l.url}" target="_blank" rel="noopener">View Listing →</a>
-    </div></div>`;
-  }).join('');
-  document.getElementById('empty').style.display = arr.length? 'none':'block';
+  const g=document.getElementById('grid');
+  g.innerHTML=arr.length?arr.map(card).join(''):'<div class="empty">No listings match the current filters.</div>';
 }
 
-function buildStats(){
-  const total = LISTINGS.length;
-  const newin3 = LISTINGS.filter(isTop).length;
-  const caps = LISTINGS.filter(l=>l.cap).map(l=>parseFloat(l.cap));
-  const prices = LISTINGS.filter(l=>typeof l.price==="number").map(l=>l.price);
-  const capR = caps.length? Math.min(...caps).toFixed(2)+'%–'+Math.max(...caps).toFixed(2)+'%':'—';
-  const priceR = prices.length? '$'+(Math.min(...prices)/1e6).toFixed(2)+'M–$'+(Math.max(...prices)/1e6).toFixed(2)+'M':'—';
-  document.getElementById('statbar').innerHTML = `
-    <div class="stat"><div class="n">${total}</div><div class="l">New Listings</div></div>
-    <div class="stat"><div class="n">${newin3}</div><div class="l">⭐ New in 3 Days</div></div>
-    <div class="stat"><div class="n">${capR}</div><div class="l">Cap Range</div></div>
-    <div class="stat"><div class="n">${priceR}</div><div class="l">Priced Range</div></div>`;
-  document.getElementById('srcStatus').innerHTML = SRC_STATUS.map(s=>`<div><span>${s[0]}:</span> ${s[1]}</div>`).join('');
+function stats(){
+  const caps=listings.filter(x=>x.cap!=null).map(x=>x.cap);
+  const prices=listings.filter(x=>x.price!=null).map(x=>x.price);
+  const new3=listings.filter(x=>x.dom!=null&&x.dom<=3).length;
+  const html=[
+    ['Total new',listings.length],
+    ['New ≤3 days',new3],
+    ['Cap range',caps.length?Math.min(...caps).toFixed(2)+'–'+Math.max(...caps).toFixed(2)+'%':'—'],
+    ['Price range',prices.length?'$'+(Math.min(...prices)/1e6).toFixed(2)+'M–$'+(Math.max(...prices)/1e6).toFixed(2)+'M':'—'],
+    ['Criteria matches',listings.filter(x=>x.crit).length]
+  ].map(([l,n])=>'<div class="stat"><div class="n">'+n+'</div><div class="l">'+l+'</div></div>').join('');
+  document.getElementById('statbar').innerHTML=html;
 }
 
-['sortSel','minCap','maxPrice','topOnly','critOnly'].forEach(id=>{
+function renderActive(){
+  document.getElementById('activeSum').textContent='Previously tracked listings still available ('+active.length+')';
+  document.getElementById('active').innerHTML=active.map(x=>
+   '<div class="mini"><b>'+x.n+'</b> — '+x.a+' · '+fmt(x.price)+' · '+x.src+' · <a href="'+x.url+'" target="_blank" style="color:var(--gold)">view</a></div>').join('');
+}
+function renderSrc(){
+  document.getElementById('srcstat').innerHTML=sources.map(s=>
+   '<div class="s"><div class="sn '+s.st+'">'+s.n+'</div><div style="color:var(--muted);margin-top:4px">'+s.d+'</div></div>').join('');
+}
+
+['sort','minCap','maxPrice','topOnly','critOnly'].forEach(id=>{
   document.getElementById(id).addEventListener('input',render);
   document.getElementById(id).addEventListener('change',render);
 });
-buildStats();
-render();
+stats();render();renderActive();renderSrc();
 </script>
 </body>
 </html>
