@@ -3,467 +3,220 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DFW Retail Investment Report — July 3, 2026</title>
+<title>DFW Retail Investment Report — July 4, 2026</title>
 <style>
-:root{
-  --bg:#0d0d14; --card:#15151f; --gold:#e8a020; --text:#e8e8ee; --muted:#8a8a9a;
-  --line:#26262f; --green:#3fb950; --red:#e5534b;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.45}
-a{color:inherit}
-.wrap{max-width:1280px;margin:0 auto;padding:0 20px}
-header{padding:32px 0 18px;border-bottom:1px solid var(--line)}
-h1{font-size:26px;font-weight:700;letter-spacing:-.3px}
-h1 .g{color:var(--gold)}
-.sub{color:var(--muted);font-size:14px;margin-top:6px}
-.statbar{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0 4px}
-.statbar .s{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;flex:1;min-width:150px}
-.statbar .s .n{font-size:22px;font-weight:700}
-.statbar .s .n.gold{color:var(--gold)}
-.statbar .s .k{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:3px}
-.controls{position:sticky;top:0;z-index:20;background:rgba(13,13,20,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 0;margin-top:14px}
-.controls .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.controls label{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
-.controls select,.controls input{background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:7px 9px;font-size:13px}
-.controls input[type=number]{width:120px}
-.chk{flex-direction:row!important;align-items:center;gap:6px!important;color:var(--text)!important;font-size:13px!important;padding-top:16px}
-.grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;padding:22px 0 60px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,border-color .15s}
-.card:hover{transform:translateY(-3px);border-color:#3a3a48}
-.photo-wrap{position:relative;width:100%;aspect-ratio:716/444;background:#0a0a10;overflow:hidden}
-.photo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
-.photo-wrap.nophoto .noimg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#44444f;font-size:13px}
-.dom-pill{position:absolute;left:10px;bottom:10px;z-index:2;font-size:11px;font-weight:700;padding:4px 9px;border-radius:20px;color:#111}
-.dom-green{background:var(--green)}
-.dom-gold{background:var(--gold)}
-.dom-red{background:var(--red);color:#fff}
-.dom-na{background:#6a6a78;color:#fff}
-.body{padding:14px 15px 16px;display:flex;flex-direction:column;flex:1}
-.badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:9px}
-.badge{font-size:10px;font-weight:700;padding:3px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:.04em}
-.badge.tp{background:var(--gold);color:#111}
-.badge.src{background:#20202b;color:var(--muted);border:1px solid var(--line)}
-.badge.cm{background:#1d3a24;color:var(--green);border:1px solid #274d30}
-h3{font-size:16px;font-weight:650;line-height:1.25;margin-bottom:4px}
-.addr{font-size:12.5px;color:var(--muted);margin-bottom:12px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
-.stat{background:#101019;border:1px solid var(--line);border-radius:8px;padding:7px 9px;display:flex;flex-direction:column;gap:2px}
-.stat .lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
-.stat .val{font-size:14px;font-weight:650}
-.stat .val.gold{color:var(--gold)}
-.tenants{font-size:12px;color:var(--muted);margin-bottom:12px}
-.btn{margin-top:auto;text-align:center;background:var(--gold);color:#111;font-weight:700;font-size:13px;padding:9px;border-radius:8px;text-decoration:none}
-.btn:hover{filter:brightness(1.08)}
-.empty{padding:60px 0;text-align:center;color:var(--muted)}
-footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:12px}
-.note{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:18px 0;font-size:12.5px;color:var(--muted)}
-.note b{color:var(--text)}
+  :root{
+    --bg:#0d0d14; --card:#15151f; --card2:#1b1b28; --gold:#e8a020;
+    --text:#e8e8ee; --muted:#9a9aab; --line:#2a2a3a;
+    --green:#3fb56b; --red:#d9534f; --gray:#6b6b7a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.45}
+  a{color:inherit;text-decoration:none}
+  header{padding:26px 20px 10px;max-width:1280px;margin:0 auto}
+  h1{margin:0 0 4px;font-size:24px;letter-spacing:.3px}
+  h1 span{color:var(--gold)}
+  .sub{color:var(--muted);font-size:13px;margin-bottom:14px}
+  .statbar{display:flex;flex-wrap:wrap;gap:10px;max-width:1280px;margin:0 auto;padding:0 20px 6px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;min-width:120px}
+  .stat .n{font-size:20px;font-weight:700;color:var(--gold)}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .controls{position:sticky;top:0;z-index:20;background:rgba(13,13,20,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);padding:12px 20px;margin-top:10px}
+  .controls .inner{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .controls label{font-size:12px;color:var(--muted)}
+  select,input[type=number]{background:var(--card2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:6px 9px;font-size:13px}
+  input[type=number]{width:110px}
+  .chk{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--muted);cursor:pointer;user-select:none}
+  .grid{max-width:1280px;margin:0 auto;padding:18px 20px 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .12s,border-color .12s}
+  .card:hover{transform:translateY(-3px);border-color:var(--gold)}
+  .photo-wrap{position:relative;width:100%;aspect-ratio:16/10;background:var(--card2);overflow:hidden}
+  .photo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+  .badges{position:absolute;top:8px;left:8px;display:flex;flex-wrap:wrap;gap:5px;z-index:2}
+  .badge{font-size:10.5px;font-weight:700;padding:3px 7px;border-radius:20px;letter-spacing:.3px}
+  .b-top{background:var(--gold);color:#1a1200}
+  .b-src{background:rgba(0,0,0,.62);color:#fff;border:1px solid rgba(255,255,255,.18)}
+  .b-crit{background:#2f6fb0;color:#fff}
+  .dom{position:absolute;bottom:8px;right:8px;font-size:11px;font-weight:700;color:#000;padding:2px 8px;border-radius:20px;z-index:2}
+  .dom.green{background:var(--green)} .dom.gold{background:var(--gold)} .dom.red{background:var(--red)} .dom.gray{background:var(--gray)}
+  .body{padding:13px 14px 15px;display:flex;flex-direction:column;gap:9px;flex:1}
+  .name{font-size:15px;font-weight:650;line-height:1.25}
+  .addr{font-size:12px;color:var(--muted)}
+  .statsgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;font-size:12px;margin-top:2px}
+  .statsgrid .k{color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.4px}
+  .statsgrid .v{font-weight:650}
+  .statsgrid .cap .v{color:var(--gold)}
+  .notes{font-size:11.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px}
+  .btn{margin-top:auto;text-align:center;background:var(--gold);color:#1a1200;font-weight:700;font-size:13px;padding:9px;border-radius:9px;transition:opacity .1s}
+  .btn:hover{opacity:.88}
+  .empty{max-width:1280px;margin:0 auto;padding:40px 20px;color:var(--muted);text-align:center}
+  footer{max-width:1280px;margin:0 auto;padding:10px 20px 50px;color:var(--muted);font-size:11.5px;border-top:1px solid var(--line)}
+  .srcstatus{font-size:11.5px;color:var(--muted);line-height:1.7}
+  .srcstatus b{color:var(--text)}
 </style>
 </head>
 <body>
-<div class="wrap">
 <header>
-  <h1>DFW <span class="g">Retail</span> Investment Report</h1>
-  <div class="sub">New-to-market listings — July 3, 2026 · Dallas–Fort Worth metro</div>
-  <div class="statbar">
-    <div class="s"><div class="n">29</div><div class="k">New Listings</div></div>
-    <div class="s"><div class="n gold">3</div><div class="k">New in Past 3 Days</div></div>
-    <div class="s"><div class="n">4.70% – 7.45%</div><div class="k">Cap Rate Range</div></div>
-    <div class="s"><div class="n">$530,000 – $9.68M</div><div class="k">Price Range</div></div>
-  </div>
+  <h1>DFW Retail Investment Report <span>&mdash; New to Market</span></h1>
+  <div class="sub">Generated Saturday, July 4, 2026 &middot; Focus: newly listed DFW retail for-sale properties</div>
 </header>
 
+<div class="statbar" id="statbar"></div>
+
 <div class="controls">
-  <div class="row">
-    <label>Sort by
+  <div class="inner">
+    <label>Sort
       <select id="sort">
-        <option value="newest">Newest first</option>
-        <option value="cap">Cap rate (high→low)</option>
-        <option value="price">Price (low→high)</option>
-        <option value="sf">Size (large→small)</option>
+        <option value="new">Newest (DOM)</option>
+        <option value="cap">Cap rate (high&rarr;low)</option>
+        <option value="pricelow">Price (low&rarr;high)</option>
+        <option value="pricehigh">Price (high&rarr;low)</option>
+        <option value="sf">Size (SF)</option>
       </select>
     </label>
-    <label>Min cap %
-      <input type="number" id="minCap" step="0.25" placeholder="any">
-    </label>
-    <label>Max price $
-      <input type="number" id="maxPrice" step="500000" placeholder="any">
-    </label>
-    <label class="chk"><input type="checkbox" id="tpOnly"> Top picks only</label>
-    <label class="chk"><input type="checkbox" id="cmOnly"> Criteria match only</label>
-    <span id="count" style="margin-left:auto;color:var(--muted);font-size:12px"></span>
+    <label>Min cap <input type="number" id="mincap" step="0.25" placeholder="%"></label>
+    <label>Max price <input type="number" id="maxprice" step="500000" placeholder="$"></label>
+    <label class="chk"><input type="checkbox" id="onlytop"> Top picks only</label>
+    <label class="chk"><input type="checkbox" id="onlycrit"> Criteria match only</label>
   </div>
 </div>
 
-<div class="note">
-  <b>Coverage note.</b> Fully scraped this run with live data: Crexi (Dallas + Fort Worth, with on-market dates), STRIVE, Secure Net Lease, SRS (partial). Attempted but not yielding DFW retail this run: Marcus &amp; Millichap and Matthews (require interactive filtering), Colliers, CBRE (perpetual loading), NAI Robert Lynn (results app did not render), LoopNet (bot protection), SHOP Companies (map-only). STRIVE and Secure Net Lease list pages do not publish on-market dates, so those cards show "New listing" rather than a day count.
-</div>
-
-<div class="grid-cards" id="cards">
-<div class="card" data-dom="1" data-cap="5.37" data-price="4120000.0" data-sf="13741" data-toppick="1" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-green">1 day on market</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://images.crexi.com/assets/2608798/a806ff98714b477cbf68111b8946ca8d_716x444.jpg" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge tp">⭐ Top Pick</span><span class="badge src">Crexi</span></div>
-    <h3>Walgreens | Absolute-NNN | ±12 Years Remaining</h3>
-    <div class="addr">3809 East Belknap Street, Fort Worth 76111</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$4,120,000</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">5.37%</span></div><div class="stat"><span class="lbl">Size</span><span class="val">13,741 SF</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">100%</span></div></div>
-    <div class="tenants">Single-Tenant</div>
-    <a class="btn" href="https://www.crexi.com/properties/2608798/texas-walgreens-absolute-nnn-12-years-remaining" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="2" data-cap="6.75" data-price="6844000.0" data-sf="12500" data-toppick="1" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-green">2 days on market</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://images.crexi.com/assets/2605896/8c937cbf91944649b6f5cfa83f02e260_716x444.jpg" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge tp">⭐ Top Pick</span><span class="badge src">Crexi</span></div>
-    <h3>Kiddie Academy</h3>
-    <div class="addr">9773 Tehama Ridge Parkway, Fort Worth 76177</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$6,844,000</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">6.75%</span></div><div class="stat"><span class="lbl">Size</span><span class="val">12,500 SF</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    <div class="tenants">Single-Tenant</div>
-    <a class="btn" href="https://www.crexi.com/properties/2605896/texas-kiddie-academy" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="2" data-cap="" data-price="" data-sf="8356" data-toppick="1" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-green">2 days on market</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://res.cloudinary.com/srsre/image/upload/f_auto,q_auto:eco,fl_lossy,w_1200/srsre_listings_attachments/a28TP000002vlSTYAY/duncanville-tx-vacant-former-restaurant-image-retail-in-duncanville-tx-1782412888866.jpg" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge tp">⭐ Top Pick</span><span class="badge src">SRS</span></div>
-    <h3>Vacant Former Restaurant (NEW)</h3>
-    <div class="addr">603 N Cockrell Hill Rd, Duncanville, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">—</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">—</span></div><div class="stat"><span class="lbl">Size</span><span class="val">8,356 SF</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">Vacant</span></div></div>
-    <div class="tenants">Single-Tenant</div>
-    <a class="btn" href="https://srsre.com/properties/sale-or-lease/retail/texas/duncanville/603-n-cockrell-hill-rd/l14871" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="7" data-cap="" data-price="" data-sf="3290" data-toppick="0" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-green">7 days on market</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://images.crexi.com/assets/2600292/d034f4590aa24fa8bb4491882f9d4551_716x444.jpg" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">Crexi</span></div>
-    <h3>1065 West Magnolia Avenue</h3>
-    <div class="addr">1065 West Magnolia Avenue, Fort Worth 76104</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">—</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">—</span></div><div class="stat"><span class="lbl">Size</span><span class="val">3,290 SF</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    <div class="tenants">Multi-Tenant</div>
-    <a class="btn" href="https://www.crexi.com/properties/2600292/texas-1065-west-magnolia-avenue" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="10" data-cap="" data-price="" data-sf="21883" data-toppick="0" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-green">10 days on market</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://images.crexi.com/assets/2596793/b635bd8481164f11a54796b0bd359e11_716x444.jpg" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">Crexi</span></div>
-    <h3>Near Southside Mercantile</h3>
-    <div class="addr">1217 Eighth Ave, Fort Worth 76104</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">—</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">—</span></div><div class="stat"><span class="lbl">Size</span><span class="val">21,883 SF</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">89%</span></div></div>
-    <div class="tenants">Multi-Tenant</div>
-    <a class="btn" href="https://www.crexi.com/properties/2596793/texas-near-southside-mercantile" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="16" data-cap="" data-price="" data-sf="40241" data-toppick="0" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-green">16 days on market</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://images.crexi.com/assets/2557808/bdbffc297248480eb6b45c02c3fba4b4_716x444.jpg" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">Crexi</span></div>
-    <h3>NEC John T White & E Loop 820</h3>
-    <div class="addr">NEC John T White Rd & E Loop 820, Fort Worth 76120</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">—</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">—</span></div><div class="stat"><span class="lbl">Size</span><span class="val">40,241 SF</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    
-    <a class="btn" href="https://www.crexi.com/properties/2557808/texas-nec-john-t-white-e-loop-820" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="16" data-cap="" data-price="" data-sf="" data-toppick="0" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-green">16 days on market</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://images.crexi.com/assets/2557685/cb7227968ac64f4280272c3275c162f1_716x444.jpg" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">Crexi</span></div>
-    <h3>9100 Tehama Ridge Pkwy</h3>
-    <div class="addr">9100 Tehama Ridge Pkwy, Fort Worth 76177</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">—</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">—</span></div><div class="stat"><span class="lbl">Size</span><span class="val">—</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    
-    <a class="btn" href="https://www.crexi.com/properties/2557685/texas-9100-tehama-ridge-pkwy" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="16" data-cap="" data-price="" data-sf="" data-toppick="0" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-green">16 days on market</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://images.crexi.com/assets/2557784/d2d62b34e2a94424915defce177ee326_716x444.jpg" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">Crexi</span></div>
-    <h3>SWQ IH-820 & Clifford St</h3>
-    <div class="addr">200 Clifford Center Dr, Fort Worth 76108</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">—</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">—</span></div><div class="stat"><span class="lbl">Size</span><span class="val">—</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    
-    <a class="btn" href="https://www.crexi.com/properties/2557784/texas-swq-ih-820-clifford-st" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="16" data-cap="" data-price="" data-sf="55240" data-toppick="0" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-green">16 days on market</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://images.crexi.com/assets/2587747/db07594201d04b98b4ef971b7ce381da_716x444.jpg" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">Crexi</span></div>
-    <h3>North Park Plaza</h3>
-    <div class="addr">6300 Rufe Snow Drive, North Richland Hills 76180</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">—</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">—</span></div><div class="stat"><span class="lbl">Size</span><span class="val">55,240 SF</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">100%</span></div></div>
-    <div class="tenants">Multi-Tenant</div>
-    <a class="btn" href="https://www.crexi.com/properties/2587747/texas-north-park-plaza" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="16" data-cap="" data-price="" data-sf="2570" data-toppick="0" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-green">16 days on market</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://images.crexi.com/assets/2557497/c062dd606a0e4dfda12fe5c85d49d61f_716x444.jpg" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">Crexi</span></div>
-    <h3>Former Wendy's</h3>
-    <div class="addr">963 N Beach St, Fort Worth 76111</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">—</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">—</span></div><div class="stat"><span class="lbl">Size</span><span class="val">2,570 SF</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    
-    <a class="btn" href="https://www.crexi.com/properties/2557497/texas-former-wendys" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="" data-cap="" data-price="4200000.0" data-sf="" data-toppick="0" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-na">New listing</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://strivenext.s3.amazonaws.com/website/property-photos/35833/Action%20Behavior%20Cover%20Photo.JPG" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">STRIVE</span></div>
-    <h3>Action Behavior Centers</h3>
-    <div class="addr">Fort Worth, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$4,200,000</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">—</span></div><div class="stat"><span class="lbl">Size</span><span class="val">—</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    <div class="tenants">Single-Tenant</div>
-    <a class="btn" href="https://www.strivere.com/property/35833" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="" data-cap="4.7" data-price="699000.0" data-sf="" data-toppick="0" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-na">New listing</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://strivenext.s3.amazonaws.com/website/property-photos/338973/ChatGPT%20Image%20Jun%2011%2C%202026%2C%2002_24_48%20PM.png" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">STRIVE</span></div>
-    <h3>Wimbledon Court</h3>
-    <div class="addr">Garland, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$699,000</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">4.70%</span></div><div class="stat"><span class="lbl">Size</span><span class="val">—</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    <div class="tenants">Multi-Tenant</div>
-    <a class="btn" href="https://www.strivere.com/property/338973" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="" data-cap="5.75" data-price="2520000.0" data-sf="" data-toppick="0" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-na">New listing</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://strivenext.s3.amazonaws.com/website/property-photos/40531/Cover%20Shot.JPG" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">STRIVE</span></div>
-    <h3>Black Rock Coffee</h3>
-    <div class="addr">McKinney, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$2,520,000</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">5.75%</span></div><div class="stat"><span class="lbl">Size</span><span class="val">—</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    <div class="tenants">Single-Tenant</div>
-    <a class="btn" href="https://www.strivere.com/property/40531" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="" data-cap="7.38" data-price="2615000.0" data-sf="" data-toppick="0" data-criteria="1">
-  <div class="photo-wrap"><span class="dom-pill dom-na">New listing</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://strivenext.s3.amazonaws.com/website/property-photos/58544/Screenshot%202026-06-04%20132855.jpg" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">STRIVE</span><span class="badge cm">Criteria Match</span></div>
-    <h3>Skyway Circle Office</h3>
-    <div class="addr">Irving, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$2,615,000</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">7.38%</span></div><div class="stat"><span class="lbl">Size</span><span class="val">—</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    <div class="tenants">Multi-Tenant</div>
-    <a class="btn" href="https://www.strivere.com/property/58544" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="" data-cap="" data-price="3985000.0" data-sf="" data-toppick="0" data-criteria="1">
-  <div class="photo-wrap"><span class="dom-pill dom-na">New listing</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://strivenext.s3.amazonaws.com/website/property-photos/202380/2005%20Green%20Oaks%20-%20Cover.JPG" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">STRIVE</span><span class="badge cm">Criteria Match</span></div>
-    <h3>Green Oaks Offices II</h3>
-    <div class="addr">Arlington, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$3,985,000</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">—</span></div><div class="stat"><span class="lbl">Size</span><span class="val">—</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    <div class="tenants">Multi-Tenant</div>
-    <a class="btn" href="https://www.strivere.com/property/202380" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="" data-cap="" data-price="530000.0" data-sf="" data-toppick="0" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-na">New listing</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://strivenext.s3.amazonaws.com/website/property-photos/202304/Screenshot%202026-06-08%20095846.jpg" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">STRIVE</span></div>
-    <h3>Dallas VA Hospital Strip</h3>
-    <div class="addr">Dallas, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$530,000</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">—</span></div><div class="stat"><span class="lbl">Size</span><span class="val">—</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    <div class="tenants">Multi-Tenant</div>
-    <a class="btn" href="https://www.strivere.com/property/202304" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="" data-cap="" data-price="2525000.0" data-sf="" data-toppick="0" data-criteria="1">
-  <div class="photo-wrap"><span class="dom-pill dom-na">New listing</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://strivenext.s3.amazonaws.com/website/property-photos/202300/2001%20Green%20Oaks%20-%20Cover.JPG" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">STRIVE</span><span class="badge cm">Criteria Match</span></div>
-    <h3>Green Oaks Offices I</h3>
-    <div class="addr">Arlington, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$2,525,000</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">—</span></div><div class="stat"><span class="lbl">Size</span><span class="val">—</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    <div class="tenants">Multi-Tenant</div>
-    <a class="btn" href="https://www.strivere.com/property/202300" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="" data-cap="7.45" data-price="8965000.0" data-sf="" data-toppick="0" data-criteria="1">
-  <div class="photo-wrap"><span class="dom-pill dom-na">New listing</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://strivenext.s3.amazonaws.com/website/property-photos/58263/McKinney%20Bluff.JPG" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">STRIVE</span><span class="badge cm">Criteria Match</span></div>
-    <h3>McKinney Bluff</h3>
-    <div class="addr">McKinney, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$8,965,000</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">7.45%</span></div><div class="stat"><span class="lbl">Size</span><span class="val">—</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    <div class="tenants">Multi-Tenant</div>
-    <a class="btn" href="https://www.strivere.com/property/58263" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="" data-cap="7.33" data-price="6550000.0" data-sf="" data-toppick="0" data-criteria="1">
-  <div class="photo-wrap"><span class="dom-pill dom-na">New listing</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://strivenext.s3.amazonaws.com/website/property-photos/20457/COVER%202.png" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">STRIVE</span><span class="badge cm">Criteria Match</span></div>
-    <h3>Collins Plaza</h3>
-    <div class="addr">Arlington, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$6,550,000</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">7.33%</span></div><div class="stat"><span class="lbl">Size</span><span class="val">—</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    <div class="tenants">Multi-Tenant</div>
-    <a class="btn" href="https://www.strivere.com/property/20457" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="" data-cap="" data-price="2000000.0" data-sf="" data-toppick="0" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-na">New listing</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://strivenext.s3.amazonaws.com/website/property-photos/32466/GetAttachmentThumbnail_1CN2J.jpg" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">STRIVE</span></div>
-    <h3>Richardson Medical Office</h3>
-    <div class="addr">Richardson, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$2,000,000</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">—</span></div><div class="stat"><span class="lbl">Size</span><span class="val">—</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    <div class="tenants">Single-Tenant</div>
-    <a class="btn" href="https://www.strivere.com/property/32466" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="" data-cap="" data-price="2395000.0" data-sf="" data-toppick="0" data-criteria="1">
-  <div class="photo-wrap"><span class="dom-pill dom-na">New listing</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://strivenext.s3.amazonaws.com/website/property-photos/200363/First%20St%20-%20Cover%20Pic.jpg" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">STRIVE</span><span class="badge cm">Criteria Match</span></div>
-    <h3>First Street Shallow Bay</h3>
-    <div class="addr">Garland, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$2,395,000</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">—</span></div><div class="stat"><span class="lbl">Size</span><span class="val">—</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    <div class="tenants">Multi-Tenant</div>
-    <a class="btn" href="https://www.strivere.com/property/200363" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="" data-cap="6.5" data-price="3045000.0" data-sf="" data-toppick="0" data-criteria="1">
-  <div class="photo-wrap"><span class="dom-pill dom-na">New listing</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://strivenext.s3.amazonaws.com/website/property-photos/60285/Cover%20edit%20-%20small.png" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">STRIVE</span><span class="badge cm">Criteria Match</span></div>
-    <h3>Sojourn Retail</h3>
-    <div class="addr">Lewisville, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$3,045,000</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">6.50%</span></div><div class="stat"><span class="lbl">Size</span><span class="val">—</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    <div class="tenants">Multi-Tenant</div>
-    <a class="btn" href="https://www.strivere.com/property/60285" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="" data-cap="5.5" data-price="1910000.0" data-sf="" data-toppick="0" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-na">New listing</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://strivenext.s3.amazonaws.com/website/property-photos/200126/Aerial%20-%20Surrounding%20Stores_HS05n.png" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">STRIVE</span></div>
-    <h3>Smalls Sliders</h3>
-    <div class="addr">McKinney, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$1,910,000</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">5.50%</span></div><div class="stat"><span class="lbl">Size</span><span class="val">—</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    <div class="tenants">Single-Tenant</div>
-    <a class="btn" href="https://www.strivere.com/property/200126" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="" data-cap="" data-price="999900.0" data-sf="" data-toppick="0" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-na">New listing</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://strivenext.s3.amazonaws.com/website/property-photos/202508/450-500%20S.%20Kaufman%20street%20redline%20map%20%281%29.jpg" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">STRIVE</span></div>
-    <h3>Kaufman Street (Land)</h3>
-    <div class="addr">Seagoville, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$999,900</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">—</span></div><div class="stat"><span class="lbl">Size</span><span class="val">—</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">—</span></div></div>
-    <div class="tenants">Single-Tenant</div>
-    <a class="btn" href="https://www.strivere.com/property/202508" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="" data-cap="4.7" data-price="9678000.0" data-sf="4816" data-toppick="0" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-na">New listing</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://securenetlease.com/wp-content/uploads/2026/06/7-Eleven_TX_4398_US_Route_377-Cover-scaled.jpg" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">Secure Net Lease</span></div>
-    <h3>7-Eleven</h3>
-    <div class="addr">4398 US Route 377, Aubrey, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$9,678,000</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">4.70%</span></div><div class="stat"><span class="lbl">Size</span><span class="val">4,816 SF</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">100%</span></div></div>
-    <div class="tenants">Single-Tenant</div>
-    <a class="btn" href="https://securenetlease.com/properties/7-eleven-aubrey-tx/" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="" data-cap="5.0" data-price="3190000.0" data-sf="2824" data-toppick="0" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-na">New listing</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://securenetlease.com/wp-content/uploads/2026/04/Murphy_USA_TX_Lewisville_960_E_State_Hwy_121-COVER.jpg" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">Secure Net Lease</span></div>
-    <h3>Murphy USA</h3>
-    <div class="addr">960 E State Hwy 121, Lewisville, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$3,190,000</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">5.00%</span></div><div class="stat"><span class="lbl">Size</span><span class="val">2,824 SF</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">100%</span></div></div>
-    <div class="tenants">Single-Tenant</div>
-    <a class="btn" href="https://securenetlease.com/properties/murphy-usa-lewisville/" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="" data-cap="5.0" data-price="9100000.0" data-sf="4853" data-toppick="0" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-na">New listing</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://securenetlease.com/wp-content/uploads/2026/02/7-Eleven_TX_Midlothian_SWC_Hwy_287__Miller_Rd-Cover.gif" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">Secure Net Lease</span></div>
-    <h3>7-Eleven</h3>
-    <div class="addr">SWC Hwy 287 & Miller Rd, Midlothian, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$9,100,000</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">5.00%</span></div><div class="stat"><span class="lbl">Size</span><span class="val">4,853 SF</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">100%</span></div></div>
-    <div class="tenants">Single-Tenant</div>
-    <a class="btn" href="https://securenetlease.com/properties/7-eleven-midlothian-tx/" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="" data-cap="5.35" data-price="3364485.0" data-sf="4694" data-toppick="0" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-na">New listing</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://securenetlease.com/wp-content/uploads/2026/01/Outback_Steakhouse_TX_Forney_560_W_US_Hwy_80-Cover.jpg" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">Secure Net Lease</span></div>
-    <h3>Outback Steakhouse</h3>
-    <div class="addr">560 W US Hwy 80, Forney, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$3,364,485</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">5.35%</span></div><div class="stat"><span class="lbl">Size</span><span class="val">4,694 SF</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">100%</span></div></div>
-    <div class="tenants">Single-Tenant</div>
-    <a class="btn" href="https://securenetlease.com/properties/outback-forney-tx/" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-<div class="card" data-dom="" data-cap="6.0" data-price="2250000.0" data-sf="664" data-toppick="0" data-criteria="0">
-  <div class="photo-wrap"><span class="dom-pill dom-na">New listing</span><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://securenetlease.com/wp-content/uploads/2025/10/Caribou_Coffee_TX_Grapevine_897_W_Northwest_Hwy-Cover-1.png" alt=""></div>
-  <div class="body">
-    <div class="badges"><span class="badge src">Secure Net Lease</span></div>
-    <h3>Caribou Coffee</h3>
-    <div class="addr">897 W Northwest Hwy, Grapevine, TX</div>
-    <div class="grid"><div class="stat"><span class="lbl">Price</span><span class="val">$2,250,000</span></div><div class="stat"><span class="lbl">Cap</span><span class="val gold">6.00%</span></div><div class="stat"><span class="lbl">Size</span><span class="val">664 SF</span></div><div class="stat"><span class="lbl">Occupancy</span><span class="val">100%</span></div></div>
-    <div class="tenants">Single-Tenant</div>
-    <a class="btn" href="https://securenetlease.com/properties/caribou-coffee-grapevine-tx/" target="_blank" rel="noopener">View Listing →</a>
-  </div>
-</div>
-</div>
-<div class="empty" id="empty" style="display:none">No listings match your filters.</div>
+<div class="grid" id="grid"></div>
+<div class="empty" id="empty" style="display:none">No listings match the current filters.</div>
 
 <footer>
-  Generated July 3, 2026 · Data pulled live from broker/marketplace sites. Figures are as-listed and unverified. Not investment advice. ⭐ Top Pick = on market ≤ 3 days. Criteria Match = multi-tenant, $2M–$50M.
+  <p><b>Source coverage this run</b> (all 11 attempted):</p>
+  <div class="srcstatus" id="srcstatus"></div>
+  <p style="margin-top:14px">Report auto-generated from public brokerage listing pages. "Days on market" (DOM) reflects the platform's activation date where available. Listings marked <b>listed date n/a</b> come from sources that don't publish a list date on the grid; they are included because they are new versus the tracked-listings history. Always verify price, cap rate, and availability directly with the listing broker.</p>
 </footer>
-</div>
 
 <script>
-var cardsEl=document.getElementById('cards');
-var all=[].slice.call(cardsEl.children);
-function num(v){v=parseFloat(v);return isNaN(v)?null:v;}
-function apply(){
+const LISTINGS = [
+ {source:"Crexi",name:"Calloway Center",addr:"5932-5952 River Oaks Blvd, Fort Worth, TX",price:2150000,cap:5.67,sf:null,dom:6,listed:"2026-06-28",crit:true,notes:"Multi-tenant retail center.",url:"https://www.crexi.com/properties/2603644/texas-calloway-center",photo:"https://images.crexi.com/assets/2603644/a867b47d0b4b4be09912e3550360db87_716x444.jpg"},
+ {source:"Crexi",name:"The PARC 24/7 Emergency Hospital",addr:"4801 West Fwy, Fort Worth, TX",price:11694530,cap:6.5,sf:null,dom:7,listed:"2026-06-26",crit:false,notes:"Single-tenant veterinary / emergency hospital, NNN.",url:"https://www.crexi.com/properties/2288523/texas-the-parc-veterinary-campus---247-emergency-hospital-dfw-msa",photo:"https://images.crexi.com/assets/2288523/4e639a650ef04fe0bdb4090a6de40e9b_716x444.jpg"},
+ {source:"Crexi",name:"1065 West Magnolia Avenue",addr:"1065 West Magnolia Avenue, Fort Worth, TX",price:null,cap:null,sf:null,dom:8,listed:"2026-06-25",crit:false,notes:"Near Southside / Magnolia corridor retail.",url:"https://www.crexi.com/properties/2600292/texas-1065-west-magnolia-avenue",photo:"https://images.crexi.com/assets/2600292/d034f4590aa24fa8bb4491882f9d4551_716x444.jpg"},
+ {source:"Crexi",name:"2813 Commerce St",addr:"2813 Commerce St, Fort Worth, TX",price:1600000,cap:null,sf:null,dom:9,listed:"2026-06-24",crit:false,notes:"Freestanding retail/commercial building.",url:"https://www.crexi.com/properties/2599003/texas-2813-commerce-st",photo:"https://images.crexi.com/assets/2599003/131e3999d39d4405a220bd5f74f53ba7_716x444.jpg"},
+ {source:"Crexi",name:"Fair Oaks Plaza",addr:"4409 River Oaks Blvd, Fort Worth, TX",price:4925000,cap:7.3,sf:null,dom:9,listed:"2026-06-24",crit:true,notes:"Multi-tenant retail plaza (also listed on STRIVE).",url:"https://www.crexi.com/properties/2599576/texas-fair-oaks-plaza",photo:"https://images.crexi.com/assets/2599576/286dd03940aa4806b55b1b674d0087f6_716x444.jpg"},
+ {source:"Crexi",name:"Beach Street Retail",addr:"8201 North Beach Street, Fort Worth, TX",price:3549000,cap:6,sf:null,dom:10,listed:"2026-06-23",crit:true,notes:"Multi-tenant retail.",url:"https://www.crexi.com/properties/2597791/texas-beach-street-retail",photo:"https://images.crexi.com/assets/2597791/b11eb012cbc5407ab3709b0e15db44bc_716x444.jpg"},
+ {source:"Crexi",name:"Near Southside Mercantile",addr:"1217 Eighth Ave, Fort Worth, TX",price:null,cap:null,sf:null,dom:11,listed:"2026-06-22",crit:false,notes:"Mixed-use / retail, Near Southside.",url:"https://www.crexi.com/properties/2596793/texas-near-southside-mercantile",photo:"https://images.crexi.com/assets/2596793/b635bd8481164f11a54796b0bd359e11_716x444.jpg"},
+ {source:"Crexi",name:"North Park Plaza",addr:"6300 Rufe Snow Drive, North Richland Hills, TX",price:null,cap:null,sf:null,dom:17,listed:"2026-06-16",crit:false,notes:"Retail plaza, price on request.",url:"https://www.crexi.com/properties/2587747/texas-north-park-plaza",photo:"https://images.crexi.com/assets/2587747/db07594201d04b98b4ef971b7ce381da_716x444.jpg"},
+ {source:"Crexi",name:"Hungry Pig (20-Yr Sale-Leaseback)",addr:"4049 Boat Club Rd, Lake Worth, TX",price:2100000,cap:6.5,sf:null,dom:18,listed:"2026-06-15",crit:false,notes:"Single-tenant NNN sale-leaseback.",url:"https://www.crexi.com/properties/2586596/texas-hungry-pig-20-year-sale-leaseback",photo:"https://images.crexi.com/assets/2586596/2aa8cb5e07bb45c8976d3ec053e13ca4_716x444.jpg"},
+ {source:"Crexi",name:"5549 E Lancaster Ave",addr:"5549 E Lancaster Ave, Fort Worth, TX 76112",price:1900000,cap:6.47,sf:null,dom:25,listed:"2026-06-08",crit:false,notes:"Freestanding retail.",url:"https://www.crexi.com/properties/2561555/texas-5549-e-lancaster-ave-fort-worth-tx-76112-6428",photo:"https://images.crexi.com/assets/2561555/1eb0fae19c8e4987bf1f8d0d06a9a876_716x444.jpg"},
+ {source:"Crexi",name:"Cheddar's — Long-Term NNN (Darden)",addr:"6700 NW Loop 820, Fort Worth, TX",price:5874000,cap:6,sf:null,dom:31,listed:"2026-06-02",crit:false,notes:"Single-tenant NNN, Darden guarantee.",url:"https://www.crexi.com/properties/2432952/texas-cheddars",photo:"https://images.crexi.com/assets/2432952/22eae8cfdf984313bc6100f87dc02a7c_716x444.jpg"},
+ {source:"Crexi",name:"Woodland Village Strip Center",addr:"12400 Timberland Boulevard, Fort Worth, TX",price:4100000,cap:5.78,sf:null,dom:31,listed:"2026-06-02",crit:true,notes:"Multi-tenant strip center.",url:"https://www.crexi.com/properties/2555694/texas-woodland-village-strip-center",photo:"https://images.crexi.com/assets/2555694/2af64fc6b0744bc88a980399c2734d12_716x444.jpg"},
+
+ {source:"Secure Net Lease",name:"7-Eleven",addr:"Aubrey, TX (Denton County)",price:null,cap:null,sf:null,dom:25,listed:"2026-06-08",crit:false,notes:"Single-tenant NNN convenience/gas. Call broker for price.",url:"https://securenetlease.com/properties/7-eleven-aubrey-tx/",photo:"https://securenetlease.com/wp-content/uploads/2026/06/Featured-Image.png"},
+
+ {source:"STRIVE",name:"Collins Plaza",addr:"Arlington, TX",price:6550000,cap:7.33,sf:null,dom:null,listed:null,crit:true,notes:"Multi-tenant plaza. Status: In Negotiation.",url:"https://www.strivere.com/property/20457",photo:"https://strivenext.s3.amazonaws.com/website/property-photos/20457/COVER%202.png"},
+ {source:"STRIVE",name:"Richardson Medical Office",addr:"Richardson, TX",price:2000000,cap:3,sf:null,dom:null,listed:null,crit:false,notes:"Medical office. Status: Available.",url:"https://www.strivere.com/property/32466",photo:"https://strivenext.s3.amazonaws.com/website/property-photos/32466/GetAttachmentThumbnail_1CN2J.jpg"},
+ {source:"STRIVE",name:"Action Behavior Centers",addr:"Fort Worth, TX",price:4200000,cap:7.22,sf:null,dom:null,listed:null,crit:false,notes:"Single-tenant. Status: Available.",url:"https://www.strivere.com/property/35833",photo:"https://strivenext.s3.amazonaws.com/website/property-photos/35833/Action%20Behavior%20Cover%20Photo.JPG"},
+ {source:"STRIVE",name:"Black Rock Coffee",addr:"McKinney, TX",price:2520000,cap:5.75,sf:null,dom:null,listed:null,crit:false,notes:"Single-tenant NNN. Status: In Negotiation.",url:"https://www.strivere.com/property/40531",photo:"https://strivenext.s3.amazonaws.com/website/property-photos/40531/Cover%20Shot.JPG"},
+ {source:"STRIVE",name:"McKinney Bluff",addr:"McKinney, TX",price:8965000,cap:7.45,sf:null,dom:null,listed:null,crit:true,notes:"Status: Available.",url:"https://www.strivere.com/property/58263",photo:"https://strivenext.s3.amazonaws.com/website/property-photos/58263/McKinney%20Bluff.JPG"},
+ {source:"STRIVE",name:"Skyway Circle Office",addr:"Irving, TX",price:2615000,cap:7.38,sf:null,dom:null,listed:null,crit:false,notes:"Office. Status: Available.",url:"https://www.strivere.com/property/58544",photo:"https://strivenext.s3.amazonaws.com/website/property-photos/58544/Screenshot%202026-06-04%20132855.jpg"},
+ {source:"STRIVE",name:"Sojourn Retail",addr:"Lewisville, TX",price:3045000,cap:6.5,sf:null,dom:null,listed:null,crit:true,notes:"Multi-tenant retail. Status: Under Contract.",url:"https://www.strivere.com/property/60285",photo:"https://strivenext.s3.amazonaws.com/website/property-photos/60285/Cover%20edit%20-%20small.png"},
+ {source:"STRIVE",name:"Smalls Sliders",addr:"McKinney, TX",price:1910000,cap:5.5,sf:null,dom:null,listed:null,crit:false,notes:"Single-tenant NNN. Status: Available.",url:"https://www.strivere.com/property/200126",photo:"https://strivenext.s3.amazonaws.com/website/property-photos/200126/Aerial%20-%20Surrounding%20Stores_HS05n.png"},
+ {source:"STRIVE",name:"First Street Shallow Bay",addr:"Garland, TX",price:2395000,cap:null,sf:null,dom:null,listed:null,crit:true,notes:"Multi-tenant shallow-bay. Status: Available.",url:"https://www.strivere.com/property/200363",photo:"https://strivenext.s3.amazonaws.com/website/property-photos/200363/First%20St%20-%20Cover%20Pic.jpg"},
+ {source:"STRIVE",name:"Green Oaks Offices I",addr:"Arlington, TX",price:2525000,cap:null,sf:null,dom:null,listed:null,crit:true,notes:"Multi-tenant office. Status: Available.",url:"https://www.strivere.com/property/202300",photo:"https://strivenext.s3.amazonaws.com/website/property-photos/202300/2001%20Green%20Oaks%20-%20Cover.JPG"},
+ {source:"STRIVE",name:"Retail — Dallas",addr:"Dallas, TX",price:530000,cap:7.07,sf:null,dom:null,listed:null,crit:false,notes:"Status: Available.",url:"https://www.strivere.com/property/202304",photo:"https://strivenext.s3.amazonaws.com/website/property-photos/202304/Screenshot%202026-06-08%20095846.jpg"},
+ {source:"STRIVE",name:"Green Oaks Offices II",addr:"Arlington, TX",price:3985000,cap:null,sf:null,dom:null,listed:null,crit:true,notes:"Multi-tenant office. Status: Available.",url:"https://www.strivere.com/property/202380",photo:null},
+ {source:"STRIVE",name:"Wimbledon Court",addr:"Garland, TX",price:699000,cap:4.7,sf:null,dom:null,listed:null,crit:false,notes:"Status: Available.",url:"https://www.strivere.com/property/338973",photo:null},
+
+ {source:"Matthews",name:"Portillo's",addr:"16499 FM 423, Frisco, TX 75034",price:6000000,cap:null,sf:null,dom:null,listed:null,crit:false,notes:"Single-tenant NNN (STNL).",url:"https://www.matthews.com/properties/stnl-portillos-frisco-tx",photo:null},
+ {source:"Matthews",name:"501 Rufe Snow Dr",addr:"501 Rufe Snow Dr, Keller, TX 76248",price:1555095,cap:null,sf:null,dom:null,listed:null,crit:false,notes:"Land / development site.",url:"https://www.matthews.com/properties/land-501-rufe-snow-dr-keller-tx",photo:null}
+];
+
+LISTINGS.forEach(l=>{ l.top = (l.dom!=null && l.dom<=3); });
+
+const SRC_STATUS = [
+ ["Crexi — Fort Worth","12 listings within 35 days captured (real days-on-market from platform data)."],
+ ["Crexi — Dallas","Scraped; newest on grid was 78 days old — no new-to-market retail in the past 35 days."],
+ ["STRIVE","16 DFW listings; 13 new vs. tracker included (grid does not publish a list date)."],
+ ["Secure Net Lease","19 DFW listings found; 1 listed within 35 days (7-Eleven Aubrey) included."],
+ ["Matthews","2 DFW listings on the default page included; full Texas filter needs interactive UI."],
+ ["SRS","Grid rendered but cards carry no city/state label and the Texas filter would not apply via automation — no DFW captured."],
+ ["Marcus &amp; Millichap","Default newest page returned no DFW listings; location filter requires interactive UI, not applied this run."],
+ ["Colliers","Coveo search requires a location entry; no results rendered without it."],
+ ["CBRE","Returned HTTP 404 on both attempts (site URL structure appears to have changed)."],
+ ["NAI Robert Lynn","Results app failed to render on both attempts."],
+ ["LoopNet","Serves a bot-protection page to automation — not bypassed, per policy."],
+ ["SHOP Companies","Map/list app surfaced only office locations, no investment-sale listings this run."]
+];
+
+function money(n){ if(n==null) return "—"; return "$"+n.toLocaleString(); }
+function domPill(l){
+  if(l.dom==null) return '<div class="dom gray">n/a</div>';
+  var c = l.dom<=30?'green':(l.dom<=90?'gold':'red');
+  return '<div class="dom '+c+'">'+l.dom+'d on market</div>';
+}
+function render(){
   var sort=document.getElementById('sort').value;
-  var minCap=num(document.getElementById('minCap').value);
-  var maxPrice=num(document.getElementById('maxPrice').value);
-  var tpOnly=document.getElementById('tpOnly').checked;
-  var cmOnly=document.getElementById('cmOnly').checked;
-  var vis=all.filter(function(c){
-    var cap=num(c.dataset.cap), price=num(c.dataset.price);
-    if(minCap!=null && (cap==null||cap<minCap)) return false;
-    if(maxPrice!=null && (price==null||price>maxPrice)) return false;
-    if(tpOnly && c.dataset.toppick!=='1') return false;
-    if(cmOnly && c.dataset.criteria!=='1') return false;
+  var mincap=parseFloat(document.getElementById('mincap').value);
+  var maxprice=parseFloat(document.getElementById('maxprice').value);
+  var onlytop=document.getElementById('onlytop').checked;
+  var onlycrit=document.getElementById('onlycrit').checked;
+  var list=LISTINGS.filter(function(l){
+    if(onlytop && !l.top) return false;
+    if(onlycrit && !l.crit) return false;
+    if(!isNaN(mincap) && (l.cap==null || l.cap<mincap)) return false;
+    if(!isNaN(maxprice) && (l.price==null || l.price>maxprice)) return false;
     return true;
   });
-  vis.sort(function(a,b){
-    function g(c,k){var v=c.dataset[k];v=v===''?null:parseFloat(v);return v;}
-    if(sort==='newest'){var da=g(a,'dom'),db=g(b,'dom');da=da==null?9999:da;db=db==null?9999:db;return da-db;}
-    if(sort==='cap'){var ca=g(a,'cap'),cb=g(b,'cap');ca=ca==null?-1:ca;cb=cb==null?-1:cb;return cb-ca;}
-    if(sort==='price'){var pa=g(a,'price'),pb=g(b,'price');pa=pa==null?1e15:pa;pb=pb==null?1e15:pb;return pa-pb;}
-    if(sort==='sf'){var sa=g(a,'sf'),sb=g(b,'sf');sa=sa==null?-1:sa;sb=sb==null?-1:sb;return sb-sa;}
+  list.sort(function(a,b){
+    if(sort==='new'){ var x=a.dom==null?9999:a.dom, y=b.dom==null?9999:b.dom; return x-y; }
+    if(sort==='cap'){ return (b.cap||-1)-(a.cap||-1); }
+    if(sort==='pricelow'){ return (a.price==null?Infinity:a.price)-(b.price==null?Infinity:b.price); }
+    if(sort==='pricehigh'){ return (b.price||-1)-(a.price||-1); }
+    if(sort==='sf'){ return (b.sf||-1)-(a.sf||-1); }
     return 0;
   });
-  all.forEach(function(c){c.style.display='none';});
-  vis.forEach(function(c){c.style.display='';cardsEl.appendChild(c);});
-  document.getElementById('empty').style.display=vis.length?'none':'block';
-  document.getElementById('count').textContent=vis.length+' of '+all.length+' shown';
+  var grid=document.getElementById('grid');
+  grid.innerHTML=list.map(function(l){
+    var badges='<span class="badge b-src">'+l.source+'</span>'+(l.top?'<span class="badge b-top">⭐ TOP PICK</span>':'')+(l.crit?'<span class="badge b-crit">Criteria Match</span>':'');
+    var photo;
+    if(l.photo){
+      photo='<div class="photo-wrap"><div class="badges">'+badges+'</div><img src="'+l.photo+'" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest(\'.photo-wrap\').style.display=\'none\'"/>'+domPill(l)+'</div>';
+    } else {
+      photo='<div style="padding:12px 14px 0"><div class="badges" style="position:static">'+badges+'</div><div style="margin-top:8px">'+domPill(l).replace('position:absolute;bottom:8px;right:8px','').replace('class="dom','style="position:static;display:inline-block" class="dom')+'</div></div>';
+    }
+    return '<div class="card">'+photo+
+      '<div class="body">'+
+      '<div class="name">'+l.name+'</div>'+
+      '<div class="addr">'+l.addr+'</div>'+
+      '<div class="statsgrid">'+
+        '<div><div class="k">Price</div><div class="v">'+money(l.price)+'</div></div>'+
+        '<div class="cap"><div class="k">Cap Rate</div><div class="v">'+(l.cap!=null?l.cap+'%':'—')+'</div></div>'+
+        '<div><div class="k">Size</div><div class="v">'+(l.sf?l.sf.toLocaleString()+' SF':'—')+'</div></div>'+
+        '<div><div class="k">Listed</div><div class="v">'+(l.listed||'n/a')+'</div></div>'+
+      '</div>'+
+      (l.notes?'<div class="notes">'+l.notes+'</div>':'')+
+      '<a class="btn" href="'+l.url+'" target="_blank" rel="noopener">View Listing →</a>'+
+      '</div></div>';
+  }).join('');
+  document.getElementById('empty').style.display=list.length?'none':'block';
 }
-['sort','minCap','maxPrice','tpOnly','cmOnly'].forEach(function(id){
-  var el=document.getElementById(id);
-  el.addEventListener('change',apply);el.addEventListener('input',apply);
+
+function buildStats(){
+  var caps=LISTINGS.filter(function(l){return l.cap!=null}).map(function(l){return l.cap});
+  var prices=LISTINGS.filter(function(l){return l.price!=null}).map(function(l){return l.price});
+  var new3=LISTINGS.filter(function(l){return l.dom!=null&&l.dom<=3}).length;
+  var within30=LISTINGS.filter(function(l){return l.dom!=null&&l.dom<=30}).length;
+  var stats=[
+    ["Total listings",LISTINGS.length],
+    ["New ≤ 3 days",new3],
+    ["Listed ≤ 30 days",within30],
+    ["Cap range",caps.length?Math.min.apply(0,caps)+"%–"+Math.max.apply(0,caps)+"%":"—"],
+    ["Price range",prices.length?"$"+(Math.min.apply(0,prices)/1e6).toFixed(2)+"M–$"+(Math.max.apply(0,prices)/1e6).toFixed(1)+"M":"—"]
+  ];
+  document.getElementById('statbar').innerHTML=stats.map(function(s){return '<div class="stat"><div class="n">'+s[1]+'</div><div class="l">'+s[0]+'</div></div>'}).join('');
+  document.getElementById('srcstatus').innerHTML=SRC_STATUS.map(function(s){return '• <b>'+s[0]+'</b> — '+s[1]}).join('<br>');
+}
+
+['sort','mincap','maxprice','onlytop','onlycrit'].forEach(function(id){
+  document.getElementById(id).addEventListener('input',render);
+  document.getElementById(id).addEventListener('change',render);
 });
-apply();
+buildStats();
+render();
 </script>
 </body>
 </html>
