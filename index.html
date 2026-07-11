@@ -145,7 +145,7 @@ document.getElementById('grid').innerHTML=items.map(x=>{
 const top=(x.dom!=null&&x.dom<=3)?'<span class="badge top">⭐ TOP PICK — NEW IN 3 DAYS</span>':'';
 const nw=x.isNew?'<span class="badge new">NEW LISTING BADGE</span>':'';
 const mt=x.match?'<span class="badge match">✓ CRITERIA MATCH</span>':'';
-const photo=x.img?'<div class="photo-wrap"><img src="'+x.img+'" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest(\x27.photo-wrap\x27).style.display=\x27none\x27" alt="">'+domPill(x.dom)+'</div>':'<div style="padding:12px 18px 0">'+domPill(x.dom).replace('dom ','dom-inline dom ').replace('position:absolute','')+'</div>';
+const photo=x.img?'<div class="photo-wrap"><img src="'+x.img+'" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest(\x27.photo-wrap\x27).style.display=\x27none\x27" alt="">'+domPill(x.dom)+'</div>':'<div style="padding:12px 18px 0"><span style="display:inline-block;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700;color:#000;background:#8b8b99">DOM n/a</span></div>';
 return '<div class="card">'+photo+'<div class="body"><div class="badges">'+top+nw+mt+'<span class="badge src">'+x.src+'</span></div><h3>'+x.n+'</h3><div class="addr">'+x.a+'</div><div class="stats"><div><div class="sv">'+fmtP(x.p)+'</div><div class="sl">Price</div></div><div><div class="sv cap">'+fmtC(x.c)+'</div><div class="sl">Cap</div></div><div><div class="sv">'+fmtSF(x.sf)+'</div><div class="sl">Size</div></div><div><div class="sv">'+fmtO(x.occ)+'</div><div class="sl">Occupancy</div></div></div><div class="notes">'+x.no+'</div><a class="btn" href="'+x.u+'" target="_blank" rel="noopener">View Listing →</a></div></div>';}).join('');
 }
 function statbar(){
