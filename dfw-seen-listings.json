@@ -1308,6 +1308,102 @@
    "last_seen": "2026-08-11",
    "address": "3260 US-175 (DFW)",
    "price": null
+  },
+  "https://www.crexi.com/properties/2659063/texas-prosper-town-center": {
+   "first_seen": "2026-08-12",
+   "last_seen": "2026-08-12",
+   "address": "111 South Preston Road, Prosper, TX",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2657208/texas-joshua-station": {
+   "first_seen": "2026-08-12",
+   "last_seen": "2026-08-12",
+   "address": "NWQ HWY 174 & Stadium Drive, Joshua, TX",
+   "price": 2750000
+  },
+  "https://www.crexi.com/properties/2657877/texas-new-flex-space-10340-sf-on-118-acres": {
+   "first_seen": "2026-08-12",
+   "last_seen": "2026-08-12",
+   "address": "11436 Business Highway 287 N, Fort Worth, TX",
+   "price": 2223100
+  },
+  "https://www.crexi.com/properties/2657728/texas-forest-oaks-plaza": {
+   "first_seen": "2026-08-12",
+   "last_seen": "2026-08-12",
+   "address": "2425 Northeast Green Oaks Boulevard, Arlington, TX",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2361721/texas-century-plaza": {
+   "first_seen": "2026-08-12",
+   "last_seen": "2026-08-12",
+   "address": "903 W Parker Rd, Plano, TX",
+   "price": 5000000
+  },
+  "https://www.crexi.com/properties/2656398/texas-8601-benbrook-boulevard": {
+   "first_seen": "2026-08-12",
+   "last_seen": "2026-08-12",
+   "address": "8601 Benbrook Boulevard, Benbrook, TX",
+   "price": 6000000
+  },
+  "https://www.crexi.com/properties/2492827/texas-kiddie-academy---colleyville-tx": {
+   "first_seen": "2026-08-12",
+   "last_seen": "2026-08-12",
+   "address": "4321 Colleyville Boulevard, Colleyville, TX",
+   "price": 6885214
+  },
+  "https://www.crexi.com/properties/2655253/texas-1125-roberts-cut-off-road": {
+   "first_seen": "2026-08-12",
+   "last_seen": "2026-08-12",
+   "address": "1125 Roberts Cut Off Road, River Oaks, TX",
+   "price": 689000
+  },
+  "https://www.crexi.com/properties/2594087/texas-lovers-greenville-retail-center": {
+   "first_seen": "2026-08-12",
+   "last_seen": "2026-08-12",
+   "address": "5135 & 5323 Greenville Ave, Dallas, TX",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2655585/texas-6709-rufe-snow-drive": {
+   "first_seen": "2026-08-12",
+   "last_seen": "2026-08-12",
+   "address": "6709 Rufe Snow Drive, Fort Worth, TX",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2652327/texas-trophy-real-estate-top-texas-intersection": {
+   "first_seen": "2026-08-12",
+   "last_seen": "2026-08-12",
+   "address": "2065 Preston Road, Plano, TX",
+   "price": 27368421
+  },
+  "https://www.crexi.com/properties/2654187/texas-dallas-walgreens-108k-avg-hh-incomes-early-lease-ext": {
+   "first_seen": "2026-08-12",
+   "last_seen": "2026-08-12",
+   "address": "11403 East Northwest Highway, Dallas, TX",
+   "price": 4400000
+  },
+  "https://www.crexi.com/properties/2652638/texas-511-e-camp-wisdom-rd": {
+   "first_seen": "2026-08-12",
+   "last_seen": "2026-08-12",
+   "address": "511 E. Camp Wisdom Rd., Duncanville, TX",
+   "price": 4000000
+  },
+  "https://shopcompanies.com/properties/1912-greenville": {
+   "first_seen": "2026-08-12",
+   "last_seen": "2026-08-12",
+   "address": "1912 Greenville Ave, Dallas, TX",
+   "price": 0
+  },
+  "https://shopcompanies.com/properties/19201922-greenville": {
+   "first_seen": "2026-08-12",
+   "last_seen": "2026-08-12",
+   "address": "1920/1922 Greenville Ave, Dallas, TX",
+   "price": 0
+  },
+  "https://shopcompanies.com/properties/2300-fort-worth-avenue": {
+   "first_seen": "2026-08-12",
+   "last_seen": "2026-08-12",
+   "address": "2300 Fort Worth Avenue, Dallas, TX",
+   "price": 0
   }
  }
 }
