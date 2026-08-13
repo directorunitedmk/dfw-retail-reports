@@ -1,1 +1,421 @@
-undefined
+{
+  "seen": {
+    "https://www.crexi.com/properties/1661624/texas-live-oak-liberty-retail-shops": {
+      "first_seen": "2026-06-11",
+      "last_seen": "2026-06-11",
+      "address": "2817 Live Oak St, Dallas, TX 75204",
+      "price": 3348000,
+      "delisted": true
+    },
+    "https://www.crexi.com/properties/2233034/": {
+      "first_seen": "2026-06-11",
+      "last_seen": "2026-06-11",
+      "address": "2515 W Jefferson Blvd, Dallas, TX 75211",
+      "price": 8244115,
+      "delisted": true
+    },
+    "https://www.crexi.com/properties/2251085/texas-preston-broadway": {
+      "first_seen": "2026-06-11",
+      "last_seen": "2026-06-11",
+      "address": "4950 Broadway, Dallas, TX 75225",
+      "price": 4583000,
+      "delisted": true
+    },
+    "https://www.strivere.com/property/201191": {
+      "first_seen": "2026-06-11",
+      "last_seen": "2026-08-13",
+      "address": "Fair Oaks Plaza (4409 River Oaks Blvd), Fort Worth, TX 76114",
+      "price": 4860000
+    },
+    "https://www.strivere.com/property/21": {
+      "first_seen": "2026-06-11",
+      "last_seen": "2026-08-13",
+      "address": "Fitzhugh Retail Center, 2325 N Fitzhugh Ave, Dallas, TX 75204",
+      "price": 6750000
+    },
+    "https://www.strivere.com/property/63807": {
+      "first_seen": "2026-06-11",
+      "last_seen": "2026-08-13",
+      "address": "Tarrant West Plaza, 1701 S Cherry Ln, Fort Worth, TX 76108",
+      "price": 12905000
+    },
+    "https://securenetlease.com/properties/camp-wisdom-village/": {
+      "first_seen": "2026-06-11",
+      "last_seen": "2026-08-13",
+      "address": "417 E Camp Wisdom Rd, Duncanville, TX",
+      "price": 3800000
+    },
+    "https://securenetlease.com/properties/texas-star-plaza/": {
+      "first_seen": "2026-06-11",
+      "last_seen": "2026-08-13",
+      "address": "125 North Clark Road, Cedar Hill, TX",
+      "price": 3800000
+    },
+    "https://www.strivere.com/property/58263": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "McKinney Bluff \u2014 McKinney, Collin County, TX",
+      "price": 8965000,
+      "source": "STRIVE"
+    },
+    "https://www.strivere.com/property/35833": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Action Behavior Centers \u2014 Fort Worth, Tarrant County, TX",
+      "price": 4200000,
+      "source": "STRIVE"
+    },
+    "https://www.strivere.com/property/60285": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Sojourn Retail \u2014 Lewisville, Denton County, TX",
+      "price": 3045000,
+      "source": "STRIVE"
+    },
+    "https://www.strivere.com/property/40531": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Black Rock Coffee \u2014 McKinney, Collin County, TX",
+      "price": 2520000,
+      "source": "STRIVE"
+    },
+    "https://www.strivere.com/property/50166": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Collins Square \u2014 Arlington, Tarrant County, TX",
+      "price": 2380000,
+      "source": "STRIVE"
+    },
+    "https://www.strivere.com/property/65050": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Safe Harbor Center \u2014 Arlington, Tarrant County, TX",
+      "price": 1815000,
+      "source": "STRIVE"
+    },
+    "https://www.strivere.com/property/202376": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Crossroads Centre \u2014 North Richland Hills, Tarrant County, TX",
+      "price": 1810000,
+      "source": "STRIVE"
+    },
+    "https://www.strivere.com/property/338882": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "4224 Swiss Ave \u2014 4224 Swiss Ave, Dallas, TX",
+      "price": 1795000,
+      "source": "STRIVE"
+    },
+    "https://www.strivere.com/property/202578": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Alta Mere Two Tenant Strip \u2014 Fort Worth, Tarrant County, TX",
+      "price": 1055000,
+      "source": "STRIVE"
+    },
+    "https://www.strivere.com/property/338973": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Wimbledon Court \u2014 Garland, Dallas County, TX",
+      "price": 699000,
+      "source": "STRIVE"
+    },
+    "https://www.strivere.com/property/202304": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Dallas VA Hospital Strip \u2014 Dallas, Dallas County, TX",
+      "price": 510000,
+      "source": "STRIVE"
+    },
+    "https://securenetlease.com/properties/7-eleven-aubrey-tx/": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "7-Eleven \u2014 Aubrey \u2014 4398 US-377, Aubrey, Denton County, TX",
+      "price": 9678000,
+      "source": "Secure Net Lease"
+    },
+    "https://securenetlease.com/properties/7-eleven-lake-worth-tx/": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "7-Eleven \u2014 Lake Worth \u2014 6217 Azle Avenue, Lake Worth, Tarrant County, TX",
+      "price": 9527000,
+      "source": "Secure Net Lease"
+    },
+    "https://securenetlease.com/properties/7-eleven-midlothian-tx/": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "7-Eleven \u2014 Midlothian \u2014 SWC Hwy 287 & Miller Rd, Midlothian, Ellis County, TX",
+      "price": 9100000,
+      "source": "Secure Net Lease"
+    },
+    "https://securenetlease.com/properties/murphy-usa-lewisville/": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Murphy USA \u2014 Lewisville \u2014 960 State Hwy 121, Lewisville, Denton County, TX",
+      "price": 3190000,
+      "source": "Secure Net Lease"
+    },
+    "https://securenetlease.com/properties/mcdonalds-red-oak-tx/": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "McDonald's \u2014 Red Oak \u2014 Red Oak, Ellis County, TX",
+      "price": 2187000,
+      "source": "Secure Net Lease"
+    },
+    "https://www.marcusmillichap.com/properties/307774/trophy-real-estate-best-retail-intersection-in-tx-bank-of-america-wild-fork-abs-nnn-leases": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Trophy Real Estate \u2014 Bank of America & Wild Fork \u2014 Plano, Collin County, TX",
+      "price": 27368421,
+      "source": "Marcus & Millichap"
+    },
+    "https://www.marcusmillichap.com/properties/198759/absolute-net-20-year-car-wash-1-in-texas-top-15-nationally-dfw-msa-100-bonus-depreciation": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Absolute Net 20-Year Car Wash \u2014 Cleburne, Johnson County, TX",
+      "price": 8188024,
+      "source": "Marcus & Millichap"
+    },
+    "https://www.marcusmillichap.com/properties/305283/caliber-collision-center-dallasfort-worth-msa-15-year-absolute-net-qualifies-for-depreciation": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Caliber Collision Center \u2014 Benbrook, Tarrant County, TX",
+      "price": 7689072,
+      "source": "Marcus & Millichap"
+    },
+    "https://www.marcusmillichap.com/properties/300358/clearwater-express-wash-1-texas-operator-20yr-abs-net-100-bonus-depreciation-annual-bumps": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "ClearWater Express Wash \u2014 Dallas, Dallas County, TX",
+      "price": 6466550,
+      "source": "Marcus & Millichap"
+    },
+    "https://www.marcusmillichap.com/properties/201490/first-watch-nasdaq-fwrg-leading-daytime-dining-concept-dfw-1-most-visited-location-in-tx": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "First Watch \u2014 Waxahachie, Ellis County, TX",
+      "price": 3913000,
+      "source": "Marcus & Millichap"
+    },
+    "https://www.marcusmillichap.com/properties/302343/brand-new-chipotle-w-drthru-15-year-nnn-prime-west-dallas-infill-direct-frontage-to-i30": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Brand New Chipotle w/ Drive-Thru \u2014 West Dallas \u2014 direct I-30 frontage, Dallas, TX",
+      "price": 3667000,
+      "source": "Marcus & Millichap"
+    },
+    "https://www.marcusmillichap.com/properties/301942/corp-pollo-campero-400-locations-dfw-metro-epicenter-of-activity-absolute-nnn-ground-lease": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Corp. Pollo Campero \u2014 DFW Metro \u2014 Irving, Dallas County, TX",
+      "price": 3333333,
+      "source": "Marcus & Millichap"
+    },
+    "https://www.marcusmillichap.com/properties/305938/mcdonalds": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "McDonald's \u2014 Dallas \u2014 Dallas, Dallas County, TX",
+      "price": 2552534,
+      "source": "Marcus & Millichap"
+    },
+    "https://www.marcusmillichap.com/properties/204097/little-blessings-childcare-preschool-dfw-metro-109k-ahhi-in-1mile-15-yr-absolute-net-lease": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Little Blessings Childcare & Preschool \u2014 Garland, Dallas County, TX",
+      "price": 2000000,
+      "source": "Marcus & Millichap"
+    },
+    "https://www.marcusmillichap.com/properties/188116/4312-live-oak": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "4312 Live Oak \u2014 4312 Live Oak St, Dallas, TX",
+      "price": 1200000,
+      "source": "Marcus & Millichap"
+    },
+    "https://www.marcusmillichap.com/properties/201872/bishop-arts-retail-portfolio": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Bishop Arts Retail Portfolio \u2014 Bishop Arts District, Dallas, TX",
+      "price": null,
+      "source": "Marcus & Millichap"
+    },
+    "https://www.marcusmillichap.com/properties/195779/e-grand-retail-portfolio": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "E Grand Retail Portfolio \u2014 E Grand Ave, Dallas, TX",
+      "price": null,
+      "source": "Marcus & Millichap"
+    },
+    "https://www.marcusmillichap.com/properties/200332/sixt-rent-the-car": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Sixt: Rent The Car \u2014 Dallas, Dallas County, TX",
+      "price": null,
+      "source": "Marcus & Millichap"
+    },
+    "https://www.marcusmillichap.com/properties/189919/801-core-st": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "801 Core St \u2014 801 Core St, Dallas, TX",
+      "price": null,
+      "source": "Marcus & Millichap"
+    },
+    "https://www.matthews.com/properties/sc-southlake-commons-southlake-tx": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Southlake Commons \u2014 280 Commerce Street, Southlake, TX 76092",
+      "price": 22850000,
+      "source": "Matthews"
+    },
+    "https://www.matthews.com/properties/stnl-mcdonalds-fort-worth-tx": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "McDonald's \u2014 Chisholm Trail \u2014 NWC Chisholm Trail Pkwy & McPherson Blvd, Fort Worth, TX 76123",
+      "price": 4054794,
+      "source": "Matthews"
+    },
+    "https://www.matthews.com/properties/stnl-pnc-bank-fort-worth-tx": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "PNC Bank \u2014 Chisholm Trail \u2014 NWC Chisholm Trail Pkwy & McPherson Blvd, Fort Worth, TX 76123",
+      "price": 3978495,
+      "source": "Matthews"
+    },
+    "https://shopcompanies.com/properties/west-towne-center-building-1": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "West Towne Center \u2014 Building 1 \u2014 12255 Teel Parkway, Frisco, Collin County, TX",
+      "price": null,
+      "source": "SHOP Companies"
+    },
+    "https://shopcompanies.com/properties/viridian-marketplace": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Viridian Marketplace \u2014 500 Fort Worth Drive, Denton, Denton County, TX",
+      "price": null,
+      "source": "SHOP Companies"
+    },
+    "https://www.crexi.com/properties/2661344/texas-garland-brand---commercial-development-pad-site": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "GARLAND BRAND \u2014 Commercial Development & Pad Site \u2014 4780 N. President George Bush Hwy, Garland, Dallas County, TX",
+      "price": 2261000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2661322/texas-5290-george-bush-hwy": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "For Sale \u2014 Restaurant | Office | Retail \u2014 5290 George Bush Hwy, Garland, Dallas County, TX",
+      "price": 1114000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2661154/texas-premium-medical-office-for-sale-in-prosper-tx": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Premium Medical & Office For Sale in Prosper \u2014 2120 Prairie Drive, Prosper, Collin County, TX",
+      "price": 1044000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2660004/texas-41-property-texas-land-portfolio-103-acres": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "41-Property Texas Land Portfolio | 103+ Acres \u2014 2600 E Park Row Dr, Arlington, Tarrant County, TX",
+      "price": null,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2660789/texas-dry-cleaning-business-real-estate": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Dry Cleaning Business & Real Estate \u2014 8424 White Settlement Road, Fort Worth, Tarrant County, TX",
+      "price": 499000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2660679/texas-4000-bruton-orand-blvd-in-flower-mound": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "4000 Bruton Orand Blvd \u2014 4000 Bruton Orand Boulevard, Flower Mound, Denton County, TX",
+      "price": 3100000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2660198/texas-901-medical-centre-drive": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "901 Medical Centre Drive \u2014 901 Medical Centre Dr, Arlington, Tarrant County, TX",
+      "price": 460000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2659063/texas-prosper-town-center": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Prosper Town Center \u2014 111 South Preston Road, Prosper, Collin County, TX",
+      "price": null,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2657877/texas-new-flex-space-10340-sf-on-118-acres": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "NEW FLEX SPACE \u2014 10,340 SF on 1.18 Acres \u2014 11436 Business Highway 287 N, Fort Worth, Tarrant County, TX",
+      "price": 2223100,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2627291/texas-turn-key-2nd-generation-med-spa": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Turn-Key 2nd Generation Med Spa \u2014 450 N Standridge Blvd, Ste 201, Anna, Collin County, TX",
+      "price": null,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2657287/texas-nwc-of-trinity-blvdraider-dr": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "NWC of Trinity Blvd / Raider Dr \u2014 NWC Trinity Blvd & Raider Dr, Hurst, Tarrant County, TX",
+      "price": null,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2657208/texas-joshua-station": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Joshua Station \u2014 NWQ HWY 174 & Stadium Drive, Joshua, Johnson County, TX",
+      "price": 2750000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2361721/texas-century-plaza": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Century Plaza \u2014 903 W Parker Rd, Plano, Collin County, TX",
+      "price": 5000000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2656398/texas-8601-benbrook-boulevard": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "8601 Benbrook Boulevard \u2014 8601 Benbrook Boulevard, Benbrook, Tarrant County, TX",
+      "price": 6000000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2098637/texas-crowley-retail": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "Crowley Retail \u2014 SWQ Crowley Plover Rd & S Crowley Rd, Crowley, Tarrant County, TX",
+      "price": null,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2654033/texas-434-w-kiest-blvd-pad-site": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "434 W Kiest Blvd (Pad Site) \u2014 434 West Kiest Boulevard, Dallas, Dallas County, TX",
+      "price": null,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2652638/texas-511-e-camp-wisdom-rd": {
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-08-13",
+      "address": "511 E. Camp Wisdom Rd. \u2014 511 E. Camp Wisdom Rd., Duncanville, Dallas County, TX",
+      "price": 4000000,
+      "source": "Crexi"
+    }
+  },
+  "last_run": "2026-08-13",
+  "note": "Updated by scheduled run 2026-08-13. Sources blocked this run: Colliers (facet), CBRE (loading hang), LoopNet (bot protection); Matthews partial (modal blocks infinite scroll)."
+}
