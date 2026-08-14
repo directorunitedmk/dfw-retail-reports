@@ -305,49 +305,49 @@
     },
     "https://www.crexi.com/properties/2661322/texas-5290-george-bush-hwy": {
       "first_seen": "2026-08-13",
-      "last_seen": "2026-08-13",
+      "last_seen": "2026-08-14",
       "address": "For Sale \u2014 Restaurant | Office | Retail \u2014 5290 George Bush Hwy, Garland, Dallas County, TX",
       "price": 1114000,
       "source": "Crexi"
     },
     "https://www.crexi.com/properties/2661154/texas-premium-medical-office-for-sale-in-prosper-tx": {
       "first_seen": "2026-08-13",
-      "last_seen": "2026-08-13",
+      "last_seen": "2026-08-14",
       "address": "Premium Medical & Office For Sale in Prosper \u2014 2120 Prairie Drive, Prosper, Collin County, TX",
       "price": 1044000,
       "source": "Crexi"
     },
     "https://www.crexi.com/properties/2660004/texas-41-property-texas-land-portfolio-103-acres": {
       "first_seen": "2026-08-13",
-      "last_seen": "2026-08-13",
+      "last_seen": "2026-08-14",
       "address": "41-Property Texas Land Portfolio | 103+ Acres \u2014 2600 E Park Row Dr, Arlington, Tarrant County, TX",
       "price": null,
       "source": "Crexi"
     },
     "https://www.crexi.com/properties/2660789/texas-dry-cleaning-business-real-estate": {
       "first_seen": "2026-08-13",
-      "last_seen": "2026-08-13",
+      "last_seen": "2026-08-14",
       "address": "Dry Cleaning Business & Real Estate \u2014 8424 White Settlement Road, Fort Worth, Tarrant County, TX",
       "price": 499000,
       "source": "Crexi"
     },
     "https://www.crexi.com/properties/2660679/texas-4000-bruton-orand-blvd-in-flower-mound": {
       "first_seen": "2026-08-13",
-      "last_seen": "2026-08-13",
+      "last_seen": "2026-08-14",
       "address": "4000 Bruton Orand Blvd \u2014 4000 Bruton Orand Boulevard, Flower Mound, Denton County, TX",
       "price": 3100000,
       "source": "Crexi"
     },
     "https://www.crexi.com/properties/2660198/texas-901-medical-centre-drive": {
       "first_seen": "2026-08-13",
-      "last_seen": "2026-08-13",
+      "last_seen": "2026-08-14",
       "address": "901 Medical Centre Drive \u2014 901 Medical Centre Dr, Arlington, Tarrant County, TX",
       "price": 460000,
       "source": "Crexi"
     },
     "https://www.crexi.com/properties/2659063/texas-prosper-town-center": {
       "first_seen": "2026-08-13",
-      "last_seen": "2026-08-13",
+      "last_seen": "2026-08-14",
       "address": "Prosper Town Center \u2014 111 South Preston Road, Prosper, Collin County, TX",
       "price": null,
       "source": "Crexi"
@@ -413,6 +413,139 @@
       "last_seen": "2026-08-13",
       "address": "511 E. Camp Wisdom Rd. \u2014 511 E. Camp Wisdom Rd., Duncanville, Dallas County, TX",
       "price": 4000000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2519035/texas-new-tractor-supply-investment-grade-credit-15-yr": {
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-14",
+      "address": "1535 S. Beckley Road, Glenn Heights, Dallas, Ellis County, TX 75154",
+      "price": 7805000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2655785/texas-whitewater-express-car-wash-140-locations": {
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-14",
+      "address": "701 Fort Worth Highway, Weatherford, Parker, TX 76086",
+      "price": 4402554,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2659271/texas-dennys": {
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-14",
+      "address": "408 WESTCHASE DR, GRAND PRAIRIE, DALLAS, TX 75052",
+      "price": 2684200,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2660055/texas-frisco-market-center": {
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-14",
+      "address": "5252 Main St & 9169-9179 Dallas Pkwy, Frisco, Denton County, TX 75033",
+      "price": 0,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2660182/texas-sonic-drive-in-brand-new-20-year-absolute-nnn-lease": {
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-14",
+      "address": "109 Texas 274, Kemp, Kaufman County, TX 75143",
+      "price": 1769231,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2660441/texas-standard-service": {
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-14",
+      "address": "4240 Ridge Road, Heath, Rockwall County, TX 75032",
+      "price": 7938858,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2660456/texas-culpepper-cattle-co": {
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-14",
+      "address": "309 Interstate 30 Frontage Road, Rockwall, Rockwall County, TX 75087",
+      "price": 8661593,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2660478/texas-autozone-mesquite-tx": {
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-14",
+      "address": "3002 North Town East Boulevard, Mesquite, Dallas County, TX 75150",
+      "price": 1720000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2660491/texas-unco-portfolio-25-year-slb": {
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-14",
+      "address": "309 I-30 Frontage Rd, Rockwall, Rockwall County, TX 75087",
+      "price": 16600451,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2660523/texas-west-towne-center-building-1": {
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-14",
+      "address": "12255 Teel Pkwy, Frisco, Denton County, TX 75033",
+      "price": 10188000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2660833/texas-3300-s-watson-rd-trinity-centre---for-sale": {
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-14",
+      "address": "3300 South Watson Road, Arlington, Tarrant County, TX 76014",
+      "price": 0,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2660893/texas-3900-hemphill-st": {
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-14",
+      "address": "3900 Hemphill Street, Fort Worth, Tarrant County, TX 76110",
+      "price": 2900000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2661456/texas-walgreens-absolute-nnn-12-years-remaining": {
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-14",
+      "address": "3809 East Belknap Street, Fort Worth, Tarrant County, TX 76111",
+      "price": 4120000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2661593/texas-5008-collett-little-road": {
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-14",
+      "address": "5008 Collett Little Road, Fort Worth, Tarrant County, TX 76119",
+      "price": 625000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2661772/texas-the-evers-building": {
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-14",
+      "address": "109 W Hickory St, Denton, Denton County, TX 76201",
+      "price": 2100000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2662166/texas-mb2-dental-3-annual-increases-abs-nnn": {
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-14",
+      "address": "2441 Lacy Lane, Carrollton, Dallas County, TX 75006",
+      "price": 7210000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2662181/texas-premium-professional-office-for-sale-in-prosper-tx": {
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-14",
+      "address": "2120 Prairie Drive, Prosper, Collin County, TX 75078",
+      "price": 475000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2662291/texas-wheatland-strip-center": {
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-14",
+      "address": "3335 West Wheatland Road, Dallas, Dallas County, TX 75237",
+      "price": 4250000,
+      "source": "Crexi"
+    },
+    "https://www.crexi.com/properties/2662744/texas-kfc-long-john-silvers": {
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-14",
+      "address": "700 West Abram Street, Arlington, Tarrant County, TX 76013",
+      "price": 1714285,
       "source": "Crexi"
     }
   },
