@@ -607,13 +607,13 @@
     },
     "https://www.crexi.com/properties/2664474/texas-421-powerhouse-st": {
       "first_seen": "2026-08-17",
-      "last_seen": "2026-08-17",
+      "last_seen": "2026-08-18",
       "address": "421 Powerhouse St, McKinney, TX 75071",
       "price": 4500000
     },
     "https://www.crexi.com/properties/2664441/texas-multi-tenant-commercial-facility": {
       "first_seen": "2026-08-17",
-      "last_seen": "2026-08-17",
+      "last_seen": "2026-08-18",
       "address": "1610 East Ennis Avenue, Ennis, TX 75119",
       "price": 900000
     },
@@ -631,7 +631,7 @@
     },
     "https://www.crexi.com/properties/2663467/texas-8120-matlock-dry-cleaner-super-center": {
       "first_seen": "2026-08-17",
-      "last_seen": "2026-08-17",
+      "last_seen": "2026-08-18",
       "address": "8120 Matlock Road, Arlington, TX 76002",
       "price": 1400000
     },
@@ -856,7 +856,91 @@
       "last_seen": "2026-08-17",
       "address": "12255 Teel Parkway, Frisco, TX",
       "price": 0
+    },
+    "crexi::2632428": {
+      "first_seen": "2026-08-18",
+      "last_seen": "2026-08-18",
+      "address": "421 W White St, Anna, TX 75409",
+      "price": 0
+    },
+    "srs::l15090": {
+      "first_seen": "2026-08-18",
+      "last_seen": "2026-08-18",
+      "address": "404 E FM 1382, Cedar Hill, TX",
+      "price": 0
+    },
+    "crexi::2664603": {
+      "first_seen": "2026-08-18",
+      "last_seen": "2026-08-18",
+      "address": "3900 Memorial Drive, The Colony, TX 75056",
+      "price": 11000000
+    },
+    "srs::l15088": {
+      "first_seen": "2026-08-18",
+      "last_seen": "2026-08-18",
+      "address": "3900 Memorial Drive, The Colony, TX 75056",
+      "price": 11000000
+    },
+    "snl::7-eleven-ennis-tx": {
+      "first_seen": "2026-08-18",
+      "last_seen": "2026-08-18",
+      "address": "1470 Hwy 287, Ennis, TX",
+      "price": 9194000
+    },
+    "crexi::2665165": {
+      "first_seen": "2026-08-18",
+      "last_seen": "2026-08-18",
+      "address": "4555 E US Hwy 380, Princeton, TX 75407",
+      "price": 3490900
+    },
+    "crexi::2663627": {
+      "first_seen": "2026-08-18",
+      "last_seen": "2026-08-18",
+      "address": "7040 Independence Parkway, Frisco, TX 75035",
+      "price": 4200000
+    },
+    "mm::201490": {
+      "first_seen": "2026-08-18",
+      "last_seen": "2026-08-18",
+      "address": "Waxahachie (Dallas\u2013Fort Worth MSA), TX",
+      "price": 3913000
+    },
+    "mm::301942": {
+      "first_seen": "2026-08-18",
+      "last_seen": "2026-08-18",
+      "address": "Irving (Dallas\u2013Ft. Worth MSA), TX",
+      "price": 3333333
+    },
+    "mm::201872": {
+      "first_seen": "2026-08-18",
+      "last_seen": "2026-08-18",
+      "address": "Dallas, TX",
+      "price": 0
+    },
+    "mm::200332": {
+      "first_seen": "2026-08-18",
+      "last_seen": "2026-08-18",
+      "address": "Dallas, TX",
+      "price": 0
+    },
+    "mm::304819": {
+      "first_seen": "2026-08-18",
+      "last_seen": "2026-08-18",
+      "address": "Dallas, TX",
+      "price": 0
+    },
+    "col::usa1167246": {
+      "first_seen": "2026-08-18",
+      "last_seen": "2026-08-18",
+      "address": "5549 E Lancaster Ave, Fort Worth, TX 76112",
+      "price": 0
+    },
+    "col::usa1162162": {
+      "first_seen": "2026-08-18",
+      "last_seen": "2026-08-18",
+      "address": "3155 W Wheatland Rd, Dallas, TX 75237",
+      "price": 0
     }
   },
-  "note": "Updated 2026-08-17 by scheduled dfw-retail-report run."
+  "note": "Updated 2026-08-18 by scheduled dfw-retail-report run."
 }
