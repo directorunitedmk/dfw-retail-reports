@@ -20,7 +20,7 @@
   },
   "https://www.strivere.com/property/201191": {
    "first_seen": "2026-06-11",
-   "last_seen": "2026-06-11",
+   "last_seen": "2026-08-22",
    "address": "4409 River Oaks Blvd, Fort Worth, TX 76114",
    "price": 5000000
   },
@@ -32,7 +32,7 @@
   },
   "https://www.strivere.com/property/63807": {
    "first_seen": "2026-06-11",
-   "last_seen": "2026-06-11",
+   "last_seen": "2026-08-22",
    "address": "1701 S Cherry Ln, Fort Worth, TX 76108",
    "price": 12905000
   },
@@ -158,19 +158,19 @@
   },
   "https://www.strivere.com/property/58263": {
    "first_seen": "2026-08-20",
-   "last_seen": "2026-08-20",
+   "last_seen": "2026-08-22",
    "address": "McKinney, TX",
    "price": 8965000
   },
   "https://www.strivere.com/property/58544": {
    "first_seen": "2026-08-20",
-   "last_seen": "2026-08-20",
+   "last_seen": "2026-08-22",
    "address": "Irving, TX",
    "price": 2615000
   },
   "https://www.strivere.com/property/32466": {
    "first_seen": "2026-08-20",
-   "last_seen": "2026-08-20",
+   "last_seen": "2026-08-22",
    "address": "Richardson, TX",
    "price": 2250000
   },
@@ -182,19 +182,19 @@
   },
   "https://www.strivere.com/property/60285": {
    "first_seen": "2026-08-20",
-   "last_seen": "2026-08-20",
+   "last_seen": "2026-08-22",
    "address": "Lewisville, TX",
    "price": 3045000
   },
   "https://srsre.com/properties/investment-sale/retail/texas/the-colony/3900-memorial-dr/l15088": {
    "first_seen": "2026-08-20",
-   "last_seen": "2026-08-20",
+   "last_seen": "2026-08-22",
    "address": "3900 Memorial Dr, The Colony, TX",
    "price": 11000000
   },
   "https://shopcompanies.com/properties/west-towne-center-building-1": {
    "first_seen": "2026-08-20",
-   "last_seen": "2026-08-20",
+   "last_seen": "2026-08-22",
    "address": "12255 Teel Parkway, Frisco, TX",
    "price": null
   },
@@ -206,7 +206,7 @@
   },
   "https://www.strivere.com/property/338973": {
    "first_seen": "2026-08-20",
-   "last_seen": "2026-08-20",
+   "last_seen": "2026-08-22",
    "address": "Garland, TX",
    "price": 699000
   },
@@ -218,7 +218,7 @@
   },
   "https://securenetlease.com/properties/7-eleven-ennis-tx/": {
    "first_seen": "2026-08-20",
-   "last_seen": "2026-08-20",
+   "last_seen": "2026-08-22",
    "address": "NWC Ensign Rd & Hwy 287, Ennis, TX",
    "price": 9194000
   },
@@ -242,37 +242,37 @@
   },
   "https://www.strivere.com/property/338882": {
    "first_seen": "2026-08-20",
-   "last_seen": "2026-08-20",
+   "last_seen": "2026-08-22",
    "address": "Dallas, TX",
    "price": 1795000
   },
   "https://www.strivere.com/property/202578": {
    "first_seen": "2026-08-20",
-   "last_seen": "2026-08-20",
+   "last_seen": "2026-08-22",
    "address": "Fort Worth, TX",
    "price": 1055000
   },
   "https://www.strivere.com/property/202508": {
    "first_seen": "2026-08-20",
-   "last_seen": "2026-08-20",
+   "last_seen": "2026-08-22",
    "address": "Seagoville, TX",
    "price": 999900
   },
   "https://www.strivere.com/property/202376": {
    "first_seen": "2026-08-20",
-   "last_seen": "2026-08-20",
+   "last_seen": "2026-08-22",
    "address": "North Richland Hills, TX",
    "price": 1810000
   },
   "https://www.strivere.com/property/202300": {
    "first_seen": "2026-08-20",
-   "last_seen": "2026-08-20",
+   "last_seen": "2026-08-22",
    "address": "Arlington, TX",
    "price": 2525000
   },
   "https://www.strivere.com/property/61480": {
    "first_seen": "2026-08-20",
-   "last_seen": "2026-08-20",
+   "last_seen": "2026-08-22",
    "address": "Anna, TX",
    "price": 6500000
   },
@@ -284,7 +284,7 @@
   },
   "https://srsre.com/properties/investment-sale/retail/texas/cedar-hill/404-e-farm-to-market-rd-1382/l15090": {
    "first_seen": "2026-08-20",
-   "last_seen": "2026-08-20",
+   "last_seen": "2026-08-22",
    "address": "404 E FM 1382, Cedar Hill, TX",
    "price": null
   },
@@ -302,7 +302,7 @@
   },
   "https://www.colliers.com/en/properties/for-sale-i-former-retail-big-box/usa-3155-w-wheatland-rd-dallas-tx-75237-usa/usa1162162": {
    "first_seen": "2026-08-20",
-   "last_seen": "2026-08-20",
+   "last_seen": "2026-08-22",
    "address": "3155 W Wheatland Rd, Dallas, TX 75237",
    "price": null
   },
@@ -329,7 +329,290 @@
    "last_seen": "2026-08-20",
    "address": "8041 Walnut Hill Lane, Dallas, TX",
    "price": null
+  },
+  "https://www.crexi.com/properties/2668854/texas-4001-south-buckner-boulevard": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "4001 South Buckner Boulevard, Dallas, Dallas County, TX 75227",
+   "price": 3750000
+  },
+  "https://www.crexi.com/properties/2668149/texas-rosedale-value-add-fuel-station-c-store": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "6101 E Rosedale St, Fort Worth, TX 76112",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2667217/texas-boba-shop-asset-sale-rc-413": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "Belt Line Road, Addison, Dallas County, TX 75052",
+   "price": 75000
+  },
+  "https://www.crexi.com/properties/2667663/texas-legacy-park-at-vista-ridge": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "755 E Vista Ridge Mall Dr, Lewisville, Denton County, TX 75067",
+   "price": 1500000
+  },
+  "https://www.crexi.com/properties/2667910/texas-403-pecan-st": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "403 East Pecan Street, Celina, Collin County, TX 75009",
+   "price": 750000
+  },
+  "https://www.crexi.com/properties/2668763/texas-2115-dairy-road": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "2115 Dairy Road, Garland, Dallas County, TX 75041",
+   "price": 450000
+  },
+  "https://www.crexi.com/properties/2667140/texas-franchise-wings-burger-ro-316": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "Carrollton, TX, Carrollton, Dallas County, TX 75006",
+   "price": 220000
+  },
+  "https://www.crexi.com/properties/2671058/texas-prime-preston-road-retail-shell-completion-early-2027": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "1350 S Preston Road, Celina, Collin, TX 75009",
+   "price": 6250000
+  },
+  "https://www.crexi.com/properties/2668070/texas-eastchase-commercial": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "NEQ of I-30 & Eastchase Pkwy, Fort Worth, Tarrant, TX 76120",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2669321/texas-2602-2606-jones-st": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "2602-2606 Jones St., Greenville, TX 75401",
+   "price": 675000
+  },
+  "https://www.crexi.com/properties/2668061/texas-dallas-va-hospital-strip": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "4303 South Lancaster Road, Dallas, Dallas County, TX 75216",
+   "price": 510000
+  },
+  "https://www.crexi.com/properties/2665068/texas-abrams-mockingbird-center": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "6310 - 6350 East Mockingbird Lane, Dallas, Dallas, TX 75214",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2667642/texas-the-schoolhouse": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "1601 Chalk Hill Road, Dallas, TX 75212",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2667183/texas-richardson-restaurant-park-ii": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "744 S Central Expy, Richardson, Dallas, TX 75080",
+   "price": 5082000
+  },
+  "https://www.crexi.com/properties/2667918/texas-10202-coit-road": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "10202 Coit Road, Frisco, Collin County, TX 75035",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2669156/texas-learning-care-group-dba-ea-young-academy-dfw": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "8521 Davis Blvd, North Richland Hills, Tarrant, TX 76182",
+   "price": 4745000
+  },
+  "https://www.crexi.com/properties/2666776/texas-134-fm-2738": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "134 Fm 2738, Alvarado, TX 76009",
+   "price": 989000
+  },
+  "https://www.crexi.com/properties/2669369/texas-2211-s-beckley-ave-dallas-tx-75224": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "2211 S Beckley Ave, Dallas, Dallas, TX 75224",
+   "price": 2122000
+  },
+  "https://www.crexi.com/properties/2668990/texas-family-dollar": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "651 N Stemmons St, Sanger, TX 76266",
+   "price": 1060750
+  },
+  "https://www.crexi.com/properties/2670756/texas-northspur": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "4662 West US Highway 80, Terrell, Kaufman County, TX 75160",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2667255/texas-advantage-dental-williams-chicken": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "6600 Brentwood Stair Road, Fort Worth, Tarrant County, TX 76112",
+   "price": 1050000
+  },
+  "https://www.crexi.com/properties/2667780/texas-the-learning-experience-rare-abs-nnn-lease-dfw-metro": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "1195 Farm to Market Road 3040, Lewisville, Denton County, TX 75028",
+   "price": 6014000
+  },
+  "https://www.crexi.com/properties/2600717/texas-603-n-cockrell-hill-road": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "603 N. Cockrell Hill Road, Duncanville, TX 75116",
+   "price": 4000000
+  },
+  "https://www.crexi.com/properties/2667610/texas-7-eleven---red-oak-dallas-tx": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "694 E Ovilla Road, Red Oak, Ellis, TX 75154",
+   "price": 8223000
+  },
+  "https://www.crexi.com/properties/2666089/texas-7-eleven-anchored-strip-center": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "14200 Trinity Blvd, Fort Worth, Tarrant, TX 76155",
+   "price": 5413545
+  },
+  "https://www.strivere.com/property/50166": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "Arlington, TX",
+   "price": 2380000
+  },
+  "https://www.strivere.com/property/65050": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "Arlington, TX",
+   "price": 1740000
+  },
+  "https://www.strivere.com/property/63745": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "Dallas, TX",
+   "price": 2600000
+  },
+  "https://www.strivere.com/property/35833": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "Fort Worth, TX",
+   "price": 4200000
+  },
+  "https://www.strivere.com/property/40531": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "McKinney, TX",
+   "price": 2520000
+  },
+  "https://www.strivere.com/property/200363": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "Garland, TX",
+   "price": 2395000
+  },
+  "https://srsre.com/properties/investment-sale/retail/texas/plano/3820-state-highway-121/l15109": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "3820 State Highway 121, Plano, TX",
+   "price": 6195000
+  },
+  "https://www.marcusmillichap.com/properties/186020/5601-virgina-parkway": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "5601 Virginia Parkway, McKinney, TX",
+   "price": 3795000
+  },
+  "https://www.marcusmillichap.com/properties/304606/cvs-ground-lease-dallas-msa-15-renttosales-ratio-below-market-rent": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "Midlothian, TX",
+   "price": 5030000
+  },
+  "https://www.matthews.com/listings?states=TX&keyword=CleanSmart+Express+Car+Wash": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "2520 E Plano Pkwy, Plano, TX 75074",
+   "price": 4500000
+  },
+  "https://www.matthews.com/listings?states=TX&keyword=421+Powerhouse+St": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "421 Powerhouse St, McKinney, TX 75071",
+   "price": 4500000
+  },
+  "https://www.matthews.com/listings?states=TX&keyword=McDonald's+(NNN)": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "NWC Chisholm Trail Pkwy & McPherson Blvd, Fort Worth, TX 76123",
+   "price": 4054794
+  },
+  "https://www.matthews.com/listings?states=TX&keyword=PNC+Bank+(NNN)": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "NWC Chisholm Trail Pkwy & McPherson Blvd, Fort Worth, TX 76123",
+   "price": 3978495
+  },
+  "https://www.matthews.com/listings?states=TX&keyword=Sycamore+Shopping+Center": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "7800-7836 Crowley Road, Fort Worth, TX 76134",
+   "price": 0
+  },
+  "https://www.colliers.com/en/properties/brand-new-20-year-absolute-nnn-lease/usa-5549-e-lancaster-ave-fort-worth-tx-76112/usa1167246": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "5549 E Lancaster Ave, Fort Worth, TX 76112",
+   "price": 0
+  },
+  "https://nairl.com/property-detail/?property_id=11315": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "101-103 W. Main St., Mesquite, TX 75149",
+   "price": 550000
+  },
+  "https://nairl.com/property-detail/?property_id=11182": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "4500 South Fwy., Fort Worth, TX 76115",
+   "price": 0
+  },
+  "https://nairl.com/property-detail/?property_id=11090": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "800 W. Vickery Blvd., Fort Worth, TX 76104",
+   "price": 0
+  },
+  "https://nairl.com/property-detail/?property_id=11088": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "1424 Brown Trl., Bedford, TX 76022",
+   "price": 0
+  },
+  "https://shopcompanies.com/properties/viridian-marketplace": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "500 Fort Worth Drive, Denton, TX",
+   "price": 0
+  },
+  "https://shopcompanies.com/properties/take-5-oil-change-ground-lease-1": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "901 East Arkansas Lane, Arlington, TX",
+   "price": 0
+  },
+  "https://shopcompanies.com/properties/custer-four-corners": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "1480 North Custer Road, Allen, TX",
+   "price": 0
   }
  },
- "updated": "2026-08-20"
+ "updated": "2026-08-20",
+ "note": "Updated 2026-08-22 by scheduled DFW retail report run."
 }
