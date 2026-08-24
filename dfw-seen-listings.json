@@ -1,18 +1,18 @@
 {
  "seen": {
-  "https://www.crexi.com/properties/1661624/texas-live-oak-liberty-retail-shops": {
+  "https://www.crexi.com/properties/1661624": {
    "first_seen": "2026-06-11",
    "last_seen": "2026-06-11",
    "address": "2817 Live Oak St, Dallas, TX 75204",
    "price": 3348000
   },
-  "https://www.crexi.com/properties/2233034/": {
+  "https://www.crexi.com/properties/2233034": {
    "first_seen": "2026-06-11",
    "last_seen": "2026-06-11",
    "address": "2515 W Jefferson Blvd, Dallas, TX 75211",
    "price": 8244115
   },
-  "https://www.crexi.com/properties/2251085/texas-preston-broadway": {
+  "https://www.crexi.com/properties/2251085": {
    "first_seen": "2026-06-11",
    "last_seen": "2026-06-11",
    "address": "4950 Broadway, Dallas, TX 75225",
@@ -48,103 +48,103 @@
    "address": "125 North Clark Road, Cedar Hill, TX",
    "price": 3800000
   },
-  "https://www.crexi.com/properties/2667780/": {
-   "first_seen": "2026-08-20",
+  "https://www.crexi.com/properties/2667780": {
+   "first_seen": "2026-08-22",
    "last_seen": "2026-08-23",
-   "address": "1195 FM 3040, Lewisville, TX 75028",
+   "address": "1195 Farm to Market Road 3040, Lewisville, Denton County, TX 75028",
    "price": 6014000
   },
-  "https://www.crexi.com/properties/2667255/": {
-   "first_seen": "2026-08-20",
+  "https://www.crexi.com/properties/2667255": {
+   "first_seen": "2026-08-22",
    "last_seen": "2026-08-23",
-   "address": "6600 Brentwood Stair Road, Fort Worth, TX 76112",
+   "address": "6600 Brentwood Stair Road, Fort Worth, Tarrant County, TX 76112",
    "price": 1050000
   },
-  "https://www.crexi.com/properties/2667918/": {
-   "first_seen": "2026-08-20",
-   "last_seen": "2026-08-20",
-   "address": "10202 Coit Road, Frisco, TX 75035",
-   "price": null
+  "https://www.crexi.com/properties/2667918": {
+   "first_seen": "2026-08-22",
+   "last_seen": "2026-08-22",
+   "address": "10202 Coit Road, Frisco, Collin County, TX 75035",
+   "price": 0
   },
-  "https://www.crexi.com/properties/2667910/": {
-   "first_seen": "2026-08-20",
+  "https://www.crexi.com/properties/2667910": {
+   "first_seen": "2026-08-22",
    "last_seen": "2026-08-23",
-   "address": "403 East Pecan Street, Celina, TX 75009",
+   "address": "403 East Pecan Street, Celina, Collin County, TX 75009",
    "price": 750000
   },
-  "https://www.crexi.com/properties/2665981/": {
+  "https://www.crexi.com/properties/2665981": {
    "first_seen": "2026-08-20",
    "last_seen": "2026-08-20",
    "address": "5196 Rufe Snow Dr, North Richland Hills, TX 76180",
    "price": 8932000
   },
-  "https://www.crexi.com/properties/2662846/": {
+  "https://www.crexi.com/properties/2662846": {
    "first_seen": "2026-08-20",
    "last_seen": "2026-08-23",
    "address": "2001 SE Green Oaks Blvd, Arlington, TX 76018",
    "price": null
   },
-  "https://www.crexi.com/properties/2288523/": {
+  "https://www.crexi.com/properties/2288523": {
    "first_seen": "2026-08-20",
    "last_seen": "2026-08-20",
    "address": "4801 West Fwy, Fort Worth, TX 76107",
    "price": 11694530
   },
-  "https://www.crexi.com/properties/2666210/": {
+  "https://www.crexi.com/properties/2666210": {
    "first_seen": "2026-08-20",
    "last_seen": "2026-08-23",
    "address": "2751 Capital Street, Wylie, TX 75098",
    "price": 3432000
   },
-  "https://www.crexi.com/properties/2640721/": {
+  "https://www.crexi.com/properties/2640721": {
    "first_seen": "2026-08-20",
    "last_seen": "2026-08-23",
    "address": "I-30 Frontage Road, Royse City, TX 75189",
    "price": 5078885
   },
-  "https://www.crexi.com/properties/2665090/": {
+  "https://www.crexi.com/properties/2665090": {
    "first_seen": "2026-08-20",
    "last_seen": "2026-08-23",
    "address": "6217 Azle Avenue, Lake Worth, TX 76135",
    "price": 9629000
   },
-  "https://www.crexi.com/properties/2664775/": {
+  "https://www.crexi.com/properties/2664775": {
    "first_seen": "2026-08-20",
    "last_seen": "2026-08-23",
    "address": "1470 U.S. 287, Ennis, TX 75119",
    "price": 9194000
   },
-  "https://www.crexi.com/properties/2665331/": {
+  "https://www.crexi.com/properties/2665331": {
    "first_seen": "2026-08-20",
    "last_seen": "2026-08-23",
    "address": "3407 Canyon Bluff Blvd, Dallas, TX 75211",
    "price": 3667000
   },
-  "https://www.crexi.com/properties/2664462/": {
+  "https://www.crexi.com/properties/2664462": {
    "first_seen": "2026-08-20",
    "last_seen": "2026-08-23",
    "address": "6000 Lt Jg Barnett Road, Fort Worth, TX 76114",
    "price": 590000
   },
-  "https://www.crexi.com/properties/2664941/": {
+  "https://www.crexi.com/properties/2664941": {
    "first_seen": "2026-08-20",
    "last_seen": "2026-08-23",
    "address": "5800 Maple Avenue, Dallas, TX 75235",
    "price": null
   },
-  "https://www.crexi.com/properties/2664961/": {
+  "https://www.crexi.com/properties/2664961": {
    "first_seen": "2026-08-20",
    "last_seen": "2026-08-23",
    "address": "140 S Buckner Blvd, Dallas, TX 75217",
    "price": null
   },
-  "https://www.crexi.com/properties/2664987/": {
+  "https://www.crexi.com/properties/2664987": {
    "first_seen": "2026-08-20",
    "last_seen": "2026-08-20",
    "address": "930 East Highway 67, Duncanville, TX 75137",
    "price": 4245132
   },
-  "https://www.crexi.com/properties/2664363/": {
+  "https://www.crexi.com/properties/2664363": {
    "first_seen": "2026-08-20",
    "last_seen": "2026-08-20",
    "address": "County Road 255, Terrell, TX 75160",
@@ -330,151 +330,127 @@
    "address": "8041 Walnut Hill Lane, Dallas, TX",
    "price": null
   },
-  "https://www.crexi.com/properties/2668854/texas-4001-south-buckner-boulevard": {
+  "https://www.crexi.com/properties/2668854": {
    "first_seen": "2026-08-22",
    "last_seen": "2026-08-23",
    "address": "4001 South Buckner Boulevard, Dallas, Dallas County, TX 75227",
    "price": 3750000
   },
-  "https://www.crexi.com/properties/2668149/texas-rosedale-value-add-fuel-station-c-store": {
+  "https://www.crexi.com/properties/2668149": {
    "first_seen": "2026-08-22",
    "last_seen": "2026-08-22",
    "address": "6101 E Rosedale St, Fort Worth, TX 76112",
    "price": 0
   },
-  "https://www.crexi.com/properties/2667217/texas-boba-shop-asset-sale-rc-413": {
+  "https://www.crexi.com/properties/2667217": {
    "first_seen": "2026-08-22",
-   "last_seen": "2026-08-23",
+   "last_seen": "2026-08-24",
    "address": "Belt Line Road, Addison, Dallas County, TX 75052",
    "price": 75000
   },
-  "https://www.crexi.com/properties/2667663/texas-legacy-park-at-vista-ridge": {
+  "https://www.crexi.com/properties/2667663": {
    "first_seen": "2026-08-22",
-   "last_seen": "2026-08-23",
+   "last_seen": "2026-08-24",
    "address": "755 E Vista Ridge Mall Dr, Lewisville, Denton County, TX 75067",
    "price": 1500000
   },
-  "https://www.crexi.com/properties/2667910/texas-403-pecan-st": {
-   "first_seen": "2026-08-22",
-   "last_seen": "2026-08-23",
-   "address": "403 East Pecan Street, Celina, Collin County, TX 75009",
-   "price": 750000
-  },
-  "https://www.crexi.com/properties/2668763/texas-2115-dairy-road": {
+  "https://www.crexi.com/properties/2668763": {
    "first_seen": "2026-08-22",
    "last_seen": "2026-08-23",
    "address": "2115 Dairy Road, Garland, Dallas County, TX 75041",
    "price": 450000
   },
-  "https://www.crexi.com/properties/2667140/texas-franchise-wings-burger-ro-316": {
+  "https://www.crexi.com/properties/2667140": {
    "first_seen": "2026-08-22",
-   "last_seen": "2026-08-23",
+   "last_seen": "2026-08-24",
    "address": "Carrollton, TX, Carrollton, Dallas County, TX 75006",
    "price": 220000
   },
-  "https://www.crexi.com/properties/2671058/texas-prime-preston-road-retail-shell-completion-early-2027": {
+  "https://www.crexi.com/properties/2671058": {
    "first_seen": "2026-08-22",
-   "last_seen": "2026-08-22",
+   "last_seen": "2026-08-24",
    "address": "1350 S Preston Road, Celina, Collin, TX 75009",
    "price": 6250000
   },
-  "https://www.crexi.com/properties/2668070/texas-eastchase-commercial": {
+  "https://www.crexi.com/properties/2668070": {
    "first_seen": "2026-08-22",
    "last_seen": "2026-08-22",
    "address": "NEQ of I-30 & Eastchase Pkwy, Fort Worth, Tarrant, TX 76120",
    "price": 0
   },
-  "https://www.crexi.com/properties/2669321/texas-2602-2606-jones-st": {
+  "https://www.crexi.com/properties/2669321": {
    "first_seen": "2026-08-22",
    "last_seen": "2026-08-22",
    "address": "2602-2606 Jones St., Greenville, TX 75401",
    "price": 675000
   },
-  "https://www.crexi.com/properties/2668061/texas-dallas-va-hospital-strip": {
+  "https://www.crexi.com/properties/2668061": {
    "first_seen": "2026-08-22",
    "last_seen": "2026-08-23",
    "address": "4303 South Lancaster Road, Dallas, Dallas County, TX 75216",
    "price": 510000
   },
-  "https://www.crexi.com/properties/2665068/texas-abrams-mockingbird-center": {
+  "https://www.crexi.com/properties/2665068": {
    "first_seen": "2026-08-22",
    "last_seen": "2026-08-22",
    "address": "6310 - 6350 East Mockingbird Lane, Dallas, Dallas, TX 75214",
    "price": 0
   },
-  "https://www.crexi.com/properties/2667642/texas-the-schoolhouse": {
+  "https://www.crexi.com/properties/2667642": {
    "first_seen": "2026-08-22",
    "last_seen": "2026-08-22",
    "address": "1601 Chalk Hill Road, Dallas, TX 75212",
    "price": 0
   },
-  "https://www.crexi.com/properties/2667183/texas-richardson-restaurant-park-ii": {
+  "https://www.crexi.com/properties/2667183": {
    "first_seen": "2026-08-22",
-   "last_seen": "2026-08-22",
+   "last_seen": "2026-08-24",
    "address": "744 S Central Expy, Richardson, Dallas, TX 75080",
    "price": 5082000
   },
-  "https://www.crexi.com/properties/2667918/texas-10202-coit-road": {
-   "first_seen": "2026-08-22",
-   "last_seen": "2026-08-22",
-   "address": "10202 Coit Road, Frisco, Collin County, TX 75035",
-   "price": 0
-  },
-  "https://www.crexi.com/properties/2669156/texas-learning-care-group-dba-ea-young-academy-dfw": {
+  "https://www.crexi.com/properties/2669156": {
    "first_seen": "2026-08-22",
    "last_seen": "2026-08-22",
    "address": "8521 Davis Blvd, North Richland Hills, Tarrant, TX 76182",
    "price": 4745000
   },
-  "https://www.crexi.com/properties/2666776/texas-134-fm-2738": {
+  "https://www.crexi.com/properties/2666776": {
    "first_seen": "2026-08-22",
    "last_seen": "2026-08-22",
    "address": "134 Fm 2738, Alvarado, TX 76009",
    "price": 989000
   },
-  "https://www.crexi.com/properties/2669369/texas-2211-s-beckley-ave-dallas-tx-75224": {
+  "https://www.crexi.com/properties/2669369": {
    "first_seen": "2026-08-22",
    "last_seen": "2026-08-22",
    "address": "2211 S Beckley Ave, Dallas, Dallas, TX 75224",
    "price": 2122000
   },
-  "https://www.crexi.com/properties/2668990/texas-family-dollar": {
+  "https://www.crexi.com/properties/2668990": {
    "first_seen": "2026-08-22",
    "last_seen": "2026-08-22",
    "address": "651 N Stemmons St, Sanger, TX 76266",
    "price": 1060750
   },
-  "https://www.crexi.com/properties/2670756/texas-northspur": {
+  "https://www.crexi.com/properties/2670756": {
    "first_seen": "2026-08-22",
-   "last_seen": "2026-08-22",
+   "last_seen": "2026-08-24",
    "address": "4662 West US Highway 80, Terrell, Kaufman County, TX 75160",
    "price": 0
   },
-  "https://www.crexi.com/properties/2667255/texas-advantage-dental-williams-chicken": {
+  "https://www.crexi.com/properties/2600717": {
    "first_seen": "2026-08-22",
-   "last_seen": "2026-08-23",
-   "address": "6600 Brentwood Stair Road, Fort Worth, Tarrant County, TX 76112",
-   "price": 1050000
-  },
-  "https://www.crexi.com/properties/2667780/texas-the-learning-experience-rare-abs-nnn-lease-dfw-metro": {
-   "first_seen": "2026-08-22",
-   "last_seen": "2026-08-23",
-   "address": "1195 Farm to Market Road 3040, Lewisville, Denton County, TX 75028",
-   "price": 6014000
-  },
-  "https://www.crexi.com/properties/2600717/texas-603-n-cockrell-hill-road": {
-   "first_seen": "2026-08-22",
-   "last_seen": "2026-08-22",
+   "last_seen": "2026-08-24",
    "address": "603 N. Cockrell Hill Road, Duncanville, TX 75116",
    "price": 4000000
   },
-  "https://www.crexi.com/properties/2667610/texas-7-eleven---red-oak-dallas-tx": {
+  "https://www.crexi.com/properties/2667610": {
    "first_seen": "2026-08-22",
    "last_seen": "2026-08-22",
    "address": "694 E Ovilla Road, Red Oak, Ellis, TX 75154",
    "price": 8223000
   },
-  "https://www.crexi.com/properties/2666089/texas-7-eleven-anchored-strip-center": {
+  "https://www.crexi.com/properties/2666089": {
    "first_seen": "2026-08-22",
    "last_seen": "2026-08-22",
    "address": "14200 Trinity Blvd, Fort Worth, Tarrant, TX 76155",
@@ -671,6 +647,420 @@
    "last_seen": "2026-08-23",
    "address": "4303 S Lancaster Rd, Dallas, TX",
    "price": 510000
+  },
+  "https://www.crexi.com/properties/2673233": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "506 East Avenue K, Grand Prairie, TX 75050",
+   "price": 1899000
+  },
+  "https://www.crexi.com/properties/2673210": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "2900 Western Center Boulevard, Fort Worth, TX 76131",
+   "price": 800000
+  },
+  "https://www.crexi.com/properties/2463815": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "2816, 2808 & 2800 Central Dr, Bedford, TX 76021",
+   "price": 6611314
+  },
+  "https://www.crexi.com/properties/2459637": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "2501 & 2521 Ballpark Way - Arlington, TX, Arlington, TX 76006",
+   "price": 3832343
+  },
+  "https://www.crexi.com/properties/2666515": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "1505 WILLIAM D TATE AVE, GRAPEVINE, TX 76051-3965",
+   "price": 3506953
+  },
+  "https://www.crexi.com/properties/2665723": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "26605 US-380, Providence Village, TX 76227",
+   "price": 2190000
+  },
+  "https://www.crexi.com/properties/2666736": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "1715-1721 W. Berry Street, Fort Worth, TX 76110",
+   "price": 1500000
+  },
+  "https://www.crexi.com/properties/2666326": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "2126 Ruder St., Dallas, TX 75212",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2662142": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "5530 W University Drive, Prosper, TX 75078",
+   "price": 15500000
+  },
+  "https://www.crexi.com/properties/2664603": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "3900 Memorial Drive, The Colony, TX 75056",
+   "price": 11000000
+  },
+  "https://www.crexi.com/properties/2664474": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "421 Powerhouse St, McKinney, TX 75071",
+   "price": 4500000
+  },
+  "https://www.crexi.com/properties/2663284": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "8151 Lakeview Pkwy, Rowlett, TX 75088",
+   "price": 3828000
+  },
+  "https://www.crexi.com/properties/2665165": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "4555 E US HWY 380, PRINCETON, TX 75407",
+   "price": 3490900
+  },
+  "https://www.crexi.com/properties/2664441": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "1610 East Ennis Avenue, Ennis, TX 75119",
+   "price": 900000
+  },
+  "https://www.crexi.com/properties/2664344": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "3530 Puget Street, Dallas, TX 75212",
+   "price": 230000
+  },
+  "https://www.crexi.com/properties/2664269": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "211 North Interstate 35 East Road, Red Oak, TX 75154",
+   "price": 595000
+  },
+  "https://www.crexi.com/properties/2663467": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "8120 Matlock Road, Arlington, TX 76002",
+   "price": 1400000
+  },
+  "https://www.crexi.com/properties/2661313": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "9336 Team Ranch Road, Fort Worth, TX 76126",
+   "price": 20020000
+  },
+  "https://www.crexi.com/properties/2662991": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "1601 Cross Timbers Road, Flower Mound, TX 75028",
+   "price": 7633350
+  },
+  "https://www.crexi.com/properties/2662291": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "3335 West Wheatland Road, Dallas, TX 75237",
+   "price": 3995000
+  },
+  "https://www.crexi.com/properties/2662934": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "000 Audie Murphy Parkway, Farmersville, TX 75442",
+   "price": 2495000
+  },
+  "https://www.crexi.com/properties/2662917": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "404 E. Farm to Market Road 1382, Cedar Hill, TX 75104",
+   "price": 2444000
+  },
+  "https://www.crexi.com/properties/2662744": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "700 West Abram Street, Arlington, TX 76013",
+   "price": 1714285
+  },
+  "https://www.crexi.com/properties/2662271": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "7150 Baker Boulevard, Richland Hills, TX 76118",
+   "price": 799000
+  },
+  "https://www.crexi.com/properties/2662857": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "5520 E Lancaster Ave, Fort Worth, TX 76112",
+   "price": 500000
+  },
+  "https://www.crexi.com/properties/2612812": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "6720 NE Loop 820, North Richland Hills, TX 76180",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2612929": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "NEQ of SH-360 & Lynn Creek Pkwy, Grand Prairie, TX 76002",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2662844": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "2001 SE Green Oaks Blvd, Arlington, TX 76018",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2662166": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "2441 Lacy Lane, Carrollton, TX 75006",
+   "price": 7210000
+  },
+  "https://www.crexi.com/properties/2661456": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "3809 East Belknap Street, Fort Worth, TX 76111",
+   "price": 4120000
+  },
+  "https://www.crexi.com/properties/2660893": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "3900 Hemphill Street, Fort Worth, TX 76110",
+   "price": 2900000
+  },
+  "https://www.crexi.com/properties/2661749": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "111 W Hickory St, Denton, TX 76201",
+   "price": 2900000
+  },
+  "https://www.crexi.com/properties/2661322": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "5290 George Bush Hwy, Garland, TX 75044",
+   "price": 1114000
+  },
+  "https://www.crexi.com/properties/2661154": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "2120 Prairie Drive, Prosper, TX 75078",
+   "price": 1044000
+  },
+  "https://www.crexi.com/properties/2661593": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "5008 Collett Little Road, Fort Worth, TX 76119",
+   "price": 625000
+  },
+  "https://www.crexi.com/properties/2662181": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "2120 Prairie Drive, Prosper, TX 75078",
+   "price": 475000
+  },
+  "https://www.crexi.com/properties/2660004": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "2600 E Park Row Dr, Arlington, TX 76010",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2660491": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "309 I-30 Frontage Rd, Rockwall, TX 75087",
+   "price": 16600451
+  },
+  "https://www.crexi.com/properties/2660523": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "12255 TEEL PKWY, FRISCO, TX 75033",
+   "price": 10188000
+  },
+  "https://www.crexi.com/properties/2660456": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "309 Interstate 30 Frontage Road, Rockwall, TX 75087",
+   "price": 8661593
+  },
+  "https://www.crexi.com/properties/2660441": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "4240 Ridge Road, Heath, TX 75032",
+   "price": 7938858
+  },
+  "https://www.crexi.com/properties/2519035": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "1535 S. Beckley Road, Glenn Heights, TX 75154",
+   "price": 7805000
+  },
+  "https://www.crexi.com/properties/2655785": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "701 Fort Worth Highway, Weatherford, TX 76086",
+   "price": 4446582
+  },
+  "https://www.crexi.com/properties/2660679": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "4000 Bruton Orand Boulevard, Flower Mound, TX 75022",
+   "price": 3100000
+  },
+  "https://www.crexi.com/properties/2659271": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "408 WESTCHASE DR, GRAND PRAIRIE, TX 75052",
+   "price": 2684200
+  },
+  "https://www.crexi.com/properties/2659877": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "4500 Franklin Avenue, Waco, TX 76710",
+   "price": 2148725
+  },
+  "https://www.crexi.com/properties/2660478": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "3002 North Town East Boulevard, Mesquite, TX 75150",
+   "price": 1720000
+  },
+  "https://www.crexi.com/properties/2660218": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "6820 Walling Lane, Dallas, TX 75231",
+   "price": 1600000
+  },
+  "https://www.crexi.com/properties/2660789": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "8424 White Settlement Road, Fort Worth, TX 76108",
+   "price": 499000
+  },
+  "https://www.crexi.com/properties/2660198": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "901 Medical Centre Drive, Arlington, TX 76012",
+   "price": 460000
+  },
+  "https://www.crexi.com/properties/2660055": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "5252 Main St & 9169-9179 Dallas Pkwy, FRISCO, TX 75033-3283",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2660247": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "4986 W US Highway 80 Corner, Terrell, TX 75160",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2658977": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "801 E State Hwy 121 Bus, Lewisville, TX 75057",
+   "price": 3363000
+  },
+  "https://www.crexi.com/properties/2659063": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "111 South Preston Road, Prosper, TX 75078",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2035040": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "1940 N Hwy 77, Waxahachie, TX 75165",
+   "price": 19387500
+  },
+  "https://www.crexi.com/properties/2621283": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "6708 LAKE WORTH BLVD, LAKE WORTH, TX 76135-2902",
+   "price": 9375000
+  },
+  "https://www.crexi.com/properties/2228304": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "3710 W Northwest Hwy, Dallas, TX 75220",
+   "price": 4795000
+  },
+  "https://www.crexi.com/properties/2657146": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "2520 East Plano Parkway, Plano, TX 75074",
+   "price": 4500000
+  },
+  "https://www.crexi.com/properties/2657208": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "NWQ HWY 174 & Stadium Drive, Joshua, TX 76058",
+   "price": 2750000
+  },
+  "https://www.crexi.com/properties/2657877": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "11436 Business Highway 287 N, Fort Worth, TX 76179",
+   "price": 2223100
+  },
+  "https://www.crexi.com/properties/2657287": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "NWC of Trinity Blvd/Raider Dr, Hurst, TX 76053",
+   "price": 1100000
+  },
+  "https://www.crexi.com/properties/2657728": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "2425 Northeast Green Oaks Boulevard, Arlington, TX 76006",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2627291": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "450 N Standridge Blvd, Ste 201, Anna, TX 75409",
+   "price": 0
+  },
+  "https://www.crexi.com/properties/2657314": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "2016 Forum Drive, Grand Prairie, TX 75052",
+   "price": 0
+  },
+  "https://www.marcusmillichap.com/properties/308501/sun-auto-tire-service-15-year-absolute-net-qualifies-for-depreciation-575-unit-guarantor": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "Royse City (Dallas-Fort Worth MSA), TX",
+   "price": 5078885
+  },
+  "https://www.marcusmillichap.com/properties/200332/sixt-love-field": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "Dallas, TX",
+   "price": 0
+  },
+  "https://shopcompanies.com/properties/2300-fort-worth-avenue": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "2300 Fort Worth Avenue, Dallas, TX",
+   "price": 0
+  },
+  "https://shopcompanies.com/properties/1912-greenville": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "1912 Greenville Ave, Dallas, TX",
+   "price": 0
+  },
+  "https://shopcompanies.com/properties/1920-1922-greenville": {
+   "first_seen": "2026-08-24",
+   "last_seen": "2026-08-24",
+   "address": "1920/1922 Greenville Ave, Dallas, TX",
+   "price": 0
   }
  }
 }
