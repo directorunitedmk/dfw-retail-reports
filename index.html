@@ -1,612 +1,1031 @@
-
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DFW Retail Investment Property Report - 2026-09-05</title>
 <style>
   :root {
     --bg: #0d0d14;
     --card: #15151f;
     --gold: #e8a020;
-    --text: #e8e8ec;
-    --text-dim: #9a9aa8;
-    --border: #26263a;
-    --green: #3ecf6a;
-    --red: #e05a5a;
-    --gray: #6a6a78;
+    --text: #e8e8ee;
+    --muted: #9a9aab;
+    --border: #24242f;
   }
   * { box-sizing: border-box; }
-  body { background: var(--bg); color: var(--text); font-family: -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; padding: 0; }
-  .wrap { max-width: 1280px; margin: 0 auto; padding: 24px; }
-  h1 { color: var(--gold); font-size: 26px; margin-bottom: 4px; }
-  .subtitle { color: var(--text-dim); font-size: 14px; margin-bottom: 20px; }
-  .filter-bar { position: sticky; top: 0; background: rgba(13,13,20,0.97); backdrop-filter: blur(6px); padding: 14px 0; border-bottom: 1px solid var(--border); z-index: 10; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-  .filter-bar select, .filter-bar input { background: var(--card); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 7px 10px; font-size: 13px; }
-  .filter-bar label { font-size: 12px; color: var(--text-dim); display: flex; align-items: center; gap: 6px; }
-  .stat-bar { display: flex; gap: 16px; flex-wrap: wrap; margin: 18px 0; }
-  .stat-box { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 18px; min-width: 130px; }
-  .stat-box .num { font-size: 20px; font-weight: 700; color: var(--gold); }
-  .stat-box .lbl { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: .04em; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; margin-top: 20px; }
-  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
-  .photo-wrap { position: relative; width: 100%; height: 170px; background: #1c1c28; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  header {
+    padding: 28px 24px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  header h1 {
+    margin: 0 0 4px;
+    font-size: 1.6rem;
+    color: var(--gold);
+  }
+  header p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+  .statbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border);
+    background: #101018;
+  }
+  .stat-box { min-width: 140px; }
+  .stat-box .n { font-size: 1.4rem; font-weight: 700; color: var(--gold); }
+  .stat-box .l { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+
+  .filterbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 24px;
+    background: #12121a;
+    border-bottom: 1px solid var(--border);
+  }
+  .filterbar label { font-size: 0.75rem; color: var(--muted); margin-right: 4px; }
+  .filterbar select, .filterbar input {
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+  .filterbar .chk { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--muted); }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    padding: 24px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .photo-wrap { position: relative; width: 100%; aspect-ratio: 16/10; background: #1c1c28; }
   .photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .photo-wrap.no-photo { display: flex; align-items: center; justify-content: center; }
-  .no-photo-label { color: var(--text-dim); font-size: 12px; }
-  .dom-pill { position: absolute; bottom: 8px; left: 8px; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 20px; color: #000; }
-  .dom-pill.green { background: var(--green); }
-  .dom-pill.gold { background: var(--gold); }
-  .dom-pill.red { background: var(--red); color:#fff; }
-  .dom-pill.gray { background: var(--gray); color: #fff; }
-  .card-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px; flex:1; }
-  .badges { display: flex; gap: 6px; flex-wrap: wrap; }
-  .badge { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 20px; text-transform: uppercase; letter-spacing: .03em; }
-  .badge.top-pick { background: var(--gold); color: #000; }
-  .badge.criteria { background: #2c4a3e; color: #6fe6a8; }
-  .badge.source { background: #24243a; color: var(--text-dim); }
-  .card h3 { margin: 2px 0 0; font-size: 17px; }
-  .address { color: var(--text-dim); font-size: 13px; }
-  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 6px 0; }
+  .photo-wrap.noimg { display: flex; align-items: center; justify-content: center; }
+  .noimg-label { color: var(--muted); font-size: 0.8rem; }
+  .dom-pill {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #000;
+  }
+  .dom-green { background: #3ecf6b; }
+  .dom-gold { background: var(--gold); }
+  .dom-red { background: #e8574f; }
+  .dom-gray { background: #8a8a97; }
+
+  .card-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .badges { display: flex; flex-wrap: wrap; gap: 6px; }
+  .badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+  }
+  .badge-top { background: var(--gold); color: #000; }
+  .badge-match { background: #2e6fdb; color: #fff; }
+  .badge-source { background: #2a2a38; color: var(--muted); }
+
+  .card h3 { margin: 2px 0 0; font-size: 1.05rem; line-height: 1.3; }
+  .addr { margin: 0; color: var(--muted); font-size: 0.85rem; }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 12px;
+    margin: 8px 0 4px;
+  }
   .stat { display: flex; flex-direction: column; }
-  .stat .label { font-size: 10px; color: var(--text-dim); text-transform: uppercase; }
-  .stat .value { font-size: 14px; font-weight: 600; }
-  .stat .value.gold { color: var(--gold); }
-  .stat .value.small { font-size: 12px; font-weight: 400; color: var(--text-dim); }
-  .notes { font-size: 12px; color: var(--text-dim); line-height: 1.4; margin: 4px 0; }
-  .view-btn { margin-top: auto; background: var(--gold); color: #000; text-decoration: none; text-align: center; padding: 9px; border-radius: 6px; font-weight: 700; font-size: 13px; }
-  section.extra { margin-top: 40px; }
-  section.extra h2 { color: var(--gold); font-size: 18px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
-  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
-  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
-  th { color: var(--text-dim); font-weight: 600; font-size: 11px; text-transform: uppercase; }
-  ul.blocked { font-size: 13px; color: var(--text-dim); line-height: 1.7; }
-  footer { margin-top: 40px; color: var(--text-dim); font-size: 12px; text-align: center; padding: 20px 0; }
+  .stat-label { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; }
+  .stat-val { font-size: 0.92rem; font-weight: 600; }
+  .stat-val.cap { color: var(--gold); }
+
+  .notes { font-size: 0.8rem; color: var(--muted); margin: 0; }
+
+  .view-btn {
+    margin-top: auto;
+    display: inline-block;
+    text-align: center;
+    background: var(--gold);
+    color: #000;
+    font-weight: 700;
+    padding: 9px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+  }
+
+  .section { padding: 8px 24px 32px; }
+  .section h2 { color: var(--gold); font-size: 1.1rem; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+  .still-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+  }
+  .still-note { color: var(--muted); font-size: 0.78rem; }
+  .still-row a { color: var(--gold); text-decoration: none; font-weight: 600; }
+
+  .blocked ul { color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
+
+  footer { padding: 20px 24px 40px; color: var(--muted); font-size: 0.75rem; text-align: center; }
+
+  @media (max-width: 700px) {
+    .still-row { grid-template-columns: 1fr; }
+  }
 </style>
+</head>
+<body>
 
-<div class="wrap">
+<header>
   <h1>DFW Retail Investment Property Report</h1>
-  <div class="subtitle">Generated 2026-09-04 · New-to-market listings across 11 DFW retail sources</div>
+  <p>Generated 2026-09-05 - New-to-market focus (last 3 days prioritized) - 11 sources checked</p>
+</header>
 
-  <div class="filter-bar">
-    <label>Sort
-      <select id="sortSel">
-        <option value="newest">Newest</option>
-        <option value="cap">Cap Rate (High→Low)</option>
-        <option value="price-asc">Price (Low→High)</option>
-        <option value="price-desc">Price (High→Low)</option>
-        <option value="sf">Size (SF)</option>
-      </select>
-    </label>
-    <label>Min Cap % <input type="number" id="minCap" step="0.1" style="width:70px"></label>
-    <label>Max Price $ <input type="number" id="maxPrice" step="100000" style="width:120px"></label>
-    <label><input type="checkbox" id="topOnly"> Top Picks only</label>
-    <label><input type="checkbox" id="critOnly"> Criteria Match only</label>
-  </div>
+<div class="statbar">
+  <div class="stat-box"><div class="n">40</div><div class="l">New Listings Today</div></div>
+  <div class="stat-box"><div class="n">1</div><div class="l">New in 3 Days</div></div>
+  <div class="stat-box"><div class="n">16</div><div class="l">Criteria Match</div></div>
+  <div class="stat-box"><div class="n">4.50% to 10.00%</div><div class="l">Cap Rate Range</div></div>
+  <div class="stat-box"><div class="n">$500,000 to $27,368,421</div><div class="l">Price Range</div></div>
+</div>
 
-  <div class="stat-bar">
-    <div class="stat-box"><div class="num">24</div><div class="lbl">Total New Listings</div></div>
-    <div class="stat-box"><div class="num">10</div><div class="lbl">New in ≤3 Days</div></div>
-    <div class="stat-box"><div class="num" style="font-size:15px">3.75% – 10.00%</div><div class="lbl">Cap Rate Range</div></div>
-    <div class="stat-box"><div class="num" style="font-size:15px">$510,000 – $27,368,421</div><div class="lbl">Price Range</div></div>
-  </div>
+<div class="filterbar">
+  <label>Sort</label>
+  <select id="sortSel">
+    <option value="newest">Newest (DOM)</option>
+    <option value="cap">Cap Rate (high-low)</option>
+    <option value="price">Price (low-high)</option>
+    <option value="sf">Size (high-low)</option>
+  </select>
+  <label>Min Cap %</label>
+  <input type="number" id="minCap" step="0.1" style="width:70px">
+  <label>Max Price $</label>
+  <input type="number" id="maxPrice" step="100000" style="width:110px">
+  <span class="chk"><input type="checkbox" id="topOnly"> Top Picks only</span>
+  <span class="chk"><input type="checkbox" id="matchOnly"> Criteria Match only</span>
+</div>
 
-  <div class="grid" id="grid">
-    
-    <div class="card" data-price="4666000" data-cap="0" data-sf="0" data-toppick="1" data-criteria="1" data-dom="1">
+<div class="grid" id="grid">
+  
+    <div class="card" data-price="4666000" data-cap="0" data-sf="0" data-top="1" data-match="1" data-dom="2">
       <div class="photo-wrap">
           <img src="https://crexi.com/images/format=auto,width=716,height=444,fit=cover/assets/2686577/5ad45893d960494e905ae3ef6eea10c2.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'">
-          <span class="dom-pill green">1d on market</span>
+          <span class="dom-pill dom-green">2d on market</span>
         </div>
       <div class="card-body">
-        <div class="badges"><span class="badge top-pick">⭐ Top Pick</span><span class="badge criteria">Criteria Match</span><span class="badge source">Crexi / SHOP Companies</span></div>
+        <div class="badges"><span class="badge badge-top">&#9733; Top Pick</span><span class="badge badge-match">Criteria Match</span><span class="badge badge-source">Crexi / SHOP Companies</span></div>
         <h3>Panera 3-Tenant</h3>
-        <div class="address">6280 Tennyson Parkway, Plano, TX 75204</div>
+        <p class="addr">6280 Tennyson Pkwy, Plano, TX 75204</p>
         <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">$4,666,000</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">—</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">Panera Bread (drive-thru end cap), Mathnasium, AlphaGraphics</span></div>
-        </div>
-        <p class="notes">Multi-tenant shopping center near AT&amp;T&#x27;s future HQ &amp; Toyota NA HQ, Legacy Business Park, Plano.</p>
-        <a class="view-btn" href="https://www.crexi.com/properties/2686577/texas-panera-3-tenant" target="_blank" rel="noopener">View Listing →</a>
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$4,666,000</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Panera Bread, Mathnasium, AlphaGraphics</span></div>
+    </div>
+        <p class="notes">Shopping center outparcel w/ drive-thru Panera end cap; cross-listed on SHOP Companies.</p>
+        <a class="view-btn" href="https://www.crexi.com/properties/2686577/texas-panera-3-tenant" target="_blank" rel="noopener">View Listing &rarr;</a>
       </div>
     </div>
-    <div class="card" data-price="0" data-cap="0" data-sf="0" data-toppick="1" data-criteria="0" data-dom="1">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill green">1d on market</span>
+    <div class="card" data-price="4143580" data-cap="10.0" data-sf="0" data-top="0" data-match="0" data-dom="5">
+      <div class="photo-wrap">
+          <img src="https://crexi.com/images/format=auto,width=716,height=444,fit=cover/assets/2682566/24d331b321d44d069b08654648989bd9.JPG" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'">
+          <span class="dom-pill dom-green">5d on market</span>
         </div>
       <div class="card-body">
-        <div class="badges"><span class="badge top-pick">⭐ Top Pick</span><span class="badge source">SHOP Companies</span></div>
-        <h3>Sendera Ranch Blvd &amp; Rancho Canyon</h3>
-        <div class="address">NEC &amp; NWC of Sendera Ranch Blvd, Fort Worth, TX</div>
+        <div class="badges"><span class="badge badge-source">Crexi / Marcus & Millichap</span></div>
+        <h3>Fitness Connection | Leasehold Interest | DFW</h3>
+        <p class="addr">3630 Forest Lane, Dallas, TX 75234</p>
         <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">Unpriced / Call for Price</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">—</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">Pad / outparcel site</span></div>
-        </div>
-        <p class="notes">Near top of newest-created sort on SHOP Companies map feed; price/SF not listed on card.</p>
-        <a class="view-btn" href="https://shopcompanies.com/properties/sendera-ranch-blvd-rancho-canyon" target="_blank" rel="noopener">View Listing →</a>
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$4,143,580</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">10.00%</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Fitness Connection (single tenant)</span></div>
+    </div>
+        <p class="notes">Leasehold interest sale; cross-listed on Marcus & Millichap at same price.</p>
+        <a class="view-btn" href="https://www.crexi.com/properties/2682566/texas-fitness-connection-leasehold-interest-dfw" target="_blank" rel="noopener">View Listing &rarr;</a>
       </div>
     </div>
-    <div class="card" data-price="0" data-cap="0" data-sf="0" data-toppick="1" data-criteria="0" data-dom="1">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill green">1d on market</span>
+    <div class="card" data-price="0" data-cap="0" data-sf="0" data-top="0" data-match="0" data-dom="9">
+      <div class="photo-wrap">
+          <img src="https://crexi.com/images/format=auto,width=716,height=444,fit=cover/assets/2678045/0ceb41290e6e470a9d8bc7624aeb6ee7.JPG" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'">
+          <span class="dom-pill dom-green">9d on market</span>
         </div>
       <div class="card-body">
-        <div class="badges"><span class="badge top-pick">⭐ Top Pick</span><span class="badge source">SHOP Companies</span></div>
-        <h3>Firewheel North Outparcels</h3>
-        <div class="address">Garland, TX</div>
+        <div class="badges"><span class="badge badge-source">Crexi</span></div>
+        <h3>Cash Cow</h3>
+        <p class="addr">Dallas, TX</p>
         <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">Unpriced / Call for Price</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">—</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">Outparcel sites</span></div>
-        </div>
-        <p class="notes">Near top of newest-created sort; price/SF not listed on card.</p>
-        <a class="view-btn" href="https://shopcompanies.com/properties/firewheel-north-outparcels" target="_blank" rel="noopener">View Listing →</a>
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">Call for pricing</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">&mdash;</span></div>
+    </div>
+        <p class="notes">Unpriced; address withheld by broker.</p>
+        <a class="view-btn" href="https://www.crexi.com/properties/2678045/cash-cow" target="_blank" rel="noopener">View Listing &rarr;</a>
       </div>
     </div>
-    <div class="card" data-price="0" data-cap="0" data-sf="0" data-toppick="1" data-criteria="0" data-dom="1">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill green">1d on market</span>
+    <div class="card" data-price="0" data-cap="0" data-sf="0" data-top="0" data-match="0" data-dom="9">
+      <div class="photo-wrap">
+          <img src="https://crexi.com/images/format=auto,width=716,height=444,fit=cover/assets/2678016/e47e60272be8495984336d8c181fa7e6.JPG" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'">
+          <span class="dom-pill dom-green">9d on market</span>
         </div>
       <div class="card-body">
-        <div class="badges"><span class="badge top-pick">⭐ Top Pick</span><span class="badge source">SHOP Companies</span></div>
-        <h3>Elm Street Portfolio</h3>
-        <div class="address">Dallas, TX</div>
+        <div class="badges"><span class="badge badge-source">Crexi</span></div>
+        <h3>Green Light Social</h3>
+        <p class="addr">Dallas, TX</p>
         <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">Unpriced / Call for Price</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">—</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">Retail portfolio</span></div>
-        </div>
-        <p class="notes">Near top of newest-created sort; price/SF not listed on card.</p>
-        <a class="view-btn" href="https://shopcompanies.com/properties/elm-street-portfolio-0" target="_blank" rel="noopener">View Listing →</a>
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">Call for pricing</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">&mdash;</span></div>
+    </div>
+        <p class="notes">Unpriced; address withheld by broker.</p>
+        <a class="view-btn" href="https://www.crexi.com/properties/2678016/green-light-social" target="_blank" rel="noopener">View Listing &rarr;</a>
       </div>
     </div>
-    <div class="card" data-price="2588000" data-cap="4.25" data-sf="6815" data-toppick="1" data-criteria="0" data-dom="2">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill green">2d on market</span>
+    <div class="card" data-price="3500000" data-cap="0" data-sf="0" data-top="0" data-match="1" data-dom="120">
+      <div class="photo-wrap">
+          <img src="https://crexi.com/images/format=auto,width=716,height=444,fit=cover/assets/2496986/e8b3e4bab05242d2ac2afe2521de606b.JPG" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'">
+          <span class="dom-pill dom-red">120d on market</span>
         </div>
       <div class="card-body">
-        <div class="badges"><span class="badge top-pick">⭐ Top Pick</span><span class="badge source">Secure Net Lease</span></div>
-        <h3>AutoZone</h3>
-        <div class="address">4825 N Josey Ln, Carrollton, TX</div>
+        <div class="badges"><span class="badge badge-match">Criteria Match</span><span class="badge badge-source">Crexi</span></div>
+        <h3>Lancaster Plaza</h3>
+        <p class="addr">8702 S Lancaster Rd, Dallas, TX 75241</p>
         <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">$2,588,000</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">4.25%</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">6,815 SF</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">AutoZone (single-tenant NNN)</span></div>
-        </div>
-        <p class="notes">2026 construction, 1.1-acre site. Near top of &#x27;Most Recent&#x27; sort.</p>
-        <a class="view-btn" href="https://securenetlease.com/properties/autozone-carrollton-tx/" target="_blank" rel="noopener">View Listing →</a>
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$3,500,000</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">100% leased, NNN</span></div>
+    </div>
+        <p class="notes">Multi-tenant retail/office center, fully leased.</p>
+        <a class="view-btn" href="https://www.crexi.com/properties/2496986/texas-lancaster-plaza" target="_blank" rel="noopener">View Listing &rarr;</a>
       </div>
     </div>
-    <div class="card" data-price="9629000" data-cap="4.65" data-sf="4824" data-toppick="1" data-criteria="0" data-dom="3">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill green">3d on market</span>
+    <div class="card" data-price="2552534" data-cap="0" data-sf="0" data-top="0" data-match="0" data-dom="59">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gold">59d on market</span>
         </div>
       <div class="card-body">
-        <div class="badges"><span class="badge top-pick">⭐ Top Pick</span><span class="badge source">Secure Net Lease</span></div>
-        <h3>7-Eleven</h3>
-        <div class="address">6217 Azle Avenue, Lake Worth, TX</div>
+        <div class="badges"><span class="badge badge-source">Crexi / Marcus & Millichap</span></div>
+        <h3>Brand New 20-Yr NNN Ground Lease McDonald's</h3>
+        <p class="addr">3659 Simpson Stuart Rd, Dallas, TX 75241</p>
         <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">$9,629,000</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">4.65%</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">4,824 SF</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">7-Eleven (single-tenant NNN)</span></div>
-        </div>
-        <p class="notes">2026 construction, Tarrant County.</p>
-        <a class="view-btn" href="https://securenetlease.com/properties/7-eleven-lake-worth-tx/" target="_blank" rel="noopener">View Listing →</a>
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$2,552,534</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">McDonald's (ground lease)</span></div>
+    </div>
+        <p class="notes">Cross-listed on Marcus & Millichap at identical price ($2,552,534).</p>
+        <a class="view-btn" href="https://www.crexi.com/properties/2618579/texas-brand-new-mcdonalds" target="_blank" rel="noopener">View Listing &rarr;</a>
       </div>
     </div>
-    <div class="card" data-price="9194000" data-cap="4.65" data-sf="4816" data-toppick="1" data-criteria="0" data-dom="3">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill green">3d on market</span>
+    <div class="card" data-price="1100000" data-cap="0" data-sf="0" data-top="0" data-match="0" data-dom="31">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gold">31d on market</span>
         </div>
       <div class="card-body">
-        <div class="badges"><span class="badge top-pick">⭐ Top Pick</span><span class="badge source">Secure Net Lease</span></div>
-        <h3>7-Eleven (S&amp;P Rated A-)</h3>
-        <div class="address">1470 Hwy 287, Ennis, TX</div>
+        <div class="badges"><span class="badge badge-source">Crexi</span></div>
+        <h3>Free-Standing Building with Dallas Liquor Store</h3>
+        <p class="addr">3202 Samuell Blvd, Dallas, TX 75223</p>
         <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">$9,194,000</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">4.65%</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">4,816 SF</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">7-Eleven (single-tenant NNN)</span></div>
-        </div>
-        <p class="notes">2026 construction on 1.89-acre site, Ellis County.</p>
-        <a class="view-btn" href="https://securenetlease.com/properties/7-eleven-ennis-tx/" target="_blank" rel="noopener">View Listing →</a>
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$1,100,000</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Liquor store (owner-operator)</span></div>
+    </div>
+        <p class="notes">Business + real estate sale.</p>
+        <a class="view-btn" href="https://www.crexi.com/properties/2649821/texas-free-standing-building-with-dallas-liquor-store" target="_blank" rel="noopener">View Listing &rarr;</a>
       </div>
     </div>
-    <div class="card" data-price="2187000" data-cap="3.75" data-sf="3629" data-toppick="1" data-criteria="0" data-dom="3">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill green">3d on market</span>
+    <div class="card" data-price="4400000" data-cap="6.72" data-sf="15022" data-top="0" data-match="0" data-dom="193">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-red">193d on market</span>
         </div>
       <div class="card-body">
-        <div class="badges"><span class="badge top-pick">⭐ Top Pick</span><span class="badge source">Secure Net Lease</span></div>
-        <h3>McDonald&#x27;s</h3>
-        <div class="address">Texas 342 &amp; Mighty Hawk Blvd, Red Oak, TX</div>
+        <div class="badges"><span class="badge badge-source">Crexi / Matthews</span></div>
+        <h3>Walgreens</h3>
+        <p class="addr">6984 Rufe Snow Dr, Fort Worth, TX 76148</p>
         <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">$2,187,000</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">3.75%</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">3,629 SF</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">McDonald&#x27;s (single-tenant NNN)</span></div>
-        </div>
-        <p class="notes">2026 construction, Ellis County.</p>
-        <a class="view-btn" href="https://securenetlease.com/properties/mcdonalds-red-oak-tx/" target="_blank" rel="noopener">View Listing →</a>
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$4,400,000</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">6.72%</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">15,022 SF</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Walgreens</span></div>
+    </div>
+        <p class="notes">Cross-listed on Matthews at identical price.</p>
+        <a class="view-btn" href="https://www.crexi.com/properties/2365369/texas-walgreens" target="_blank" rel="noopener">View Listing &rarr;</a>
       </div>
     </div>
-    <div class="card" data-price="0" data-cap="0" data-sf="0" data-toppick="0" data-criteria="0" data-dom="2">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill green">2d on market</span>
+    <div class="card" data-price="5215000" data-cap="6.25" data-sf="9566" data-top="0" data-match="1" data-dom="45">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gold">45d on market</span>
         </div>
       <div class="card-body">
-        <div class="badges"><span class="badge source">SHOP Companies</span></div>
-        <h3>1931 Greenville Ave</h3>
-        <div class="address">Dallas, TX</div>
+        <div class="badges"><span class="badge badge-match">Criteria Match</span><span class="badge badge-source">Crexi</span></div>
+        <h3>2 Tenant Strip</h3>
+        <p class="addr">411 Alta Mere Dr, Fort Worth, TX 76114</p>
         <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">Unpriced / Call for Price</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">—</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">Retail</span></div>
-        </div>
-        <p class="notes">Price/SF not listed on card.</p>
-        <a class="view-btn" href="https://shopcompanies.com/properties/1931-greenville-ave" target="_blank" rel="noopener">View Listing →</a>
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$5,215,000</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">6.25%</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">9,566 SF</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">2 tenants</span></div>
+    </div>
+        
+        <a class="view-btn" href="https://www.crexi.com/properties/2633545/texas-2-tenant-strip" target="_blank" rel="noopener">View Listing &rarr;</a>
       </div>
     </div>
-    <div class="card" data-price="0" data-cap="0" data-sf="0" data-toppick="0" data-criteria="0" data-dom="2">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill green">2d on market</span>
+    <div class="card" data-price="2400000" data-cap="0" data-sf="0" data-top="0" data-match="0" data-dom="55">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gold">55d on market</span>
         </div>
       <div class="card-body">
-        <div class="badges"><span class="badge source">SHOP Companies</span></div>
-        <h3>IBP Plano Retail</h3>
-        <div class="address">Carrollton, TX</div>
+        <div class="badges"><span class="badge badge-source">Crexi</span></div>
+        <h3>Tunnel Car Wash With Real Estate Included</h3>
+        <p class="addr">7205 Rufe Snow Dr, Fort Worth, TX 76148</p>
         <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">Unpriced / Call for Price</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">—</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">Retail</span></div>
-        </div>
-        <p class="notes">Price/SF not listed on card.</p>
-        <a class="view-btn" href="https://shopcompanies.com/properties/ibp-plano-retail" target="_blank" rel="noopener">View Listing →</a>
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$2,400,000</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Car wash (owner-operator)</span></div>
+    </div>
+        
+        <a class="view-btn" href="https://www.crexi.com/properties/2622495/texas-tunnel-car-wash-with-real-estate-included" target="_blank" rel="noopener">View Listing &rarr;</a>
       </div>
     </div>
-    <div class="card" data-price="27368421" data-cap="4.75" data-sf="0" data-toppick="0" data-criteria="1" data-dom="9999">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill gray">DOM n/a</span>
+    <div class="card" data-price="0" data-cap="0" data-sf="0" data-top="0" data-match="0" data-dom="71">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gold">71d on market</span>
         </div>
       <div class="card-body">
-        <div class="badges"><span class="badge criteria">Criteria Match</span><span class="badge source">Marcus &amp; Millichap</span></div>
-        <h3>Trophy Real Estate (Bank of America &amp; Wild Fork)</h3>
-        <div class="address">Plano (Dallas-Fort Worth MSA), TX</div>
+        <div class="badges"><span class="badge badge-source">Crexi</span></div>
+        <h3>301 South Virginia Avenue</h3>
+        <p class="addr">301 S Virginia Ave, Fort Worth, TX 76104</p>
         <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">$27,368,421</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">4.75%</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">Bank of America, Wild Fork (multi-tenant, absolute NNN)</span></div>
-        </div>
-        <p class="notes">Best retail intersection in TX per listing; 12.2 yrs remaining.</p>
-        <a class="view-btn" href="https://www.marcusmillichap.com/properties/307774/trophy-real-estate-best-retail-intersection-in-tx-bank-of-america-wild-fork-abs-nnn-leases" target="_blank" rel="noopener">View Listing →</a>
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">Call for pricing</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">&mdash;</span></div>
+    </div>
+        <p class="notes">Unpriced; mixed retail/industrial/hospitality zoning.</p>
+        <a class="view-btn" href="https://www.crexi.com/properties/2602518/texas-301-south-virginia-avenue" target="_blank" rel="noopener">View Listing &rarr;</a>
       </div>
     </div>
-    <div class="card" data-price="8965000" data-cap="7.58" data-sf="0" data-toppick="0" data-criteria="1" data-dom="9999">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill gray">DOM n/a</span>
+    <div class="card" data-price="0" data-cap="0" data-sf="0" data-top="0" data-match="0" data-dom="40">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gold">40d on market</span>
         </div>
       <div class="card-body">
-        <div class="badges"><span class="badge criteria">Criteria Match</span><span class="badge source">STRIVE</span></div>
-        <h3>McKinney Bluff</h3>
-        <div class="address">McKinney, TX</div>
+        <div class="badges"><span class="badge badge-source">Crexi</span></div>
+        <h3>2737 Tillar St</h3>
+        <p class="addr">2737 Tillar St, Fort Worth, TX 76107</p>
         <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">$8,965,000</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">7.58%</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">Retail center</span></div>
-        </div>
-        <p class="notes">Available. Collin County.</p>
-        <a class="view-btn" href="https://www.strivere.com/property/58263" target="_blank" rel="noopener">View Listing →</a>
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">Call for pricing</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">&mdash;</span></div>
+    </div>
+        <p class="notes">Unpriced.</p>
+        <a class="view-btn" href="https://www.crexi.com/properties/2640006/texa-2737-tillar-st" target="_blank" rel="noopener">View Listing &rarr;</a>
       </div>
     </div>
-    <div class="card" data-price="7689072" data-cap="5.5" data-sf="0" data-toppick="0" data-criteria="0" data-dom="9999">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill gray">DOM n/a</span>
+    <div class="card" data-price="1810000" data-cap="0" data-sf="21100" data-top="0" data-match="1" data-dom="9999">
+      <div class="photo-wrap">
+          <img src="https://strivenext.s3.amazonaws.com/website/property-photos/202376/Cover%20Option.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'">
+          <span class="dom-pill dom-gray">DOM N/A</span>
         </div>
       <div class="card-body">
-        <div class="badges"><span class="badge source">Marcus &amp; Millichap</span></div>
-        <h3>Caliber Collision Center</h3>
-        <div class="address">Benbrook (Dallas-Ft. Worth MSA), TX</div>
-        <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">$7,689,072</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">5.50%</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">Caliber Collision (single-tenant, 15-yr absolute net)</span></div>
-        </div>
-        <p class="notes">15.3 yrs remaining on lease.</p>
-        <a class="view-btn" href="https://www.marcusmillichap.com/properties/305283/caliber-collision-center-dallasfort-worth-msa-15-year-absolute-net-qualifies-for-depreciation" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    <div class="card" data-price="6237000" data-cap="5.79" data-sf="0" data-toppick="0" data-criteria="1" data-dom="9999">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill gray">DOM n/a</span>
-        </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge criteria">Criteria Match</span><span class="badge source">Marcus &amp; Millichap</span></div>
-        <h3>Wheatland Marketplace</h3>
-        <div class="address">Dallas, TX</div>
-        <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">$6,237,000</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">5.79%</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">Multi-tenant shopping center</span></div>
-        </div>
-        <p class="notes">$155.81/SF.</p>
-        <a class="view-btn" href="https://www.marcusmillichap.com/properties/309582/wheatland-marketplace" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    <div class="card" data-price="5078885" data-cap="5.65" data-sf="0" data-toppick="0" data-criteria="0" data-dom="9999">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill gray">DOM n/a</span>
-        </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge source">Marcus &amp; Millichap</span></div>
-        <h3>Sun Auto Tire &amp; Service</h3>
-        <div class="address">Royse City (Dallas-Fort Worth MSA), TX</div>
-        <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">$5,078,885</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">5.65%</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">Sun Auto Tire &amp; Service (single-tenant, 575+ unit guarantor)</span></div>
-        </div>
-        <p class="notes">15-yr absolute net, 15.6 yrs remaining.</p>
-        <a class="view-btn" href="https://www.marcusmillichap.com/properties/308501/sun-auto-tire-service-15-year-absolute-net-qualifies-for-depreciation-575-unit-guarantor" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    <div class="card" data-price="4200000" data-cap="7.22" data-sf="0" data-toppick="0" data-criteria="0" data-dom="9999">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill gray">DOM n/a</span>
-        </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge source">STRIVE</span></div>
-        <h3>Action Behavior Centers</h3>
-        <div class="address">Fort Worth, TX</div>
-        <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">$4,200,000</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">7.22%</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">Action Behavior Centers (single-tenant)</span></div>
-        </div>
-        <p class="notes">Available.</p>
-        <a class="view-btn" href="https://www.strivere.com/property/35833" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    <div class="card" data-price="4143580" data-cap="10.0" data-sf="0" data-toppick="0" data-criteria="0" data-dom="9999">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill gray">DOM n/a</span>
-        </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge source">Marcus &amp; Millichap</span></div>
-        <h3>Fitness Connection</h3>
-        <div class="address">Dallas, TX</div>
-        <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">$4,143,580</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">10.00%</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">Fitness Connection (single-tenant net lease)</span></div>
-        </div>
-        <p class="notes">12.2 yrs remaining on lease. Newest in M&amp;M&#x27;s Dallas retail sort.</p>
-        <a class="view-btn" href="https://www.marcusmillichap.com/properties/309025/fitness-connection-dallas-tx" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    <div class="card" data-price="3667000" data-cap="4.5" data-sf="0" data-toppick="0" data-criteria="0" data-dom="9999">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill gray">DOM n/a</span>
-        </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge source">Marcus &amp; Millichap</span></div>
-        <h3>Chipotle w/ Drive-Thru</h3>
-        <div class="address">Dallas, TX (West Dallas, I-30 frontage)</div>
-        <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">$3,667,000</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">4.50%</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">Chipotle (single-tenant NNN)</span></div>
-        </div>
-        <p class="notes">15-yr NNN, 14.9 yrs remaining, direct I-30 frontage.</p>
-        <a class="view-btn" href="https://www.marcusmillichap.com/properties/302343/brand-new-chipotle-w-drthru-15-year-nnn-prime-west-dallas-infill-direct-frontage-to-i30" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    <div class="card" data-price="2624500" data-cap="6.0" data-sf="0" data-toppick="0" data-criteria="1" data-dom="9999">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill gray">DOM n/a</span>
-        </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge criteria">Criteria Match</span><span class="badge source">Marcus &amp; Millichap</span></div>
-        <h3>Jumana Retail Center</h3>
-        <div class="address">Dallas, TX</div>
-        <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">$2,624,500</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">6.00%</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">Multi-tenant retail center</span></div>
-        </div>
-        <p class="notes">$472.46/SF.</p>
-        <a class="view-btn" href="https://www.marcusmillichap.com/properties/303xxx/jumana-retail-center" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    <div class="card" data-price="2552534" data-cap="3.75" data-sf="0" data-toppick="0" data-criteria="0" data-dom="9999">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill gray">DOM n/a</span>
-        </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge source">Marcus &amp; Millichap</span></div>
-        <h3>McDonald&#x27;s</h3>
-        <div class="address">Dallas, TX</div>
-        <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">$2,552,534</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">3.75%</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">McDonald&#x27;s (single-tenant NNN)</span></div>
-        </div>
-        <p class="notes">20.3 yrs remaining on lease.</p>
-        <a class="view-btn" href="https://www.marcusmillichap.com/properties/mcdonalds-dallas-tx" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    <div class="card" data-price="2520000" data-cap="5.75" data-sf="0" data-toppick="0" data-criteria="0" data-dom="9999">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill gray">DOM n/a</span>
-        </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge source">STRIVE</span></div>
-        <h3>Black Rock Coffee</h3>
-        <div class="address">McKinney, TX</div>
-        <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">$2,520,000</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">5.75%</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">Black Rock Coffee (single-tenant)</span></div>
-        </div>
-        <p class="notes">Available. Collin County.</p>
-        <a class="view-btn" href="https://www.strivere.com/property/40531" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    <div class="card" data-price="1810000" data-cap="0" data-sf="0" data-toppick="0" data-criteria="0" data-dom="9999">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill gray">DOM n/a</span>
-        </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge source">STRIVE</span></div>
+        <div class="badges"><span class="badge badge-match">Criteria Match</span><span class="badge badge-source">STRIVE</span></div>
         <h3>Crossroads Centre</h3>
-        <div class="address">North Richland Hills, TX</div>
+        <p class="addr">8214 Bedford Euless Rd, North Richland Hills, TX 76180</p>
         <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">$1,810,000</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">0.00%</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">Multi-tenant retail center</span></div>
-        </div>
-        <p class="notes">Available. Tarrant County.</p>
-        <a class="view-btn" href="https://www.strivere.com/property/202376" target="_blank" rel="noopener">View Listing →</a>
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$1,810,000</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">21,100 SF</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">57% occupied shopping center</span></div>
+    </div>
+        <p class="notes">Value-add: ~9,000 SF vacant, dense DFW demos.</p>
+        <a class="view-btn" href="https://www.strivere.com/property/202376" target="_blank" rel="noopener">View Listing &rarr;</a>
       </div>
     </div>
-    <div class="card" data-price="1740000" data-cap="8.0" data-sf="0" data-toppick="0" data-criteria="0" data-dom="9999">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill gray">DOM n/a</span>
+    <div class="card" data-price="1740000" data-cap="8.0" data-sf="0" data-top="0" data-match="0" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
         </div>
       <div class="card-body">
-        <div class="badges"><span class="badge source">STRIVE</span></div>
+        <div class="badges"><span class="badge badge-source">STRIVE</span></div>
         <h3>Safe Harbor Center</h3>
-        <div class="address">Arlington, TX</div>
+        <p class="addr">Arlington, TX</p>
         <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">$1,740,000</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">8.00%</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">Multi-tenant retail</span></div>
-        </div>
-        <p class="notes">Available.</p>
-        <a class="view-btn" href="https://www.strivere.com/property/65050" target="_blank" rel="noopener">View Listing →</a>
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$1,740,000</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">8.00%</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Multi-tenant retail</span></div>
+    </div>
+        
+        <a class="view-btn" href="https://www.strivere.com/property/65050" target="_blank" rel="noopener">View Listing &rarr;</a>
       </div>
     </div>
-    <div class="card" data-price="510000" data-cap="7.34" data-sf="0" data-toppick="0" data-criteria="0" data-dom="9999">
-      <div class="photo-wrap no-photo">
-          <span class="no-photo-label">No photo available</span>
-          <span class="dom-pill gray">DOM n/a</span>
+    <div class="card" data-price="1695000" data-cap="0" data-sf="0" data-top="0" data-match="0" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
         </div>
       <div class="card-body">
-        <div class="badges"><span class="badge source">STRIVE</span></div>
-        <h3>Dallas VA Hospital Strip</h3>
-        <div class="address">Dallas, TX</div>
+        <div class="badges"><span class="badge badge-source">STRIVE</span></div>
+        <h3>4224 Swiss Ave</h3>
+        <p class="addr">4224 Swiss Ave, Dallas, TX</p>
         <div class="stats-grid">
-          <div class="stat"><span class="label">Price</span><span class="value">$510,000</span></div>
-          <div class="stat"><span class="label">Cap Rate</span><span class="value gold">7.34%</span></div>
-          <div class="stat"><span class="label">Size</span><span class="value">—</span></div>
-          <div class="stat"><span class="label">Occupancy</span><span class="value small">Retail strip near VA Hospital</span></div>
-        </div>
-        <p class="notes">Available.</p>
-        <a class="view-btn" href="https://www.strivere.com/property/202304" target="_blank" rel="noopener">View Listing →</a>
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$1,695,000</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">&mdash;</span></div>
+    </div>
+        
+        <a class="view-btn" href="https://www.strivere.com/property/338882" target="_blank" rel="noopener">View Listing &rarr;</a>
       </div>
     </div>
-  </div>
-
-  <section class="extra">
-    <h2>Still Active (Previously Tracked)</h2>
-    <table>
-      <thead><tr><th>Name</th><th>Address</th><th>Price</th><th>Tracked</th></tr></thead>
-      <tbody><tr><td>Live Oak/Liberty Retail Shops</td><td>2817 Live Oak St, Dallas, TX 75204</td><td>$3,348,000</td><td>Since 2026-06-11</td></tr>
-<tr><td>2515 W Jefferson Blvd</td><td>2515 W Jefferson Blvd, Dallas, TX 75211</td><td>$8,244,115</td><td>Since 2026-06-11</td></tr>
-<tr><td>Preston Broadway</td><td>4950 Broadway, Dallas, TX 75225</td><td>$4,583,000</td><td>Since 2026-06-11</td></tr>
-<tr><td>River Oaks Blvd Retail</td><td>4409 River Oaks Blvd, Fort Worth, TX 76114</td><td>$5,000,000</td><td>Since 2026-06-11</td></tr>
-<tr><td>2325 N Fitzhugh Ave</td><td>2325 N Fitzhugh Ave, Dallas, TX 75204</td><td>$6,750,000</td><td>Since 2026-06-11</td></tr>
-<tr><td>Tarrant West Plaza</td><td>1701 S Cherry Ln, Fort Worth, TX 76108</td><td>$12,905,000</td><td>Since 2026-06-11</td></tr>
-<tr><td>Camp Wisdom Village</td><td>417 E Camp Wisdom Rd, Duncanville, TX</td><td>$3,800,000</td><td>Since 2026-06-11</td></tr>
-<tr><td>Texas Star Plaza</td><td>125 North Clark Road, Cedar Hill, TX</td><td>$3,800,000</td><td>Since 2026-06-11</td></tr></tbody>
-    </table>
-  </section>
-
-  <section class="extra">
-    <h2>Sources With Limited or No Access This Run</h2>
-    <ul class="blocked"><li>Matthews — blocked by a persistent &#x27;Subscribe for Updates&#x27; modal that reappeared after dismissal</li>
-<li>Colliers — location/facet search returned no results despite multiple attempts</li>
-<li>CBRE — property-search URL structure changed again; no working DFW retail path found</li>
-<li>NAI Robert Lynn — AJAX marker feed fetched successfully but content could not be parsed/returned this run (data safety filter)</li>
-<li>LoopNet — confirmed still blocked/404 to automation, as in prior runs</li>
-<li>SRS — attempted; sorted by newest, no DFW retail-for-sale listings in the newest batch (one Burleson, TX item was for-lease only, excluded)</li></ul>
-  </section>
-
-  <footer>DFW Retail Investment Property Report · Automated daily scan · directorunitedmk/dfw-retail-reports</footer>
+    <div class="card" data-price="4200000" data-cap="7.22" data-sf="0" data-top="0" data-match="1" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-match">Criteria Match</span><span class="badge badge-source">STRIVE</span></div>
+        <h3>Action Behavior Centers</h3>
+        <p class="addr">Fort Worth, TX</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$4,200,000</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">7.22%</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Action Behavior Centers</span></div>
+    </div>
+        
+        <a class="view-btn" href="https://www.strivere.com/property/35833" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="510000" data-cap="7.34" data-sf="0" data-top="0" data-match="0" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-source">STRIVE</span></div>
+        <h3>Dallas VA Hospital Strip</h3>
+        <p class="addr">Dallas, TX</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$510,000</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">7.34%</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Retail strip</span></div>
+    </div>
+        
+        <a class="view-btn" href="https://www.strivere.com/property/202304" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="2520000" data-cap="5.75" data-sf="0" data-top="0" data-match="1" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-match">Criteria Match</span><span class="badge badge-source">STRIVE</span></div>
+        <h3>Black Rock Coffee</h3>
+        <p class="addr">McKinney, TX</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$2,520,000</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">5.75%</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Black Rock Coffee</span></div>
+    </div>
+        
+        <a class="view-btn" href="https://www.strivere.com/property/40531" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="6237000" data-cap="5.79" data-sf="0" data-top="0" data-match="1" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-match">Criteria Match</span><span class="badge badge-source">Marcus & Millichap</span></div>
+        <h3>Wheatland Marketplace</h3>
+        <p class="addr">Dallas, TX</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$6,237,000</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">5.79%</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Multi-tenant retail</span></div>
+    </div>
+        <p class="notes">Price/SF $155.81</p>
+        <a class="view-btn" href="https://www.marcusmillichap.com/property/wheatland-marketplace" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="5078885" data-cap="5.65" data-sf="0" data-top="0" data-match="1" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-match">Criteria Match</span><span class="badge badge-source">Marcus & Millichap</span></div>
+        <h3>Sun Auto Tire & Service</h3>
+        <p class="addr">Royse City (DFW MSA), TX</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$5,078,885</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">5.65%</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Sun Auto Tire & Service (575+ unit guarantor)</span></div>
+    </div>
+        <p class="notes">15-yr absolute net; qualifies for depreciation.</p>
+        <a class="view-btn" href="https://www.marcusmillichap.com/property/sun-auto-tire-service" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="0" data-cap="0" data-sf="0" data-top="0" data-match="0" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-source">Marcus & Millichap</span></div>
+        <h3>Sixt: Love Field</h3>
+        <p class="addr">Dallas, TX</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">Call for pricing</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Sixt</span></div>
+    </div>
+        <p class="notes">Request for offer.</p>
+        <a class="view-btn" href="https://www.marcusmillichap.com/property/sixt-love-field" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="0" data-cap="0" data-sf="0" data-top="0" data-match="1" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-match">Criteria Match</span><span class="badge badge-source">Marcus & Millichap</span></div>
+        <h3>Bishop Arts Retail Portfolio</h3>
+        <p class="addr">Dallas, TX</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">Call for pricing</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Multi-tenant portfolio</span></div>
+    </div>
+        <p class="notes">Request for offer.</p>
+        <a class="view-btn" href="https://www.marcusmillichap.com/property/bishop-arts-retail-portfolio" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="7689072" data-cap="5.5" data-sf="0" data-top="0" data-match="1" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-match">Criteria Match</span><span class="badge badge-source">Marcus & Millichap</span></div>
+        <h3>Caliber Collision Center | DFW MSA</h3>
+        <p class="addr">Benbrook (DFW MSA), TX</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$7,689,072</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">5.50%</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Caliber Collision</span></div>
+    </div>
+        <p class="notes">15-yr absolute net.</p>
+        <a class="view-btn" href="https://www.marcusmillichap.com/property/caliber-collision-center-dfw" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="3667000" data-cap="4.5" data-sf="0" data-top="0" data-match="1" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-match">Criteria Match</span><span class="badge badge-source">Marcus & Millichap</span></div>
+        <h3>Brand New Chipotle w/ Dr-Thru</h3>
+        <p class="addr">West Dallas, TX</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$3,667,000</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">4.50%</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Chipotle</span></div>
+    </div>
+        <p class="notes">15-yr NNN, direct I-30 frontage.</p>
+        <a class="view-btn" href="https://www.marcusmillichap.com/property/chipotle-west-dallas" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="27368421" data-cap="4.75" data-sf="0" data-top="0" data-match="1" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-match">Criteria Match</span><span class="badge badge-source">Marcus & Millichap</span></div>
+        <h3>Trophy Real Estate | Bank of America & Wild Fork</h3>
+        <p class="addr">Plano (DFW MSA), TX</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$27,368,421</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">4.75%</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Bank of America, Wild Fork</span></div>
+    </div>
+        <p class="notes">Best retail intersection in TX per broker; absolute NNN leases.</p>
+        <a class="view-btn" href="https://www.marcusmillichap.com/property/trophy-real-estate-plano" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="2624500" data-cap="6.0" data-sf="0" data-top="0" data-match="1" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-match">Criteria Match</span><span class="badge badge-source">Marcus & Millichap</span></div>
+        <h3>Jumana Retail Center</h3>
+        <p class="addr">Dallas, TX</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$2,624,500</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">6.00%</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Multi-tenant retail</span></div>
+    </div>
+        <p class="notes">Price/SF $472.46</p>
+        <a class="view-btn" href="https://www.marcusmillichap.com/property/jumana-retail-center" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="0" data-cap="0" data-sf="0" data-top="0" data-match="1" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-match">Criteria Match</span><span class="badge badge-source">Marcus & Millichap</span></div>
+        <h3>E Grand Retail Portfolio</h3>
+        <p class="addr">Dallas, TX</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">Call for pricing</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Multi-tenant portfolio</span></div>
+    </div>
+        <p class="notes">Request for offer.</p>
+        <a class="view-btn" href="https://www.marcusmillichap.com/property/e-grand-retail-portfolio" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="6466550" data-cap="6.0" data-sf="0" data-top="0" data-match="1" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-match">Criteria Match</span><span class="badge badge-source">Marcus & Millichap</span></div>
+        <h3>ClearWater Express Wash</h3>
+        <p class="addr">Dallas, TX</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$6,466,550</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">6.00%</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">ClearWater Express Wash</span></div>
+    </div>
+        <p class="notes">#1 TX operator; 20-yr absolute net, 100% bonus depreciation.</p>
+        <a class="view-btn" href="https://www.marcusmillichap.com/property/clearwater-express-wash-dallas" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="0" data-cap="0" data-sf="15093" data-top="0" data-match="0" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-source">Matthews</span></div>
+        <h3>Walgreens</h3>
+        <p class="addr">921 Henderson St, Fort Worth, TX 76102</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">Call for pricing</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">15,093 SF</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Walgreens</span></div>
+    </div>
+        <p class="notes">Contact broker for pricing.</p>
+        <a class="view-btn" href="https://www.matthews.com/listings/walgreens-henderson-st-fort-worth" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="500000" data-cap="0" data-sf="704" data-top="0" data-match="0" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-source">Matthews</span></div>
+        <h3>Fort Worth Gas Station</h3>
+        <p class="addr">5520 E Lancaster Ave, Fort Worth, TX 76112</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$500,000</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">704 SF</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Gas station</span></div>
+    </div>
+        
+        <a class="view-btn" href="https://www.matthews.com/listings/fort-worth-gas-station" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="4650000" data-cap="0" data-sf="51800" data-top="0" data-match="1" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-match">Criteria Match</span><span class="badge badge-source">Matthews</span></div>
+        <h3>425-427 W Jefferson Blvd & 428-429 Sunset Ave</h3>
+        <p class="addr">Dallas, TX 75208</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$4,650,000</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">51,800 SF</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Multi-tenant shopping center</span></div>
+    </div>
+        
+        <a class="view-btn" href="https://www.matthews.com/listings/425-427-w-jefferson-blvd-dallas" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="1410000" data-cap="6.52" data-sf="7500" data-top="0" data-match="0" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-source">Matthews</span></div>
+        <h3>Dollar General</h3>
+        <p class="addr">4433 Mansfield Hwy, Fort Worth, TX 76119</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">$1,410,000</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">6.52%</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">7,500 SF</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Dollar General</span></div>
+    </div>
+        
+        <a class="view-btn" href="https://www.matthews.com/listings/dollar-general-mansfield-hwy-fort-worth" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="0" data-cap="0" data-sf="0" data-top="0" data-match="0" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-source">SHOP Companies</span></div>
+        <h3>Sendera Ranch Blvd & Rancho Canyon</h3>
+        <p class="addr">Fort Worth, TX 76052</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">Call for pricing</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Pad site (1.74 ac)</span></div>
+    </div>
+        <p class="notes">Ground-lease/pad development opportunity.</p>
+        <a class="view-btn" href="https://shopcompanies.com/properties/sendera-ranch-blvd-rancho-canyon" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="0" data-cap="0" data-sf="0" data-top="0" data-match="0" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-source">SHOP Companies</span></div>
+        <h3>FM 741 & Sunrise Blvd</h3>
+        <p class="addr">Crandall, TX 75114</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">Call for pricing</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">Future retail anchor</span></div>
+    </div>
+        <p class="notes">Kaufman County growth market.</p>
+        <a class="view-btn" href="https://shopcompanies.com/properties/fm-741-sunrise-blvd" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="0" data-cap="0" data-sf="0" data-top="0" data-match="0" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-source">SHOP Companies</span></div>
+        <h3>Preston Road Retail</h3>
+        <p class="addr">Plano area, TX</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">Call for pricing</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">&mdash;</span></div>
+    </div>
+        
+        <a class="view-btn" href="https://shopcompanies.com/properties/preston-road-retail" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="0" data-cap="0" data-sf="0" data-top="0" data-match="0" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-source">SHOP Companies</span></div>
+        <h3>Firewheel North Outparcels</h3>
+        <p class="addr">Garland, TX</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">Call for pricing</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">&mdash;</span></div>
+    </div>
+        <p class="notes">Outparcels near Firewheel Town Center.</p>
+        <a class="view-btn" href="https://shopcompanies.com/properties/firewheel-north-outparcels" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="0" data-cap="0" data-sf="0" data-top="0" data-match="0" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-source">SHOP Companies</span></div>
+        <h3>Elm Street Portfolio</h3>
+        <p class="addr">Dallas, TX</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">Call for pricing</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">&mdash;</span></div>
+    </div>
+        
+        <a class="view-btn" href="https://shopcompanies.com/properties/elm-street-portfolio-0" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="0" data-cap="0" data-sf="0" data-top="0" data-match="0" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-source">SHOP Companies</span></div>
+        <h3>1931 Greenville Ave</h3>
+        <p class="addr">1931 Greenville Ave, Dallas, TX</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">Call for pricing</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">&mdash;</span></div>
+    </div>
+        
+        <a class="view-btn" href="https://shopcompanies.com/properties/1931-greenville-ave" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="0" data-cap="0" data-sf="0" data-top="0" data-match="0" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-source">SHOP Companies</span></div>
+        <h3>IBP Plano Retail</h3>
+        <p class="addr">Plano, TX</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">Call for pricing</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">&mdash;</span></div>
+    </div>
+        
+        <a class="view-btn" href="https://shopcompanies.com/properties/ibp-plano-retail" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
+    <div class="card" data-price="0" data-cap="0" data-sf="0" data-top="0" data-match="0" data-dom="9999">
+      <div class="photo-wrap noimg">
+          <span class="noimg-label">No photo available</span>
+          <span class="dom-pill dom-gray">DOM N/A</span>
+        </div>
+      <div class="card-body">
+        <div class="badges"><span class="badge badge-source">SHOP Companies</span></div>
+        <h3>5946 Lyndon B Johnson Fwy</h3>
+        <p class="addr">5946 LBJ Fwy, Dallas, TX</p>
+        <div class="stats-grid">
+      <div class="stat"><span class="stat-label">Price</span><span class="stat-val">Call for pricing</span></div>
+      <div class="stat"><span class="stat-label">Cap Rate</span><span class="stat-val cap">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Size</span><span class="stat-val">&mdash;</span></div>
+      <div class="stat"><span class="stat-label">Occupancy / Tenants</span><span class="stat-val">&mdash;</span></div>
+    </div>
+        
+        <a class="view-btn" href="https://shopcompanies.com/properties/5946-lyndon-b-johnson-fwy" target="_blank" rel="noopener">View Listing &rarr;</a>
+      </div>
+    </div>
 </div>
+
+<div class="section">
+  <h2>Still Active (previously tracked)</h2>
+  <div class="still-row">
+      <div><strong>River Oaks Plaza</strong> - 4409 River Oaks Blvd, Fort Worth, TX 76114</div>
+      <div>$4,860,000 | Cap 7.40%</div>
+      <div class="still-note">Price reduced from $5,000,000 (first tracked 2026-06-11).</div>
+      <a href="https://www.strivere.com/property/201191" target="_blank" rel="noopener">View &rarr;</a>
+    </div><div class="still-row">
+      <div><strong>Tarrant West Plaza</strong> - 1701 S Cherry Ln, Fort Worth, TX 76108</div>
+      <div>$12,905,000 | Cap 8.00%</div>
+      <div class="still-note">Under contract; first tracked 2026-06-11.</div>
+      <a href="https://www.strivere.com/property/63807" target="_blank" rel="noopener">View &rarr;</a>
+    </div>
+</div>
+
+<div class="section blocked">
+  <h2>Sources With No Usable Data This Run</h2>
+  <ul><li><strong>Secure Net Lease:</strong> Listing grid never populated (client-side app returned an empty #propertyList div after search); site appears to require a session/interaction Chrome automation could not trigger.</li><li><strong>Colliers:</strong> Coveo search results panel stayed empty after applying the Dallas location facet; likely needs a logged-in session or additional facet clicks.</li><li><strong>CBRE:</strong> The prior working search URL now 404s (site restructure); the general /properties hub page has no direct link into a working for-sale search.</li><li><strong>LoopNet:</strong> Bot-detection page served instead of listings; not bypassed per policy.</li><li><strong>NAI Robert Lynn:</strong> Retrieved the map data feed (738 total markers, 206 tagged 'For Sale' within the DFW bounding box), but the feed only exposes address + building SF - no price, tenant, or property-type field - so individual retail listings could not be confirmed or built into report cards.</li></ul>
+</div>
+
+<footer>
+  DFW Retail Investment Property Report - Automated daily run - Sources: Crexi, STRIVE, Secure Net Lease, SRS, Marcus and Millichap, Matthews, Colliers, CBRE, NAI Robert Lynn, LoopNet, SHOP Companies
+</footer>
 
 <script>
 function applyFilters() {
-  const cards = Array.from(document.querySelectorAll('#grid .card'));
+  const cards = Array.from(document.querySelectorAll('.card'));
   const minCap = parseFloat(document.getElementById('minCap').value) || 0;
   const maxPrice = parseFloat(document.getElementById('maxPrice').value) || Infinity;
   const topOnly = document.getElementById('topOnly').checked;
-  const critOnly = document.getElementById('critOnly').checked;
-  const sortSel = document.getElementById('sortSel').value;
+  const matchOnly = document.getElementById('matchOnly').checked;
+  const sortVal = document.getElementById('sortSel').value;
 
   cards.forEach(c => {
     const cap = parseFloat(c.dataset.cap) || 0;
     const price = parseFloat(c.dataset.price) || 0;
-    const isTop = c.dataset.toppick === '1';
-    const isCrit = c.dataset.criteria === '1';
-    let show = cap >= minCap && (price === 0 || price <= maxPrice);
-    if (topOnly && !isTop) show = false;
-    if (critOnly && !isCrit) show = false;
+    const top = c.dataset.top === '1';
+    const match = c.dataset.match === '1';
+    let show = true;
+    if (cap < minCap) show = false;
+    if (price > maxPrice && price > 0) show = false;
+    if (topOnly && !top) show = false;
+    if (matchOnly && !match) show = false;
     c.style.display = show ? '' : 'none';
   });
 
-  const sorted = cards.sort((a,b) => {
-    if (sortSel === 'newest') return (parseInt(a.dataset.dom)||9999) - (parseInt(b.dataset.dom)||9999);
-    if (sortSel === 'cap') return (parseFloat(b.dataset.cap)||0) - (parseFloat(a.dataset.cap)||0);
-    if (sortSel === 'price-asc') return (parseFloat(a.dataset.price)||0) - (parseFloat(b.dataset.price)||0);
-    if (sortSel === 'price-desc') return (parseFloat(b.dataset.price)||0) - (parseFloat(a.dataset.price)||0);
-    if (sortSel === 'sf') return (parseFloat(b.dataset.sf)||0) - (parseFloat(a.dataset.sf)||0);
+  const grid = document.getElementById('grid');
+  const visible = cards.filter(c => c.style.display !== 'none');
+  visible.sort((a,b) => {
+    if (sortVal === 'newest') return (parseFloat(a.dataset.dom)) - (parseFloat(b.dataset.dom));
+    if (sortVal === 'cap') return (parseFloat(b.dataset.cap)||0) - (parseFloat(a.dataset.cap)||0);
+    if (sortVal === 'price') {
+      const pa = parseFloat(a.dataset.price)||Infinity, pb = parseFloat(b.dataset.price)||Infinity;
+      return pa - pb;
+    }
+    if (sortVal === 'sf') return (parseFloat(b.dataset.sf)||0) - (parseFloat(a.dataset.sf)||0);
     return 0;
   });
-  const grid = document.getElementById('grid');
-  sorted.forEach(c => grid.appendChild(c));
+  visible.forEach(c => grid.appendChild(c));
 }
-['sortSel','minCap','maxPrice','topOnly','critOnly'].forEach(id => {
+['sortSel','minCap','maxPrice','topOnly','matchOnly'].forEach(id => {
   document.getElementById(id).addEventListener('input', applyFilters);
   document.getElementById(id).addEventListener('change', applyFilters);
 });
+applyFilters();
 </script>
+
+</body>
+</html>
