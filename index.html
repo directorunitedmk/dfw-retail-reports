@@ -2,557 +2,232 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DFW Retail Investment Property Report — 2026-09-07</title>
+<title>DFW Retail Investment Property Report — 2026-09-08</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  :root {
-    --bg: #0d0d14;
-    --card-bg: #15151f;
-    --gold: #e8a020;
-    --text: #e8e8ec;
-    --text-dim: #9a9aa8;
-    --border: #26263a;
-    --green: #3ecf6e;
-    --red: #e05555;
-  }
-  * { box-sizing: border-box; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  header {
-    padding: 28px 24px 16px;
-    border-bottom: 1px solid var(--border);
-  }
-  header h1 {
-    margin: 0 0 6px;
-    color: var(--gold);
-    font-size: 1.6rem;
-  }
-  header .subtitle {
-    color: var(--text-dim);
-    font-size: 0.9rem;
-  }
-  .stat-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 16px 24px;
-    background: var(--card-bg);
-    border-bottom: 1px solid var(--border);
-  }
-  .stat-bar .stat-item {
-    min-width: 140px;
-  }
-  .stat-bar .stat-item .label {
-    color: var(--text-dim);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  .stat-bar .stat-item .value {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--gold);
-  }
-  .filter-bar {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-    padding: 12px 24px;
-    background: rgba(13,13,20,0.97);
-    border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(6px);
-  }
-  .filter-bar select, .filter-bar input {
-    background: var(--card-bg);
-    color: var(--text);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 6px 10px;
-    font-size: 0.85rem;
-  }
-  .filter-bar label {
-    font-size: 0.8rem;
-    color: var(--text-dim);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 20px;
-    padding: 24px;
-  }
-  .card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.15s ease, border-color 0.15s ease;
-  }
-  .card:hover {
-    border-color: var(--gold);
-    transform: translateY(-2px);
-  }
-  .photo-wrap {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16/10;
-    background: #1c1c28;
-  }
-  .photo-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .dom-pill {
-    position: absolute;
-    bottom: 8px;
-    left: 8px;
-    padding: 3px 9px;
-    border-radius: 12px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: #000;
-  }
-  .dom-green { background: var(--green); }
-  .dom-gold { background: var(--gold); }
-  .dom-red { background: var(--red); color: #fff; }
-  .dom-new { background: var(--green); }
-  .card-body {
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    flex: 1;
-  }
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  .badge {
-    font-size: 0.68rem;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-  }
-  .badge-top { background: var(--gold); color: #000; }
-  .badge-source { background: #26263a; color: var(--text-dim); }
-  .badge-criteria { background: #2b4d3a; color: #6ee69a; }
-  .prop-name {
-    margin: 2px 0 0;
-    font-size: 1.05rem;
-    color: var(--text);
-  }
-  .prop-address {
-    color: var(--text-dim);
-    font-size: 0.85rem;
-  }
-  .stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin: 8px 0;
-    padding: 10px 0;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  .stat-label {
-    color: var(--text-dim);
-    font-size: 0.68rem;
-    text-transform: uppercase;
-  }
-  .stat-value {
-    font-size: 0.95rem;
-    font-weight: 600;
-  }
-  .stat-value.gold { color: var(--gold); }
-  .stat-value.small { font-size: 0.8rem; font-weight: 500; }
-  .notes {
-    color: var(--text-dim);
-    font-size: 0.8rem;
-    line-height: 1.4;
-    flex: 1;
-  }
-  .view-btn {
-    display: inline-block;
-    margin-top: 8px;
-    padding: 9px 14px;
-    background: var(--gold);
-    color: #000;
-    text-align: center;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.85rem;
-  }
-  .view-btn:hover { opacity: 0.9; }
-  footer {
-    padding: 24px;
-    text-align: center;
-    color: var(--text-dim);
-    font-size: 0.78rem;
-    border-top: 1px solid var(--border);
-  }
-  .empty-msg {
-    padding: 60px 24px;
-    text-align: center;
-    color: var(--text-dim);
-  }
+:root{
+  --bg:#0d0d14; --card:#15151f; --gold:#e8a020; --text:#eee; --muted:#9a9aa8;
+  --green:#3fbf5f; --red:#e05555; --border:#26263a;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
+header{padding:24px 20px 12px;text-align:center;}
+header h1{margin:0 0 4px;color:var(--gold);font-size:1.6rem;}
+header p{margin:0;color:var(--muted);font-size:.9rem;}
+.statbar{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;padding:16px 20px;max-width:1100px;margin:0 auto;}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 18px;text-align:center;min-width:120px;}
+.stat .num{font-size:1.4rem;font-weight:700;color:var(--gold);}
+.stat .lbl{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;}
+.filterbar{position:sticky;top:0;z-index:10;background:rgba(13,13,20,.97);border-bottom:1px solid var(--border);padding:10px 20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;backdrop-filter:blur(6px);}
+.filterbar select,.filterbar input{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 8px;font-size:.85rem;}
+.filterbar label{font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:5px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;padding:20px;max-width:1400px;margin:0 auto;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s;}
+.card:hover{transform:translateY(-3px);}
+.photo-wrap{position:relative;width:100%;aspect-ratio:16/10;background:#1c1c28;}
+.photo-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+.badges{position:absolute;top:8px;left:8px;display:flex;gap:6px;flex-wrap:wrap;}
+.badge{font-size:.68rem;font-weight:700;padding:3px 8px;border-radius:20px;color:#111;}
+.badge.top{background:var(--gold);}
+.badge.match{background:#7fd0ff;}
+.badge.source{background:#3a3a4d;color:#eee;}
+.dom-pill{position:absolute;bottom:8px;right:8px;font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:20px;color:#111;}
+.dom-green{background:var(--green);}
+.dom-gold{background:var(--gold);}
+.dom-red{background:var(--red);color:#fff;}
+.dom-gray{background:#888;}
+.body{padding:14px 16px;display:flex;flex-direction:column;gap:8px;flex:1;}
+.body h3{margin:0;font-size:1.05rem;}
+.addr{color:var(--muted);font-size:.82rem;}
+.statsgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;font-size:.82rem;margin-top:4px;}
+.statsgrid .k{color:var(--muted);}
+.statsgrid .cap{color:var(--gold);font-weight:700;}
+.notes{font-size:.8rem;color:#c8c8d4;margin-top:4px;}
+.viewbtn{margin-top:auto;text-align:center;background:var(--gold);color:#111;font-weight:700;padding:9px;border-radius:8px;text-decoration:none;font-size:.85rem;}
+.viewbtn:hover{filter:brightness(1.08);}
+footer{text-align:center;color:var(--muted);font-size:.75rem;padding:30px 20px;}
+.section-title{max-width:1400px;margin:26px auto 0;padding:0 20px;color:var(--gold);font-size:1.1rem;border-bottom:1px solid var(--border);padding-bottom:8px;}
 </style>
 </head>
 <body>
 <header>
-  <h1>DFW Retail Investment Property Report</h1>
-  <div class="subtitle">Generated 2026-09-07 &middot; New-to-market listings across 11 broker/marketplace sources &middot; Dallas, Tarrant, Collin, Denton, Rockwall, Ellis &amp; Johnson counties</div>
+<h1>DFW Retail Investment Property Report</h1>
+<p>Generated 2026-09-08 · New-to-market focus (past 3 days priority) · United MK Investment Committee</p>
 </header>
 
-<div class="stat-bar">
-  <div class="stat-item"><div class="label">Total New Listings</div><div class="value">13</div></div>
-  <div class="stat-item"><div class="label">New in Past 3 Days</div><div class="value">13</div></div>
-  <div class="stat-item"><div class="label">Cap Rate Range</div><div class="value">7.25% – 7.25%</div></div>
-  <div class="stat-item"><div class="label">Price Range</div><div class="value">$5,000,000 – $5,000,000</div></div>
-</div>
+<div class="statbar" id="statbar"></div>
 
-<div class="filter-bar">
+<div class="filterbar">
   <label>Sort
-    <select id="sortSelect">
+    <select id="sortSel">
       <option value="newest">Newest</option>
       <option value="cap">Cap Rate (High→Low)</option>
       <option value="price">Price (Low→High)</option>
       <option value="sf">Size (High→Low)</option>
     </select>
   </label>
-  <label>Min Cap % <input type="number" id="minCap" step="0.1" placeholder="0"></label>
-  <label>Max Price $ <input type="number" id="maxPrice" placeholder="any"></label>
-  <label><input type="checkbox" id="topPicksOnly"> Top Picks Only</label>
-  <label><input type="checkbox" id="criteriaOnly"> Criteria Match Only</label>
+  <label>Min Cap <input type="number" id="minCap" step="0.1" style="width:70px" placeholder="0"></label>
+  <label>Max Price <input type="number" id="maxPrice" style="width:110px" placeholder="any"></label>
+  <label><input type="checkbox" id="topOnly"> Top Picks only</label>
+  <label><input type="checkbox" id="matchOnly"> Criteria Match only</label>
 </div>
 
-<div class="grid" id="grid">
-
-    <div class="card" data-price="5000000" data-cap="7.25" data-sf="10462" data-toppick="1" data-criteria="0" data-dom="0">
-      <div class="photo-wrap">
-        
-        <span class="dom-pill dom-new">NEW</span>
-      </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge badge-top">⭐ Top Pick</span><span class="badge badge-source">Matthews</span></div>
-        <h3 class="prop-name">The Goddard School</h3>
-        <div class="prop-address">3531 Corinth Pkwy, Corinth, TX 76208</div>
-        <div class="stats-grid">
-          <div class="stat"><div class="stat-label">Price</div><div class="stat-value">$5,000,000</div></div>
-          <div class="stat"><div class="stat-label">Cap Rate</div><div class="stat-value gold">7.25%</div></div>
-          <div class="stat"><div class="stat-label">Size</div><div class="stat-value">10,462 SF</div></div>
-          <div class="stat"><div class="stat-label">Occupancy</div><div class="stat-value small">Single-tenant NNN (Goddard School, daycare)</div></div>
-        </div>
-        <div class="notes">Built 2018. Denton County (DFW metro). New-to-market single-tenant NNN daycare.</div>
-        <a class="view-btn" href="https://www.matthews.com/properties/stnl-the-goddard-school-corinth-tx" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    
-    <div class="card" data-price="-1" data-cap="-1" data-sf="205802" data-toppick="1" data-criteria="0" data-dom="0">
-      <div class="photo-wrap">
-        
-        <span class="dom-pill dom-new">NEW</span>
-      </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge badge-top">⭐ Top Pick</span><span class="badge badge-source">Colliers</span></div>
-        <h3 class="prop-name">For Sale I Former Retail Big Box</h3>
-        <div class="prop-address">3155 W Wheatland Rd, Dallas, TX 75237</div>
-        <div class="stats-grid">
-          <div class="stat"><div class="stat-label">Price</div><div class="stat-value">Contact Broker</div></div>
-          <div class="stat"><div class="stat-label">Cap Rate</div><div class="stat-value gold">—</div></div>
-          <div class="stat"><div class="stat-label">Size</div><div class="stat-value">205,802 SF</div></div>
-          <div class="stat"><div class="stat-label">Occupancy</div><div class="stat-value small">Vacant former big-box retail</div></div>
-        </div>
-        <div class="notes">205,802 SF former big-box retail building, unpriced. Redevelopment/user opportunity.</div>
-        <a class="view-btn" href="https://www.colliers.com/en/properties/for-sale-i-former-retail-big-box/usa-3155-w-wheatland-rd-dallas-tx-75237-usa/usa1162162" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    
-    <div class="card" data-price="-1" data-cap="-1" data-sf="-1" data-toppick="1" data-criteria="0" data-dom="0">
-      <div class="photo-wrap">
-        <img src="https://www.cbre.com/resources/fileassets/US-SMPL-149041/893d965b/0ec6ca43-7ab3-4f30-9695-3c9bcdde50a5_Photo_1_small.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'">
-        <span class="dom-pill dom-new">NEW</span>
-      </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge badge-top">⭐ Top Pick</span><span class="badge badge-source">CBRE</span></div>
-        <h3 class="prop-name">SEQ Wilmeth Rd & Ridge Rd</h3>
-        <div class="prop-address">SEQ Wilmeth Rd & Ridge Rd, McKinney, TX 76071</div>
-        <div class="stats-grid">
-          <div class="stat"><div class="stat-label">Price</div><div class="stat-value">Contact Broker</div></div>
-          <div class="stat"><div class="stat-label">Cap Rate</div><div class="stat-value gold">—</div></div>
-          <div class="stat"><div class="stat-label">Size</div><div class="stat-value">0.79 AC (land)</div></div>
-          <div class="stat"><div class="stat-label">Occupancy</div><div class="stat-value small">Vacant land / retail pad site</div></div>
-        </div>
-        <div class="notes">0.79 AC retail pad site near new McKinney elementary schools and fast-growing residential subdivisions.</div>
-        <a class="view-btn" href="https://www.cbre.com/properties/properties-for-lease/commercial-space/details/US-SMPL-149041/seq-wilmeth-rd-and-ridge-rd-mckinney-tx-76071" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    
-    <div class="card" data-price="-1" data-cap="-1" data-sf="-1" data-toppick="1" data-criteria="0" data-dom="0">
-      <div class="photo-wrap">
-        <img src="https://www.cbre.com/resources/fileassets/US-SMPL-120435/16bda58a/89ee7d12-d937-4706-b2e6-ba3c4132d6c3_Photo_1_small.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'">
-        <span class="dom-pill dom-new">NEW</span>
-      </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge badge-top">⭐ Top Pick</span><span class="badge badge-source">CBRE</span></div>
-        <h3 class="prop-name">NEQ US-75 & Melissa Road</h3>
-        <div class="prop-address">NEQ US-75 & Melissa Rd, Melissa, TX 75454</div>
-        <div class="stats-grid">
-          <div class="stat"><div class="stat-label">Price</div><div class="stat-value">Contact Broker</div></div>
-          <div class="stat"><div class="stat-label">Cap Rate</div><div class="stat-value gold">—</div></div>
-          <div class="stat"><div class="stat-label">Size</div><div class="stat-value">2.385 AC (land)</div></div>
-          <div class="stat"><div class="stat-label">Occupancy</div><div class="stat-value small">Vacant land / retail pad site</div></div>
-        </div>
-        <div class="notes">2.385 AC retail site, Collin County (DFW metro).</div>
-        <a class="view-btn" href="https://www.cbre.com/properties/properties-for-lease/commercial-space/details/US-SMPL-120435/neq-us-75-melissa-road-neq-us-75-melissa-rd-melissa-tx-75454" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    
-    <div class="card" data-price="-1" data-cap="-1" data-sf="-1" data-toppick="1" data-criteria="1" data-dom="0">
-      <div class="photo-wrap">
-        
-        <span class="dom-pill dom-new">NEW</span>
-      </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge badge-top">⭐ Top Pick</span><span class="badge badge-source">SHOP Companies</span><span class="badge badge-criteria">Criteria Match</span></div>
-        <h3 class="prop-name">Panera 3-Tenant (SHOP Companies listing)</h3>
-        <div class="prop-address">6280 Tennyson Pkwy area, Plano, TX</div>
-        <div class="stats-grid">
-          <div class="stat"><div class="stat-label">Price</div><div class="stat-value">Contact Broker</div></div>
-          <div class="stat"><div class="stat-label">Cap Rate</div><div class="stat-value gold">—</div></div>
-          <div class="stat"><div class="stat-label">Size</div><div class="stat-value">—</div></div>
-          <div class="stat"><div class="stat-label">Occupancy</div><div class="stat-value small">Multi-tenant (Panera + 2 others)</div></div>
-        </div>
-        <div class="notes">Cross-listed on SHOP Companies (also on Crexi as a separate URL, tracked previously). Multi-tenant retail.</div>
-        <a class="view-btn" href="https://shopcompanies.com/properties/panera-3-tenant" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    
-    <div class="card" data-price="-1" data-cap="-1" data-sf="-1" data-toppick="1" data-criteria="0" data-dom="0">
-      <div class="photo-wrap">
-        
-        <span class="dom-pill dom-new">NEW</span>
-      </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge badge-top">⭐ Top Pick</span><span class="badge badge-source">NAI Robert Lynn</span></div>
-        <h3 class="prop-name">NAI Robert Lynn Listing (property_id 11282)</h3>
-        <div class="prop-address">4111 Platinum Way, Dallas, TX (approx. location)</div>
-        <div class="stats-grid">
-          <div class="stat"><div class="stat-label">Price</div><div class="stat-value">Contact Broker</div></div>
-          <div class="stat"><div class="stat-label">Cap Rate</div><div class="stat-value gold">—</div></div>
-          <div class="stat"><div class="stat-label">Size</div><div class="stat-value">—</div></div>
-          <div class="stat"><div class="stat-label">Occupancy</div><div class="stat-value small">Unconfirmed (verify with broker)</div></div>
-        </div>
-        <div class="notes">Flagged as newest on NAI Robert Lynn's site map feed (property_id higher than any previously tracked). Address is approximate from map coordinates; property type/price not confirmed by this scrape — verify listing details directly.</div>
-        <a class="view-btn" href="https://nairl.com/?p=206&property_id=11282" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    
-    <div class="card" data-price="-1" data-cap="-1" data-sf="-1" data-toppick="1" data-criteria="0" data-dom="0">
-      <div class="photo-wrap">
-        
-        <span class="dom-pill dom-new">NEW</span>
-      </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge badge-top">⭐ Top Pick</span><span class="badge badge-source">NAI Robert Lynn</span></div>
-        <h3 class="prop-name">NAI Robert Lynn Listing (property_id 11331)</h3>
-        <div class="prop-address">1333 S Belt Line Rd, Irving/Dallas, TX (approx. location)</div>
-        <div class="stats-grid">
-          <div class="stat"><div class="stat-label">Price</div><div class="stat-value">Contact Broker</div></div>
-          <div class="stat"><div class="stat-label">Cap Rate</div><div class="stat-value gold">—</div></div>
-          <div class="stat"><div class="stat-label">Size</div><div class="stat-value">—</div></div>
-          <div class="stat"><div class="stat-label">Occupancy</div><div class="stat-value small">Unconfirmed (verify with broker)</div></div>
-        </div>
-        <div class="notes">Flagged as newest on NAI Robert Lynn's site map feed (property_id higher than any previously tracked). Address is approximate from map coordinates; property type/price not confirmed by this scrape — verify listing details directly.</div>
-        <a class="view-btn" href="https://nairl.com/?p=206&property_id=11331" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    
-    <div class="card" data-price="-1" data-cap="-1" data-sf="-1" data-toppick="1" data-criteria="0" data-dom="0">
-      <div class="photo-wrap">
-        
-        <span class="dom-pill dom-new">NEW</span>
-      </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge badge-top">⭐ Top Pick</span><span class="badge badge-source">NAI Robert Lynn</span></div>
-        <h3 class="prop-name">NAI Robert Lynn Listing (property_id 11322)</h3>
-        <div class="prop-address">4820 Memphis St, Mesquite, TX (approx. location)</div>
-        <div class="stats-grid">
-          <div class="stat"><div class="stat-label">Price</div><div class="stat-value">Contact Broker</div></div>
-          <div class="stat"><div class="stat-label">Cap Rate</div><div class="stat-value gold">—</div></div>
-          <div class="stat"><div class="stat-label">Size</div><div class="stat-value">—</div></div>
-          <div class="stat"><div class="stat-label">Occupancy</div><div class="stat-value small">Unconfirmed (verify with broker)</div></div>
-        </div>
-        <div class="notes">Flagged as newest on NAI Robert Lynn's site map feed (property_id higher than any previously tracked). Address is approximate from map coordinates; property type/price not confirmed by this scrape — verify listing details directly.</div>
-        <a class="view-btn" href="https://nairl.com/?p=206&property_id=11322" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    
-    <div class="card" data-price="-1" data-cap="-1" data-sf="-1" data-toppick="1" data-criteria="0" data-dom="0">
-      <div class="photo-wrap">
-        
-        <span class="dom-pill dom-new">NEW</span>
-      </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge badge-top">⭐ Top Pick</span><span class="badge badge-source">NAI Robert Lynn</span></div>
-        <h3 class="prop-name">NAI Robert Lynn Listing (property_id 11346)</h3>
-        <div class="prop-address">6540 County Rd 809, Johnson County, TX (approx. location)</div>
-        <div class="stats-grid">
-          <div class="stat"><div class="stat-label">Price</div><div class="stat-value">Contact Broker</div></div>
-          <div class="stat"><div class="stat-label">Cap Rate</div><div class="stat-value gold">—</div></div>
-          <div class="stat"><div class="stat-label">Size</div><div class="stat-value">—</div></div>
-          <div class="stat"><div class="stat-label">Occupancy</div><div class="stat-value small">Unconfirmed (verify with broker)</div></div>
-        </div>
-        <div class="notes">Flagged as newest on NAI Robert Lynn's site map feed (property_id higher than any previously tracked). Address is approximate from map coordinates; property type/price not confirmed by this scrape — verify listing details directly.</div>
-        <a class="view-btn" href="https://nairl.com/?p=206&property_id=11346" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    
-    <div class="card" data-price="-1" data-cap="-1" data-sf="-1" data-toppick="1" data-criteria="0" data-dom="0">
-      <div class="photo-wrap">
-        
-        <span class="dom-pill dom-new">NEW</span>
-      </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge badge-top">⭐ Top Pick</span><span class="badge badge-source">NAI Robert Lynn</span></div>
-        <h3 class="prop-name">NAI Robert Lynn Listing (property_id 11205)</h3>
-        <div class="prop-address">10908 S Pipeline Rd, Hurst, TX (approx. location)</div>
-        <div class="stats-grid">
-          <div class="stat"><div class="stat-label">Price</div><div class="stat-value">Contact Broker</div></div>
-          <div class="stat"><div class="stat-label">Cap Rate</div><div class="stat-value gold">—</div></div>
-          <div class="stat"><div class="stat-label">Size</div><div class="stat-value">—</div></div>
-          <div class="stat"><div class="stat-label">Occupancy</div><div class="stat-value small">Unconfirmed (verify with broker)</div></div>
-        </div>
-        <div class="notes">Flagged as newest on NAI Robert Lynn's site map feed (property_id higher than any previously tracked). Address is approximate from map coordinates; property type/price not confirmed by this scrape — verify listing details directly.</div>
-        <a class="view-btn" href="https://nairl.com/?p=206&property_id=11205" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    
-    <div class="card" data-price="-1" data-cap="-1" data-sf="-1" data-toppick="1" data-criteria="0" data-dom="0">
-      <div class="photo-wrap">
-        
-        <span class="dom-pill dom-new">NEW</span>
-      </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge badge-top">⭐ Top Pick</span><span class="badge badge-source">NAI Robert Lynn</span></div>
-        <h3 class="prop-name">NAI Robert Lynn Listing (property_id 11206)</h3>
-        <div class="prop-address">8713 White Settlement Rd, Fort Worth, TX (approx. location)</div>
-        <div class="stats-grid">
-          <div class="stat"><div class="stat-label">Price</div><div class="stat-value">Contact Broker</div></div>
-          <div class="stat"><div class="stat-label">Cap Rate</div><div class="stat-value gold">—</div></div>
-          <div class="stat"><div class="stat-label">Size</div><div class="stat-value">—</div></div>
-          <div class="stat"><div class="stat-label">Occupancy</div><div class="stat-value small">Unconfirmed (verify with broker)</div></div>
-        </div>
-        <div class="notes">Flagged as newest on NAI Robert Lynn's site map feed (property_id higher than any previously tracked). Address is approximate from map coordinates; property type/price not confirmed by this scrape — verify listing details directly.</div>
-        <a class="view-btn" href="https://nairl.com/?p=206&property_id=11206" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    
-    <div class="card" data-price="-1" data-cap="-1" data-sf="-1" data-toppick="1" data-criteria="0" data-dom="0">
-      <div class="photo-wrap">
-        
-        <span class="dom-pill dom-new">NEW</span>
-      </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge badge-top">⭐ Top Pick</span><span class="badge badge-source">NAI Robert Lynn</span></div>
-        <h3 class="prop-name">NAI Robert Lynn Listing (property_id 11189)</h3>
-        <div class="prop-address">302 W Ovilla Rd, Ovilla, TX (approx. location)</div>
-        <div class="stats-grid">
-          <div class="stat"><div class="stat-label">Price</div><div class="stat-value">Contact Broker</div></div>
-          <div class="stat"><div class="stat-label">Cap Rate</div><div class="stat-value gold">—</div></div>
-          <div class="stat"><div class="stat-label">Size</div><div class="stat-value">—</div></div>
-          <div class="stat"><div class="stat-label">Occupancy</div><div class="stat-value small">Unconfirmed (verify with broker)</div></div>
-        </div>
-        <div class="notes">Flagged as newest on NAI Robert Lynn's site map feed (property_id higher than any previously tracked). Address is approximate from map coordinates; property type/price not confirmed by this scrape — verify listing details directly.</div>
-        <a class="view-btn" href="https://nairl.com/?p=206&property_id=11189" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    
-    <div class="card" data-price="-1" data-cap="-1" data-sf="-1" data-toppick="1" data-criteria="0" data-dom="0">
-      <div class="photo-wrap">
-        
-        <span class="dom-pill dom-new">NEW</span>
-      </div>
-      <div class="card-body">
-        <div class="badges"><span class="badge badge-top">⭐ Top Pick</span><span class="badge badge-source">NAI Robert Lynn</span></div>
-        <h3 class="prop-name">NAI Robert Lynn Listing (property_id 11190)</h3>
-        <div class="prop-address">SWC W McCart St & Jackson St, Denton County, TX (approx. location)</div>
-        <div class="stats-grid">
-          <div class="stat"><div class="stat-label">Price</div><div class="stat-value">Contact Broker</div></div>
-          <div class="stat"><div class="stat-label">Cap Rate</div><div class="stat-value gold">—</div></div>
-          <div class="stat"><div class="stat-label">Size</div><div class="stat-value">—</div></div>
-          <div class="stat"><div class="stat-label">Occupancy</div><div class="stat-value small">Unconfirmed (verify with broker)</div></div>
-        </div>
-        <div class="notes">Flagged as newest on NAI Robert Lynn's site map feed (property_id higher than any previously tracked). Address is approximate from map coordinates; property type/price not confirmed by this scrape — verify listing details directly.</div>
-        <a class="view-btn" href="https://nairl.com/?p=206&property_id=11190" target="_blank" rel="noopener">View Listing →</a>
-      </div>
-    </div>
-    
-</div>
+<div class="section-title">New-to-Market Listings (11)</div>
+<div class="grid" id="grid"></div>
 
 <footer>
-  DFW Retail Investment Property Report — internal use for United MK. Sources: Crexi, STRIVE, Secure Net Lease, SRS, Marcus &amp; Millichap, Matthews, Colliers, CBRE, NAI Robert Lynn, LoopNet, SHOP Companies.
+DFW Retail Investment Property Report — automated daily scan of Crexi, STRIVE, Secure Net Lease, SRS, Marcus &amp; Millichap, Matthews, Colliers, CBRE, NAI Robert Lynn, LoopNet, SHOP Companies.<br>
+Sources blocked/empty this run: LoopNet (bot protection), CBRE (404 — site restructure), Colliers (facet did not persist), Matthews (infinite-scroll list would not load beyond 1 card via automation), NAI Robert Lynn (data retrieved but structured parsing blocked), SHOP Companies (sale/lease status unconfirmed), SRS (no new DFW for-sale retail in newest feed).
 </footer>
 
 <script>
-function applyFilters() {
-  const cards = Array.from(document.querySelectorAll('.card'));
-  const minCap = parseFloat(document.getElementById('minCap').value) || -Infinity;
-  const maxPrice = parseFloat(document.getElementById('maxPrice').value) || Infinity;
-  const topOnly = document.getElementById('topPicksOnly').checked;
-  const critOnly = document.getElementById('criteriaOnly').checked;
-  const sortVal = document.getElementById('sortSelect').value;
+const listings = [
+  {
+    name:"Panera 3-Tenant", addr:"6280 Tennyson Parkway, Plano, TX 75204", price:4666000, cap:6.15, sf:6634,
+    dom:5, source:"Crexi", match:true, top:false, occ:"3 tenants", notes:"Multi-tenant NNN retail strip anchored by Panera Bread.",
+    url:"https://www.crexi.com/properties/2686577/texas-panera-3-tenant",
+    photo:"https://crexi.com/images/format=auto,width=716,height=444,fit=cover/assets/2686577/5ad45893d960494e905ae3ef6eea10c2.jpg"
+  },
+  {
+    name:"817 W Jefferson Boulevard", addr:"817 W Jefferson Boulevard, Dallas, TX 75208", price:1900000, cap:null, sf:11001,
+    dom:4, source:"Crexi", match:false, top:false, occ:"n/a", notes:"Special-purpose building on a retail corridor (Oak Cliff); under $2M, priced for owner-user or redevelopment.",
+    url:"https://www.crexi.com/properties/2687303/texas-817-w-jefferson-boulevard",
+    photo:"https://crexi.com/images/format=auto,width=716,height=444,fit=cover/assets/2687303/fae2625ac0f744d0add7c1c39274cecb.JPG"
+  },
+  {
+    name:"Trail Lake Plaza", addr:"5018-5042 Trail Lake Drive, Fort Worth, TX 76133", price:4991000, cap:6.76, sf:32539,
+    dom:14, source:"Crexi", match:true, top:false, occ:"Multi-tenant retail center", notes:"Established multi-tenant neighborhood retail center.",
+    url:"https://www.crexi.com/properties/2674880/texas-trail-lake-plaza",
+    photo:"https://crexi.com/images/format=auto,width=716,height=444,fit=cover/assets/2674880/760700b286fc454c9ce1358dbf96aded.JPG"
+  },
+  {
+    name:"Parkside Place", addr:"2833 Community Drive, Dallas, TX 75220", price:null, cap:null, sf:null,
+    dom:6, source:"Crexi", match:false, top:false, occ:"n/a", notes:"Urban infill redevelopment site in NW Dallas growth corridor; unpriced.",
+    url:"https://www.crexi.com/properties/2685454/texas-parkside-place",
+    photo:"https://crexi.com/images/format=auto,width=716,height=444,fit=cover/assets/2685454/e5597774e1fa483c9f03c32150eac6d4.PNG"
+  },
+  {
+    name:"AutoZone — Carrollton", addr:"4825 N Josey Ln, Carrollton, TX", price:2588000, cap:4.25, sf:6815,
+    dom:null, source:"Secure Net Lease", match:false, top:false, occ:"Single-tenant NNN (AutoZone)", notes:"2026 construction, ground lease. Listed within the last few weeks (exact day unconfirmed — Aug 2026 upload date).",
+    url:"https://securenetlease.com/properties/autozone-carrollton-tx/",
+    photo:"https://securenetlease.com/wp-content/uploads/2026/08/Cover-Crop-1-scaled.jpg"
+  },
+  {
+    name:"7-Eleven (S&P Rated A-) — Ennis", addr:"1470 Hwy 287, Ennis, TX", price:9194000, cap:4.65, sf:4816,
+    dom:null, source:"Secure Net Lease", match:true, top:false, occ:"Single-tenant NNN (7-Eleven)", notes:"2026 construction. Ellis County (DFW metro). Listed recently (Aug 2026 upload, exact day unconfirmed).",
+    url:"https://securenetlease.com/properties/7-eleven-ennis-tx/",
+    photo:"https://securenetlease.com/wp-content/uploads/2026/08/7-Eleven_TX_Ennis_NWC_Ensign_RD__Hwy_287-Cover.jpg"
+  },
+  {
+    name:"Fitness Connection", addr:"Dallas, TX", price:4143580, cap:10.00, sf:null,
+    dom:null, source:"Marcus & Millichap", match:true, top:false, occ:"Single-tenant net lease (Fitness Connection)", notes:"12.2 years remaining on lease. Sorted as most-recent on M&M's Dallas feed.",
+    url:"https://www.marcusmillichap.com/properties/309025/fitness-connection-dallas-tx",
+    photo:"https://mmimageservice.azurewebsites.net/api/image/property/4a07dc4b-3ce0-4efe-9425-2b24b15f742a/M"
+  },
+  {
+    name:"Wheatland Marketplace", addr:"Dallas, TX", price:6237000, cap:5.79, sf:null,
+    dom:null, source:"Marcus & Millichap", match:true, top:false, occ:"Multi-tenant retail center", notes:"Multi-tenant shopping center, $155.81/SF. Sorted as most-recent on M&M's Dallas feed.",
+    url:"https://www.marcusmillichap.com/properties/309582/wheatland-marketplace",
+    photo:"https://mmimageservice.azurewebsites.net/api/image/property/d7b6a675-f601-46b3-a9f9-fda4d34733c5/M"
+  },
+  {
+    name:"Sun Auto Tire & Service", addr:"Royse City (Dallas-Fort Worth MSA), TX", price:5078885, cap:5.65, sf:null,
+    dom:null, source:"Marcus & Millichap", match:true, top:false, occ:"Single-tenant NNN (Sun Auto, 575-unit guarantor)", notes:"15-year absolute NNN, qualifies for depreciation.",
+    url:"https://www.marcusmillichap.com/properties/308501/sun-auto-tire-service-15-year-absolute-net-qualifies-for-depreciation-575-unit-guarantor",
+    photo:"https://mmimageservice.azurewebsites.net/api/image/property/85bc13e0-2f18-4eb1-ab17-1a5712726487/M"
+  },
+  {
+    name:"Sixt: Love Field", addr:"Dallas, TX (Love Field)", price:null, cap:null, sf:null,
+    dom:null, source:"Marcus & Millichap", match:false, top:false, occ:"Single-tenant retail (Sixt car rental)", notes:"Unpriced — request for offer.",
+    url:"https://www.marcusmillichap.com/properties/200332/sixt-love-field",
+    photo:"https://mmimageservice.azurewebsites.net/api/image/property/5e093a0e-223c-48ee-892b-731015c090f0/M"
+  },
+  {
+    name:"4224 Swiss Ave", addr:"4224 Swiss Ave, Dallas, TX 75204", price:1695000, cap:null, sf:4781,
+    dom:null, source:"STRIVE", match:false, top:false, occ:"0% (vacant, backfill/owner-user opportunity)", notes:"Medical-retail building 2 blocks from Baylor University Medical Center on the Swiss Ave corridor; under $2M.",
+    url:"https://www.strivere.com/property/338882",
+    photo:"https://strivenext.s3.amazonaws.com/website/property-photos/338882/Swiss%20Cover.JPG"
+  }
+];
 
-  cards.forEach(c => {
-    const cap = parseFloat(c.dataset.cap);
-    const price = parseFloat(c.dataset.price);
-    const isTop = c.dataset.toppick === '1';
-    const isCrit = c.dataset.criteria === '1';
-    let show = true;
-    if (!isNaN(cap) && cap >= 0 && cap < minCap) show = false;
-    if (!isNaN(price) && price >= 0 && price > maxPrice) show = false;
-    if (topOnly && !isTop) show = false;
-    if (critOnly && !isCrit) show = false;
-    c.style.display = show ? '' : 'none';
+function domClass(d){
+  if(d===null||d===undefined) return 'dom-gray';
+  if(d<=30) return 'dom-green';
+  if(d<=90) return 'dom-gold';
+  return 'dom-red';
+}
+function fmtPrice(p){ return p? '$'+p.toLocaleString() : 'Unpriced'; }
+function fmtSF(s){ return s? s.toLocaleString()+' SF' : 'n/a'; }
+function fmtCap(c){ return (c!==null && c!==undefined) ? c.toFixed(2)+'%' : 'n/a'; }
+
+function render(){
+  const sort = document.getElementById('sortSel').value;
+  const minCap = parseFloat(document.getElementById('minCap').value)||0;
+  const maxPrice = parseFloat(document.getElementById('maxPrice').value)||Infinity;
+  const topOnly = document.getElementById('topOnly').checked;
+  const matchOnly = document.getElementById('matchOnly').checked;
+
+  let arr = listings.filter(l=>{
+    if((l.cap||0) < minCap) return false;
+    if((l.price||0) > maxPrice && l.price) return false;
+    if(topOnly && !l.top) return false;
+    if(matchOnly && !l.match) return false;
+    return true;
   });
+
+  if(sort==='newest') arr.sort((a,b)=>(a.dom??999)-(b.dom??999));
+  if(sort==='cap') arr.sort((a,b)=>(b.cap||0)-(a.cap||0));
+  if(sort==='price') arr.sort((a,b)=>(a.price||0)-(b.price||0));
+  if(sort==='sf') arr.sort((a,b)=>(b.sf||0)-(a.sf||0));
 
   const grid = document.getElementById('grid');
-  const visible = cards.filter(c => c.style.display !== 'none');
-  visible.sort((a,b) => {
-    if (sortVal === 'cap') return (parseFloat(b.dataset.cap)||-1) - (parseFloat(a.dataset.cap)||-1);
-    if (sortVal === 'price') {
-      const pa = parseFloat(a.dataset.price); const pb = parseFloat(b.dataset.price);
-      return (pa<0?Infinity:pa) - (pb<0?Infinity:pb);
-    }
-    if (sortVal === 'sf') return (parseFloat(b.dataset.sf)||-1) - (parseFloat(a.dataset.sf)||-1);
-    return (parseFloat(b.dataset.dom)||0) - (parseFloat(a.dataset.dom)||0) === 0 ? 0 : 0;
-  });
-  visible.forEach(c => grid.appendChild(c));
+  grid.innerHTML = arr.map(l=>`
+    <div class="card">
+      <div class="photo-wrap">
+        <img src="${l.photo}" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'">
+        <div class="badges">
+          ${l.top?'<span class="badge top">⭐ Top Pick</span>':''}
+          ${l.match?'<span class="badge match">Criteria Match</span>':''}
+          <span class="badge source">${l.source}</span>
+        </div>
+        <span class="dom-pill ${domClass(l.dom)}">${l.dom!==null&&l.dom!==undefined ? 'DOM '+l.dom+'d' : 'DOM n/a'}</span>
+      </div>
+      <div class="body">
+        <h3>${l.name}</h3>
+        <div class="addr">${l.addr}</div>
+        <div class="statsgrid">
+          <div><span class="k">Price:</span> ${fmtPrice(l.price)}</div>
+          <div><span class="k">Cap:</span> <span class="cap">${fmtCap(l.cap)}</span></div>
+          <div><span class="k">Size:</span> ${fmtSF(l.sf)}</div>
+          <div><span class="k">Occ:</span> ${l.occ}</div>
+        </div>
+        <div class="notes">${l.notes}</div>
+        <a class="viewbtn" href="${l.url}" target="_blank" rel="noopener">View Listing →</a>
+      </div>
+    </div>
+  `).join('');
 }
-['sortSelect','minCap','maxPrice','topPicksOnly','criteriaOnly'].forEach(id => {
-  document.getElementById(id).addEventListener('input', applyFilters);
-  document.getElementById(id).addEventListener('change', applyFilters);
-});
-applyFilters();
-</script>
 
+function renderStats(){
+  const caps = listings.map(l=>l.cap).filter(c=>c!==null&&c!==undefined);
+  const prices = listings.map(l=>l.price).filter(p=>p);
+  const newIn3 = listings.filter(l=>l.dom!==null&&l.dom!==undefined&&l.dom<=3).length;
+  const stats = [
+    {num:listings.length, lbl:'Total Listings'},
+    {num:newIn3, lbl:'New In 3 Days'},
+    {num: caps.length? (Math.min(...caps).toFixed(2)+'–'+Math.max(...caps).toFixed(2)+'%') : 'n/a', lbl:'Cap Range'},
+    {num: prices.length? ('$'+(Math.min(...prices)/1e6).toFixed(2)+'M–$'+(Math.max(...prices)/1e6).toFixed(1)+'M') : 'n/a', lbl:'Price Range'},
+    {num: listings.filter(l=>l.match).length, lbl:'Criteria Matches'}
+  ];
+  document.getElementById('statbar').innerHTML = stats.map(s=>`<div class="stat"><div class="num">${s.num}</div><div class="lbl">${s.lbl}</div></div>`).join('');
+}
+
+['sortSel','minCap','maxPrice','topOnly','matchOnly'].forEach(id=>{
+  document.getElementById(id).addEventListener('input', render);
+  document.getElementById(id).addEventListener('change', render);
+});
+renderStats();
+render();
+</script>
 </body>
 </html>
