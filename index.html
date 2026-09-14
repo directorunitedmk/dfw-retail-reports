@@ -3,201 +3,166 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DFW Retail Investment Report — Sep 13, 2026</title>
+<title>DFW Retail Investment Report — Sep 14, 2026</title>
 <style>
-:root{--bg:#0d0d14;--card:#15151f;--card2:#1c1c28;--line:#2a2a3a;--gold:#e8a020;--txt:#e6e6ef;--dim:#9a9ab0;--grn:#3fbf6f;--red:#e05555;--gray:#6a6a80}
+:root{--bg:#0d0d14;--card:#15151f;--card2:#1c1c28;--gold:#e8a020;--txt:#e9e9f0;--mut:#8b8b9e;--line:#26263a;--grn:#3ec46d;--red:#e05252}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-a{color:inherit;text-decoration:none}
 .wrap{max-width:1280px;margin:0 auto;padding:0 20px 60px}
-header{padding:32px 0 18px;border-bottom:1px solid var(--line)}
+header{padding:34px 0 18px;border-bottom:1px solid var(--line)}
 h1{margin:0 0 6px;font-size:27px;letter-spacing:-.4px}
 h1 span{color:var(--gold)}
-.sub{color:var(--dim);font-size:14px}
+.sub{color:var(--mut);font-size:14px}
 .stats{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
 .stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 16px;min-width:130px}
 .stat b{display:block;font-size:20px;color:var(--gold);font-weight:600}
-.stat i{font-style:normal;font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.6px}
-.bar{position:sticky;top:0;z-index:20;background:rgba(13,13,20,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 0;margin-bottom:24px}
-.bar .wrap2{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-select,input{background:var(--card2);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:13px}
-label.chk{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--dim);cursor:pointer}
-.sechead{margin:34px 0 14px;font-size:16px;letter-spacing:.4px;color:var(--gold);text-transform:uppercase;border-left:3px solid var(--gold);padding-left:10px}
-.sechead small{display:block;text-transform:none;letter-spacing:0;color:var(--dim);font-size:12px;margin-top:3px;font-weight:400}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:13px;overflow:hidden;display:flex;flex-direction:column}
-.photo-wrap{position:relative;height:175px;background:var(--card2)}
+.stat i{font-style:normal;color:var(--mut);font-size:11px;text-transform:uppercase;letter-spacing:.7px}
+.bar{position:sticky;top:0;z-index:20;background:rgba(13,13,20,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 0;margin-bottom:22px}
+.bar .in{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+label.f{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.6px;margin-right:4px}
+select,input[type=number]{background:var(--card2);color:var(--txt);border:1px solid var(--line);border-radius:7px;padding:7px 10px;font-size:13px}
+input[type=number]{width:110px}
+.chk{display:inline-flex;align-items:center;gap:6px;background:var(--card2);border:1px solid var(--line);border-radius:7px;padding:7px 11px;font-size:13px;cursor:pointer;user-select:none}
+.chk input{accent-color:var(--gold);margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.photo-wrap{position:relative;aspect-ratio:716/444;background:var(--card2);overflow:hidden}
 .photo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
-.dom{position:absolute;left:10px;bottom:10px;background:var(--gray);color:#000;font-size:11px;font-weight:700;padding:3px 8px;border-radius:20px}
-.dom.g{background:var(--grn)}.dom.y{background:var(--gold)}.dom.r{background:var(--red)}
+.dom{position:absolute;left:10px;bottom:10px;color:#000;font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.3px}
+.d-new{background:var(--grn)}.d-mid{background:var(--gold)}.d-old{background:var(--red)}.d-na{background:#9a9aae}
 .badges{display:flex;flex-wrap:wrap;gap:6px;padding:12px 14px 0}
-.b{font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:3px 8px;border-radius:20px;background:var(--card2);color:var(--dim);border:1px solid var(--line)}
-.b.top{background:var(--gold);color:#1a1205;border-color:var(--gold)}
-.b.cm{background:#1e3a2b;color:#6fe0a0;border-color:#2c5a40}
-.body{padding:10px 14px 14px;flex:1;display:flex;flex-direction:column}
-.ttl{font-size:15px;font-weight:600;line-height:1.3;margin:0 0 4px}
-.addr{font-size:12.5px;color:var(--dim);margin-bottom:12px}
-.sg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:11px}
-.sg div{background:var(--card2);border-radius:8px;padding:7px 9px}
-.sg i{font-style:normal;display:block;font-size:9.5px;color:var(--dim);text-transform:uppercase;letter-spacing:.6px;margin-bottom:2px}
-.sg b{font-size:13.5px;font-weight:600}
-.sg b.gold{color:var(--gold)}
-.note{font-size:12px;color:var(--dim);line-height:1.45;margin-bottom:12px;flex:1}
-.btn{display:block;text-align:center;background:var(--card2);border:1px solid var(--line);border-radius:8px;padding:9px;font-size:12.5px;font-weight:600;color:var(--gold)}
-.btn:hover{background:#23232f}
-.srcnote{margin-top:44px;padding:18px;background:var(--card);border:1px solid var(--line);border-radius:11px;font-size:12.5px;color:var(--dim);line-height:1.7}
-.srcnote b{color:var(--txt)}
-.empty{color:var(--dim);font-size:14px;padding:20px 0}
-footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:var(--dim);font-size:11.5px}
+.bdg{font-size:10.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:3px 8px;border-radius:5px}
+.b-top{background:var(--gold);color:#000}
+.b-src{background:var(--card2);color:var(--mut);border:1px solid var(--line)}
+.b-cri{background:#2a4d34;color:var(--grn);border:1px solid #376b46}
+.b-uc{background:#4d2a2a;color:#f09a9a;border:1px solid #6b3737}
+.body{padding:10px 14px 16px;display:flex;flex-direction:column;flex:1}
+.nm{font-size:16px;font-weight:600;margin:0 0 3px;line-height:1.3}
+.ad{color:var(--mut);font-size:12.5px;margin-bottom:12px}
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:11px 0;margin-bottom:11px}
+.sg div i{display:block;font-style:normal;color:var(--mut);font-size:9.5px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}
+.sg div b{font-weight:600;font-size:13px}
+.sg .cap b{color:var(--gold)}
+.tn{font-size:12.5px;color:var(--mut);margin-bottom:14px;flex:1}
+.tn b{color:var(--txt);font-weight:600}
+.btn{display:block;text-align:center;background:var(--gold);color:#000;text-decoration:none;font-weight:700;font-size:13px;padding:10px;border-radius:8px}
+.btn:hover{filter:brightness(1.1)}
+.none{color:var(--mut);padding:40px 0;text-align:center}
+footer{margin-top:46px;padding-top:20px;border-top:1px solid var(--line);color:var(--mut);font-size:12.5px}
+footer b{color:var(--txt)}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
-<h1>DFW Retail Investment Report <span>&mdash; New to Market</span></h1>
-<div class="sub">Sunday, September 13, 2026 &middot; 10 sources scraped &middot; deduplicated against 48 previously-seen listings</div>
+<h1>DFW Retail Investment Report — <span>September 14, 2026</span></h1>
+<div class="sub">New-to-market retail for sale across the Dallas–Fort Worth metroplex. 11 sources swept.</div>
 <div class="stats" id="stats"></div>
 </header>
 </div>
-
-<div class="bar"><div class="wrap2">
+<div class="bar"><div class="in">
+<label class="f">Sort</label>
 <select id="sort">
-<option value="new">Sort: Newest first</option>
-<option value="cap">Sort: Cap rate (high&rarr;low)</option>
-<option value="pricedesc">Sort: Price (high&rarr;low)</option>
-<option value="priceasc">Sort: Price (low&rarr;high)</option>
-<option value="sf">Sort: Size (large&rarr;small)</option>
+<option value="new">Newest</option>
+<option value="cap">Cap rate (high→low)</option>
+<option value="plo">Price (low→high)</option>
+<option value="phi">Price (high→low)</option>
+<option value="sf">Size (large→small)</option>
 </select>
-<input id="mincap" type="number" step="0.25" placeholder="Min cap %" style="width:110px">
-<input id="maxprice" type="number" step="500000" placeholder="Max price $" style="width:130px">
-<label class="chk"><input type="checkbox" id="onlytop"> Top picks only</label>
-<label class="chk"><input type="checkbox" id="onlycm"> Criteria match only</label>
-<span style="flex:1"></span>
-<span id="shown" style="font-size:12px;color:var(--dim)"></span>
+<label class="f">Min cap</label><input type="number" id="mincap" step="0.25" placeholder="%">
+<label class="f">Max price</label><input type="number" id="maxprice" step="100000" placeholder="$">
+<span class="chk"><input type="checkbox" id="toponly"><span>⭐ Top picks only</span></span>
+<span class="chk"><input type="checkbox" id="crionly"><span>Criteria match only</span></span>
 </div></div>
-
-<div class="wrap">
-<div id="sections"></div>
-
-<div class="srcnote">
-<b>Source coverage &mdash; this run</b><br>
-<b>Crexi</b> &mdash; 9 new retail listings, all activated Sep 11&ndash;12. Search API is capped at 50 unsorted results for anonymous users, so the "New Listings" sort in the UI was used; the tab froze partway through, so coverage is the top ~24 of the newest-sorted DFW feed rather than the full 6,663.<br>
-<b>SHOP Companies</b> &mdash; 2 new (JSON feed, sorted newest-created). <b>Secure Net Lease</b> &mdash; 5 new (card grid renders empty for automation; pulled from the site's own <code>/wp-json/api/v1/property</code> feed instead). <b>Matthews</b> &mdash; 1 new (pulled from the CMS REST API, 300 newest listings back to Aug 10). <b>Marcus &amp; Millichap</b> &mdash; 2 new (all 3 pages of the Dallas MSA feed). <b>STRIVE</b> &mdash; 6 new-to-tracker, but STRIVE publishes no listing dates and its board is not date-ordered, so these are almost certainly standing inventory rather than fresh listings; they are grouped separately and not marked Top Pick. <b>SRS</b> &mdash; 1 new. <b>Colliers</b> &mdash; 1 new (only one retail-for-sale in the whole Dallas + Fort Worth facet). <b>CBRE</b> &mdash; 1 new; the site has restructured and now uses stable <code>/details/US-SMPL-&hellip;</code> URLs, which have been written back to the tracker. <b>NAI Robert Lynn</b> &mdash; 1 new (land tract, via the admin-ajax marker feed).<br>
-<b>LoopNet</b> &mdash; blocked. Served an empty page to automation; no bypass attempted.<br>
-<b>Caveat on dates:</b> only Crexi, Matthews and Secure Net Lease expose a real listing or publish date. For the rest, "new" means new relative to the tracker, and the DOM pill reads n/a.
-</div>
-
-<footer>Generated automatically 2026-09-13. Prices, cap rates and availability are as published by each brokerage at time of scrape and are not verified. This is a lead list, not investment advice &mdash; confirm everything with the listing broker.</footer>
-</div>
-
+<div class="wrap"><div class="grid" id="grid"></div>
+<footer id="foot"></footer></div>
 <script>
-const T='2026-09-13';
-const D=[
-{s:'Matthews',n:'Custer Silverado Crossing',a:'4301 S Custer Rd, McKinney, TX (Collin)',p:null,cap:null,sf:17880,occ:'Multi-Tenant',d:'2026-09-10',dom:3,cm:1,u:'https://www.matthews.com/properties/sc-custer-silverado-crossing-mckinney-tx/',img:'https://cms.matthews.com/wp-content/uploads/2026/09/Custer-Silverado-Crossing-4301-S-Custer-Rd-McKinney-TX-pic-1.jpg',note:'Multi-tenant neighbourhood shopping centre on S Custer Rd. Listed "available", pricing on request. Closest thing in this batch to the preferred profile.'},
-{s:'Crexi / SHOP',n:'Texas Health 4-Tenant',a:'2211 Central Expressway, Melissa, TX (Collin)',p:10885000,cap:6.00,sf:null,occ:'4 tenants',d:'2026-09-11',dom:2,cm:1,u:'https://www.crexi.com/properties/2698898/texas-texas-health-4-tenant',img:'https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/DJI_20260828142547_0033_D_PSD_EDIT_V2.jpg',note:'Four-tenant retail/office/mixed-use building anchored by Texas Health. Listed on both Crexi and SHOP Companies within a day of each other.'},
-{s:'Crexi',n:'Confidential Express Car Wash &mdash; Northeast DFW',a:'Northeast DFW (address withheld)',p:5000000,cap:null,sf:null,occ:'Single tenant',d:'2026-09-11',dom:2,cm:0,u:'https://www.crexi.com/properties/2699197/texas-confidential-express-car-wash---northeast-dfw',img:'https://crexi.com/images/format=auto,width=716,height=444,fit=cover/assets/2699197/65495e77a7374a19aa5d048dbfb68615.JPG',note:'Confidential express-wash offering. Address released under CA only.'},
-{s:'Crexi',n:'Northstar Preschool at Sendera Ranch',a:'14081 Willow Springs Road, Haslet, TX (Tarrant)',p:3214286,cap:null,sf:null,occ:'Single tenant',d:'2026-09-11',dom:2,cm:0,u:'https://www.crexi.com/properties/2695852/texas-northstar-preschool-at-sendera-ranch---fort-worth-tx',img:'https://crexi.com/images/format=auto,width=716,height=444,fit=cover/assets/2695852/a01d818f58cc473dbcaa69eb969fffb9.PNG',note:'Early-education STNL in the Sendera Ranch growth corridor north-west of Fort Worth.'},
-{s:'Crexi / M&amp;M',n:'Mavis Tires &amp; Brakes Sale-Leaseback',a:'3940 State Hwy 31 W, Corsicana, TX (Navarro &mdash; Dallas MSA)',p:2990654,cap:5.35,sf:null,occ:'Single tenant, 20.2 yrs remaining',d:'2026-09-11',dom:2,cm:0,u:'https://www.crexi.com/properties/2699235/texas-mavis-tires-brakes-sale-leaseback',img:'https://crexi.com/images/format=auto,width=716,height=444,fit=cover/assets/2699235/5248a7ff647347468aa870637fef9203.JPG',note:'Outside the seven core counties &mdash; Navarro is in the Dallas MSA but a 55-mile drive from downtown. Cross-listed on Marcus &amp; Millichap.'},
-{s:'Crexi',n:'Brakes Plus Sale-Leaseback (Mavis Guaranty)',a:'4776 East Interstate 30, Fate, TX (Rockwall)',p:2616822,cap:null,sf:null,occ:'Single tenant',d:'2026-09-11',dom:2,cm:0,u:'https://www.crexi.com/properties/2699298/texas-brakes-plus-sale-leaseback-mavis-guaranty',img:'https://crexi.com/images/format=auto,width=716,height=444,fit=cover/assets/2699298/d619763b3a0243ec8cd36f7602679952.JPG',note:'I-30 frontage in Fate, one of the fastest-growing Rockwall County submarkets.'},
-{s:'Crexi',n:'800 Peach St &mdash; For Lease &amp; Sale',a:'800 Peach St, Arlington, TX (Tarrant)',p:null,cap:null,sf:null,occ:null,d:'2026-09-11',dom:2,cm:0,u:'https://www.crexi.com/properties/2699127/texas-800-peach-st-for-lease-sale',img:'https://crexi.com/images/format=auto,width=716,height=444,fit=cover/assets/2699127/f8271e2239824cb3b5abb53c84b5ec67.jpg',note:'Marketed for both sale and lease; pricing on request.'},
-{s:'Crexi',n:'207 W Main St &mdash; Suite for Sale',a:'207 W Main St, Grand Prairie, TX (Dallas)',p:null,cap:null,sf:null,occ:null,d:'2026-09-11',dom:2,cm:0,u:'https://www.crexi.com/properties/2699598/texas-207-w-main-st-suite-for-sale',img:'https://crexi.com/images/format=auto,width=716,height=444,fit=cover/assets/2699598/d0e83edc9db7417daae41c1626ffba76.jpg',note:'Small retail/office suite in downtown Grand Prairie. Unpriced.'},
-{s:'Crexi',n:'Main Street Commercial Lot',a:'1110 N Main St, Weatherford, TX (Parker)',p:null,cap:null,sf:null,occ:'Land',d:'2026-09-11',dom:2,cm:0,u:'https://www.crexi.com/properties/2699630/texas-main-street-commercial-lot',img:'https://crexi.com/images/format=auto,width=716,height=444,fit=cover/assets/2699630/2067949dde7648feacbd349157d4670d.JPG',note:'Retail-zoned commercial lot on Weatherford’s Main Street corridor. Unpriced.'},
-{s:'SHOP Companies',n:'Pad Ready Drive Thru Site',a:'2202 N Galloway Ave, Mesquite, TX (Dallas)',p:null,cap:null,sf:null,occ:'Pad site',d:'2026-09-12',dom:1,cm:0,u:'https://shopcompanies.com/properties/pad-ready-drive-thru-site-mesquite-tx',img:'https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/2202%20N%20Galloway%20%2825%29.jpg',note:'Newest item in SHOP’s feed. Pad-ready drive-thru site on N Galloway; pricing on request.'},
-
-{s:'Marcus &amp; Millichap',n:'Little Blessings Childcare &amp; Preschool',a:'Garland, TX (Dallas &mdash; DFW MSA)',p:2000000,cap:7.75,sf:null,occ:'Single tenant, 13.3 yrs remaining',d:null,dom:null,cm:0,u:'https://www.marcusmillichap.com/properties/310028/little-blessings-childcare-preschool-dfw-metro-120k-ahhi-in-1mile-absolute-net-lease',img:'',note:'Absolute-net childcare STNL, $120k average household income within one mile. Highest M&amp;M listing ID in the Dallas feed, so likely the most recently posted.'},
-{s:'SRS',n:'Mesquite, TX &mdash; McDonald’s',a:'2700 Faithon P Lucas Sr Blvd, Mesquite, TX (Dallas)',p:2637000,cap:3.65,sf:4445,occ:'Single tenant',d:null,dom:null,cm:0,u:'https://srsre.com/properties/investment-sale/retail/texas/mesquite/2700-faithon-p-lucas-sr',img:'',note:'Carries SRS’s own "NEW" badge on their newest-first feed. Very tight cap for a corporate McDonald’s.'},
-{s:'Secure Net Lease',n:'Dutch Bros',a:'164 Industrial Ave, Azle, TX (Tarrant)',p:1700000,cap:5.00,sf:950,occ:'Single tenant, built 2024',d:null,dom:null,cm:0,u:'https://securenetlease.com/properties/dutch-bros-tx-azle/',img:'https://securenetlease.com/wp-content/uploads/2026/09/Dutch-Bros_TX_Azle_164_Industrial_Ave-FI.png',note:'Photo uploaded September 2026, so this is a genuinely recent addition to SNL’s book.'},
-{s:'Secure Net Lease',n:'Chick-fil-A',a:'417 NW Pkwy St, Azle, TX (Tarrant)',p:3467000,cap:3.75,sf:5399,occ:'Single tenant, built 2026',d:null,dom:null,cm:0,u:'https://securenetlease.com/properties/chick-fil-a-azle-tx/',img:'https://securenetlease.com/wp-content/uploads/2026/09/Chick-fil-A_TX_Azle_417_Northwest_Pkwy-fi.png',note:'Brand-new 2026 construction. Photo uploaded September 2026.'},
-{s:'Secure Net Lease',n:'7-Eleven',a:'6217 Azle Avenue, Lake Worth, TX (Tarrant)',p:9629000,cap:4.65,sf:4824,occ:'Single tenant, built 2026',d:null,dom:null,cm:0,u:'https://securenetlease.com/properties/7-eleven-lake-worth-tx/',img:'https://securenetlease.com/wp-content/uploads/2026/08/Featured-Image-scaled.jpg',note:'NOI $447,735. Photo uploaded August 2026.'},
-{s:'Secure Net Lease',n:'McDonald’s',a:'Red Oak, TX (Ellis)',p:2187000,cap:3.75,sf:3629,occ:'Single tenant, built 2026',d:null,dom:null,cm:0,u:'https://securenetlease.com/properties/mcdonalds-red-oak-tx/',img:'https://securenetlease.com/wp-content/uploads/2026/08/Featured-Image-1-scaled.jpg',note:'Photo uploaded August 2026.'},
-{s:'Secure Net Lease',n:'7-Eleven',a:'Crowley (Fort Worth), TX (Tarrant/Johnson)',p:8903000,cap:4.70,sf:4816,occ:'Single tenant, built 2026',d:null,dom:null,cm:0,u:'https://securenetlease.com/properties/7-eleven-fort-worth-tx-crowley/',img:'https://securenetlease.com/wp-content/uploads/2026/07/Featured-Image-2-scaled.jpg',note:'Photo uploaded July 2026 &mdash; the oldest of the SNL additions, so "new to tracker" rather than new to market.'},
-{s:'Colliers',n:'Brand New 20 Year Absolute NNN Lease',a:'5549 E Lancaster Ave, Fort Worth, TX 76112 (Tarrant)',p:null,cap:null,sf:3079,occ:'Single tenant, 20-yr absolute NNN',d:null,dom:null,cm:0,u:'https://www.colliers.com/en/properties/brand-new-20-year-absolute-nnn-lease/usa-5549-e-lancaster-ave-fort-worth-tx-76112/usa1167246',img:'',note:'The only retail-for-sale listing in Colliers’ entire Dallas + Fort Worth facet. Pricing on request.'},
-{s:'CBRE',n:'Outlot Opportunity &mdash; Fort Worth',a:'2900 Western Center Boulevard, Fort Worth, TX 76131 (Tarrant)',p:800000,cap:null,sf:null,occ:'2.83 ac land',d:null,dom:null,cm:0,u:'https://www.cbre.com/properties/properties-for-lease/commercial-space/details/US-SMPL-123645/outlot-opportunity-fort-worth-tx-2900-western-center-boulevard',img:'',note:'Retail outlot at I-35W &amp; Western Center Blvd. Intensive Commercial zoning, $111,872 average income within 3 miles.'},
-{s:'NAI Robert Lynn',n:'SWC FM 1187 &amp; Bailey Ranch Rd',a:'Aledo area, TX (Parker)',p:null,cap:null,sf:null,occ:'4.14 ac land',d:null,dom:null,cm:0,u:'https://nairl.com/properties/?p=206&property_id=11462',img:'',note:'Hard-corner commercial tract. NAI’s map feed classifies it as land rather than retail, but it is a for-sale retail-corridor site.'},
-
-{s:'STRIVE',n:'McKinney Bluff',a:'McKinney, TX (Collin)',p:8965000,cap:7.47,sf:null,occ:'Multi-tenant',d:null,dom:null,cm:1,u:'https://www.strivere.com/property/58263',img:'https://strivenext.s3.amazonaws.com/website/property-photos/58263/McKinney%20Bluff.JPG',note:'New to the tracker, but STRIVE publishes no list dates &mdash; treat as standing inventory until confirmed.'},
-{s:'STRIVE',n:'Action Behavior Centers',a:'Fort Worth, TX (Tarrant)',p:4200000,cap:7.22,sf:null,occ:'Single tenant',d:null,dom:null,cm:0,u:'https://www.strivere.com/property/35833',img:'https://strivenext.s3.amazonaws.com/website/property-photos/35833/Action%20Behavior%20Cover%20Photo.JPG',note:'New to the tracker. Age unknown.'},
-{s:'STRIVE',n:'Black Rock Coffee',a:'McKinney, TX (Collin)',p:2520000,cap:5.75,sf:null,occ:'Single tenant',d:null,dom:null,cm:0,u:'https://www.strivere.com/property/40531',img:'https://strivenext.s3.amazonaws.com/website/property-photos/40531/Cover%20Shot.JPG',note:'New to the tracker. Age unknown.'},
-{s:'STRIVE',n:'Safe Harbor Center',a:'Arlington, TX (Tarrant)',p:1740000,cap:8.00,sf:null,occ:'Multi-tenant',d:null,dom:null,cm:0,u:'https://www.strivere.com/property/65050',img:'https://strivenext.s3.amazonaws.com/website/property-photos/65050/SHC%20-%20Cover%20Photo.JPG',note:'Multi-tenant centre but below the $2M floor, so not flagged as a criteria match.'},
-{s:'STRIVE',n:'7-Eleven',a:'Dallas, TX (Dallas)',p:1275000,cap:4.75,sf:null,occ:'Single tenant',d:null,dom:null,cm:0,u:'https://www.strivere.com/property/1087',img:'https://strivenext.s3.amazonaws.com/website/property-photos/1087/Cover%20Page-2.jpg',note:'Low listing ID &mdash; likely long-standing inventory.'},
-{s:'STRIVE',n:'Dallas VA Hospital Strip',a:'Dallas, TX (Dallas)',p:510000,cap:7.34,sf:null,occ:'Multi-tenant strip',d:null,dom:null,cm:0,u:'https://www.strivere.com/property/202304',img:'https://strivenext.s3.amazonaws.com/website/property-photos/202304/Screenshot%202026-06-08%20095846.jpg',note:'Cover photo is dated June 2026, so this has been listed a while.'}
+var CX="https://crexi.com/images/format=auto,width=716,height=444,fit=cover/assets/";
+var SV="https://strivenext.s3.amazonaws.com/website/property-photos/";
+var SN="https://securenetlease.com/wp-content/uploads/";
+var MT="https://cms.matthews.com/wp-content/uploads/";
+var CO="https://listingsprod.blob.core.windows.net/ourlistings-usa/";
+var D=[
+{n:"Northstar Preschool at Sendera Ranch",a:"Haslet, TX (Fort Worth MSA)",p:3214286,c:null,sf:15577,oc:"Single tenant · NNN",t:"Day care / early education STNL. Corporate-backed lease, new construction.",dom:3,src:"Crexi",cri:0,img:CX+"2695852/a01d818f58cc473dbcaa69eb969fffb9.PNG",u:"https://www.crexi.com/properties/2695852/texas-northstar-preschool-at-sendera-ranch---fort-worth-tx"},
+{n:"Brakes Plus Sale-Leaseback (Mavis Guaranty)",a:"Fate, TX 75087 (Rockwall County)",p:2616822,c:null,sf:null,oc:"Single tenant · Auto service",t:"<b>Mavis Discount Tires / Brakes Plus</b> corporate guaranty. New sale-leaseback.",dom:3,src:"Crexi",cri:0,img:CX+"2699298/d619763b3a0243ec8cd36f7602679952.JPG",u:"https://www.crexi.com/properties/2699298/texas-brakes-plus-sale-leaseback-mavis-guaranty"},
+{n:"800 Peach St",a:"800 Peach St, Arlington, TX",p:null,c:null,sf:18760,oc:"Auto shop · 54,005 SF lot",t:"For sale or lease. Large auto-service retail building on 1.24 acres.",dom:3,src:"Crexi",cri:0,img:CX+"2699127/f8271e2239824cb3b5abb53c84b5ec67.jpg",u:"https://www.crexi.com/properties/2699127/texas-800-peach-st-for-lease-sale"},
+{n:"207 W Main St — Suite for Sale",a:"207 W Main St, Grand Prairie, TX 75050",p:null,c:null,sf:3960,oc:"Restaurant / storefront · Zoning CA",t:"Downtown Grand Prairie storefront suite, for sale or lease.",dom:3,src:"Crexi",cri:0,img:CX+"2699598/d0e83edc9db7417daae41c1626ffba76.jpg",u:"https://www.crexi.com/properties/2699598/texas-207-w-main-st-suite-for-sale"},
+{n:"Main Street Commercial Lot",a:"1110 N Main St, Weatherford, TX 76086",p:null,c:null,sf:2217,oc:"QSR/fast-food · 16,498 SF lot",t:"Commercial lot on busy Main Street, Weatherford (DFW MSA — Parker County).",dom:3,src:"Crexi",cri:0,img:CX+"2699630/2067949dde7648feacbd349157d4670d.JPG",u:"https://www.crexi.com/properties/2699630/texas-main-street-commercial-lot"},
+{n:"Meadowbrook East Shopping Center",a:"Fort Worth, TX",p:5000000,c:null,sf:49277,oc:"Multi-tenant center",t:"Tenants: <b>Family Dollar, AutoZone, Metro PCS, Papa John's</b>. Value-add neighborhood center.",dom:4,src:"Crexi",cri:1,img:CX+"2696995/8a07ed52be5e47b8adf58fe6dbdcdc7f.JPG",u:"https://www.crexi.com/properties/2696995/texas-meadowbrook-east-shopping-center"},
+{n:"Arby's NNN (Short-Term Lease)",a:"Haltom City, TX",p:1745000,c:null,sf:null,oc:"Single tenant NNN",t:"<b>Arby's</b> freestanding NNN with short remaining term — redevelopment / re-lease upside.",dom:4,src:"Crexi",cri:0,img:CX+"2697069/14f42468929f49ee8dab91b4a2fa328a.JPG",u:"https://www.crexi.com/properties/2697069/texas-arbys-nnn-short-term-lease"},
+{n:"Pad Ready Drive-Thru Site",a:"2202 N Galloway Ave, Mesquite, TX",p:null,c:null,sf:null,oc:"Pad site · drive-thru ready",t:"Newest listing on SHOP Companies' board. Pad-ready drive-thru development site.",dom:4,src:"SHOP Companies",cri:0,img:"https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/2202%20N%20Galloway%20%2825%29.jpg",u:"https://shopcompanies.com/properties/pad-ready-drive-thru-site-mesquite-tx"},
+{n:"Chick-fil-A — Azle",a:"417 NW Pkwy St, Azle, TX",p:3467000,c:3.75,sf:5399,oc:"Single tenant · Absolute NNN ground lease",t:"2026 construction. New 15-year absolute NNN ground lease. <b>Chick-fil-A</b>.",dom:6,src:"Secure Net Lease",cri:0,img:SN+"2026/09/Chick-fil-A_TX_Azle_417_Northwest_Pkwy-fi.png",u:"https://securenetlease.com/properties/chick-fil-a-azle-tx/"},
+{n:"Dutch Bros — Azle",a:"164 Industrial Ave, Azle, TX",p:1700000,c:5.00,sf:950,oc:"Single tenant · Absolute NNN ground lease",t:"2024 construction on 0.75 ac. 15-year absolute NNN ground lease with 10% bumps. <b>Dutch Bros</b>.",dom:6,src:"Secure Net Lease",cri:0,img:SN+"2026/09/Dutch-Bros_TX_Azle_164_Industrial_Ave-FI.png",u:"https://securenetlease.com/properties/dutch-bros-tx-azle/"},
+{n:"Surepoint ER — Arlington",a:"Arlington, TX",p:6250000,c:8.10,sf:null,oc:"Single tenant net lease · 9.9 yrs remaining",t:"Flagged <b>New Listing</b> on Marcus &amp; Millichap. Net-leased emergency-care retail box.",dom:null,src:"Marcus & Millichap",cri:0,img:"https://mmimageservice.azurewebsites.net/api/image/property/bc87eb8c-7927-4e65-b383-c041c619966d/M",u:"https://www.marcusmillichap.com/properties/176638/surepoint-er"},
+{n:"The Shops At Lakefront",a:"2009 Oak Grove Pkwy, Little Elm, TX 75068",p:null,c:null,sf:8650,oc:"Multi-tenant retail strip",t:"Little Elm retail strip. Price on request.",dom:null,src:"Matthews",cri:0,img:MT+"2026/08/The-Shops-At-Lakefront-2009-Oak-Grove-Pkwy-Little-Elm-TX-pic-2-2.jpg",u:"https://www.matthews.com/properties/stnl-the-shops-at-lakefront-little-elm-tx"},
+{n:"Walgreens — Fort Worth",a:"921 Henderson St, Fort Worth, TX 76102",p:null,c:null,sf:15093,oc:"Single tenant · ±6.25 yrs remaining",t:"<b>Walgreens</b> near downtown Fort Worth, built 2003. Price on request.",dom:null,src:"Matthews",cri:0,img:MT+"2026/08/002_Webpage-51.jpeg",u:"https://www.matthews.com/properties/stnl-walgreens-fort-worth-tx-2"},
+{n:"McKinney Bluff",a:"McKinney, TX",p:8965000,c:7.53,sf:null,oc:"Multi-tenant center",t:"Multi-tenant McKinney retail center at a 7.53% cap.",dom:null,src:"STRIVE",cri:1,img:SV+"58263/McKinney%20Bluff.JPG",u:"https://www.strivere.com/property/58263"},
+{n:"Action Behavior Centers",a:"Fort Worth, TX",p:4200000,c:null,sf:null,oc:"Single tenant · NNN",t:"<b>Action Behavior Centers</b> net-leased asset in Fort Worth.",dom:null,src:"STRIVE",cri:0,img:SV+"35833/Action%20Behavior%20Cover%20Photo.JPG",u:"https://www.strivere.com/property/35833"},
+{n:"Black Rock Coffee",a:"McKinney, TX",p:2520000,c:5.75,sf:null,oc:"Single tenant · NNN",t:"<b>Black Rock Coffee</b> drive-thru STNL, McKinney.",dom:null,src:"STRIVE",cri:0,img:SV+"40531/Cover%20Shot.JPG",u:"https://www.strivere.com/property/40531"},
+{n:"Collins Square",a:"Arlington, TX",p:2380000,c:6.45,sf:null,oc:"Multi-tenant center · UNDER CONTRACT",t:"Arlington neighborhood center. Currently under contract.",dom:null,src:"STRIVE",cri:1,uc:1,img:SV+"50166/IMG_1411.jpg",u:"https://www.strivere.com/property/50166"},
+{n:"Safe Harbor Center",a:"Arlington, TX",p:1740000,c:8.00,sf:null,oc:"Multi-tenant center",t:"Small Arlington strip center at an 8.00% cap.",dom:null,src:"STRIVE",cri:0,img:SV+"65050/SHC%20-%20Cover%20Photo.JPG",u:"https://www.strivere.com/property/65050"},
+{n:"Alta Mere Two Tenant Strip",a:"3101 Alta Mere Dr, Fort Worth, TX 76116",p:1055000,c:null,sf:10000,oc:"30% occupied · built 1978 · UNDER CONTRACT",t:"Value-add: 6,960 SF vacant (69% vacancy). Low basis entry point. Now under contract.",dom:null,src:"STRIVE",cri:0,uc:1,img:SV+"202578/Cover%20Photo.jpg",u:"https://www.strivere.com/property/202578"},
+{n:"Dallas VA Hospital Strip",a:"Dallas, TX",p:510000,c:null,sf:null,oc:"Small strip near VA hospital",t:"Low-price-point Dallas strip retail.",dom:null,src:"STRIVE",cri:0,img:SV+"202304/Screenshot%202026-06-08%20095846.jpg",u:"https://www.strivere.com/property/202304"},
+{n:"7-Eleven — Dallas",a:"Dallas, TX",p:1275000,c:4.75,sf:null,oc:"Single tenant · NNN",t:"<b>7-Eleven</b> net-leased convenience store, Dallas.",dom:null,src:"STRIVE",cri:0,img:SV+"1087/Cover%20Page-2.jpg",u:"https://www.strivere.com/property/1087"},
+{n:"Former Retail Big Box",a:"3155 W Wheatland Rd, Dallas, TX 75237",p:null,c:null,sf:205802,oc:"Vacant big box",t:"205,802 SF former big-box retail — redevelopment / owner-user play in southwest Dallas.",dom:null,src:"Colliers",cri:0,img:CO+"33a86ddd-6e80-4e08-b23e-6605e3100d10/8efe66e8-68ea-45ca-bf15-7b2beedf9068-672-404",u:"https://www.colliers.com/en/properties/for-sale-i-former-retail-big-box/usa-3155-w-wheatland-rd-dallas-tx-75237-usa/usa1162162"},
+{n:"Brand New 20-Year Absolute NNN Lease",a:"5549 E Lancaster Ave, Fort Worth, TX 76112",p:null,c:null,sf:3079,oc:"Single tenant · 20-yr absolute NNN",t:"Brand new 20-year absolute NNN lease, east Fort Worth.",dom:null,src:"Colliers",cri:0,img:CO+"2789b9b1-056a-4c5d-85bf-e375b5cd9f10/5c3afd75-e45b-46fc-a686-be0159c74203-672-404",u:"https://www.colliers.com/en/properties/brand-new-20-year-absolute-nnn-lease/usa-5549-e-lancaster-ave-fort-worth-tx-76112/usa1167246"},
+{n:"Retail Pad Site — Grapevine Mills",a:"3500 Grapevine Mills Pkwy, Ste 200, Grapevine, TX 76051",p:null,c:null,sf:7110,oc:"Pad site · ground lease or sale",t:"Retail pad adjacent to Grapevine Mills. Ground lease or sale.",dom:null,src:"Colliers",cri:0,img:CO+"1ac3e457-57a6-4efe-be1e-14addc9f2fa0/7378e4e1-279b-49f3-9616-aa03c6766d4e-672-404",u:"https://www.colliers.com/en/properties/ground-lease-or-sale-retail-pad-site/usa-3500-grapevine-mills-pkwy-suite-200-grapevine-tx-76051/usa1147415"}
 ];
-
-const money=v=>v==null?'n/a':'$'+v.toLocaleString('en-US');
-const esc=s=>s==null?'':s;
-function domPill(x){
-  if(x.dom==null)return '<span class="dom">n/a</span>';
-  const c=x.dom<=30?'g':x.dom<=90?'y':'r';
-  return '<span class="dom '+c+'">'+x.dom+' day'+(x.dom===1?'':'s')+' on market</span>';
-}
-function card(x){
-  const ph=x.img?'<div class="photo-wrap"><img src="'+x.img+'" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest(\'.photo-wrap\').style.display=\'none\'">'+domPill(x)+'</div>':'';
-  return '<div class="card">'+ph+
-  '<div class="badges">'+(x.dom!=null&&x.dom<=3?'<span class="b top">&#9733; Top Pick</span>':'')+
-  '<span class="b">'+x.s+'</span>'+(x.cm?'<span class="b cm">Criteria Match</span>':'')+'</div>'+
-  '<div class="body"><div class="ttl">'+x.n+'</div><div class="addr">'+x.a+'</div>'+
-  '<div class="sg">'+
-  '<div><i>Price</i><b>'+money(x.p)+'</b></div>'+
-  '<div><i>Cap rate</i><b class="gold">'+(x.cap!=null?x.cap.toFixed(2)+'%':'n/a')+'</b></div>'+
-  '<div><i>Size</i><b>'+(x.sf?x.sf.toLocaleString('en-US')+' SF':'n/a')+'</b></div>'+
-  '<div><i>Tenancy</i><b>'+(x.occ||'n/a')+'</b></div>'+
-  '</div>'+
-  '<div class="note">'+x.note+'</div>'+
-  '<a class="btn" href="'+x.u+'" target="_blank" rel="noopener">View Listing &rarr;</a>'+
-  '</div></div>';
-}
-
+function money(v){return v==null?"—":"$"+v.toLocaleString("en-US")}
+function domCls(d){if(d==null)return"d-na";if(d<=30)return"d-new";if(d<=90)return"d-mid";return"d-old"}
+function domTxt(d){return d==null?"DOM n/a":d+(d===1?" day":" days")+" on market"}
+function hideImg(el){var w=el.closest(".photo-wrap");if(w)w.style.display="none"}
 function render(){
-  const minc=parseFloat(document.getElementById('mincap').value);
-  const maxp=parseFloat(document.getElementById('maxprice').value);
-  const ot=document.getElementById('onlytop').checked;
-  const oc=document.getElementById('onlycm').checked;
-  const sort=document.getElementById('sort').value;
-  let L=D.filter(x=>{
-    if(!isNaN(minc)&&!(x.cap!=null&&x.cap>=minc))return false;
-    if(!isNaN(maxp)&&!(x.p!=null&&x.p<=maxp))return false;
-    if(ot&&!(x.dom!=null&&x.dom<=3))return false;
-    if(oc&&!x.cm)return false;
-    return true;
-  });
-  const S={
-    new:(a,b)=>(a.dom==null?99:a.dom)-(b.dom==null?99:b.dom),
-    cap:(a,b)=>(b.cap==null?-1:b.cap)-(a.cap==null?-1:a.cap),
-    pricedesc:(a,b)=>(b.p==null?-1:b.p)-(a.p==null?-1:a.p),
-    priceasc:(a,b)=>(a.p==null?1e12:a.p)-(b.p==null?1e12:b.p),
-    sf:(a,b)=>(b.sf||0)-(a.sf||0)
-  };
-  L.sort(S[sort]);
-  const top=L.filter(x=>x.dom!=null&&x.dom<=3);
-  const dated=L.filter(x=>!(x.dom!=null&&x.dom<=3)&&x.s!=='STRIVE');
-  const str=L.filter(x=>x.s==='STRIVE');
-  let h='';
-  h+='<div class="sechead">&#9733; New in the past 3 days<small>Listing date published by the source and within 3 days of today</small></div>';
-  h+=top.length?'<div class="grid">'+top.map(card).join('')+'</div>':'<div class="empty">Nothing matches the current filters.</div>';
-  h+='<div class="sechead">New to the tracker &mdash; date not published<small>First time these have appeared in the report; the source does not publish a list date, so age is unconfirmed</small></div>';
-  h+=dated.length?'<div class="grid">'+dated.map(card).join('')+'</div>':'<div class="empty">Nothing matches the current filters.</div>';
-  h+='<div class="sechead">STRIVE standing inventory<small>New to the tracker, but STRIVE’s board is not date-ordered &mdash; most of these are likely older listings</small></div>';
-  h+=str.length?'<div class="grid">'+str.map(card).join('')+'</div>':'<div class="empty">Nothing matches the current filters.</div>';
-  document.getElementById('sections').innerHTML=h;
-  document.getElementById('shown').textContent=L.length+' of '+D.length+' shown';
+ var sort=document.getElementById("sort").value;
+ var mc=parseFloat(document.getElementById("mincap").value);
+ var mp=parseFloat(document.getElementById("maxprice").value);
+ var top=document.getElementById("toponly").checked;
+ var cri=document.getElementById("crionly").checked;
+ var L=D.filter(function(x){
+  if(top&&!(x.dom!=null&&x.dom<=3))return false;
+  if(cri&&!x.cri)return false;
+  if(!isNaN(mc)&&!(x.c!=null&&x.c>=mc))return false;
+  if(!isNaN(mp)&&!(x.p!=null&&x.p<=mp))return false;
+  return true;});
+ L.sort(function(a,b){
+  if(sort==="cap")return (b.c==null?-1:b.c)-(a.c==null?-1:a.c);
+  if(sort==="plo")return (a.p==null?1e15:a.p)-(b.p==null?1e15:b.p);
+  if(sort==="phi")return (b.p==null?-1:b.p)-(a.p==null?-1:a.p);
+  if(sort==="sf")return (b.sf==null?-1:b.sf)-(a.sf==null?-1:a.sf);
+  return (a.dom==null?999:a.dom)-(b.dom==null?999:b.dom);});
+ var g=document.getElementById("grid");
+ if(!L.length){g.innerHTML='<div class="none">No listings match these filters.</div>';return}
+ g.innerHTML=L.map(function(x){
+  var isTop=x.dom!=null&&x.dom<=3;
+  var ph=x.img?'<div class="photo-wrap"><img loading="lazy" referrerpolicy="no-referrer" onerror="hideImg(this)" src="'+x.img+'" alt=""><span class="dom '+domCls(x.dom)+'">'+domTxt(x.dom)+'</span></div>':'';
+  return '<article class="card">'+ph+
+  '<div class="badges">'+(isTop?'<span class="bdg b-top">⭐ Top Pick</span>':'')+
+  '<span class="bdg b-src">'+x.src+'</span>'+
+  (x.cri?'<span class="bdg b-cri">Criteria Match</span>':'')+
+  (x.uc?'<span class="bdg b-uc">Under Contract</span>':'')+'</div>'+
+  '<div class="body"><h2 class="nm">'+x.n+'</h2><div class="ad">'+x.a+'</div>'+
+  '<div class="sg"><div><i>Price</i><b>'+money(x.p)+'</b></div>'+
+  '<div class="cap"><i>Cap</i><b>'+(x.c!=null?x.c.toFixed(2)+"%":"—")+'</b></div>'+
+  '<div><i>Size</i><b>'+(x.sf!=null?x.sf.toLocaleString("en-US")+" SF":"—")+'</b></div>'+
+  '<div><i>Occupancy</i><b>'+(x.dom!=null?"New":"Active")+'</b></div></div>'+
+  '<div class="tn">'+(x.oc?'<b>'+x.oc+'</b><br>':'')+x.t+'</div>'+
+  '<a class="btn" href="'+x.u+'" target="_blank" rel="noopener">View Listing →</a></div></article>';
+ }).join("");
 }
-
 (function(){
-  const caps=D.filter(x=>x.cap!=null).map(x=>x.cap);
-  const prs=D.filter(x=>x.p!=null).map(x=>x.p);
-  const tp=D.filter(x=>x.dom!=null&&x.dom<=3).length;
-  document.getElementById('stats').innerHTML=
-   '<div class="stat"><i>New listings</i><b>'+D.length+'</b></div>'+
-   '<div class="stat"><i>New in 3 days</i><b>'+tp+'</b></div>'+
-   '<div class="stat"><i>Criteria match</i><b>'+D.filter(x=>x.cm).length+'</b></div>'+
-   '<div class="stat"><i>Cap range</i><b>'+Math.min.apply(null,caps).toFixed(2)+'% &ndash; '+Math.max.apply(null,caps).toFixed(2)+'%</b></div>'+
-   '<div class="stat"><i>Price range</i><b>'+money(Math.min.apply(null,prs))+' &ndash; '+money(Math.max.apply(null,prs))+'</b></div>'+
-   '<div class="stat"><i>Sources scraped</i><b>10 of 11</b></div>';
-  ['sort','mincap','maxprice','onlytop','onlycm'].forEach(id=>{
-    document.getElementById(id).addEventListener('input',render);
-    document.getElementById(id).addEventListener('change',render);
-  });
-  render();
+ var caps=D.filter(function(x){return x.c!=null}).map(function(x){return x.c});
+ var prs=D.filter(function(x){return x.p!=null}).map(function(x){return x.p});
+ var n3=D.filter(function(x){return x.dom!=null&&x.dom<=3}).length;
+ document.getElementById("stats").innerHTML=
+  '<div class="stat"><b>'+D.length+'</b><i>New listings</i></div>'+
+  '<div class="stat"><b>'+n3+'</b><i>On market ≤3 days</i></div>'+
+  '<div class="stat"><b>'+Math.min.apply(null,caps).toFixed(2)+'–'+Math.max.apply(null,caps).toFixed(2)+'%</b><i>Cap range</i></div>'+
+  '<div class="stat"><b>$'+(Math.min.apply(null,prs)/1000).toFixed(0)+'K–$'+(Math.max.apply(null,prs)/1e6).toFixed(1)+'M</b><i>Price range</i></div>'+
+  '<div class="stat"><b>'+D.filter(function(x){return x.cri}).length+'</b><i>Criteria matches</i></div>';
+ document.getElementById("foot").innerHTML='<b>Sources swept:</b> Crexi, STRIVE, Secure Net Lease, SRS, Marcus &amp; Millichap, Matthews, Colliers, CBRE, NAI Robert Lynn, LoopNet, SHOP Companies.<br><b>Issues this run:</b> LoopNet served a bot-protection blank page (not bypassed). CBRE&rsquo;s search app hung in a perpetual loading state after two attempts. Crexi and Marcus &amp; Millichap cap the number of results their APIs return, so coverage is the newest page of each rather than an exhaustive sweep. Listings without a published list date show &ldquo;DOM n/a&rdquo; and are new relative to the cross-session tracker rather than confirmed new-to-market.<br><br>Generated 2026-09-14 · deduplicated against dfw-seen-listings.json';
+ ["sort","mincap","maxprice","toponly","crionly"].forEach(function(id){
+  var e=document.getElementById(id);e.addEventListener("change",render);e.addEventListener("input",render);});
+ render();
 })();
 </script>
 </body>
