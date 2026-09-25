@@ -20,7 +20,7 @@
   },
   "https://www.strivere.com/property/201191": {
    "first_seen": "2026-06-11",
-   "last_seen": "2026-09-22",
+   "last_seen": "2026-09-25",
    "address": "4409 River Oaks Blvd, Fort Worth, TX 76114",
    "price": 5000000
   },
@@ -39,7 +39,7 @@
   },
   "https://securenetlease.com/properties/camp-wisdom-village/": {
    "first_seen": "2026-06-11",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "417 E Camp Wisdom Rd, Duncanville, TX",
    "price": 3800000
   },
@@ -75,43 +75,43 @@
   },
   "https://securenetlease.com/properties/autozone-carrollton-tx/": {
    "first_seen": "2026-09-08",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "4825 N Josey Ln, Carrollton, TX",
    "price": 2588000
   },
   "https://securenetlease.com/properties/7-eleven-ennis-tx/": {
    "first_seen": "2026-09-08",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "1470 Hwy 287, Ennis, TX",
    "price": 9194000
   },
   "https://www.marcusmillichap.com/properties/309025/fitness-connection-dallas-tx": {
    "first_seen": "2026-09-08",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "Dallas, TX",
    "price": 4143580
   },
   "https://www.marcusmillichap.com/properties/309582/wheatland-marketplace": {
    "first_seen": "2026-09-08",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "Dallas, TX",
    "price": 6237000
   },
   "https://www.marcusmillichap.com/properties/308501/sun-auto-tire-service-15-year-absolute-net-qualifies-for-depreciation-575-unit-guarantor": {
    "first_seen": "2026-09-08",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "Royse City (Dallas-Fort Worth MSA), TX",
    "price": 5078885
   },
   "https://www.marcusmillichap.com/properties/200332/sixt-love-field": {
    "first_seen": "2026-09-08",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "Dallas, TX (Love Field)",
    "price": null
   },
   "https://www.strivere.com/property/338882": {
    "first_seen": "2026-09-08",
-   "last_seen": "2026-09-22",
+   "last_seen": "2026-09-25",
    "address": "4224 Swiss Ave, Dallas, TX 75204",
    "price": 1695000
   },
@@ -147,7 +147,7 @@
   },
   "https://www.strivere.com/property/202376": {
    "first_seen": "2026-09-10",
-   "last_seen": "2026-09-22",
+   "last_seen": "2026-09-25",
    "address": "8214 Bedford Euless Rd, North Richland Hills, TX 76180",
    "price": 1810000
   },
@@ -159,87 +159,45 @@
   },
   "https://shopcompanies.com/properties/firewheel-south-outparcels": {
    "first_seen": "2026-09-10",
-   "last_seen": "2026-09-22",
+   "last_seen": "2026-09-25",
    "address": "245 Cedar Sage Dr, Garland, TX",
    "price": null
   },
   "https://shopcompanies.com/properties/firewheel-north-outparcels": {
    "first_seen": "2026-09-10",
-   "last_seen": "2026-09-10",
+   "last_seen": "2026-09-25",
    "address": "Firewheel North Outparcels, Garland, TX",
    "price": null
   },
   "https://shopcompanies.com/properties/sendera-ranch-blvd-rancho-canyon": {
    "first_seen": "2026-09-10",
-   "last_seen": "2026-09-10",
+   "last_seen": "2026-09-25",
    "address": "NEC & NWC of Sendera Ranch Blvd & Rancho Canyon Way, Fort Worth, TX",
    "price": null
   },
   "https://shopcompanies.com/properties/preston-road-retail": {
    "first_seen": "2026-09-10",
-   "last_seen": "2026-09-10",
+   "last_seen": "2026-09-25",
    "address": "Preston Road Retail, TX",
    "price": null
   },
   "https://shopcompanies.com/properties/fm-741-sunrise-blvd": {
    "first_seen": "2026-09-10",
-   "last_seen": "2026-09-10",
+   "last_seen": "2026-09-25",
    "address": "FM 741 & Sunrise Blvd, Crandall, TX",
    "price": null
   },
   "https://www.matthews.com/properties/stnl-cedars-village-market-dallas-tx": {
    "first_seen": "2026-09-10",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "2020 S Harwood St, Dallas, TX 75215",
    "price": 6678260
   },
   "https://www.matthews.com/properties/stnl-1435-eastchase-pkwy-fort-worth-tx": {
    "first_seen": "2026-09-10",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "1435 Eastchase Pkwy, Fort Worth, TX 76120",
    "price": 1545454
-  },
-  "https://www.marcusmillichap.com/properties/#dallas-bishop-arts-portfolio": {
-   "first_seen": "2026-09-10",
-   "last_seen": "2026-09-24",
-   "address": "Dallas, TX (Bishop Arts Retail Portfolio)",
-   "price": null
-  },
-  "https://www.marcusmillichap.com/properties/#benbrook-caliber-collision": {
-   "first_seen": "2026-09-10",
-   "last_seen": "2026-09-24",
-   "address": "Benbrook (DFW MSA), TX (Caliber Collision Center)",
-   "price": 7689072
-  },
-  "https://www.marcusmillichap.com/properties/#dallas-chipotle": {
-   "first_seen": "2026-09-10",
-   "last_seen": "2026-09-24",
-   "address": "Dallas, TX (Chipotle w/ Drive-Thru, West Dallas)",
-   "price": 3667000
-  },
-  "https://www.marcusmillichap.com/properties/#plano-trophy-real-estate": {
-   "first_seen": "2026-09-10",
-   "last_seen": "2026-09-24",
-   "address": "Plano (DFW MSA), TX (Bank of America & Wild Fork)",
-   "price": 27368421
-  },
-  "https://www.marcusmillichap.com/properties/#dallas-jumana-retail": {
-   "first_seen": "2026-09-10",
-   "last_seen": "2026-09-24",
-   "address": "Dallas, TX (Jumana Retail Center)",
-   "price": 2624500
-  },
-  "https://www.marcusmillichap.com/properties/#dallas-e-grand-portfolio": {
-   "first_seen": "2026-09-10",
-   "last_seen": "2026-09-24",
-   "address": "Dallas, TX (E Grand Retail Portfolio)",
-   "price": null
-  },
-  "https://www.marcusmillichap.com/properties/#dallas-clearwater-express-wash": {
-   "first_seen": "2026-09-10",
-   "last_seen": "2026-09-10",
-   "address": "Dallas, TX (ClearWater Express Wash)",
-   "price": 6466550
   },
   "https://www.cbre.com/properties/properties-for-sale#fort-worth-5201-bridge-st": {
    "first_seen": "2026-09-10",
@@ -285,7 +243,7 @@
   },
   "https://nairl.com/properties/#nid-11282": {
    "first_seen": "2026-09-10",
-   "last_seen": "2026-09-10",
+   "last_seen": "2026-09-25",
    "address": "4111 Platinum Way, DFW area, TX (exact city not confirmed)",
    "price": null
   },
@@ -345,31 +303,31 @@
   },
   "https://shopcompanies.com/properties/gaston-ave-pads": {
    "first_seen": "2026-09-22",
-   "last_seen": "2026-09-22",
+   "last_seen": "2026-09-25",
    "address": "Gaston Ave & Hall Street, Dallas, TX",
    "price": null
   },
   "https://shopcompanies.com/properties/1013-w-magnolia-avenue": {
    "first_seen": "2026-09-22",
-   "last_seen": "2026-09-22",
+   "last_seen": "2026-09-25",
    "address": "1013 W Magnolia Avenue, Fort Worth, TX",
    "price": null
   },
   "https://shopcompanies.com/properties/3209-n-fitzhugh-ave": {
    "first_seen": "2026-09-22",
-   "last_seen": "2026-09-22",
+   "last_seen": "2026-09-25",
    "address": "3209 N Fitzhugh Ave, Dallas, TX",
    "price": null
   },
   "https://shopcompanies.com/properties/5631-alta-avenue": {
    "first_seen": "2026-09-22",
-   "last_seen": "2026-09-22",
+   "last_seen": "2026-09-25",
    "address": "5631 Alta Avenue, Dallas, TX",
    "price": null
   },
   "https://shopcompanies.com/properties/pad-ready-drive-thru-site-mesquite-tx": {
    "first_seen": "2026-09-22",
-   "last_seen": "2026-09-22",
+   "last_seen": "2026-09-25",
    "address": "2202 N Galloway Ave, Mesquite, TX",
    "price": null
   },
@@ -608,14 +566,14 @@
   },
   "https://securenetlease.com/properties/dutch-bros-tx-azle/": {
    "first_seen": "2026-09-23",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "164 Industrial Ave, Azle, TX",
    "price": null,
    "source": "Secure Net Lease"
   },
   "https://securenetlease.com/properties/chick-fil-a-azle-tx/": {
    "first_seen": "2026-09-23",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "417 Northwest Pkwy, Azle, TX",
    "price": null,
    "source": "Secure Net Lease"
@@ -629,14 +587,14 @@
   },
   "https://www.marcusmillichap.com/properties/310028/little-blessings-childcare-preschool-dfw-metro-120k-ahhi-in-1mile-absolute-net-lease": {
    "first_seen": "2026-09-23",
-   "last_seen": "2026-09-23",
+   "last_seen": "2026-09-25",
    "address": "Garland (DFW Metro), TX",
    "price": null,
    "source": "Marcus & Millichap"
   },
   "https://www.marcusmillichap.com/properties/305938/mcdonalds": {
    "first_seen": "2026-09-23",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "Dallas, TX",
    "price": 2552534,
    "source": "Marcus & Millichap"
@@ -650,14 +608,14 @@
   },
   "https://www.marcusmillichap.com/properties/188116/4312-live-oak": {
    "first_seen": "2026-09-23",
-   "last_seen": "2026-09-23",
+   "last_seen": "2026-09-25",
    "address": "4312 Live Oak St, Dallas, TX",
    "price": 1200000,
    "source": "Marcus & Millichap"
   },
   "https://www.marcusmillichap.com/properties/189919/801-core-st": {
    "first_seen": "2026-09-23",
-   "last_seen": "2026-09-23",
+   "last_seen": "2026-09-25",
    "address": "801 Core St, Dallas, TX",
    "price": null,
    "source": "Marcus & Millichap"
@@ -678,7 +636,7 @@
   },
   "https://www.colliers.com/en/properties/for-sale-i-former-retail-big-box/usa-3155-w-wheatland-rd-dallas-tx-75237-usa/usa1162162": {
    "first_seen": "2026-09-23",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "3155 W Wheatland Rd, Dallas, TX 75237",
    "price": null,
    "source": "Colliers"
@@ -699,21 +657,21 @@
   },
   "https://shopcompanies.com/properties/shops-fate": {
    "first_seen": "2026-09-23",
-   "last_seen": "2026-09-23",
+   "last_seen": "2026-09-25",
    "address": "610 S W E Crawford Ave, Fate, TX",
    "price": null,
    "source": "SHOP Companies"
   },
   "https://shopcompanies.com/properties/ibp-retail": {
    "first_seen": "2026-09-23",
-   "last_seen": "2026-09-23",
+   "last_seen": "2026-09-25",
    "address": "3432 E Hebron Pkwy, Carrollton, TX",
    "price": null,
    "source": "SHOP Companies"
   },
   "https://shopcompanies.com/properties/bella-prosper-development": {
    "first_seen": "2026-09-23",
-   "last_seen": "2026-09-23",
+   "last_seen": "2026-09-25",
    "address": "First St & Legacy Dr, Prosper, TX",
    "price": null,
    "source": "SHOP Companies"
@@ -942,49 +900,49 @@
   },
   "https://www.strivere.com/property/1087": {
    "first_seen": "2026-09-24",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "Dallas, TX",
    "price": 1275000
   },
   "https://www.strivere.com/property/35833": {
    "first_seen": "2026-09-24",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "Fort Worth, TX",
    "price": 4200000
   },
   "https://www.strivere.com/property/40531": {
    "first_seen": "2026-09-24",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "McKinney, TX",
    "price": 2520000
   },
   "https://www.strivere.com/property/50166": {
    "first_seen": "2026-09-24",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "Arlington, TX",
    "price": 2380000
   },
   "https://www.strivere.com/property/58263": {
    "first_seen": "2026-09-24",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "McKinney, TX",
    "price": 8965000
   },
   "https://www.strivere.com/property/65050": {
    "first_seen": "2026-09-24",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "Arlington, TX",
    "price": 1740000
   },
   "https://www.strivere.com/property/202304": {
    "first_seen": "2026-09-24",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "Dallas, TX",
    "price": 510000
   },
   "https://www.strivere.com/property/202578": {
    "first_seen": "2026-09-24",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "Fort Worth, TX",
    "price": 1055000
   },
@@ -1002,13 +960,13 @@
   },
   "https://securenetlease.com/properties/mcdonalds-red-oak-tx/": {
    "first_seen": "2026-09-24",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "Texas 342 & Mighty Hawk Blvd, Red Oak, TX",
    "price": 2187000
   },
   "https://securenetlease.com/properties/7-eleven-fort-worth-tx-crowley/": {
    "first_seen": "2026-09-24",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "4885 Cleburne Crowley Rd, Crowley, TX (Fort Worth)",
    "price": 8903000
   },
@@ -1056,25 +1014,25 @@
   },
   "https://www.marcusmillichap.com/properties/308981/mavis-tires-brakes-saleleaseback": {
    "first_seen": "2026-09-24",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "Corsicana (Dallas MSA), TX",
    "price": 2990654
   },
   "https://www.matthews.com/properties/stnl-former-el-toro-arlington-tx": {
    "first_seen": "2026-09-24",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "1520 Nolan Ryan Expy, Arlington, TX, 76011",
    "price": null
   },
   "https://www.matthews.com/properties/stnl-fort-worth-gas-station-fort-worth-tx": {
    "first_seen": "2026-09-24",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "5520 E Lancaster Ave, Fort Worth, TX, 76112",
    "price": 500000
   },
   "https://www.matthews.com/properties/industrial-421-powerhouse-st-mckinney-tx": {
    "first_seen": "2026-09-24",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "421 Powerhouse St, McKinney, TX, 75071",
    "price": 4500000
   },
@@ -1224,7 +1182,7 @@
   },
   "https://nairl.com/?p=206&property_id=11346": {
    "first_seen": "2026-09-24",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "DFW Metro, TX",
    "price": null
   },
@@ -1278,8 +1236,548 @@
   },
   "https://shopcompanies.com/properties/texas-health-4-tenant": {
    "first_seen": "2026-09-24",
-   "last_seen": "2026-09-24",
+   "last_seen": "2026-09-25",
    "address": "2211 Central Expressway, Melissa, TX",
+   "price": null
+  },
+  "https://www.marcusmillichap.com/properties/201872/bishop-arts-retail-portfolio": {
+   "first_seen": "2026-09-10",
+   "last_seen": "2026-09-25",
+   "address": "Dallas, TX (Bishop Arts Retail Portfolio)",
+   "price": null
+  },
+  "https://www.marcusmillichap.com/properties/305283/caliber-collision-center-dallasfort-worth-msa-15-year-absolute-net-qualifies-for-depreciation": {
+   "first_seen": "2026-09-10",
+   "last_seen": "2026-09-25",
+   "address": "Benbrook (DFW MSA), TX (Caliber Collision Center)",
+   "price": 7689072
+  },
+  "https://www.marcusmillichap.com/properties/302343/brand-new-chipotle-w-drthru-15-year-nnn-prime-west-dallas-infill-direct-frontage-to-i30": {
+   "first_seen": "2026-09-10",
+   "last_seen": "2026-09-25",
+   "address": "Dallas, TX (Chipotle w/ Drive-Thru, West Dallas)",
+   "price": 3667000
+  },
+  "https://www.marcusmillichap.com/properties/307774/trophy-real-estate-best-retail-intersection-in-tx-bank-of-america-wild-fork-abs-nnn-leases": {
+   "first_seen": "2026-09-10",
+   "last_seen": "2026-09-25",
+   "address": "Plano (DFW MSA), TX (Bank of America & Wild Fork)",
+   "price": 27368421
+  },
+  "https://www.marcusmillichap.com/properties/309563/jumana-retail-center": {
+   "first_seen": "2026-09-10",
+   "last_seen": "2026-09-25",
+   "address": "Dallas, TX (Jumana Retail Center)",
+   "price": 2624500
+  },
+  "https://www.marcusmillichap.com/properties/195779/e-grand-retail-portfolio": {
+   "first_seen": "2026-09-10",
+   "last_seen": "2026-09-25",
+   "address": "Dallas, TX (E Grand Retail Portfolio)",
+   "price": null
+  },
+  "https://www.marcusmillichap.com/properties/300358/clearwater-express-wash-1-texas-operator-20yr-abs-net-100-bonus-depreciation-annual-bumps": {
+   "first_seen": "2026-09-10",
+   "last_seen": "2026-09-25",
+   "address": "Dallas, TX (ClearWater Express Wash)",
+   "price": 6466550
+  },
+  "https://www.matthews.com/properties/sc-custer-silverado-crossing-mckinney-tx": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "4301 S Custer Rd, McKinney, TX 75070",
+   "price": null
+  },
+  "https://www.matthews.com/properties/sc-southlake-commons-southlake-tx": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "280 Commerce Street, Southlake, TX 76092",
+   "price": 22850000
+  },
+  "https://www.matthews.com/properties/sc-425-427-w-jefferson-blvd-dallas-tx": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "425-427 W Jefferson Blvd & 428-429 Sunset Ave, Dallas, TX 75208",
+   "price": 4650000
+  },
+  "https://nairl.com/?p=206&property_id=8949": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "NW Corner of Harmonson Rd & McPherson Dr, Haslet, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=6776": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "3100 & 3150 Premier Dr., Coppell, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=10651": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "2500-2536 NE Loop 820, Haltom City, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=10306": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "6801 Old Randol Mill Rd., North Richland Hills, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=9944": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "4900 Anderson Blvd, Watauga, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=7912": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "8717 Directors Row, Irving, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=7780": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "845 Regal Row, Irving, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=9943": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "4800 Anderson Blvd., Haltom City, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=8500": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "502-512 N. Main St., 519 N. Main St., Irving, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=11114": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "1811 Sparks Dr., Cleburne, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=11172": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "2925 Merrell Rd., Farmers Branch, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=10523": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "3050 N. State Hwy. 161, DFW Metro, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=9816": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "2333-2337 Delante Street, Haltom City, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=6667": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "10720 Sandhill Rd., Richardson, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=3142": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "4897 State Highway 121, The Colony, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=7269": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "2703 Arkansas Ln., Arlington, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=9272": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "918 Dragon St., Dallas, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=7956": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "6101 Southwest Blvd., Benbrook, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=11046": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "1001 N. Riverfront Blvd., Dallas, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=10584": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "5421 La Sierra Dr., Richardson, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=7962": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "5131 Sharp St., Irving, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=10211": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "5105 E. California Pkwy., Fort Worth, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=11013": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "5408 W. Plano Pkwy., Addison, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=8492": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "2028-2032 Farrington St., Dallas, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=10635": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "427 Metro Park Dr., McKinney, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=8119": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "2220 S. Burleson Blvd., Burleson, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=7882": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "7707 Sovereign Row, Irving, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=5602": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "2233 Valdina St., Dallas, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=11088": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "1424 Brown Trl., Bedford, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=10372": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "4421 W. Kiest Blvd., Duncanville, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=8161": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "5000 David Strickland Rd., Fort Worth, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=3497": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "2120 Regency Dr., Irving, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=10679": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "3625 Valley Vista Dr., Hurst, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=11078": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "2845 Ladybird Ln., Farmers Branch, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=7153": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "1010 Mustang Dr., Grapevine, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=6418": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "200 S. 14th St., Cedar Hill, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=11205": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "10908 S. Pipeline Rd., Bedford, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=10831": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "216 W. Main St., Lewisville, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=10857": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "101 Executive Ct., Waxahachie, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=11206": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "8713 White Settlement Rd., White Settlement, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=10492": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "580 US-175, Balch Springs, TX",
+   "price": null
+  },
+  "https://nairl.com/?p=206&property_id=8586": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "2001-2003 N. Beach St., Haltom City, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/uptown-cheapskate-3-tenant-retail-center": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "5864 North Tarrant Parkway, Fort Worth, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/mccart-plaza": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "5199 & 5201 McCart Avenue, Fort Worth, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/panera-3-tenant": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "6280 Tennyson Parkway, Plano, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/elm-street-portfolio": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "4312, 4314, 4316, 4404, 4411, 4412 & 4420 ELM STREET & 9302 PEAK STREET, Dallas, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/1931-greenville-ave": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "1931 Greenville Ave, Dallas, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/ibp-plano-retail": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "3412 E Hebron Pkwy, Carrollton, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/space-available-park-preston-plano-tx": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "5025 W Park Blvd, Plano, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/5946-lyndon-b-johnson-fwy": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "5946 LBJ Fwy, Dallas, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/george-owens-us-380-pads": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "George Owens & US 380, Denton, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/preston-highland-village-outparcel": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "18484 Preston Rd, Dallas, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/modera-hill": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "8041 Walnut Hill Lane, Dallas, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/west-towne-center-building-1": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "12255 Teel Parkway, Frisco, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/1912-greenville": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "1912 Greenville Ave, Dallas , TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/19201922-greenville": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "1920/1922 Greenville Ave, Dallas, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/2300-fort-worth-avenue": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "2300 Fort Worth Avenue, Dallas , TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/viridian-marketplace": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "500 Fort Worth Drive, Denton, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/1121-i-20-west": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "1121 I-20 West, Arlington, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/take-5-oil-change-ground-lease-1": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "901 East Arkansas Lane, Arlington, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/whiterock-marketplace": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "11255 Garland Rd, Dallas, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/former-grocery-box-mckinney-tx": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "2901 Lake Forest Dr, McKinney, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/rufe-snow-plaza": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "242 Rufe Snow Drive, Keller, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/644-w-davis-st": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "644 West Davis St, Dallas, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/2623-commerce-street": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "2623 Commerce St, Dallas, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/tower-parkside": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "1919 Woodall Rodgers Fwy, Dallas, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/custer-village": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "3041 S Custer Rd, Mckinney , TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/custer-four-corners": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "1480 North Custer Road, Allen, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/shawnee-trail-restaurantretail": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "NWC of Preston Road (SH 289) and West Outer Loop, Celina, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/317-n-bishop-avenue": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "317 N Bishop Avenue, Dallas, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/lakeridge-shopping-center": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "9660 Audelia Road, Dallas, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/braniff-centre": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "7701 Lemmon Avenue, Dallas, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/scooters-coffee-ground-lease": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "3471 FM-2499, Corinth, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/5402-arapaho-rd": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "5402 Arapaho Rd, Dallas, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/6-ac-available-sale-princeton-tx": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "830 E Princeton Dr, Princeton, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/shops-mockingbird": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "W Mockingbird Lane, Dallas , TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/tower-22-district-apartment-site": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "305 South Haskell Avenue, Dallas, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/laud-howell-75": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "Laud Howell Parkway & US 75, McKinney , TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/macarthur-pioneer-plaza": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "615 North MacArthur Boulevard, Irving, TX",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/ridge-decatur": {
+   "first_seen": "2026-09-25",
+   "last_seen": "2026-09-25",
+   "address": "1766 US-380, Decatur, TX",
    "price": null
   }
  },
