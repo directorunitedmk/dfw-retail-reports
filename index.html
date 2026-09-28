@@ -3,507 +3,367 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DFW Retail Investment Property Report</title>
+<title>DFW Retail Investment Report</title>
 <style>
-  :root {
-    --bg: #0d0d14;
-    --card: #15151f;
-    --card-border: #24242f;
-    --gold: #e8a020;
-    --text: #e9e9ee;
-    --text-dim: #9a9aab;
-    --text-dimmer: #6b6b7a;
-    --green: #3ecf6a;
-    --red: #e2536b;
-    --blue: #4b9bff;
+  :root{
+    --bg:#0d0d14;
+    --card:#15151f;
+    --card-border:#232332;
+    --gold:#e8a020;
+    --text:#e9e9ee;
+    --text-dim:#9a9aab;
+    --green:#3ecf6e;
+    --red:#e8544a;
+    --gray:#5a5a6a;
   }
-  * { box-sizing: border-box; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
   }
-  header {
-    padding: 28px 20px 16px;
-    max-width: 1400px;
-    margin: 0 auto;
+  a{color:inherit;text-decoration:none;}
+  header{
+    padding:28px 20px 16px;
+    max-width:1400px;
+    margin:0 auto;
   }
-  header h1 {
-    margin: 0 0 6px;
-    font-size: 26px;
-    letter-spacing: -0.02em;
+  header h1{
+    margin:0 0 4px;
+    font-size:26px;
+    letter-spacing:0.3px;
   }
-  header .subtitle {
-    color: var(--text-dim);
-    font-size: 14px;
+  header h1 span{color:var(--gold);}
+  header p{
+    margin:0;
+    color:var(--text-dim);
+    font-size:14px;
   }
-  header .subtitle b { color: var(--gold); }
-
-  .stat-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px 16px;
+  .filterbar{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(13,13,20,0.96);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--card-border);
+    padding:12px 20px;
   }
-  .stat {
-    background: var(--card);
-    border: 1px solid var(--card-border);
-    border-radius: 10px;
-    padding: 12px 18px;
-    min-width: 130px;
-    flex: 1 1 130px;
+  .filterbar-inner{
+    max-width:1400px;
+    margin:0 auto;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    align-items:center;
   }
-  .stat .num { font-size: 22px; font-weight: 700; color: var(--gold); }
-  .stat .label { font-size: 12px; color: var(--text-dim); margin-top: 2px; }
-
-  .filter-bar {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    background: rgba(13,13,20,0.96);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--card-border);
-    padding: 12px 20px;
+  .filterbar select, .filterbar input[type="text"]{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    color:var(--text);
+    padding:8px 10px;
+    border-radius:8px;
+    font-size:13px;
   }
-  .filter-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
+  .filterbar label{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:13px;
+    color:var(--text-dim);
+    background:var(--card);
+    border:1px solid var(--card-border);
+    padding:8px 10px;
+    border-radius:8px;
+    cursor:pointer;
+    user-select:none;
   }
-  .filter-inner select, .filter-inner input[type="number"] {
-    background: var(--card);
-    border: 1px solid var(--card-border);
-    color: var(--text);
-    border-radius: 8px;
-    padding: 7px 10px;
-    font-size: 13px;
+  .filterbar label input{accent-color:var(--gold);}
+  .statbar{
+    max-width:1400px;
+    margin:18px auto 0;
+    padding:0 20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:12px;
   }
-  .filter-inner label {
-    font-size: 12px;
-    color: var(--text-dim);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    white-space: nowrap;
+  .stat{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:10px;
+    padding:14px 16px;
   }
-  .chip-toggle {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--card);
-    border: 1px solid var(--card-border);
-    border-radius: 20px;
-    padding: 6px 14px;
-    font-size: 13px;
-    cursor: pointer;
-    color: var(--text-dim);
-    user-select: none;
+  .stat .num{font-size:22px;font-weight:700;color:var(--gold);}
+  .stat .lbl{font-size:12px;color:var(--text-dim);margin-top:2px;}
+  section.group{
+    max-width:1400px;
+    margin:28px auto 0;
+    padding:0 20px;
   }
-  .chip-toggle.active {
-    border-color: var(--gold);
-    color: var(--gold);
-    background: rgba(232,160,32,0.08);
+  .group h2{
+    font-size:16px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--gold);
+    border-bottom:1px solid var(--card-border);
+    padding-bottom:8px;
+    margin-bottom:16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
   }
-  .filter-count {
-    margin-left: auto;
-    font-size: 13px;
-    color: var(--text-dim);
+  .group h2 .count{color:var(--text-dim);font-size:12px;text-transform:none;letter-spacing:0;}
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
+    gap:18px;
   }
-
-  main {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px;
+  .card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:12px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:transform .15s ease, border-color .15s ease;
   }
-
-  .source-status {
-    background: var(--card);
-    border: 1px solid var(--card-border);
-    border-radius: 10px;
-    padding: 14px 18px;
-    margin-bottom: 20px;
-    font-size: 12.5px;
-    color: var(--text-dim);
-    line-height: 1.7;
+  .card:hover{transform:translateY(-2px);border-color:#3a3a50;}
+  .photo-wrap{
+    position:relative;
+    width:100%;
+    aspect-ratio:16/10;
+    background:#1c1c28;
+    overflow:hidden;
   }
-  .source-status b { color: var(--text); }
-  .source-status .ok { color: var(--green); }
-  .source-status .blocked { color: var(--red); }
-  .source-status .zero { color: var(--text-dimmer); }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px;
+  .photo-wrap img{
+    width:100%;height:100%;object-fit:cover;display:block;
   }
-
-  .card {
-    background: var(--card);
-    border: 1px solid var(--card-border);
-    border-radius: 12px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+  .photo-wrap.noimg{
+    display:flex;align-items:center;justify-content:center;
+    color:var(--text-dim);font-size:12px;
   }
-  .photo-wrap {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16/10;
-    background: #1c1c28;
-    overflow: hidden;
+  .badges{
+    position:absolute;top:8px;left:8px;
+    display:flex;gap:6px;flex-wrap:wrap;
   }
-  .photo-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  .badge{
+    font-size:10px;font-weight:700;letter-spacing:0.4px;
+    padding:4px 8px;border-radius:20px;text-transform:uppercase;
   }
-  .badges {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    max-width: calc(100% - 16px);
+  .badge.top{background:var(--gold);color:#1a1400;}
+  .badge.source{background:rgba(0,0,0,0.65);color:var(--text);border:1px solid var(--card-border);}
+  .badge.match{background:#2a4d3a;color:#7be8a4;border:1px solid #3d6d52;}
+  .dom-pill{
+    position:absolute;bottom:8px;left:8px;
+    font-size:10px;font-weight:700;
+    padding:3px 9px;border-radius:20px;color:#111;
   }
-  .badge {
-    font-size: 10.5px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
+  .dom-green{background:var(--green);}
+  .dom-gold{background:var(--gold);}
+  .dom-red{background:var(--red);color:#fff;}
+  .dom-gray{background:var(--gray);color:#fff;}
+  .card-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1;}
+  .card-body h3{margin:0;font-size:15px;line-height:1.3;}
+  .card-body .addr{font-size:12.5px;color:var(--text-dim);}
+  .stats-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;
+    margin-top:4px;font-size:12.5px;
   }
-  .badge.pick { background: var(--gold); color: #241a02; }
-  .badge.source { background: rgba(0,0,0,0.65); color: #fff; }
-  .badge.match { background: var(--blue); color: #05132b; }
-  .dom-pill {
-    position: absolute;
-    bottom: 8px;
-    left: 8px;
-    font-size: 10.5px;
-    font-weight: 700;
-    padding: 3px 9px;
-    border-radius: 6px;
-    color: #111;
+  .stats-grid .k{color:var(--text-dim);}
+  .stats-grid .v{font-weight:600;}
+  .stats-grid .v.gold{color:var(--gold);}
+  .notes{font-size:12px;color:var(--text-dim);margin-top:2px;line-height:1.4;}
+  .card-body .spacer{flex:1;}
+  .view-btn{
+    margin-top:10px;
+    display:block;text-align:center;
+    background:var(--gold);color:#1a1400;
+    font-weight:700;font-size:13px;
+    padding:9px;border-radius:8px;
   }
-  .dom-pill.green { background: var(--green); }
-  .dom-pill.gold { background: var(--gold); }
-  .dom-pill.red { background: var(--red); color: #fff; }
-  .dom-pill.gray { background: #4a4a58; color: #d8d8e0; }
-
-  .no-photo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    color: var(--text-dimmer);
-    font-size: 13px;
+  .view-btn:hover{opacity:0.9;}
+  details.collapsed-note{
+    max-width:1400px;margin:30px auto 0;padding:0 20px;
+    color:var(--text-dim);font-size:13px;
   }
-
-  .card-body {
-    padding: 14px 16px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    flex: 1;
+  footer{
+    max-width:1400px;margin:40px auto 0;padding:20px 20px 40px;
+    color:var(--text-dim);font-size:12px;border-top:1px solid var(--card-border);
   }
-  .card-title {
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.3;
-  }
-  .card-address {
-    font-size: 12.5px;
-    color: var(--text-dim);
-  }
-  .stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6px 10px;
-    font-size: 12px;
-    margin-top: 4px;
-  }
-  .stats-grid .k { color: var(--text-dimmer); }
-  .stats-grid .v { color: var(--text); font-weight: 600; }
-  .stats-grid .v.gold { color: var(--gold); }
-  .notes {
-    font-size: 12px;
-    color: var(--text-dim);
-    font-style: italic;
-  }
-  .view-btn {
-    margin-top: auto;
-    display: block;
-    text-align: center;
-    background: var(--gold);
-    color: #241a02;
-    font-weight: 700;
-    font-size: 13px;
-    padding: 9px;
-    border-radius: 8px;
-    text-decoration: none;
-  }
-  .view-btn:hover { opacity: 0.9; }
-
-  .empty-state {
-    text-align: center;
-    padding: 60px 20px;
-    color: var(--text-dim);
-  }
-
-  footer {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 30px 20px 50px;
-    color: var(--text-dimmer);
-    font-size: 12px;
-    line-height: 1.6;
-  }
-
-  @media (max-width: 640px) {
-    .grid { grid-template-columns: 1fr; }
-    .filter-inner { gap: 8px; }
-  }
+  footer .blocked{color:var(--red);}
+  .hidden{display:none !important;}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>DFW Retail Investment Property Report</h1>
-  <div class="subtitle">Generated <b id="report-date"></b> &middot; New-to-market listings surfaced across 11 broker/marketplace sources</div>
+  <h1>DFW Retail Investment <span>Property Report</span></h1>
+  <p>Generated Sept 28, 2026 &middot; Sources scraped: 11/11 attempted &middot; Focus: new-to-market listings (past 3 days)</p>
 </header>
 
-<div class="stat-bar" id="stat-bar"></div>
-
-<div class="filter-bar">
-  <div class="filter-inner">
-    <label>Sort
-      <select id="sortSelect">
-        <option value="newest">Newest</option>
-        <option value="cap-desc">Cap Rate (high-low)</option>
-        <option value="price-asc">Price (low-high)</option>
-        <option value="price-desc">Price (high-low)</option>
-        <option value="sf-desc">Size (large-small)</option>
-      </select>
-    </label>
-    <label>Min Cap
-      <input type="number" id="minCap" placeholder="e.g. 5" step="0.1" style="width:70px">
-    </label>
-    <label>Max Price ($)
-      <input type="number" id="maxPrice" placeholder="e.g. 5000000" step="100000" style="width:110px">
-    </label>
-    <div class="chip-toggle" id="matchToggle">⭐ Criteria Match Only</div>
-    <div class="chip-toggle" id="photoToggle">📷 Has Photo</div>
-    <div class="filter-count" id="filterCount"></div>
+<div class="filterbar">
+  <div class="filterbar-inner">
+    <select id="sortSel">
+      <option value="newest">Sort: Newest</option>
+      <option value="cap-desc">Sort: Cap Rate (High-Low)</option>
+      <option value="price-asc">Sort: Price (Low-High)</option>
+      <option value="price-desc">Sort: Price (High-Low)</option>
+    </select>
+    <input type="text" id="minCap" placeholder="Min Cap %" style="width:90px;">
+    <input type="text" id="maxPrice" placeholder="Max Price $" style="width:120px;">
+    <label><input type="checkbox" id="topOnly"> Top Picks only</label>
+    <label><input type="checkbox" id="matchOnly"> Criteria Match only</label>
   </div>
 </div>
 
-<main>
-  <div class="source-status" id="source-status"></div>
-  <div class="grid" id="grid"></div>
-  <div class="empty-state" id="empty-state" style="display:none">No listings match the current filters.</div>
-</main>
+<div class="statbar" id="statbar"></div>
 
-<footer id="footer"></footer>
+<section class="group">
+  <h2>New to Market <span class="count" id="newCount"></span></h2>
+  <div class="grid" id="newGrid"></div>
+</section>
+
+<section class="group">
+  <h2>Still Active (previously tracked, confirmed live) <span class="count" id="activeCount"></span></h2>
+  <div class="grid" id="activeGrid"></div>
+</section>
+
+<details class="collapsed-note">
+  <summary style="cursor:pointer;">Also checked (no new or active listings pulled into this report)</summary>
+  <p style="margin-top:10px;">
+  <strong>Marcus &amp; Millichap</strong> &mdash; 15 DFW retail listings live; top 12 (sorted most-recent) all already in the tracker, no new listings today.<br>
+  <strong>Matthews</strong> &mdash; ~60% of 81 TX retail listings scanned (infinite-scroll list); 8 DFW matches found, all already tracked, no new listings in the scanned portion.<br>
+  <strong>SRS Real Estate Partners</strong> &mdash; newest-sorted nationwide feed checked (24 listings); no DFW for-sale retail among the newest items.
+  </p>
+</details>
+
+<footer>
+  <p><strong>Sources blocked or unavailable this run:</strong></p>
+  <p class="blocked">
+  Crexi &mdash; search results failed to render after repeated attempts (site appeared to hang mid-load).<br>
+  Secure Net Lease &mdash; property search returned "no results" for all filter combinations tried (likely a site-side issue).<br>
+  Colliers &mdash; Coveo faceted search would not apply location/type filters via automation; results stayed nationwide/unfiltered.<br>
+  CBRE &mdash; for-sale search path returned 404 (site restructure); no working entry point found.<br>
+  LoopNet &mdash; blocked by bot-detection page on first attempt, as expected; not bypassed per policy.
+  </p>
+  <p style="margin-top:14px;">Tracker updated: 7 new listings added, 21 previously-seen listings reconfirmed active. Full seen-listings JSON uploaded to the repo.</p>
+</footer>
 
 <script>
-const LISTINGS = [{"source": "Matthews", "url": "https://www.matthews.com/properties/sc-custer-silverado-crossing-mckinney-tx", "name": "Custer Silverado Crossing", "address": "4301 S Custer Rd, McKinney, TX 75070", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 17880, "type": "Shopping Centers", "photos": ["https://cms.matthews.com/wp-content/uploads/2026/09/Custer-Silverado-Crossing-4301-S-Custer-Rd-McKinney-TX-pic-1.jpg"], "criteria_match": true, "dom_note": "CMS image uploaded 2026-09 (this month)"}, {"source": "Matthews", "url": "https://www.matthews.com/properties/sc-southlake-commons-southlake-tx", "name": "Southlake Commons", "address": "280 Commerce Street, Southlake, TX 76092", "price": 22850000, "price_display": "$22,850,000", "cap_rate": 7.7, "sf": 105000, "type": "Shopping Centers", "photos": ["https://cms.matthews.com/wp-content/uploads/2026/08/Southlake-Commons-280-Commerce-Street-Southlake-TX-pic-1.jpg"], "criteria_match": true, "dom_note": "CMS image uploaded 2026-08"}, {"source": "Matthews", "url": "https://www.matthews.com/properties/sc-425-427-w-jefferson-blvd-dallas-tx", "name": "425-427 W Jefferson Blvd & 428-429 Sunset Ave", "address": "425-427 W Jefferson Blvd & 428-429 Sunset Ave, Dallas, TX 75208", "price": 4650000, "price_display": "$4,650,000", "cap_rate": null, "sf": 51800, "type": "Shopping Centers", "photos": ["https://cms.matthews.com/wp-content/uploads/2026/07/425-427-W-Jefferson-Blvd-428-429-Sunset-Ave-Dallas-TX-pic-3.jpg"], "criteria_match": true, "dom_note": "CMS image uploaded 2026-07"}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=8949", "name": "NW Corner of Harmonson Rd & McPherson Dr", "address": "NW Corner of Harmonson Rd & McPherson Dr, Haslet, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 125397, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 33.0461572, "lng": -97.2704695}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=6776", "name": "3100 & 3150 Premier Dr.", "address": "3100 & 3150 Premier Dr., Coppell, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 91595, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.8967059, "lng": -96.9852144}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=10651", "name": "2500-2536 NE Loop 820", "address": "2500-2536 NE Loop 820, Haltom City, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 69155, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.8387959, "lng": -97.317646}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=10306", "name": "6801 Old Randol Mill Rd.", "address": "6801 Old Randol Mill Rd., North Richland Hills, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 61300, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.7804043, "lng": -97.2116272}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=9944", "name": "4900 Anderson Blvd", "address": "4900 Anderson Blvd, Watauga, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 52344, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.834, "lng": -97.281}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=7912", "name": "8717 Directors Row", "address": "8717 Directors Row, Irving, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 44711, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.816, "lng": -96.888}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=7780", "name": "845 Regal Row", "address": "845 Regal Row, Irving, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 41861, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.824, "lng": -96.892}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=9943", "name": "4800 Anderson Blvd.", "address": "4800 Anderson Blvd., Haltom City, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 39264, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.832379657993, "lng": -97.281093826984}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=8500", "name": "502-512 N. Main St., 519 N. Main St.", "address": "502-512 N. Main St., 519 N. Main St., Irving, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 36000, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.818, "lng": -96.946}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=11114", "name": "1811 Sparks Dr.", "address": "1811 Sparks Dr., Cleburne, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 31000, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.4, "lng": -97.42}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=11172", "name": "2925 Merrell Rd.", "address": "2925 Merrell Rd., Farmers Branch, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 26000, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.887, "lng": -96.879}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=10523", "name": "3050 N. State Hwy. 161", "address": "3050 N. State Hwy. 161, DFW Metro, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": null, "lng": null}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=9816", "name": "2333-2337 Delante Street", "address": "2333-2337 Delante Street, Haltom City, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 21254, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.794, "lng": -97.253}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=6667", "name": "10720 Sandhill Rd.", "address": "10720 Sandhill Rd., Richardson, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 20745, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.896, "lng": -96.709}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=3142", "name": "4897 State Highway 121", "address": "4897 State Highway 121, The Colony, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 20331, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 33.069, "lng": -96.886}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=7269", "name": "2703 Arkansas Ln.", "address": "2703 Arkansas Ln., Arlington, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 17880, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.705, "lng": -97.057}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=9272", "name": "918 Dragon St.", "address": "918 Dragon St., Dallas, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 17650, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.786, "lng": -96.815}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=7956", "name": "6101 Southwest Blvd.", "address": "6101 Southwest Blvd., Benbrook, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 15050, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.69, "lng": -97.415}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=11046", "name": "1001 N. Riverfront Blvd.", "address": "1001 N. Riverfront Blvd., Dallas, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 14500, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.786, "lng": -96.818}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=10584", "name": "5421 La Sierra Dr.", "address": "5421 La Sierra Dr., Richardson, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 12860, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.885, "lng": -96.769}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=7962", "name": "5131 Sharp St.", "address": "5131 Sharp St., Irving, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 12600, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.811, "lng": -96.872}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=10211", "name": "5105 E. California Pkwy.", "address": "5105 E. California Pkwy., Fort Worth, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 12120, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.663, "lng": -97.249}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=11013", "name": "5408 W. Plano Pkwy.", "address": "5408 W. Plano Pkwy., Addison, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 12000, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 33.015, "lng": -96.809}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=8492", "name": "2028-2032 Farrington St.", "address": "2028-2032 Farrington St., Dallas, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 11951, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.797, "lng": -96.829}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=10635", "name": "427 Metro Park Dr.", "address": "427 Metro Park Dr., McKinney, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 11828, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 33.212, "lng": -96.61}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=8119", "name": "2220 S. Burleson Blvd.", "address": "2220 S. Burleson Blvd., Burleson, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 11050, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.496, "lng": -97.289}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=7882", "name": "7707 Sovereign Row", "address": "7707 Sovereign Row, Irving, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 11000, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.814, "lng": -96.878}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=5602", "name": "2233 Valdina St.", "address": "2233 Valdina St., Dallas, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 10400, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.8, "lng": -96.835}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=11088", "name": "1424 Brown Trl.", "address": "1424 Brown Trl., Bedford, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 9092, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.838, "lng": -97.16}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=10372", "name": "4421 W. Kiest Blvd.", "address": "4421 W. Kiest Blvd., Duncanville, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 9000, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.706, "lng": -96.894}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=8161", "name": "5000 David Strickland Rd.", "address": "5000 David Strickland Rd., Fort Worth, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "acres": 0.55, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.681, "lng": -97.248}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=3497", "name": "2120 Regency Dr.", "address": "2120 Regency Dr., Irving, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 8280, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.836, "lng": -96.895}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=10679", "name": "3625 Valley Vista Dr.", "address": "3625 Valley Vista Dr., Hurst, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 7209, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.813, "lng": -97.142}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=11078", "name": "2845 Ladybird Ln.", "address": "2845 Ladybird Ln., Farmers Branch, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 7087, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.88, "lng": -96.881}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=7153", "name": "1010 Mustang Dr.", "address": "1010 Mustang Dr., Grapevine, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 7043, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.919, "lng": -97.084}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=6418", "name": "200 S. 14th St.", "address": "200 S. 14th St., Cedar Hill, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 5687, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.481, "lng": -96.987}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=11205", "name": "10908 S. Pipeline Rd.", "address": "10908 S. Pipeline Rd., Bedford, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 4750, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.814, "lng": -97.134}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=10831", "name": "216 W. Main St.", "address": "216 W. Main St., Lewisville, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 4690, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 33.046, "lng": -96.997}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=10857", "name": "101 Executive Ct.", "address": "101 Executive Ct., Waxahachie, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 4362, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.407, "lng": -96.835}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=11206", "name": "8713 White Settlement Rd.", "address": "8713 White Settlement Rd., White Settlement, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 4180, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.76, "lng": -97.468}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=10492", "name": "580 US-175", "address": "580 US-175, Balch Springs, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "acres": 0.4, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.649, "lng": -96.539}, {"source": "NAI Robert Lynn", "url": "https://nairl.com/?p=206&property_id=8586", "name": "2001-2003 N. Beach St.", "address": "2001-2003 N. Beach St., Haltom City, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 2852, "acres": null, "type": "Retail", "photos": [], "criteria_match": false, "lat": 32.79, "lng": -97.291}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/uptown-cheapskate-3-tenant-retail-center", "nid": "4811", "name": "Uptown Cheapskate 3-Tenant Retail Center", "address": "5864 North Tarrant Parkway, Fort Worth, TX", "price": null, "price_display": "Contact Broker", "cap_rate": 6.25, "sf": 9770, "type": "Retail", "status": "100% Leased / Available", "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/DJI_20260813135645_0065_D_DRONE_LABEL.jpg"], "criteria_match": true}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/mccart-plaza", "nid": "4810", "name": "McCart Plaza", "address": "5199 & 5201 McCart Avenue, Fort Worth, TX", "price": null, "price_display": "Contact Broker", "cap_rate": 7.0, "sf": 75980, "type": "Retail", "status": "87% Leased / Available", "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/DJI_20260731132049_0009_D_PSD_EDIT.jpg"], "criteria_match": true}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/panera-3-tenant", "nid": "4788", "name": "Panera 3-Tenant", "address": "6280 Tennyson Parkway, Plano, TX", "price": null, "price_display": "Contact Broker", "cap_rate": 6.15, "sf": 6634, "type": "Retail", "status": "100% Leased / Available", "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/DJI_20260326133143_0549_D_PSD_EDIT.jpg"], "criteria_match": true}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/elm-street-portfolio", "nid": "4773", "name": "Elm Street Portfolio", "address": "4312, 4314, 4316, 4404, 4411, 4412 & 4420 ELM STREET & 9302 PEAK STREET, Dallas, TX", "price": null, "price_display": "Contact Broker", "cap_rate": 5.27, "sf": 29353, "type": "Retail", "status": "78% Leased / Available", "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/Web%203%20picture%20v2_17.jpg"], "criteria_match": true}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/1931-greenville-ave", "nid": "4769", "name": "1931 Greenville Ave", "address": "1931 Greenville Ave, Dallas, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/Greenville%20Cover.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/ibp-plano-retail", "nid": "4768", "name": "IBP Plano Retail", "address": "3412 E Hebron Pkwy, Carrollton, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/Cover%20August%202026.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/space-available-park-preston-plano-tx", "nid": "4766", "name": "Space Available - Park & Preston, Plano, TX", "address": "5025 W Park Blvd, Plano, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/_DSC7823-HDR%20EDITED.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/5946-lyndon-b-johnson-fwy", "nid": "4765", "name": "5946 Lyndon B Johnson Fwy", "address": "5946 LBJ Fwy, Dallas, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/5946%20LBJ%20%2810%29%20cropped.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/george-owens-us-380-pads", "nid": "4764", "name": "George Owens & US 380 Pads", "address": "George Owens & US 380, Denton, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": "Available", "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/DENTON_george%20owens%20%26%20380_CU.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/preston-highland-village-outparcel", "nid": "4756", "name": "Preston Highland Village Outparcel", "address": "18484 Preston Rd, Dallas, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/DJI_20260727163422_0233_D%20PSD_EDIT%208.12.26.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/modera-hill", "nid": "4755", "name": "Modera Hill", "address": "8041 Walnut Hill Lane, Dallas, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/Cover%20Edits.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/west-towne-center-building-1", "nid": "4754", "name": "West Towne Center Building 1", "address": "12255 Teel Parkway, Frisco, TX", "price": null, "price_display": "Contact Broker", "cap_rate": 6.0, "sf": 17841, "type": "Retail", "status": "100% Leased / Available", "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/DJI_20260722150934_0126_D_PSD_EDIT.jpg"], "criteria_match": true}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/1912-greenville", "nid": "4742", "name": "1912 Greenville", "address": "1912 Greenville Ave, Dallas , TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/Cover%20Edit%208-3-26_0.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/19201922-greenville", "nid": "4741", "name": "1920/1922 Greenville", "address": "1920/1922 Greenville Ave, Dallas, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/Edited%20DSC%201257.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/2300-fort-worth-avenue", "nid": "4740", "name": "2300 Fort Worth Avenue", "address": "2300 Fort Worth Avenue, Dallas , TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/Site%20Plan%20-%20Flyer%20Cover%20Version%20Cropped_0.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/viridian-marketplace", "nid": "4734", "name": "Viridian Marketplace", "address": "500 Fort Worth Drive, Denton, TX", "price": null, "price_display": "Contact Broker", "cap_rate": 6.65, "sf": 13388, "type": "Retail", "status": "100% Leased / Available", "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/DJI_20260727141957_0217_D.jpg"], "criteria_match": true}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/1121-i-20-west", "nid": "4728", "name": "1121 I-20 West", "address": "1121 I-20 West, Arlington, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/_DSC0832-HDR%20cover.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/take-5-oil-change-ground-lease-1", "nid": "4726", "name": "Take 5 Oil Change Ground Lease", "address": "901 East Arkansas Lane, Arlington, TX", "price": null, "price_display": "Contact Broker", "cap_rate": 5.1, "sf": 1711, "type": "Retail", "status": "100% Leased / Available", "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/Web%203%20picture%20v2_13.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/whiterock-marketplace", "nid": "4722", "name": "Whiterock Marketplace", "address": "11255 Garland Rd, Dallas, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/DJI_20260407085339_0044_D-HDR%20EDITED.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/former-grocery-box-mckinney-tx", "nid": "4720", "name": "Former Grocery Box", "address": "2901 Lake Forest Dr, McKinney, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/_DSC0605-HDR%20EDITED.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/rufe-snow-plaza", "nid": "4719", "name": "Rufe Snow Plaza", "address": "242 Rufe Snow Drive, Keller, TX", "price": null, "price_display": "Contact Broker", "cap_rate": 6.35, "sf": 12094, "type": "Retail", "status": "100% Leased / In Escrow", "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/Web%203%20picture_19.jpg"], "criteria_match": true}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/644-w-davis-st", "nid": "4718", "name": "644 W Davis St", "address": "644 West Davis St, Dallas, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/7-22-26%20edit.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/2623-commerce-street", "nid": "4717", "name": "2623 Commerce Street", "address": "2623 Commerce St, Dallas, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/Cover%20Website.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/tower-parkside", "nid": "4716", "name": "Tower at Parkside", "address": "1919 Woodall Rodgers Fwy, Dallas, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/G243403_PELM_BOFA_ExteriorHero_1215_03_0.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/custer-village", "nid": "4712", "name": "Custer Village", "address": "3041 S Custer Rd, Mckinney , TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/Website%20Cropped.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/custer-four-corners", "nid": "4711", "name": "Custer Four Corners", "address": "1480 North Custer Road, Allen, TX", "price": null, "price_display": "Contact Broker", "cap_rate": 5.85, "sf": 11630, "type": "Retail", "status": "100% Leased / In Escrow", "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/DJI_20260603150259_0248_D_PSD_EDIT.jpg"], "criteria_match": true}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/shawnee-trail-restaurantretail", "nid": "4671", "name": "Shawnee Trail - Restaurant/Retail", "address": "NWC of Preston Road (SH 289) and West Outer Loop, Celina, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/Trademark%20Shawnee%20Trail%20-%20Concept%20%28cleaned%20up%29.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/317-n-bishop-avenue", "nid": "4669", "name": "317 N Bishop Avenue", "address": "317 N Bishop Avenue, Dallas, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/Storefront%20Call%20Out.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/lakeridge-shopping-center", "nid": "4664", "name": "Lakeridge Shopping Center", "address": "9660 Audelia Road, Dallas, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/2.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/braniff-centre", "nid": "4665", "name": "Braniff Centre", "address": "7701 Lemmon Avenue, Dallas, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/Crop.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/scooters-coffee-ground-lease", "nid": "4663", "name": "Scooter's Coffee Ground Lease", "address": "3471 FM-2499, Corinth, TX", "price": null, "price_display": "Contact Broker", "cap_rate": 6.15, "sf": 664, "type": "Retail", "status": "100% Leased / Available", "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/Web%203%20picture%20v2_9.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/5402-arapaho-rd", "nid": "4658", "name": "5402 Arapaho Rd", "address": "5402 Arapaho Rd, Dallas, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/5402%20Arapaho%20Website.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/6-ac-available-sale-princeton-tx", "nid": "4657", "name": "\u00b1 6 AC Available for Sale in Princeton, TX", "address": "830 E Princeton Dr, Princeton, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/NWQ%20Princeton%20Dr%20%26%20Cole%20St%20%20%20%20%20%20ov%20%20%20%20%20%20PRINCETON%20%20%20%20%20%2006-26-26%20wm.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/shops-mockingbird", "nid": "4647", "name": "Shops at Mockingbird", "address": "W Mockingbird Lane, Dallas , TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/_DSC5813-HDR_0.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/tower-22-district-apartment-site", "nid": "4643", "name": "Tower 22 District Apartment Site", "address": "305 South Haskell Avenue, Dallas, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": 33000, "type": "Retail", "status": "Available", "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/cover_13.jpg"], "criteria_match": true}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/laud-howell-75", "nid": "4642", "name": "Laud Howell & 75", "address": "Laud Howell Parkway & US 75, McKinney , TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/Oblique%206-26-26.jpg"], "criteria_match": false}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/macarthur-pioneer-plaza", "nid": "4638", "name": "MacArthur & Pioneer Plaza", "address": "615 North MacArthur Boulevard, Irving, TX", "price": null, "price_display": "Contact Broker", "cap_rate": 7.35, "sf": 6113, "type": "Retail", "status": "87% Leased / Available", "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/Web%203%20picture_17.jpg"], "criteria_match": true}, {"source": "SHOP Companies", "url": "https://shopcompanies.com/properties/ridge-decatur", "nid": "4637", "name": "The Ridge at Decatur", "address": "1766 US-380, Decatur, TX", "price": null, "price_display": "Contact Broker", "cap_rate": null, "sf": null, "type": "Retail", "status": null, "photos": ["https://shopcompanies.com/sites/default/files/styles/rs_property_thumbnail_400w/public/US%20380%20%26%20CR%204003%20%20%20cu%20%20%20DECATUR%20%20%2004-15-26%20wm.jpg"], "criteria_match": false}];
+const listings = [{"name": "1912 S. Good Latimer / 2512-2516 Ferris St.", "address": "Dallas, TX 75226", "url": "https://nairl.com/properties/#nai-1912-s-good-latimer-2512-2516-ferris-st", "source": "NAI Robert Lynn", "price": null, "cap_rate": null, "status": "AVAILABLE", "photo": null, "notes": "For Sale -- Building SF: 57,850. Contact broker for pricing/details.", "sf": 57850, "group": "new", "top": true, "match": false, "dom": null}, {"name": "3054 Irving Blvd.", "address": "Dallas, TX", "url": "https://nairl.com/properties/#nai-3054-irving-blvd", "source": "NAI Robert Lynn", "price": null, "cap_rate": null, "status": "AVAILABLE", "photo": null, "notes": "For Sale -- Building SF: 33,976. Contact broker for pricing/details.", "sf": 33976, "group": "new", "top": true, "match": false, "dom": null}, {"name": "3900 Benbrook Blvd.", "address": "Fort Worth (Benbrook), TX", "url": "https://nairl.com/properties/#nai-3900-benbrook-blvd", "source": "NAI Robert Lynn", "price": null, "cap_rate": null, "status": "AVAILABLE", "photo": null, "notes": "For Sale -- Building SF: 40,904. Contact broker for pricing/details.", "sf": 40904, "group": "new", "top": true, "match": false, "dom": null}, {"name": "5801 Denton Hwy.", "address": "Haltom City/Fort Worth, TX", "url": "https://nairl.com/properties/#nai-5801-denton-hwy", "source": "NAI Robert Lynn", "price": null, "cap_rate": null, "status": "AVAILABLE", "photo": null, "notes": "For Sale -- Building SF: 12,150. Contact broker for pricing/details.", "sf": 12150, "group": "new", "top": true, "match": false, "dom": null}, {"name": "624 W. Kennedale Pkwy.", "address": "Kennedale, TX", "url": "https://nairl.com/properties/#nai-624-w-kennedale-pkwy", "source": "NAI Robert Lynn", "price": null, "cap_rate": null, "status": "AVAILABLE", "photo": null, "notes": "For Sale -- Building SF: 19,200. Contact broker for pricing/details.", "sf": 19200, "group": "new", "top": true, "match": false, "dom": null}, {"name": "905 N. Saginaw Blvd.", "address": "Saginaw, TX", "url": "https://nairl.com/properties/#nai-905-n-saginaw-blvd", "source": "NAI Robert Lynn", "price": null, "cap_rate": null, "status": "AVAILABLE", "photo": null, "notes": "For Sale -- Building SF: 14,955. Contact broker for pricing/details.", "sf": 14955, "group": "new", "top": true, "match": false, "dom": null}, {"name": "Grapevine Crossing", "address": "1515 W TX-114, Grapevine, TX", "url": "https://shopcompanies.com/properties/grapevine-crossing", "source": "SHOP Companies", "price": null, "cap_rate": null, "status": "AVAILABLE", "photo": null, "notes": "New-to-market retail listing; sale/lease status and price unconfirmed \u2014 contact broker.", "sf": null, "group": "new", "top": true, "match": false, "dom": null}, {"name": "Bella Prosper Development", "address": "First Street & Legacy Drive, Prosper, TX", "url": "https://shopcompanies.com/properties/bella-prosper-development", "source": "SHOP Companies", "price": null, "cap_rate": null, "status": "AVAILABLE", "photo": null, "notes": "New-to-market retail development site; sale/lease status and price unconfirmed \u2014 contact broker.", "sf": null, "group": "active", "top": false, "match": false, "dom": null}, {"name": "IBP Plano Retail", "address": "3412 E Hebron Pkwy, Carrollton, TX", "url": "https://shopcompanies.com/properties/ibp-plano-retail", "source": "SHOP Companies", "price": null, "cap_rate": null, "status": "AVAILABLE", "photo": null, "notes": "New-to-market retail listing; sale/lease status and price unconfirmed \u2014 contact broker.", "sf": null, "group": "active", "top": false, "match": false, "dom": null}, {"name": "Park & Preston", "address": "5025 W Park Blvd, Plano, TX", "url": "https://shopcompanies.com/properties/space-available-park-preston-plano-tx", "source": "SHOP Companies", "price": null, "cap_rate": null, "status": "AVAILABLE", "photo": null, "notes": "New-to-market retail space; sale/lease status and price unconfirmed \u2014 contact broker.", "sf": null, "group": "active", "top": false, "match": false, "dom": null}, {"name": "7-Eleven", "address": "Dallas, TX", "url": "https://www.strivere.com/property/1087", "source": "STRIVE", "price": 1275000, "cap_rate": 4.75, "status": "UNDER CONTRACT", "photo": "https://strivenext.s3.amazonaws.com/website/property-photos/1087/Cover%20Page-2.jpg", "notes": "Single-tenant NNN 7-Eleven ground lease", "sf": null, "group": "active", "top": false, "match": false, "dom": null}, {"name": "Action Behavior Centers", "address": "Fort Worth, TX", "url": "https://www.strivere.com/property/35833", "source": "STRIVE", "price": 4200000, "cap_rate": 7.22, "status": "AVAILABLE", "photo": "https://strivenext.s3.amazonaws.com/website/property-photos/35833/Action%20Behavior%20Cover%20Photo.JPG", "notes": "Single-tenant NNN retail/medical", "sf": null, "group": "active", "top": false, "match": false, "dom": null}, {"name": "Alta Mere Two Tenant Strip", "address": "Fort Worth, TX", "url": "https://www.strivere.com/property/202578", "source": "STRIVE", "price": 1055000, "cap_rate": 0.0, "status": "UNDER CONTRACT", "photo": "https://strivenext.s3.amazonaws.com/website/property-photos/202578/Cover%20Photo.jpg", "notes": "Two-tenant retail strip", "sf": null, "group": "active", "top": false, "match": false, "dom": null}, {"name": "Black Rock Coffee", "address": "McKinney, TX", "url": "https://www.strivere.com/property/40531", "source": "STRIVE", "price": 2520000, "cap_rate": 5.75, "status": "UNDER CONTRACT", "photo": "https://strivenext.s3.amazonaws.com/website/property-photos/40531/Cover%20Shot.JPG", "notes": "Single-tenant NNN coffee drive-thru", "sf": null, "group": "active", "top": false, "match": false, "dom": null}, {"name": "Collins Square", "address": "Arlington, TX", "url": "https://www.strivere.com/property/50166", "source": "STRIVE", "price": 2380000, "cap_rate": 6.45, "status": "UNDER CONTRACT", "photo": "https://strivenext.s3.amazonaws.com/website/property-photos/50166/IMG_1411.jpg", "notes": "Multi-tenant retail center", "sf": null, "group": "active", "top": false, "match": true, "dom": null}, {"name": "Crossroads Centre", "address": "North Richland Hills, TX", "url": "https://www.strivere.com/property/202376", "source": "STRIVE", "price": 1810000, "cap_rate": 0.0, "status": "AVAILABLE", "photo": "https://strivenext.s3.amazonaws.com/website/property-photos/202376/Cover%20Option.jpg", "notes": "Multi-tenant retail center", "sf": null, "group": "active", "top": false, "match": false, "dom": null}, {"name": "Safe Harbor Center", "address": "Arlington, TX", "url": "https://www.strivere.com/property/65050", "source": "STRIVE", "price": 1740000, "cap_rate": 8.13, "status": "AVAILABLE", "photo": "https://strivenext.s3.amazonaws.com/website/property-photos/65050/SHC%20-%20Cover%20Photo.JPG", "notes": "Multi-tenant retail center", "sf": null, "group": "active", "top": false, "match": false, "dom": null}];
 
-const SOURCE_STATUS = [
-  {name: "Crexi", status: "blocked", note: "listing pages stuck on loading skeleton (both Dallas & Fort Worth URLs); no listing API observed"},
-  {name: "STRIVE", status: "zero", note: "20 DFW listings reviewed, 11 retail — all previously tracked"},
-  {name: "Secure Net Lease", status: "zero", note: "site UI showed false \"no results\"; used wp-json API directly — 7 DFW listings, all previously tracked"},
-  {name: "SRS", status: "zero", note: "map/location filter repeatedly froze; reviewed national \"Newest Listings\" feed — zero DFW for-sale retail items present"},
-  {name: "Marcus & Millichap", status: "zero", note: "Retail+Net Lease, Dallas TX (covers MSA), Most Recent sort — 16 results, all previously tracked (fixed 7 malformed tracker URLs in the process)"},
-  {name: "Matthews", status: "ok", note: "Retail+Shopping Centers, Texas — 3 new listings (list is virtualized; only first 18 of 97 harvested)"},
-  {name: "Colliers", status: "zero", note: "Coveo location facet \"Texas &gt; Dallas\", For Sale + Retail — 1 result, previously tracked"},
-  {name: "CBRE", status: "blocked", note: "original search URL 404s (site restructure); /properties base URL stuck in perpetual loading state after 2 attempts"},
-  {name: "NAI Robert Lynn", status: "ok", note: "parsed admin-ajax.php map marker feed (733 properties) — 44 DFW retail-for-sale, 42 new to tracker"},
-  {name: "LoopNet", status: "blocked", note: "served bot-protection challenge page; not bypassed per policy"},
-  {name: "SHOP Companies", status: "ok", note: "properties.json feed sorted newest-created — 52 DFW of first 100 nationally, 38 new to tracker"},
-];
-
-function fmtMoney(n) {
-  if (!n) return null;
-  return '$' + n.toLocaleString('en-US');
+function fmtPrice(p){
+  if(p===null||p===undefined) return 'Price on request';
+  return '$' + p.toLocaleString('en-US');
 }
-function fmtSF(n) {
-  if (!n) return null;
-  return n.toLocaleString('en-US') + ' SF';
+function fmtCap(c){
+  if(c===null||c===undefined||c===0) return '—';
+  return c.toFixed(2)+'%';
+}
+function domPillClass(days){
+  if(days===null) return 'dom-gray';
+  if(days<=30) return 'dom-green';
+  if(days<=90) return 'dom-gold';
+  return 'dom-red';
+}
+function domLabel(days){
+  if(days===null) return 'N/A';
+  return days+'d';
 }
 
-function domPillInfo(item) {
-  // We don't have reliable days-on-market data from any source this run.
-  return {cls: 'gray', label: 'DOM n/a'};
+function cardHTML(l){
+  const photoInner = l.photo
+    ? `<img src="${l.photo}" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').classList.add('noimg'); this.remove();">`
+    : '';
+  const badges = [];
+  if(l.top) badges.push('<span class="badge top">&#9733; Top Pick</span>');
+  badges.push(`<span class="badge source">${l.source}</span>`);
+  if(l.match) badges.push('<span class="badge match">Criteria Match</span>');
+
+  return `
+  <div class="card" data-cap="${l.cap_rate||0}" data-price="${l.price||0}" data-top="${l.top?1:0}" data-match="${l.match?1:0}">
+    <div class="photo-wrap ${l.photo?'':'noimg'}">
+      ${photoInner || 'No photo available'}
+      <div class="badges">${badges.join('')}</div>
+      <div class="dom-pill ${domPillClass(l.dom)}">${domLabel(l.dom)}</div>
+    </div>
+    <div class="card-body">
+      <h3>${l.name}</h3>
+      <div class="addr">${l.address}</div>
+      <div class="stats-grid">
+        <div class="k">Price</div><div class="v">${fmtPrice(l.price)}</div>
+        <div class="k">Cap Rate</div><div class="v gold">${fmtCap(l.cap_rate)}</div>
+        <div class="k">Size</div><div class="v">${l.sf ? l.sf.toLocaleString('en-US')+' SF' : '—'}</div>
+        <div class="k">Status</div><div class="v">${l.status||'—'}</div>
+      </div>
+      <div class="notes">${l.notes||''}</div>
+      <div class="spacer"></div>
+      <a class="view-btn" href="${l.url}" target="_blank" rel="noopener">View Listing</a>
+    </div>
+  </div>`;
 }
 
-function render() {
-  const sort = document.getElementById('sortSelect').value;
-  const minCap = parseFloat(document.getElementById('minCap').value) || null;
-  const maxPrice = parseFloat(document.getElementById('maxPrice').value) || null;
-  const matchOnly = document.getElementById('matchToggle').classList.contains('active');
-  const photoOnly = document.getElementById('photoToggle').classList.contains('active');
+const newListings = listings.filter(l=>l.group==='new');
+const activeListings = listings.filter(l=>l.group==='active');
 
-  let items = LISTINGS.slice();
+document.getElementById('newGrid').innerHTML = newListings.map(cardHTML).join('');
+document.getElementById('activeGrid').innerHTML = activeListings.map(cardHTML).join('');
+document.getElementById('newCount').textContent = '(' + newListings.length + ')';
+document.getElementById('activeCount').textContent = '(' + activeListings.length + ')';
 
-  if (minCap !== null) items = items.filter(i => i.cap_rate && i.cap_rate >= minCap);
-  if (maxPrice !== null) items = items.filter(i => i.price && i.price <= maxPrice);
-  if (matchOnly) items = items.filter(i => i.criteria_match);
-  if (photoOnly) items = items.filter(i => i.photos && i.photos.length);
+// stat bar
+const priced = listings.filter(l=>l.price);
+const capped = listings.filter(l=>l.cap_rate);
+const minPrice = priced.length ? Math.min(...priced.map(l=>l.price)) : null;
+const maxPrice = priced.length ? Math.max(...priced.map(l=>l.price)) : null;
+const minCap = capped.length ? Math.min(...capped.map(l=>l.cap_rate)) : null;
+const maxCap = capped.length ? Math.max(...capped.map(l=>l.cap_rate)) : null;
 
-  if (sort === 'cap-desc') items.sort((a,b) => (b.cap_rate||0) - (a.cap_rate||0));
-  else if (sort === 'price-asc') items.sort((a,b) => (a.price||Infinity) - (b.price||Infinity));
-  else if (sort === 'price-desc') items.sort((a,b) => (b.price||0) - (a.price||0));
-  else if (sort === 'sf-desc') items.sort((a,b) => (b.sf||0) - (a.sf||0));
-  // 'newest' = source insertion order (already newest-first per source feed)
+document.getElementById('statbar').innerHTML = `
+  <div class="stat"><div class="num">${listings.length}</div><div class="lbl">Total Listings</div></div>
+  <div class="stat"><div class="num">${newListings.length}</div><div class="lbl">New (past ~3 days)</div></div>
+  <div class="stat"><div class="num">${minCap?minCap.toFixed(2):'—'}–${maxCap?maxCap.toFixed(2):'—'}%</div><div class="lbl">Cap Rate Range</div></div>
+  <div class="stat"><div class="num">${minPrice?'$'+(minPrice/1e6).toFixed(2)+'M':'—'}–${maxPrice?'$'+(maxPrice/1e6).toFixed(2)+'M':'—'}</div><div class="lbl">Price Range</div></div>
+`;
 
-  document.getElementById('filterCount').textContent = items.length + ' of ' + LISTINGS.length + ' shown';
+// filtering / sorting
+function applyFilters(){
+  const minCapVal = parseFloat(document.getElementById('minCap').value) || 0;
+  const maxPriceVal = parseFloat(document.getElementById('maxPrice').value) || Infinity;
+  const topOnly = document.getElementById('topOnly').checked;
+  const matchOnly = document.getElementById('matchOnly').checked;
 
-  const grid = document.getElementById('grid');
-  grid.innerHTML = '';
-  document.getElementById('empty-state').style.display = items.length ? 'none' : 'block';
-
-  for (const item of items) {
-    const card = document.createElement('div');
-    card.className = 'card';
-
-    const photo = document.createElement('div');
-    photo.className = 'photo-wrap';
-    if (item.photos && item.photos.length) {
-      const img = document.createElement('img');
-      img.src = item.photos[0];
-      img.loading = 'lazy';
-      img.referrerPolicy = 'no-referrer';
-      img.onerror = function() { this.closest('.photo-wrap').style.display = 'none'; };
-      photo.appendChild(img);
-    } else {
-      const ph = document.createElement('div');
-      ph.className = 'no-photo';
-      ph.textContent = 'No photo available';
-      photo.appendChild(ph);
-    }
-
-    const badges = document.createElement('div');
-    badges.className = 'badges';
-    const srcBadge = document.createElement('span');
-    srcBadge.className = 'badge source';
-    srcBadge.textContent = item.source;
-    badges.appendChild(srcBadge);
-    if (item.criteria_match) {
-      const mb = document.createElement('span');
-      mb.className = 'badge match';
-      mb.textContent = 'Criteria Match';
-      badges.appendChild(mb);
-    }
-    photo.appendChild(badges);
-
-    const dom = domPillInfo(item);
-    const domEl = document.createElement('div');
-    domEl.className = 'dom-pill ' + dom.cls;
-    domEl.textContent = dom.label;
-    photo.appendChild(domEl);
-
-    card.appendChild(photo);
-
-    const body = document.createElement('div');
-    body.className = 'card-body';
-
-    const title = document.createElement('div');
-    title.className = 'card-title';
-    title.textContent = item.name;
-    body.appendChild(title);
-
-    const addr = document.createElement('div');
-    addr.className = 'card-address';
-    addr.textContent = item.address;
-    body.appendChild(addr);
-
-    const sg = document.createElement('div');
-    sg.className = 'stats-grid';
-    const priceStr = fmtMoney(item.price) || item.price_display || 'Contact Broker';
-    sg.innerHTML = `
-      <div class="k">Price</div><div class="v">${priceStr}</div>
-      <div class="k">Cap Rate</div><div class="v gold">${item.cap_rate ? item.cap_rate + '%' : '—'}</div>
-      <div class="k">Size</div><div class="v">${fmtSF(item.sf) || (item.acres ? item.acres + ' AC' : '—')}</div>
-      <div class="k">Type</div><div class="v">${item.type || 'Retail'}</div>
-    `;
-    body.appendChild(sg);
-
-    if (item.status || item.dom_note) {
-      const notes = document.createElement('div');
-      notes.className = 'notes';
-      notes.textContent = [item.status, item.dom_note].filter(Boolean).join(' · ');
-      body.appendChild(notes);
-    }
-
-    const btn = document.createElement('a');
-    btn.className = 'view-btn';
-    btn.href = item.url;
-    btn.target = '_blank';
-    btn.rel = 'noopener noreferrer';
-    btn.textContent = 'View Listing';
-    body.appendChild(btn);
-
-    card.appendChild(body);
-    grid.appendChild(card);
-  }
-}
-
-function buildStatBar() {
-  const caps = LISTINGS.map(i => i.cap_rate).filter(Boolean);
-  const prices = LISTINGS.map(i => i.price).filter(Boolean);
-  const matchCount = LISTINGS.filter(i => i.criteria_match).length;
-  const capRange = caps.length ? Math.min(...caps).toFixed(2) + '% – ' + Math.max(...caps).toFixed(2) + '%' : '—';
-  const priceRange = prices.length ? fmtMoney(Math.min(...prices)) + ' – ' + fmtMoney(Math.max(...prices)) : '—';
-
-  const stats = [
-    {num: LISTINGS.length, label: 'New Listings Today'},
-    {num: matchCount, label: 'Criteria Match'},
-    {num: capRange, label: 'Cap Rate Range'},
-    {num: priceRange, label: 'Price Range (priced only)'},
-  ];
-  const bar = document.getElementById('stat-bar');
-  bar.innerHTML = stats.map(s => `<div class="stat"><div class="num">${s.num}</div><div class="label">${s.label}</div></div>`).join('');
-}
-
-function buildSourceStatus() {
-  const el = document.getElementById('source-status');
-  const parts = SOURCE_STATUS.map(s => {
-    const cls = s.status === 'ok' ? 'ok' : (s.status === 'blocked' ? 'blocked' : 'zero');
-    const label = s.status === 'ok' ? '✓' : (s.status === 'blocked' ? '✗ blocked' : '– 0 new');
-    return `<div><b>${s.name}</b> <span class="${cls}">${label}</span> — ${s.note}</div>`;
+  document.querySelectorAll('.card').forEach(card=>{
+    const cap = parseFloat(card.dataset.cap)||0;
+    const price = parseFloat(card.dataset.price)||0;
+    const top = card.dataset.top === '1';
+    const match = card.dataset.match === '1';
+    let show = true;
+    if(cap < minCapVal && cap!==0) show=false;
+    if(price > maxPriceVal && price!==0) show=false;
+    if(topOnly && !top) show=false;
+    if(matchOnly && !match) show=false;
+    card.classList.toggle('hidden', !show);
   });
-  el.innerHTML = '<div style="margin-bottom:8px;color:var(--text)"><b>Source coverage this run:</b></div>' + parts.join('');
 }
+['minCap','maxPrice'].forEach(id=>document.getElementById(id).addEventListener('input',applyFilters));
+['topOnly','matchOnly'].forEach(id=>document.getElementById(id).addEventListener('change',applyFilters));
 
-function buildFooter() {
-  document.getElementById('footer').innerHTML =
-    'DOM (days-on-market) data was not reliably exposed by any source this run, so all pills read "DOM n/a" rather than risk a false ⭐ Top Pick claim. ' +
-    '"New" means the listing was not present in the cross-session tracker before this run — the strongest recency signal available given each site’s data. ' +
-    'Report built for Vincent · United MK.';
-}
-
-document.getElementById('report-date').textContent = new Date().toLocaleDateString('en-US', {weekday:'long', year:'numeric', month:'long', day:'numeric'});
-document.getElementById('sortSelect').addEventListener('change', render);
-document.getElementById('minCap').addEventListener('input', render);
-document.getElementById('maxPrice').addEventListener('input', render);
-document.getElementById('matchToggle').addEventListener('click', function(){ this.classList.toggle('active'); render(); });
-document.getElementById('photoToggle').addEventListener('click', function(){ this.classList.toggle('active'); render(); });
-
-buildStatBar();
-buildSourceStatus();
-buildFooter();
-render();
+document.getElementById('sortSel').addEventListener('change', function(){
+  const val = this.value;
+  ['newGrid','activeGrid'].forEach(gridId=>{
+    const grid = document.getElementById(gridId);
+    const cards = Array.from(grid.children);
+    cards.sort((a,b)=>{
+      if(val==='cap-desc') return (parseFloat(b.dataset.cap)||0)-(parseFloat(a.dataset.cap)||0);
+      if(val==='price-asc') return (parseFloat(a.dataset.price)||Infinity)-(parseFloat(b.dataset.price)||Infinity);
+      if(val==='price-desc') return (parseFloat(b.dataset.price)||0)-(parseFloat(a.dataset.price)||0);
+      return 0;
+    });
+    cards.forEach(c=>grid.appendChild(c));
+  });
+});
 </script>
-
 </body>
 </html>
