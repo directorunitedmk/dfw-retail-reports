@@ -1821,6 +1821,90 @@
    "last_seen": "2026-09-28",
    "address": "Haltom City/Fort Worth, TX",
    "price": null
+  },
+  "https://www.crexi.com/properties/2724690/texas-2833-e-rosedale-st": {
+   "first_seen": "2026-09-30",
+   "last_seen": "2026-09-30",
+   "address": "2833 E Rosedale St, Fort Worth, TX 76105",
+   "price": 450000
+  },
+  "https://www.crexi.com/properties/2290620/texas-the-parc-express---veterinary-wellness-clinic": {
+   "first_seen": "2026-09-30",
+   "last_seen": "2026-09-30",
+   "address": "3201 Hulen St, Fort Worth, TX 76107",
+   "price": 1832000
+  },
+  "https://www.crexi.com/properties/2596538/": {
+   "first_seen": "2026-09-30",
+   "last_seen": "2026-09-30",
+   "address": "7345 Canyon Park Dr, Fort Worth, TX 76123",
+   "price": 5267000
+  },
+  "https://www.crexi.com/properties/2597434/": {
+   "first_seen": "2026-09-30",
+   "last_seen": "2026-09-30",
+   "address": "1226 W McDermott Dr, Allen, TX 75013",
+   "price": 3632114
+  },
+  "https://www.crexi.com/properties/2722449/": {
+   "first_seen": "2026-09-30",
+   "last_seen": "2026-09-30",
+   "address": "1319 W Pipeline Rd, Hurst, TX 76053",
+   "price": null
+  },
+  "https://www.crexi.com/properties/2722579/": {
+   "first_seen": "2026-09-30",
+   "last_seen": "2026-09-30",
+   "address": "3875-3899 W Frontier Pkwy, Prosper, TX 75078",
+   "price": 3491000
+  },
+  "https://www.crexi.com/properties/2722930/": {
+   "first_seen": "2026-09-30",
+   "last_seen": "2026-09-30",
+   "address": "1165 S Stemmons Fwy, Lewisville, TX 75067",
+   "price": null
+  },
+  "https://www.crexi.com/properties/2723722/texas-4409-east-side-avenue": {
+   "first_seen": "2026-09-30",
+   "last_seen": "2026-09-30",
+   "address": "4409 East Side Ave, Dallas, TX 75226",
+   "price": 825000
+  },
+  "https://www.crexi.com/properties/2723978/": {
+   "first_seen": "2026-09-30",
+   "last_seen": "2026-09-30",
+   "address": "6901 Rowlett Rd, Rowlett, TX 75089",
+   "price": null
+  },
+  "https://www.crexi.com/properties/2723016/": {
+   "first_seen": "2026-09-30",
+   "last_seen": "2026-09-30",
+   "address": "4041 S Custer Rd #2220, McKinney, TX 75070",
+   "price": 650000
+  },
+  "https://www.crexi.com/properties/2605896/": {
+   "first_seen": "2026-09-30",
+   "last_seen": "2026-09-30",
+   "address": "9773 Tehama Ridge Pkwy, Fort Worth, TX 76177",
+   "price": 6600000
+  },
+  "https://www.crexi.com/properties/2722606/": {
+   "first_seen": "2026-09-30",
+   "last_seen": "2026-09-30",
+   "address": "601 Accent Dr, Plano, TX 75075",
+   "price": null
+  },
+  "https://shopcompanies.com/properties/preston-lebanon-retail-center": {
+   "first_seen": "2026-09-30",
+   "last_seen": "2026-09-30",
+   "address": "5501 Preston Rd, Frisco, TX",
+   "price": null
+  },
+  "https://www.strivere.com/listings#dollar-tree-mansfield": {
+   "first_seen": "2026-09-30",
+   "last_seen": "2026-09-30",
+   "address": "Mansfield, TX",
+   "price": 2555000
   }
  },
  "last_run": "2026-09-23",
