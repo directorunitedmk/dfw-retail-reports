@@ -1,47 +1,24 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DFW Retail Report — Oct 2, 2026</title>
-<style>:root{--bg:#0d0d14;--card:#15151f;--gold:#e8a020;--tx:#e8e8ee;--mut:#8b8b9c;--green:#3ecf6e;--red:#e5534b}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif}
-header{padding:24px 16px 8px;max-width:1100px;margin:auto}h1{margin:0;color:var(--gold);font-size:24px}.sub{color:var(--mut);font-size:14px}
-.stats{display:flex;gap:12px;flex-wrap:wrap;max-width:1100px;margin:12px auto;padding:0 16px}.stat{background:var(--card);padding:12px 16px;border-radius:10px;flex:1;min-width:140px}.stat b{display:block;color:var(--gold);font-size:20px}
-.bar{position:sticky;top:0;background:#0d0d14ee;padding:10px 16px;z-index:5;border-bottom:1px solid #222;display:flex;gap:12px;flex-wrap:wrap;align-items:center;max-width:1100px;margin:auto;font-size:13px}
-.bar input,.bar select{background:var(--card);color:var(--tx);border:1px solid #333;border-radius:6px;padding:5px}
-.grid{max-width:1100px;margin:16px auto;padding:0 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-.card{background:var(--card);border-radius:12px;padding:16px}.badges span{display:inline-block;font-size:11px;padding:2px 8px;border-radius:99px;margin:0 4px 6px 0;background:#26263a}
-.top{background:var(--gold)!important;color:#000}.cm{background:#1f3b2a!important;color:var(--green)}
-.card h3{margin:4px 0;font-size:17px}.addr{color:var(--mut);font-size:13px;margin-bottom:10px}
-.sg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.sg div{font-size:12px;color:var(--mut)}.sg b{display:block;color:var(--tx);font-size:15px}.sg b.g{color:var(--gold)}
-.pill{display:inline-block;background:#777;color:#000;border-radius:99px;padding:2px 10px;font-size:12px;font-weight:600}
-.note{font-size:13px;color:#bbb;margin:8px 0}a.btn{display:inline-block;background:var(--gold);color:#000;text-decoration:none;font-weight:600;padding:8px 14px;border-radius:8px;font-size:13px}
-h2{max-width:1100px;margin:24px auto 0;padding:0 16px;color:var(--gold);font-size:18px}.warn{max-width:1100px;margin:16px auto;padding:0 16px;color:var(--mut);font-size:13px}.warn li{margin:4px 0}</style></head><body>
-<header><h1>DFW Retail Investment Report</h1><div class="sub">Friday, October 2, 2026 · new-to-market listings vs. tracker</div></header>
-<div class="stats"><div class="stat"><b id="s1">0</b>New listings</div><div class="stat"><b id="s2">0</b>⭐ Top picks</div><div class="stat"><b id="s3"></b>Cap range</div><div class="stat"><b id="s4"></b>Price range</div></div>
-<div class="bar"><label>Sort <select id="sort"><option value="new">Newest</option><option value="cap">Cap rate</option><option value="price">Price</option><option value="sf">SF</option></select></label>
-<label>Min cap <input id="mc" type="number" step="0.25" style="width:60px"></label><label>Max price $M <input id="mp" type="number" style="width:60px"></label>
-<label><input type="checkbox" id="tp"> Top picks only</label><label><input type="checkbox" id="cm"> Criteria match only</label></div>
-<div class="grid" id="g"></div>
-<h2>Source status (this run)</h2><ul class="warn">
-<li>Crexi — listing tiles never rendered (Dallas &amp; Fort Worth, 2 attempts); no data.</li>
-<li>Secure Net Lease — page reports 49 listings but rendered none; no data.</li>
-<li>Colliers — facet search returned zero results under every filter tried; no data.</li>
-<li>CBRE — investment listings redirect to an external deal-flow site; not accessible.</li>
-<li>LoopNet — bot-protection / blank page; not bypassed.</li>
-<li>Matthews — infinite list stalled behind a subscribe popup; only 17 national tiles loaded, none DFW.</li>
-<li>Scraped OK: STRIVE, SRS (first page, newest sort), Marcus &amp; Millichap (all 24 Dallas-MSA results, all already tracked), NAI Robert Lynn (6 newest markers, all lease), SHOP Companies (newest 42 by created date).</li></ul>
-<script>
-const L=[
-{n:"McDonald's (Ground Lease) – Camp Wisdom",a:"4016 W Camp Wisdom Rd, Dallas, TX 75237",p:2800000,c:3.75,sf:4180,occ:"100% · absolute NNN, new 20-yr lease",src:"SRS",top:1,cm:0,dom:"NEW",note:"Leased-fee (land) interest; 10% bumps every 5 yrs; $105K NOI. SRS 'NEW' badge, top of newest-first sort.",u:"https://srsre.com/properties/investment-sale/retail/texas/dallas/4016-w-camp-wisdom-rd/l15313"},
-{n:"7-Eleven Parking Lot – Frontier Pkwy",a:"3875-3899 W Frontier Pkwy, Prosper, TX 75078",p:3491000,c:5.5,sf:71003,occ:"NNN, 14+ yrs remaining",src:"SRS",top:1,cm:0,dom:"NEW",note:"Leased-fee interest in parking lot leased to 7-Eleven; 7.5% bumps every 5 yrs; $192K NOI; 1.63 AC. SRS 'NEW' badge.",u:"https://srsre.com/properties/investment-sale/retail/texas/propser/3899-3875-w-frontier-pkwy/l15296"},
-{n:"Allen Professional Building",a:"Allen, TX",p:7160000,c:6.5,sf:null,occ:"n/a",src:"STRIVE",top:0,cm:0,dom:null,note:"Office/professional — new vs tracker, not retail.",u:"https://www.strivere.com/listings"},
-{n:"Skyway Circle Office",a:"Irving, TX",p:2615000,c:7.32,sf:null,occ:"n/a",src:"STRIVE",top:0,cm:0,dom:null,note:"Office — new vs tracker, not retail.",u:"https://www.strivere.com/listings"},
-{n:"Richardson Medical Office",a:"Richardson, TX",p:2250000,c:7.24,sf:null,occ:"n/a",src:"STRIVE",top:0,cm:0,dom:null,note:"Medical office — new vs tracker, not retail.",u:"https://www.strivere.com/listings"},
-{n:"International Business Park – Retail 3 (Ste 114)",a:"3432 E Hebron Pkwy, Carrollton, TX 75010",p:null,c:null,sf:1400,occ:"n/a",src:"SHOP Companies",top:0,cm:0,dom:null,note:"Newly listed on SHOP; 1,400 SF suite, sale vs lease not stated — verify.",u:"https://shopcompanies.com/properties/international-business-park-retail-3"}];
-const f=n=>n==null?"n/a":n,m=p=>p==null?"Unpriced":"$"+p.toLocaleString();
-function dp(d){if(!d)return'<span class="pill">DOM n/a</span>';return'<span class="pill" style="background:var(--green)">'+d+'</span>'}
-function r(){const mc=+document.getElementById('mc').value||0,mp=+document.getElementById('mp').value||1e9,tp=document.getElementById('tp').checked,cm=document.getElementById('cm').checked,s=document.getElementById('sort').value;
-let a=L.filter(x=>(x.c||0)>=mc&&(x.p||0)<=mp*1e6&&(!tp||x.top)&&(!cm||x.cm));
-a.sort((x,y)=>s=='cap'?(y.c||0)-(x.c||0):s=='price'?(y.p||0)-(x.p||0):s=='sf'?(y.sf||0)-(x.sf||0):(y.top||0)-(x.top||0));
-document.getElementById('g').innerHTML=a.map(x=>`<div class="card"><div class="badges">${x.top?'<span class="top">⭐ Top Pick</span>':''}<span>${x.src}</span>${x.cm?'<span class="cm">Criteria Match</span>':''}</div>${dp(x.dom)}<h3>${x.n}</h3><div class="addr">${x.a}</div><div class="sg"><div>Price<b>${m(x.p)}</b></div><div>Cap<b class="g">${x.c?x.c+'%':'n/a'}</b></div><div>Size<b>${x.sf?x.sf.toLocaleString()+' SF':'n/a'}</b></div><div>Occupancy<b>${x.occ}</b></div></div><div class="note">${x.note}</div><a class="btn" href="${x.u}" target="_blank" rel="noopener">View Listing</a></div>`).join('')}
-['sort','mc','mp','tp','cm'].forEach(i=>document.getElementById(i).oninput=r);
-const cs=L.map(x=>x.c).filter(Boolean),ps=L.map(x=>x.p).filter(Boolean);
-s1.textContent=L.length;s2.textContent=L.filter(x=>x.top).length;s3.textContent=Math.min(...cs)+'–'+Math.max(...cs)+'%';s4.textContent='$'+(Math.min(...ps)/1e6).toFixed(2)+'M–$'+(Math.max(...ps)/1e6).toFixed(2)+'M';r();
-</script></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DFW Retail Report – 2026-10-05</title>
+<style>:root{--bg:#0d0d14;--card:#15151f;--gold:#e8a020;--tx:#e8e8ee;--mut:#8a8a99;--green:#4cc36b;--bd:#26263a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,sans-serif}
+header{padding:20px 16px;border-bottom:1px solid var(--bd)}h1{margin:0;color:var(--gold);font-size:22px}
+.bar{display:flex;gap:12px;flex-wrap:wrap;padding:14px 16px}.stat{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:10px 16px}.stat b{display:block;color:var(--gold);font-size:20px}
+main{padding:0 16px 40px;max-width:900px;margin:auto}.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;overflow:hidden;margin:14px 0}
+.photo-wrap{position:relative}.photo-wrap img{width:100%;display:block;max-height:340px;object-fit:cover}
+.pill{position:absolute;left:10px;bottom:10px;background:var(--green);color:#000;border-radius:20px;padding:2px 10px;font-weight:600;font-size:13px}
+.body{padding:14px 16px}.badge{display:inline-block;border-radius:6px;padding:2px 8px;font-size:12px;margin-right:6px;background:#26263a}.top{background:var(--gold);color:#000}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin:12px 0}.grid div{background:#0d0d14;border-radius:8px;padding:8px}.grid span{display:block;color:var(--mut);font-size:12px}.cap{color:var(--gold)}
+a.btn{display:inline-block;background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;text-decoration:none;font-weight:600}
+h2{color:var(--gold);font-size:16px;margin-top:28px}li{margin:4px 0;color:var(--mut)}</style></head><body>
+<header><h1>DFW Retail Investment Report</h1><div style="color:var(--mut)">Monday, October 5, 2026 · new-to-market listings vs. prior tracker</div></header>
+<div class="bar"><div class="stat"><b>1</b>new listing</div><div class="stat"><b>1</b>new in ~3 days</div><div class="stat"><b>n/a</b>cap range</div><div class="stat"><b>$995,000</b>price range</div></div>
+<main>
+<div class="card"><div class="photo-wrap"><img loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-wrap').style.display='none'" src="https://cms.matthews.com/wp-content/uploads/2026/10/Former-Wisdom-Academy-1935-Old-Denton-Road-Carrollton-TX-pic-1-1.jpg" alt="Former Wisdom Academy"><span class="pill">DOM ≈ &lt;5d (approx.)</span></div>
+<div class="body"><span class="badge top">⭐ Top Pick</span><span class="badge">Matthews</span>
+<h3 style="margin:8px 0 2px">Former Wisdom Academy</h3><div style="color:var(--mut)">1935 Old Denton Road, Carrollton, TX 75006</div>
+<div class="grid"><div><span>Price</span>$995,000</div><div><span>Cap</span><b class="cap">n/a</b></div><div><span>Size</span>4,496 SF</div><div><span>Occupancy</span>Vacant (former daycare)</div></div>
+<p style="color:var(--mut)">$221/SF · built 1985 / renovated 2020 · type listed as Retail. Listing age approximated from Matthews CMS image upload (Oct 2026). Below $2M, single-asset – does not meet the multi-tenant $2M–$50M profile.</p>
+<a class="btn" href="https://www.matthews.com/listings">View Listing</a></div></div>
+<h2>Other findings (already tracked, no change)</h2><ul><li>SHOP Companies – Preston &amp; Lebanon Retail Center, Frisco: $8,924,000, 5.85% cap, 100% leased NNN, 11,435 SF (first seen 9/30; Criteria Match).</li><li>SHOP Companies – new posts Former Taco Cabana (Mesquite), Springtown Pad, Grapevine Crossing, IBP Retail 3 are lease listings, not sales.</li><li>STRIVE – all DFW retail listings (Dollar Tree Mansfield, Crossroads Centre NRH, River Oaks Plaza, Action Behavior Centers, etc.) already in tracker.</li><li>NAI Robert Lynn – newest DFW retail sale (101-103 W Main St, Mesquite, 2,693 SF) already tracked.</li><li>Colliers – no DFW retail for-sale listings found for Dallas filter.</li></ul>
+<h2>Source status</h2><ul><li>Reached: STRIVE, Matthews (partial scroll), SHOP, NAI Robert Lynn, Colliers (Dallas).</li><li>Not reachable / empty today: Crexi (page would not render), Secure Net Lease (cards failed to load), SRS (browser permission denied), Marcus &amp; Millichap (filters would not apply; national results only), CBRE (no working search path), LoopNet (blank bot-protection page).</li></ul>
+</main></body></html>
